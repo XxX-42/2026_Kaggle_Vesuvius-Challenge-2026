@@ -7,6 +7,7 @@ Modules:
     - feature_extraction: Hessian-based micro-feature extraction
     - orientation: Vector field alignment
     - solver: Poisson equation solver
+    - meshing: Isosurface extraction and quality audit
 """
 
 from rgt.infrastructure import (
@@ -27,6 +28,11 @@ from rgt.solver import (
     PoissonSolver,
     PoissonResult,
 )
+from rgt.meshing import (
+    SurfaceExtractor,
+    MeshData,
+    CurvatureAudit,
+)
 
 __all__ = [
     "ContextManager",
@@ -39,4 +45,7 @@ __all__ = [
     "VectorAligner",
     "PoissonSolver",
     "PoissonResult",
+    "SurfaceExtractor",
+    "MeshData",
+    "CurvatureAudit",
 ]
