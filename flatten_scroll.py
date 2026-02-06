@@ -37,8 +37,8 @@ CONFIG = {
     "window_max": 28000,
     
     # Layer extraction
-    "num_layers": 10,  # Number of layers to extract
-    "layer_margin": 0.1,  # Skip extreme phi values
+    "num_layers": 20,  # Need more layers for true 3D volume
+    "layer_margin": 0.05,  # Less margin to get more layers
 }
 
 # =============================================================================
