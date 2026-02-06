@@ -6,6 +6,7 @@ Modules:
     - infrastructure: Environment detection, VRAM management, solver backends
     - feature_extraction: Hessian-based micro-feature extraction
     - orientation: Vector field alignment
+    - solver: Poisson equation solver
 """
 
 from rgt.infrastructure import (
@@ -22,6 +23,10 @@ from rgt.feature_extraction import (
 from rgt.orientation import (
     VectorAligner,
 )
+from rgt.solver import (
+    PoissonSolver,
+    PoissonResult,
+)
 
 __all__ = [
     "ContextManager",
@@ -32,4 +37,6 @@ __all__ = [
     "HessianResult",
     "EigenResult",
     "VectorAligner",
+    "PoissonSolver",
+    "PoissonResult",
 ]
