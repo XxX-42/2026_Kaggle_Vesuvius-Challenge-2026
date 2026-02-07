@@ -1,0 +1,128 @@
+# =============================================================================
+# Vesuvius Challenge 2026 - 统一配置文件 (Single Source of Truth)
+# =============================================================================
+# 所有训练和推理脚本都必须从这个文件读取配置
+# 禁止在代码中硬编码这些参数！
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 模型架构 (Model Architecture)
+# -----------------------------------------------------------------------------
+model:
+  name: "MiniUNETR"
+  in_channels: 1            # 输入通道数
+  out_channels: 1           # 输出通道数（二分类）
+  feature_size: 16          # 基础特征维度
+  hidden_size: 384          # ViT 隐藏层维度（统一为 384，与旧 Checkpoint 一致）
+  num_heads: 8              # 注意力头数（必须能整除 hidden_size）
+  num_layers: 6             # Transformer 层数
+  dropout: 0.1              # Dropout 概率
+
+# -----------------------------------------------------------------------------
+# 数据处理 (Data Processing)
+# -----------------------------------------------------------------------------
+data:
+  # 路径配置
+  data_path: "./data/vesuvius-challenge-ink-detection"
+  
+  # Z 轴范围 (与 Kaggle 2023 一致)
+  z_start: 29               # 起始层 (29.tif)
+  z_end: 44                 # 结束层 (44.tif)
+  
+  # 预处理
+  normalization: "instance" # 归一化方式: "instance" (per-sample) 或 "global"
+  tile_size: 256            # 输入块大小
+  
+  # 划分策略 (物理隔离)
+  # 训练: 0-80%，验证: 80-100%（基于 Y 坐标，非随机）
+  train_ratio: 0.8
+  split_by: "spatial"       # "spatial" (物理隔离) 或 "random" (随机，不推荐)
+  
+  # 数据加载
+  num_workers: 0            # Windows 建议 0
+  pin_memory: true
+  cache_data: true          # 缓存到 RAM
+
+# -----------------------------------------------------------------------------
+# 训练参数 (Training Parameters)
+# -----------------------------------------------------------------------------
+training:
+  epochs: 50                # 训练轮次（给模型足够时间收敛）
+  batch_size: 16            # 锁定批大小为 16（不要动态调整）
+  
+  # ⚠️ 关键修复：禁用 AutoScaler
+  auto_scale_batch_size: false  # 禁用动态批大小调整
+  
+  # ⚠️ 关键修复：增加每 Epoch 样本数
+  samples_per_epoch: 10000      # 原来只有 600，现在强制 10000
+  
+  # 优化器
+  optimizer: "AdamW"
+  lr: 3e-4                  # 学习率
+  weight_decay: 1e-2        # 权重衰减
+  
+  # 学习率调度
+  scheduler: "CosineAnnealingLR"
+  scheduler_T_max: 30       # 对应 epochs
+  scheduler_eta_min: 1e-6
+  
+  # 混合精度
+  amp: true                 # 启用 AMP
+  
+  # 验证
+  val_interval: 1           # 每 N 个 epoch 验证一次
+  
+  # 梯度
+  grad_accumulation_steps: 1
+  grad_clip_max_norm: 1.0   # 梯度裁剪
+
+# -----------------------------------------------------------------------------
+# 损失函数 (Loss Function)
+# -----------------------------------------------------------------------------
+loss:
+  type: "combo"             # "bce", "dice", "combo", "focal"
+  bce_weight: 0.5           # BCE 权重
+  dice_weight: 0.5          # Dice 权重
+  pos_weight: 2.0           # 正样本权重 (不要超过 5.0)
+  use_ignore_mask: true     # 使用 ignore.png 掩码
+
+# -----------------------------------------------------------------------------
+# 验证指标 (Validation Metrics)
+# -----------------------------------------------------------------------------
+metrics:
+  # 强制使用 Hard Dice（二值化后计算）
+  validation_threshold: 0.5 # 验证时的二值化阈值
+  primary_metric: "hard_dice"  # 主要监控指标
+  save_best_by: "hard_dice" # 保存最佳模型的依据
+
+# -----------------------------------------------------------------------------
+# 推理参数 (Inference Parameters)
+# -----------------------------------------------------------------------------
+inference:
+  tile_size: 256
+  stride: 128               # 50% overlap
+  batch_size: 16            # 推理批大小
+  
+  # TTA
+  tta: true
+  tta_shifts: [-1, 0, 1]
+  
+  # 高斯融合
+  gaussian_blend: true
+  gaussian_sigma_ratio: 0.25
+  
+  # 后处理
+  threshold: 0.5            # 初始阈值（待优化）
+  morphology:
+    enabled: true
+    operation: "opening"
+    kernel_size: 3
+
+# -----------------------------------------------------------------------------
+# 输出配置 (Output Configuration)
+# -----------------------------------------------------------------------------
+output:
+  checkpoint_dir: "./checkpoints"
+  log_dir: "./output/logs"
+  save_every_n_epochs: 5    # 每 N 个 epoch 保存一次
+  save_best: true           # 保存最佳模型

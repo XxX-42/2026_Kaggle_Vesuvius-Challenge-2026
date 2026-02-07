@@ -1,0 +1,52 @@
+# Vesuvius Inference Configuration (Stage 4)
+# 针对 RTX 3060 Laptop (6GB VRAM) 优化
+
+inference:
+  # 滑窗参数
+  tile_size: 256          # Tile 大小 (256x256)
+  stride: 128             # 滑动步长 (50% overlap = 128 pixels) - 减小以消除网格感
+  batch_size: 16          # 安全批次大小 (硬编码，避免 3060 性能悬崖)
+  
+  # TTA 参数
+  tta: true               # 启用 Z-Shift TTA
+  tta_shifts: [-1, 0, 1]  # TTA Z 轴偏移 (3 次预测取平均)
+  
+  # 后处理
+  threshold: 0.7          # 二值化阈值 (从 0.5 提升至 0.7，过滤背景噪点)
+  
+  # 形态学后处理 (Morphological Operations)
+  morphology:
+    enabled: true         # 启用形态学后处理
+    operation: "opening"  # 先腐蚀后膨胀 (Opening) - 剔除细小孤立噪点
+    kernel_size: 3        # 结构元素大小 (3x3)
+  
+  # 高斯加权融合 (Stage 6: Gaussian Weighted Blending)
+  # 物理意义：给予窗口中心更高权重，抑制边缘预测，消除棋盘格纹路
+  gaussian_blend: true       # 启用高斯加权融合
+  gaussian_sigma_ratio: 0.25 # Sigma = tile_size * ratio，较小值产生更集中的权重
+
+# 数据参数
+data:
+  z_start: 29             # Z 轴起始层 (对应 29.tif)
+  z_end: 44               # Z 轴结束层 (对应 44.tif, 共 16 层)
+
+# 模型参数 (需与训练配置一致)
+model:
+  name: "MiniUNETR"
+  in_channels: 1
+  out_channels: 1
+  feature_size: 16
+  hidden_size: 384        # 与 Checkpoint (BEST_EPOCH3) 匹配
+  num_heads: 8
+
+# ============================================================================
+# 手动选择 Checkpoint 指南
+# ============================================================================
+# 如果自动加载失败，请使用以下命令手动指定:
+#
+#   python scripts/inference.py --checkpoint checkpoints/MiniUNETR_BEST_EPOCH3/best_model.pth
+#
+# 或者编辑此配置文件，添加:
+#   checkpoint:
+#     path: "checkpoints/YourCheckpoint/best_model.pth"
+# ============================================================================
