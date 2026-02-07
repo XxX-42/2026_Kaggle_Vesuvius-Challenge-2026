@@ -1,4 +1,6 @@
 import os
+import concurrent.futures
+import time
 
 # ================= 配置区域 =================
 
@@ -45,7 +47,6 @@ def should_ignore(name):
 
 def is_text_file(filename):
     """通过扩展名简单判断是否为需要读取的文本文件"""
-    # 如果没有扩展名（如LICENSE），通常默认为文本
     if '.' not in filename:
         return True
     ext = os.path.splitext(filename)[1].lower()
@@ -59,7 +60,6 @@ def generate_tree(root_dir, current_dir, prefix=""):
     except PermissionError:
         return ""
 
-    # 过滤忽略项
     items = [i for i in items if not should_ignore(i)]
     
     for i, item in enumerate(items):
@@ -74,65 +74,146 @@ def generate_tree(root_dir, current_dir, prefix=""):
             tree_str += generate_tree(root_dir, path, prefix + extension_prefix)
     return tree_str
 
+def process_file_content(args):
+    """
+    线程工作函数：读取并格式化单个文件内容
+    返回字典: {'status': 'ok'|'skip'|'error', 'log': str, 'content': str}
+    """
+    root, file, current_dir = args
+    file_path = os.path.join(root, file)
+    relative_path = os.path.relpath(file_path, current_dir)
+    
+    result = {'status': 'error', 'log': '', 'content': ''}
+
+    try:
+        # 预先检查文件大小（避免读取后再判断）
+        file_size = os.path.getsize(file_path)
+        if file_size > 1024 * 1024:
+            result['status'] = 'skip'
+            result['log'] = f"[SKIPPED] File too large (>1MB): {relative_path}"
+            return result
+
+        with open(file_path, 'r', encoding='utf-8') as infile:
+            content = infile.read()
+            
+            ext = os.path.splitext(file)[1][1:] or "text"
+            formatted_content = (
+                f"## File: {relative_path}\n"
+                f"```{ext}\n"
+                f"{content}"
+                f"\n```\n\n---\n"
+            )
+            
+            result['status'] = 'ok'
+            result['log'] = f"[SUCCESS] Aggregated: {relative_path}"
+            result['content'] = formatted_content
+            
+    except UnicodeDecodeError:
+        result['status'] = 'skip'
+        result['log'] = f"[SKIPPED] Binary/Non-utf8: {relative_path}"
+    except PermissionError:
+        result['status'] = 'skip'
+        result['log'] = f"[SKIPPED] Permission denied: {relative_path}"
+    except Exception as e:
+        result['status'] = 'error'
+        result['log'] = f"[ERROR] {relative_path}: {str(e)}"
+
+    return result
+
 def aggregate_project():
+    start_time = time.time()  # 记录开始时间
+    
     current_dir = os.path.dirname(os.path.abspath(__file__))
     folder_name = os.path.basename(current_dir)
-    output_filename = f"{folder_name}_code_only.md" # 改名以区分
+    output_filename = f"{folder_name}_code_only.md"
     output_path = os.path.join(current_dir, output_filename)
 
     print(f"[*] 开始扫描项目: {folder_name}")
-    print(f"[*] 已启用强力过滤模式，忽略 .dart_tool, .gradle 等目录")
+    print(f"[*] 已启用强力过滤模式 (忽略 .dart_tool, .gradle 等)")
+    print(f"[*] 已启用多线程加速处理...")
 
+    # 1. 收集任务与统计 (主线程)
+    file_tasks = []
+    total_dirs_scanned = 0
+    total_files_scanned = 0
+    
+    # 先生成目录树结构字符串
+    tree_content = ""
+    try:
+        tree_content = generate_tree(current_dir, current_dir)
+    except Exception as e:
+        print(f"[!] Tree generation failed: {e}")
+
+    # 遍历收集文件
+    for root, dirs, files in os.walk(current_dir):
+        # 核心逻辑：原地修改 dirs 列表
+        dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
+        
+        total_dirs_scanned += 1          # 统计进入的文件夹数
+        total_files_scanned += len(files) # 统计看到的所有文件数
+        
+        for file in sorted(files):
+            # 过滤文件名和扩展名
+            if file == os.path.basename(__file__) or file == output_filename or should_ignore(file):
+                continue
+            
+            if not is_text_file(file):
+                continue
+            
+            # 将任务参数打包
+            file_tasks.append((root, file, current_dir))
+
+    target_files_count = len(file_tasks)
+    
+    # 2. 多线程并行读取 (Worker Threads)
+    max_workers = min(32, (os.cpu_count() or 1) * 5)
+    processed_results = []
+    
+    print(f"[*] 扫描完成。发现 {total_dirs_scanned} 个文件夹，共 {total_files_scanned} 个文件。")
+    print(f"[*] 准备处理 {target_files_count} 个核心代码文件，正在并行读取...")
+    
+    # 使用线程池处理
+    if target_files_count > 0:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # 使用 map 保证结果顺序
+            results = executor.map(process_file_content, file_tasks)
+            processed_results = list(results)
+    else:
+        print("[!] 未找到符合条件的代码文件。")
+
+    # 3. 统一写入文件 (主线程)
+    success_count = 0
     with open(output_path, 'w', encoding='utf-8') as outfile:
-        # 1. 写入标题和精简后的目录树
+        # 写入头部
         outfile.write(f"# Project Architecture: {folder_name}\n\n")
         outfile.write("## Directory Tree (Filtered)\n```text\n")
         outfile.write(f"{folder_name}/\n")
-        outfile.write(generate_tree(current_dir, current_dir))
+        outfile.write(tree_content)
         outfile.write("```\n\n---\n\n")
 
-        # 2. 递归遍历文件内容
-        file_count = 0
-        for root, dirs, files in os.walk(current_dir):
-            # 核心逻辑：原地修改 dirs 列表，阻止 os.walk 进入黑名单目录
-            # 这步最关键，直接切断对 .dart_tool 等目录的扫描
-            dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
+        # 写入文件内容
+        for res in processed_results:
+            if res['log']:
+                print(res['log']) # 实时打印处理日志
             
-            for file in sorted(files):
-                # 过滤文件名和扩展名
-                if file == os.path.basename(__file__) or file == output_filename or should_ignore(file):
-                    continue
-                
-                if not is_text_file(file):
-                    continue
-                
-                file_path = os.path.join(root, file)
-                relative_path = os.path.relpath(file_path, current_dir)
+            if res['status'] == 'ok':
+                outfile.write(res['content'])
+                success_count += 1
 
-                try:
-                    with open(file_path, 'r', encoding='utf-8') as infile:
-                        content = infile.read()
-                        
-                        # 简单的防错：如果文件太大（例如超过1MB），跳过，防止卡死
-                        if len(content) > 1024 * 1024: 
-                            print(f"[SKIPPED] File too large: {relative_path}")
-                            continue
-
-                        ext = os.path.splitext(file)[1][1:] or "text"
-                        outfile.write(f"## File: {relative_path}\n")
-                        outfile.write(f"```{ext}\n")
-                        outfile.write(content)
-                        outfile.write(f"\n```\n\n---\n")
-                        
-                        file_count += 1
-                        print(f"[SUCCESS] Aggregated: {relative_path}")
-                except (UnicodeDecodeError):
-                    print(f"[SKIPPED] Binary/Non-utf8: {relative_path}")
-                except PermissionError:
-                    print(f"[SKIPPED] Permission denied: {relative_path}")
-
-    print(f"\n[DONE] 聚合完成。共处理 {file_count} 个核心文件。")
-    print(f"结果已保存至: {output_filename}")
+    end_time = time.time()  # 记录结束时间
+    duration = end_time - start_time
+    
+    # 4. 打印最终统计面板
+    print("\n" + "="*40)
+    print(f"   [DONE] 项目聚合完成")
+    print("="*40)
+    print(f" 📂 扫描目录数  : {total_dirs_scanned}")
+    print(f" 📑 扫描文件总数: {total_files_scanned}")
+    print(f" 🎯 目标代码文件: {target_files_count}")
+    print(f" ✅ 成功聚合文件: {success_count}")
+    print(f" ⏱️ 总耗时      : {duration:.2f} 秒")
+    print(f" 💾 输出文件    : {output_filename}")
+    print("="*40 + "\n")
 
 if __name__ == "__main__":
     aggregate_project()

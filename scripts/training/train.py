@@ -21,58 +21,18 @@ sys.path.append(str(PROJECT_ROOT))
 
 from src.core.config import cfg
 from src.data.datasets import VesuviusDataset
-from src.models.losses import BCEDiceLoss
+from src.models.losses import BCEDiceLoss, HallucinationKillerLoss
 from src.utils.metrics import fbeta_score, MetricMonitor
 
 def main(args):
-    print(f"🚀 Starting Training: {cfg.EXPERIMENT_NAME}")
-    print(f"   Device: {cfg.DEVICE}")
-    print(f"   Data: {cfg.DATA_ROOT}")
-    print(f"   Z-Slices: {len(cfg.Z_SLICES)} chunks ({cfg.Z_SLICES[0]}...{cfg.Z_SLICES[-1]})")
-    
-    # 1. Dataset
-    transforms = A.Compose([
-        A.HorizontalFlip(p=0.5),
-        A.VerticalFlip(p=0.5),
-        A.RandomRotate90(p=0.5),
-        A.ShiftScaleRotate(p=0.5)
-    ])
-    
-    print("\n📦 Initializing Datasets (Spatial Split)...")
-    train_ds = VesuviusDataset(
-        data_root=cfg.DATA_ROOT,
-        z_slices=cfg.Z_SLICES,
-        transform=transforms, 
-        mode="train",
-        split_fraction=cfg.VALID_SPLIT
-    )
-    
-    val_ds = VesuviusDataset(
-        data_root=cfg.DATA_ROOT,
-        z_slices=cfg.Z_SLICES,
-        transform=None, 
-        mode="valid",
-        split_fraction=cfg.VALID_SPLIT
-    )
-    
-    loaders = {
-        "train": DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, num_workers=0, pin_memory=True),
-        "valid": DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=0, pin_memory=True),
-    }
-    
-    # 2. Model
-    print(f"🧠 Initializing Model (In: {cfg.IN_CHANNELS})...")
-    model = smp.Unet(
-        encoder_name="resnet18",
-        encoder_weights="imagenet",
-        in_channels=cfg.IN_CHANNELS,
-        classes=1,
-    ).to(cfg.DEVICE)
+    # ... (Keep existing setup) ...
     
     # 3. Optimization
     optimizer = optim.AdamW(model.parameters(), lr=args.lr)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=2)
-    criterion = BCEDiceLoss()
+    
+    # Use HallucinationKillerLoss (Focal + Dice + EmptyPenalty)
+    criterion = HallucinationKillerLoss(focal_weight=0.7, dice_weight=0.3, empty_weight=1.5)
     scaler = torch.cuda.amp.GradScaler()
     
     # Dry Run Break
