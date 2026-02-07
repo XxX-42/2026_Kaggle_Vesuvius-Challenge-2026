@@ -1,0 +1,26 @@
+data:
+  root: "data/native/train/1"
+  # 🎯 Z-Axis Alignment (CRITICAL)
+  # Files 34-47 are MISSING. Available files with ink: 51-64
+  # We strictly exclude any other layers to avoid domain shift or missing file errors.
+  z_slices: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64]
+  
+  # Surgical Windowing
+  window_min: 18000.0
+  window_max: 28000.0
+  
+  # Validation Split (Spatial)
+  # We take the bottom 20% of the scroll for validation to prevent leakage.
+  valid_split_fraction: 0.2
+
+training:
+  experiment_name: "vesuvius_surgical_refactor"
+  batch_size: 16
+  epochs: 20
+  lr: 0.001
+  accumulate_steps: 1
+  num_workers: 0 # Windows safe default
+
+model:
+  encoder: "resnet18"
+  in_channels: 14 # Must match z_slices length

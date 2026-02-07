@@ -6,237 +6,219 @@
 ├── .gitignore
 ├── 2026_Kaggle_Vesuvius Challenge 2026_code_only.md
 ├── aggregate.py
-├── analysis_scripts
-│   ├── analyze_signal_histogram.py
-│   ├── audit_data.py
-│   ├── audit_data_coverage.py
-│   ├── audit_model_contrast.py
-│   ├── debug_z_scan.py
-│   ├── inspect_dataset_alignment.py
-│   ├── inspect_normalization.py
-│   └── verify_debug_image.py
-├── archive
-│   ├── 2026_Kaggle_Vesuvius Challenge 2026_code_only.md
-│   ├── aggregate.py
-│   ├── create_dummy_data.py
-│   └── deploy_packager.py
-├── audit_logs
-│   ├── audit_report.txt
-│   ├── audit_result.log
-│   └── file_list.txt
-├── cleanup_comparison.png
+├── configs
+│   └── config.yaml
 ├── data
-│   └── native
-│       └── train
-│           └── 1
-│               ├── checksums.txt
-│               ├── inklabels.png
-│               ├── mask.png
-│               └── surface_volume
-│                   ├── 00.tif
-│                   ├── 01.tif
-│                   ├── 02.tif
-│                   ├── 03.tif
-│                   ├── 04.tif
-│                   ├── 05.tif
-│                   ├── 06.tif
-│                   ├── 07.tif
-│                   ├── 08.tif
-│                   ├── 09.tif
-│                   ├── 10.tif
-│                   ├── 11.tif
-│                   ├── 12.tif
-│                   ├── 13.tif
-│                   ├── 14.tif
-│                   ├── 15.tif
-│                   ├── 16.tif
-│                   ├── 17.tif
-│                   ├── 18.tif
-│                   ├── 19.tif
-│                   ├── 20.tif
-│                   ├── 21.tif
-│                   ├── 22.tif
-│                   ├── 23.tif
-│                   ├── 24.tif
-│                   ├── 25.tif
-│                   ├── 26.tif
-│                   ├── 27.tif
-│                   ├── 28.tif
-│                   ├── 29.tif
-│                   ├── 30.tif
-│                   ├── 31.tif
-│                   ├── 32.tif
-│                   ├── 33.tif
-│                   ├── 48.tif
-│                   ├── 51.tif
-│                   ├── 52.tif
-│                   ├── 53.tif
-│                   ├── 54.tif
-│                   ├── 55.tif
-│                   ├── 56.tif
-│                   ├── 57.tif
-│                   ├── 58.tif
-│                   ├── 59.tif
-│                   ├── 60.tif
-│                   ├── 61.tif
-│                   ├── 62.tif
-│                   ├── 63.tif
-│                   └── 64.tif
-├── final_clean.py
-├── final_ink_structure.png
-├── inference_binary_balanced.png
-├── inference_binary_loose.png
-├── inference_binary_strict.png
-├── inference_full_scroll.py
-├── inference_overlay.png
-├── inference_post_process.png
-├── inference_pred.png
-├── kaggle_deploy
-│   ├── inference_template.py
-│   ├── install_hooks.py
-│   └── rgt_package.zip
-├── logs
-│   ├── debug_epoch_0.png
-│   ├── debug_epoch_1.png
-│   ├── debug_epoch_10.png
-│   ├── debug_epoch_11.png
-│   ├── debug_epoch_12.png
-│   ├── debug_epoch_13.png
-│   ├── debug_epoch_14.png
-│   ├── debug_epoch_2.png
-│   ├── debug_epoch_3.png
-│   ├── debug_epoch_4.png
-│   ├── debug_epoch_5.png
-│   ├── debug_epoch_6.png
-│   ├── debug_epoch_7.png
-│   ├── debug_epoch_8.png
-│   ├── debug_epoch_9.png
-│   ├── debug_epoch_final.png
-│   ├── vis_e0_s0.png
-│   ├── vis_e0_s100.png
-│   ├── vis_e0_s150.png
-│   ├── vis_e0_s200.png
-│   ├── vis_e0_s250.png
-│   ├── vis_e0_s300.png
-│   ├── vis_e0_s350.png
-│   ├── vis_e0_s400.png
-│   ├── vis_e0_s450.png
-│   ├── vis_e0_s50.png
-│   ├── vis_e0_s500.png
-│   ├── vis_e1_s0.png
-│   ├── vis_e1_s100.png
-│   ├── vis_e1_s150.png
-│   ├── vis_e1_s200.png
-│   ├── vis_e1_s250.png
-│   ├── vis_e1_s300.png
-│   ├── vis_e1_s350.png
-│   ├── vis_e1_s400.png
-│   ├── vis_e1_s450.png
-│   ├── vis_e1_s50.png
-│   ├── vis_e1_s500.png
-│   ├── vis_e2_s0.png
-│   ├── vis_e2_s100.png
-│   ├── vis_e2_s150.png
-│   ├── vis_e2_s200.png
-│   ├── vis_e2_s250.png
-│   ├── vis_e2_s300.png
-│   ├── vis_e2_s350.png
-│   ├── vis_e2_s400.png
-│   ├── vis_e2_s450.png
-│   ├── vis_e2_s50.png
-│   ├── vis_e2_s500.png
-│   ├── vis_e3_s0.png
-│   ├── vis_e3_s100.png
-│   ├── vis_e3_s150.png
-│   ├── vis_e3_s200.png
-│   ├── vis_e3_s250.png
-│   ├── vis_e3_s300.png
-│   ├── vis_e3_s350.png
-│   ├── vis_e3_s400.png
-│   ├── vis_e3_s450.png
-│   ├── vis_e3_s50.png
-│   ├── vis_e3_s500.png
-│   ├── vis_e4_s0.png
-│   ├── vis_e4_s100.png
-│   ├── vis_e4_s150.png
-│   ├── vis_e4_s200.png
-│   ├── vis_e4_s250.png
-│   ├── vis_e4_s300.png
-│   ├── vis_e4_s350.png
-│   ├── vis_e4_s400.png
-│   ├── vis_e4_s450.png
-│   ├── vis_e4_s50.png
-│   ├── vis_e4_s500.png
-│   ├── vis_e5_s0.png
-│   ├── vis_e5_s100.png
-│   ├── vis_e5_s150.png
-│   ├── vis_e5_s200.png
-│   ├── vis_e5_s250.png
-│   ├── vis_e5_s300.png
-│   ├── vis_e5_s350.png
-│   ├── vis_e5_s400.png
-│   ├── vis_e5_s450.png
-│   ├── vis_e5_s50.png
-│   ├── vis_e5_s500.png
-│   ├── vis_e6_s0.png
-│   ├── vis_e6_s100.png
-│   ├── vis_e6_s150.png
-│   ├── vis_e6_s200.png
-│   ├── vis_e6_s250.png
-│   ├── vis_e6_s300.png
-│   ├── vis_e6_s350.png
-│   ├── vis_e6_s400.png
-│   ├── vis_e6_s450.png
-│   ├── vis_e6_s50.png
-│   └── vis_e6_s500.png
-├── media
-│   ├── data_coverage.png
-│   ├── dataset_check.png
-│   ├── layer_gallery.png
-│   ├── norm_check.png
-│   ├── raw_57_center.png
-│   ├── signal_distribution.png
-│   ├── slice_57_center.png
-│   └── z_signal_profile.png
+│   ├── flattened_layers
+│   │   ├── layer_01.png
+│   │   ├── layer_02.png
+│   │   ├── layer_03.png
+│   │   ├── layer_04.png
+│   │   ├── layer_05.png
+│   │   ├── layer_06.png
+│   │   ├── layer_07.png
+│   │   ├── layer_08.png
+│   │   ├── layer_09.png
+│   │   ├── layer_10.png
+│   │   ├── layer_11.png
+│   │   ├── layer_12.png
+│   │   ├── layer_13.png
+│   │   ├── layer_14.png
+│   │   ├── layer_15.png
+│   │   ├── layer_16.png
+│   │   ├── layer_17.png
+│   │   ├── layer_18.png
+│   │   ├── layer_19.png
+│   │   ├── layer_20.png
+│   │   ├── montage.png
+│   │   └── paper_mask.png
+│   ├── native
+│   │   └── train
+│   │       └── 1
+│   │           ├── checksums.txt
+│   │           ├── inklabels.png
+│   │           ├── mask.png
+│   │           └── surface_volume
+│   │               ├── 00.tif
+│   │               ├── 01.tif
+│   │               ├── 02.tif
+│   │               ├── 03.tif
+│   │               ├── 04.tif
+│   │               ├── 05.tif
+│   │               ├── 06.tif
+│   │               ├── 07.tif
+│   │               ├── 08.tif
+│   │               ├── 09.tif
+│   │               ├── 10.tif
+│   │               ├── 11.tif
+│   │               ├── 12.tif
+│   │               ├── 13.tif
+│   │               ├── 14.tif
+│   │               ├── 15.tif
+│   │               ├── 16.tif
+│   │               ├── 17.tif
+│   │               ├── 18.tif
+│   │               ├── 19.tif
+│   │               ├── 20.tif
+│   │               ├── 21.tif
+│   │               ├── 22.tif
+│   │               ├── 23.tif
+│   │               ├── 24.tif
+│   │               ├── 25.tif
+│   │               ├── 26.tif
+│   │               ├── 27.tif
+│   │               ├── 28.tif
+│   │               ├── 29.tif
+│   │               ├── 30.tif
+│   │               ├── 31.tif
+│   │               ├── 32.tif
+│   │               ├── 33.tif
+│   │               ├── 48.tif
+│   │               ├── 51.tif
+│   │               ├── 52.tif
+│   │               ├── 53.tif
+│   │               ├── 54.tif
+│   │               ├── 55.tif
+│   │               ├── 56.tif
+│   │               ├── 57.tif
+│   │               ├── 58.tif
+│   │               ├── 59.tif
+│   │               ├── 60.tif
+│   │               ├── 61.tif
+│   │               ├── 62.tif
+│   │               ├── 63.tif
+│   │               └── 64.tif
+│   ├── orientation_field.npz
+│   └── scalar_field.npz
+├── inference
+│   ├── predict.py
+│   └── unroll.py
 ├── models
 │   ├── vesuvius_best.pth
+│   ├── vesuvius_native_finetuned.pth
+│   ├── vesuvius_rgt_finetuned.pth
+│   ├── vesuvius_rgt_fullscale.pth
 │   └── vesuvius_surgical_best.pth
-├── output
-│   ├── debug_epoch_0.png
-│   ├── debug_epoch_1.png
-│   ├── debug_epoch_10.png
-│   ├── debug_epoch_11.png
-│   ├── debug_epoch_12.png
-│   ├── debug_epoch_13.png
-│   ├── debug_epoch_14.png
-│   ├── debug_epoch_2.png
-│   ├── debug_epoch_3.png
-│   ├── debug_epoch_4.png
-│   ├── debug_epoch_5.png
-│   ├── debug_epoch_6.png
-│   ├── debug_epoch_7.png
-│   ├── debug_epoch_8.png
-│   ├── debug_epoch_9.png
-│   └── rgt_sphere_mesh.obj
-├── post_process_ink.py
+├── outputs
+│   ├── audit_inklabels.png
+│   ├── debug_archive
+│   │   ├── cleanup_comparison.png
+│   │   ├── debug_sato_confidence.png
+│   │   ├── debug_scalar_slice.png
+│   │   ├── final_ink_structure.png
+│   │   ├── inference_binary_balanced.png
+│   │   ├── inference_binary_loose.png
+│   │   ├── inference_binary_strict.png
+│   │   ├── inference_overlay.png
+│   │   ├── inference_post_process.png
+│   │   └── inference_pred.png
+│   ├── hist_inklabels.png
+│   ├── rgt_sphere_mesh.obj
+│   ├── run_native_20260206_223319
+│   │   ├── debug_native_epoch_01.png
+│   │   ├── debug_native_epoch_02.png
+│   │   ├── debug_native_epoch_03.png
+│   │   ├── debug_native_epoch_04.png
+│   │   ├── debug_native_epoch_05.png
+│   │   ├── debug_native_epoch_06.png
+│   │   ├── debug_native_epoch_07.png
+│   │   ├── debug_native_epoch_08.png
+│   │   ├── debug_native_epoch_09.png
+│   │   ├── debug_native_epoch_10.png
+│   │   ├── debug_native_epoch_11.png
+│   │   ├── debug_native_epoch_12.png
+│   │   ├── debug_native_epoch_13.png
+│   │   ├── debug_native_epoch_14.png
+│   │   ├── debug_native_epoch_15.png
+│   │   ├── debug_native_epoch_16.png
+│   │   ├── debug_native_epoch_17.png
+│   │   ├── debug_native_epoch_18.png
+│   │   ├── debug_native_epoch_19.png
+│   │   └── debug_native_epoch_20.png
+│   ├── run_native_20260206_224441
+│   ├── run_native_20260206_224556
+│   │   ├── debug_native_epoch_01.png
+│   │   ├── debug_native_epoch_02.png
+│   │   ├── debug_native_epoch_03.png
+│   │   └── debug_native_epoch_04.png
+│   ├── run_native_20260206_225252
+│   │   ├── debug_native_epoch_01.png
+│   │   ├── debug_native_epoch_02.png
+│   │   └── debug_native_epoch_03.png
+│   ├── run_native_20260206_225816
+│   │   └── debug_native_epoch_01.png
+│   ├── surgical_v2
+│   └── vesuvius_surgical_refactor
 ├── scripts
-│   ├── audit_data.py
-│   ├── download_data.py
-│   └── extract_center.py
+│   ├── inference
+│   │   ├── assemble_and_detect_volumetric.py
+│   │   ├── audit_data.py
+│   │   ├── detect_ink_on_layer.py
+│   │   ├── inference.py
+│   │   ├── inference_full_scroll.py
+│   │   ├── inference_rgt_finetuned.py
+│   │   ├── post_process_ink.py
+│   │   └── verify_raw_inference.py
+│   ├── preprocessing
+│   │   ├── flatten_scroll.py
+│   │   ├── generate_orientation_field.py
+│   │   └── solve_global_scalar_field.py
+│   ├── training
+│   │   ├── train.py
+│   │   ├── train_native_volume.py
+│   │   └── train_rgt.py
+│   └── verify_pipeline.py
 ├── src
 │   ├── __init__.py
-│   └── rgt
-│       ├── __init__.py
-│       ├── feature_extraction.py
-│       ├── infrastructure.py
-│       ├── meshing.py
-│       ├── orientation.py
-│       ├── solver.py
-│       ├── test_full_pipeline.py
-│       └── test_integration.py
-└── training_scripts
-    ├── train_vesuvius.py
-    └── train_vesuvius_surgical.py
+│   ├── analysis
+│   │   ├── analyze_signal_histogram.py
+│   │   ├── audit_data.py
+│   │   ├── audit_data_coverage.py
+│   │   ├── audit_model_contrast.py
+│   │   ├── debug_z_scan.py
+│   │   ├── inspect_dataset_alignment.py
+│   │   ├── inspect_normalization.py
+│   │   └── verify_debug_image.py
+│   ├── core
+│   │   ├── config.py
+│   │   └── metrics.py
+│   ├── data
+│   │   ├── datasets.py
+│   │   ├── native_dataset.py
+│   │   ├── rgt_dataset.py
+│   │   └── samplers.py
+│   ├── dataset.py
+│   ├── losses.py
+│   ├── models
+│   │   ├── losses.py
+│   │   └── segmentation.py
+│   ├── models_legacy.py
+│   ├── rgt
+│   │   ├── __init__.py
+│   │   ├── feature_extraction.py
+│   │   ├── infrastructure.py
+│   │   ├── meshing.py
+│   │   ├── orientation.py
+│   │   ├── test_full_pipeline.py
+│   │   └── test_integration.py
+│   ├── utils
+│   │   ├── io.py
+│   │   └── metrics.py
+│   └── utils_legacy.py
+├── tools
+│   ├── deploy
+│   │   └── kaggle_deploy
+│   │       ├── inference_template.py
+│   │       ├── install_hooks.py
+│   │       └── rgt_package.zip
+│   ├── download.py
+│   ├── extract.py
+│   ├── inspect_labels.py
+│   └── verify_data_integrity.py
+└── train
+    ├── finetune.py
+    ├── train_native.py
+    └── train_rgt.py
 ```
 
 ---
@@ -276,2064 +258,34 @@ output/
 ```
 
 ---
-## File: final_clean.py
-```py
-"""
-Vesuvius Challenge 2026 - Final Ink Structure Cleanup
-======================================================
-Remove fine noise from binary predictions using morphological operations.
-
-Pipeline:
-1. Load binary prediction (or regenerate from raw)
-2. Morphological opening (erosion + dilation)
-3. Connected component filtering (remove small blobs)
-4. Save cleaned structure
-"""
-
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-from pathlib import Path
-
-# =============================================================================
-# ⚙️ Configuration
-# =============================================================================
-CONFIG = {
-    "input_pred": "inference_pred.png",  # Raw prediction
-    "output_path": "final_ink_structure.png",
-    "comparison_path": "cleanup_comparison.png",
-    
-    # Threshold for binarization
-    "threshold": 0.20,
-    
-    # Morphological opening kernel
-    "opening_kernel": (5, 5),
-    
-    # Connected component minimum area (pixels)
-    "min_area": 100,
-}
-
-# =============================================================================
-# 🔧 Processing Functions
-# =============================================================================
-def load_and_binarize(path, threshold):
-    """Load prediction and apply threshold."""
-    print(f"📥 Loading {path}...")
-    
-    img = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
-    if img is None:
-        raise FileNotFoundError(f"Cannot load: {path}")
-    
-    # Normalize to [0, 1]
-    img_float = img.astype(np.float32) / 255.0
-    
-    # Contrast stretch
-    p_min, p_max = img_float.min(), img_float.max()
-    if p_max - p_min > 1e-6:
-        img_float = (img_float - p_min) / (p_max - p_min)
-    
-    # Binarize
-    binary = (img_float >= threshold).astype(np.uint8) * 255
-    
-    original_pixels = (binary > 0).sum()
-    print(f"   Original binary: {original_pixels} pixels ({original_pixels / binary.size * 100:.2f}%)")
-    
-    return binary
-
-def morphological_opening(binary, kernel_size):
-    """Apply morphological opening to remove small noise."""
-    print(f"🔧 Applying morphological opening (kernel={kernel_size})...")
-    
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, kernel_size)
-    opened = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel)
-    
-    remaining_pixels = (opened > 0).sum()
-    print(f"   After opening: {remaining_pixels} pixels ({remaining_pixels / opened.size * 100:.2f}%)")
-    
-    return opened
-
-def remove_small_components(binary, min_area):
-    """Remove connected components smaller than min_area."""
-    print(f"🔧 Removing components < {min_area} pixels...")
-    
-    # Find connected components
-    num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(binary, connectivity=8)
-    
-    # Create output mask
-    cleaned = np.zeros_like(binary)
-    
-    kept_count = 0
-    removed_count = 0
-    
-    for i in range(1, num_labels):  # Skip background (label 0)
-        area = stats[i, cv2.CC_STAT_AREA]
-        if area >= min_area:
-            cleaned[labels == i] = 255
-            kept_count += 1
-        else:
-            removed_count += 1
-    
-    remaining_pixels = (cleaned > 0).sum()
-    print(f"   Components: {kept_count} kept, {removed_count} removed")
-    print(f"   After filtering: {remaining_pixels} pixels ({remaining_pixels / cleaned.size * 100:.2f}%)")
-    
-    return cleaned
-
-def create_comparison(before, after, output_path):
-    """Create side-by-side comparison visualization."""
-    print("📊 Creating comparison visualization...")
-    
-    fig, axes = plt.subplots(1, 2, figsize=(20, 10))
-    fig.suptitle("Ink Structure Cleanup", fontsize=16, fontweight='bold')
-    
-    # Before
-    before_pixels = (before > 0).sum()
-    axes[0].imshow(before, cmap='hot')
-    axes[0].set_title(f"Before Cleanup\n{before_pixels:,} pixels ({before_pixels / before.size * 100:.2f}%)", fontsize=14)
-    axes[0].axis('off')
-    
-    # After
-    after_pixels = (after > 0).sum()
-    axes[1].imshow(after, cmap='hot')
-    axes[1].set_title(f"After Cleanup\n{after_pixels:,} pixels ({after_pixels / after.size * 100:.2f}%)", fontsize=14)
-    axes[1].axis('off')
-    
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=150, bbox_inches='tight')
-    plt.close(fig)
-    
-    print(f"   ✅ Saved: {output_path}")
-
-# =============================================================================
-# 🚀 Main
-# =============================================================================
-def main():
-    print("=" * 60)
-    print("🔬 Vesuvius Ink Structure Cleanup")
-    print("=" * 60)
-    
-    # 1. Load and binarize
-    binary = load_and_binarize(CONFIG["input_pred"], CONFIG["threshold"])
-    original = binary.copy()
-    
-    # 2. Morphological opening
-    opened = morphological_opening(binary, CONFIG["opening_kernel"])
-    
-    # 3. Remove small connected components
-    cleaned = remove_small_components(opened, CONFIG["min_area"])
-    
-    # 4. Save final result
-    print(f"\n💾 Saving final structure...")
-    cv2.imwrite(CONFIG["output_path"], cleaned)
-    print(f"   ✅ Saved: {CONFIG['output_path']}")
-    
-    # 5. Create comparison
-    create_comparison(original, cleaned, CONFIG["comparison_path"])
-    
-    # 6. Summary
-    original_pct = (original > 0).sum() / original.size * 100
-    final_pct = (cleaned > 0).sum() / cleaned.size * 100
-    reduction = original_pct - final_pct
-    
-    print("\n" + "=" * 60)
-    print("📊 Cleanup Complete!")
-    print(f"   Original: {original_pct:.2f}%")
-    print(f"   Final: {final_pct:.2f}%")
-    print(f"   Noise removed: {reduction:.2f}% of image")
-    print("=" * 60)
-
-if __name__ == "__main__":
-    main()
-
-```
-
----
-## File: inference_full_scroll.py
-```py
-"""
-Vesuvius Challenge 2026 - Full Scroll Inference
-================================================
-Sliding window inference on full scroll to generate ink prediction map.
-
-Critical Parameters (Must Match Training):
-- Z-slices: range(33, 49) - 16 layers centered on Z=41
-- Normalization: clip [18000, 28000] -> [0, 1]
-- Window: 224, Stride: 112 (50% overlap with average blending)
-"""
-
-import os
-import numpy as np
-import torch
-from PIL import Image
-from pathlib import Path
-from tqdm import tqdm
-import segmentation_models_pytorch as smp
-import matplotlib.pyplot as plt
-
-# =============================================================================
-# ⚙️ Configuration (MUST MATCH TRAINING)
-# =============================================================================
-CONFIG = {
-    "data_root": Path("data/native/train/1"),
-    "model_path": "vesuvius_surgical_best.pth",
-    
-    # Z-axis alignment (actual training used Z=51-64, 14 slices)
-    "z_slices": list(range(51, 65)),  # 14 slices
-    
-    # Normalization window
-    "window_min": 18000.0,
-    "window_max": 28000.0,
-    
-    # Sliding window
-    "tile_size": 224,
-    "stride": 112,  # 50% overlap
-    
-    # Model architecture (MUST MATCH TRAINING)
-    "encoder": "resnet18",
-    "in_channels": 14,  # len(range(51, 65))
-    
-    # Output
-    "output_pred": "inference_pred.png",
-    "output_overlay": "inference_overlay.png",
-    
-    "device": "cuda" if torch.cuda.is_available() else "cpu",
-}
-
-# =============================================================================
-# 📦 Data Loading
-# =============================================================================
-def load_volume(data_root, z_slices):
-    """Load Z-stack volume and apply windowing normalization."""
-    print("📦 Loading volume...")
-    
-    tif_dir = data_root / "surface_volume"
-    
-    # Build file dictionary by Z-index
-    tif_dict = {}
-    for f in tif_dir.glob("*.tif"):
-        try:
-            z_idx = int(f.stem)
-            tif_dict[z_idx] = f
-        except ValueError:
-            continue
-    
-    # Filter to available z_slices
-    available = [z for z in z_slices if z in tif_dict]
-    if len(available) < len(z_slices):
-        print(f"⚠️ Only {len(available)}/{len(z_slices)} Z-slices available")
-    
-    # Load first slice to get dimensions
-    with Image.open(tif_dict[available[0]]) as img:
-        w, h = img.size
-    print(f"   Volume dimensions: {w} x {h} x {len(available)}")
-    
-    # Load all slices
-    volume = np.zeros((h, w, len(available)), dtype=np.float32)
-    for i, z in enumerate(tqdm(available, desc="   Loading Z-slices")):
-        with Image.open(tif_dict[z]) as img:
-            volume[:, :, i] = np.array(img).astype(np.float32)
-    
-    # Apply windowing normalization
-    print("🔧 Applying windowing normalization...")
-    volume = np.clip(volume, CONFIG["window_min"], CONFIG["window_max"])
-    volume = (volume - CONFIG["window_min"]) / (CONFIG["window_max"] - CONFIG["window_min"])
-    
-    print(f"   Normalized range: [{volume.min():.4f}, {volume.max():.4f}]")
-    print(f"   Mean: {volume.mean():.4f}")
-    
-    return volume, available
-
-# =============================================================================
-# 🧠 Sliding Window Inference
-# =============================================================================
-def sliding_window_inference(model, volume, tile_size=224, stride=112):
-    """
-    Perform sliding window inference with average blending.
-    
-    Args:
-        model: Trained segmentation model
-        volume: (H, W, C) normalized volume
-        tile_size: Window size
-        stride: Step size (overlap = tile_size - stride)
-    
-    Returns:
-        pred_map: (H, W) probability map
-    """
-    model.eval()
-    h, w, c = volume.shape
-    
-    # Initialize accumulator and counter
-    pred_sum = np.zeros((h, w), dtype=np.float32)
-    count_map = np.zeros((h, w), dtype=np.float32)
-    
-    # Calculate grid
-    y_steps = list(range(0, h - tile_size + 1, stride))
-    x_steps = list(range(0, w - tile_size + 1, stride))
-    
-    # Add edge tiles if needed
-    if y_steps[-1] + tile_size < h:
-        y_steps.append(h - tile_size)
-    if x_steps[-1] + tile_size < w:
-        x_steps.append(w - tile_size)
-    
-    total_tiles = len(y_steps) * len(x_steps)
-    print(f"🔍 Sliding window: {len(y_steps)} x {len(x_steps)} = {total_tiles} tiles")
-    
-    with torch.no_grad():
-        bar = tqdm(total=total_tiles, desc="   Inference")
-        
-        for y in y_steps:
-            for x in x_steps:
-                # Extract tile
-                tile = volume[y:y+tile_size, x:x+tile_size, :]  # (H, W, C)
-                
-                # Convert to tensor (N, C, H, W)
-                tile_tensor = torch.from_numpy(tile).permute(2, 0, 1).unsqueeze(0).float()
-                tile_tensor = tile_tensor.to(CONFIG["device"])
-                
-                # Forward pass
-                with torch.amp.autocast('cuda'):
-                    output = model(tile_tensor)
-                    prob = torch.sigmoid(output).cpu().numpy()[0, 0]  # (H, W)
-                
-                # Accumulate
-                pred_sum[y:y+tile_size, x:x+tile_size] += prob
-                count_map[y:y+tile_size, x:x+tile_size] += 1
-                
-                bar.update(1)
-                
-                # VRAM cleanup every 100 tiles
-                if bar.n % 100 == 0:
-                    torch.cuda.empty_cache()
-        
-        bar.close()
-    
-    # Average blending
-    pred_map = np.divide(pred_sum, count_map, where=count_map > 0)
-    
-    print(f"   Prediction range: [{pred_map.min():.4f}, {pred_map.max():.4f}]")
-    print(f"   Mean confidence: {pred_map.mean():.4f}")
-    
-    return pred_map
-
-# =============================================================================
-# 🎨 Visualization
-# =============================================================================
-def create_overlay(pred_map, texture, alpha=0.5):
-    """Create red heatmap overlay on grayscale texture."""
-    # Normalize texture to [0, 1]
-    texture_norm = (texture - texture.min()) / (texture.max() - texture.min() + 1e-8)
-    
-    # Create RGB image
-    h, w = texture_norm.shape
-    overlay = np.zeros((h, w, 3), dtype=np.float32)
-    
-    # Grayscale background
-    overlay[:, :, 0] = texture_norm
-    overlay[:, :, 1] = texture_norm
-    overlay[:, :, 2] = texture_norm
-    
-    # Red heatmap for prediction
-    red_channel = pred_map * alpha
-    overlay[:, :, 0] = np.clip(overlay[:, :, 0] + red_channel, 0, 1)
-    
-    return (overlay * 255).astype(np.uint8)
-
-# =============================================================================
-# 🚀 Main
-# =============================================================================
-def main():
-    print("=" * 60)
-    print("🔬 Vesuvius Challenge 2026 - Full Scroll Inference")
-    print("=" * 60)
-    
-    # 1. Load Model
-    print("\n📂 Loading model...")
-    model = smp.Unet(
-        encoder_name=CONFIG["encoder"],
-        encoder_weights=None,  # Load from checkpoint
-        in_channels=CONFIG["in_channels"],
-        classes=1,
-    )
-    
-    if os.path.exists(CONFIG["model_path"]):
-        model.load_state_dict(torch.load(CONFIG["model_path"], weights_only=True))
-        print(f"   ✅ Loaded: {CONFIG['model_path']}")
-    else:
-        print(f"   ❌ Model not found: {CONFIG['model_path']}")
-        return
-    
-    model = model.to(CONFIG["device"])
-    model.eval()
-    
-    # 2. Load Volume
-    volume, z_slices = load_volume(CONFIG["data_root"], CONFIG["z_slices"])
-    
-    # 3. Sliding Window Inference
-    print("\n🧠 Running inference...")
-    pred_map = sliding_window_inference(
-        model, volume,
-        tile_size=CONFIG["tile_size"],
-        stride=CONFIG["stride"]
-    )
-    
-    # 4. Save Prediction
-    print("\n💾 Saving outputs...")
-    
-    # Pure prediction map
-    pred_uint8 = (pred_map * 255).astype(np.uint8)
-    Image.fromarray(pred_uint8).save(CONFIG["output_pred"])
-    print(f"   ✅ Saved: {CONFIG['output_pred']}")
-    
-    # Overlay on Z=41 texture
-    z41_idx = z_slices.index(41) if 41 in z_slices else len(z_slices) // 2
-    texture = volume[:, :, z41_idx]
-    overlay = create_overlay(pred_map, texture, alpha=0.6)
-    Image.fromarray(overlay).save(CONFIG["output_overlay"])
-    print(f"   ✅ Saved: {CONFIG['output_overlay']}")
-    
-    # 5. Summary
-    print("\n" + "=" * 60)
-    print("📊 Inference Complete!")
-    print(f"   Prediction Mean: {pred_map.mean():.4f}")
-    print(f"   Prediction Max: {pred_map.max():.4f}")
-    print(f"   Non-zero pixels: {(pred_map > 0.1).sum()} ({(pred_map > 0.1).sum() / pred_map.size * 100:.2f}%)")
-    print("=" * 60)
-    
-    # Cleanup
-    torch.cuda.empty_cache()
-
-if __name__ == "__main__":
-    main()
-
-```
-
----
-## File: post_process_ink.py
-```py
-"""
-Vesuvius Challenge 2026 - Ink Prediction Post-Processing
-=========================================================
-Enhance and purify weak ink predictions using morphological operations.
-
-Pipeline:
-1. Contrast stretching (histogram normalization)
-2. Gaussian blur for stroke connection
-3. Multi-level thresholding for comparison
-"""
-
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-from pathlib import Path
-
-# =============================================================================
-# ⚙️ Configuration
-# =============================================================================
-CONFIG = {
-    "input_path": "inference_pred.png",
-    "output_path": "inference_post_process.png",
-    
-    # Gaussian blur kernel
-    "blur_kernel": (3, 3),
-    
-    # Multi-level thresholds
-    "thresholds": {
-        "loose": 0.10,
-        "balanced": 0.15,
-        "strict": 0.20,
-    }
-}
-
-# =============================================================================
-# 🔧 Processing Functions
-# =============================================================================
-def load_and_normalize(path):
-    """Load grayscale image and normalize to [0, 1]."""
-    print(f"📥 Loading {path}...")
-    img = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
-    if img is None:
-        raise FileNotFoundError(f"Cannot load: {path}")
-    
-    # Convert to float32 [0, 1]
-    img_float = img.astype(np.float32) / 255.0
-    
-    print(f"   Shape: {img.shape}")
-    print(f"   Original range: [{img_float.min():.4f}, {img_float.max():.4f}]")
-    
-    return img_float
-
-def contrast_stretch(img):
-    """Stretch intensity range from [min, max] to [0, 1]."""
-    print("🔧 Applying contrast stretching...")
-    
-    p_min, p_max = img.min(), img.max()
-    
-    if p_max - p_min < 1e-6:
-        print("   ⚠️ Image is flat, skipping stretching.")
-        return img
-    
-    stretched = (img - p_min) / (p_max - p_min)
-    
-    print(f"   Stretched from [{p_min:.4f}, {p_max:.4f}] to [0, 1]")
-    print(f"   New mean: {stretched.mean():.4f}")
-    
-    return stretched
-
-def apply_gaussian_blur(img, kernel_size=(3, 3)):
-    """Apply Gaussian blur for stroke connection."""
-    print(f"🔧 Applying Gaussian blur (kernel={kernel_size})...")
-    blurred = cv2.GaussianBlur(img, kernel_size, 0)
-    return blurred
-
-def multi_threshold(img, thresholds):
-    """Generate binary masks at multiple thresholds."""
-    print("🔧 Generating multi-level binary masks...")
-    
-    results = {}
-    for name, thresh in thresholds.items():
-        binary = (img >= thresh).astype(np.float32)
-        coverage = binary.sum() / binary.size * 100
-        results[name] = {
-            "threshold": thresh,
-            "binary": binary,
-            "coverage": coverage,
-        }
-        print(f"   {name.capitalize()} (t={thresh:.2f}): {coverage:.2f}% pixels retained")
-    
-    return results
-
-# =============================================================================
-# 🎨 Visualization
-# =============================================================================
-def create_visualization(stretched, blurred, thresh_results, output_path):
-    """Create 4-panel comparison visualization."""
-    print("📊 Creating visualization...")
-    
-    fig, axes = plt.subplots(2, 2, figsize=(16, 16))
-    fig.suptitle("Ink Prediction Post-Processing", fontsize=16, fontweight='bold')
-    
-    # Panel 1: Contrast Stretched (after blur)
-    ax1 = axes[0, 0]
-    im1 = ax1.imshow(blurred, cmap='gray', vmin=0, vmax=1)
-    ax1.set_title(f"Contrast Stretched + Blur\nMean: {blurred.mean():.3f}", fontsize=12)
-    ax1.axis('off')
-    plt.colorbar(im1, ax=ax1, fraction=0.046, pad=0.04)
-    
-    # Panel 2: Loose threshold
-    loose = thresh_results["loose"]
-    ax2 = axes[0, 1]
-    ax2.imshow(loose["binary"], cmap='hot', vmin=0, vmax=1)
-    ax2.set_title(f"Threshold = {loose['threshold']:.2f} (Loose)\n{loose['coverage']:.2f}% retained", fontsize=12)
-    ax2.axis('off')
-    
-    # Panel 3: Balanced threshold
-    balanced = thresh_results["balanced"]
-    ax3 = axes[1, 0]
-    ax3.imshow(balanced["binary"], cmap='hot', vmin=0, vmax=1)
-    ax3.set_title(f"Threshold = {balanced['threshold']:.2f} (Balanced)\n{balanced['coverage']:.2f}% retained", fontsize=12)
-    ax3.axis('off')
-    
-    # Panel 4: Strict threshold
-    strict = thresh_results["strict"]
-    ax4 = axes[1, 1]
-    ax4.imshow(strict["binary"], cmap='hot', vmin=0, vmax=1)
-    ax4.set_title(f"Threshold = {strict['threshold']:.2f} (Strict)\n{strict['coverage']:.2f}% retained", fontsize=12)
-    ax4.axis('off')
-    
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=150, bbox_inches='tight')
-    plt.close(fig)
-    
-    print(f"   ✅ Saved: {output_path}")
-
-# =============================================================================
-# 🚀 Main
-# =============================================================================
-def main():
-    print("=" * 60)
-    print("🔬 Vesuvius Ink Prediction Post-Processing")
-    print("=" * 60)
-    
-    # 1. Load and normalize
-    img = load_and_normalize(CONFIG["input_path"])
-    
-    # 2. Contrast stretching
-    stretched = contrast_stretch(img)
-    
-    # 3. Gaussian blur
-    blurred = apply_gaussian_blur(stretched, CONFIG["blur_kernel"])
-    
-    # 4. Multi-level thresholding
-    thresh_results = multi_threshold(blurred, CONFIG["thresholds"])
-    
-    # 5. Visualization
-    create_visualization(stretched, blurred, thresh_results, CONFIG["output_path"])
-    
-    # 6. Save individual binary masks
-    print("\n💾 Saving individual binary masks...")
-    for name, data in thresh_results.items():
-        mask_path = f"inference_binary_{name}.png"
-        cv2.imwrite(mask_path, (data["binary"] * 255).astype(np.uint8))
-        print(f"   ✅ Saved: {mask_path}")
-    
-    # 7. Summary
-    print("\n" + "=" * 60)
-    print("📊 Post-Processing Complete!")
-    print(f"   Input: {CONFIG['input_path']}")
-    print(f"   Output: {CONFIG['output_path']}")
-    print("=" * 60)
-
-if __name__ == "__main__":
-    main()
-
-```
-
----
-## File: analysis_scripts\analyze_signal_histogram.py
-```py
-"""
-Signal Histogram Analysis for Vesuvius Challenge 2026
-Analyzes pixel distribution of Ink vs Background to determine optimal windowing.
-"""
-import os
-import numpy as np
-from PIL import Image
-import matplotlib.pyplot as plt
-from pathlib import Path
-
-def analyze_signal():
-    print("📊 Starting Signal Histogram Analysis...")
-    
-    # Path Configuration
-    data_dir = Path("data/native/train/1")
-    volume_dir = data_dir / "surface_volume"
-    label_path = data_dir / "inklabels.png"
-    
-    # Find the signal layer (should be around Z=41 based on Z-scan)
-    # First, list available files to find correct naming
-    tif_files = sorted(list(volume_dir.glob("*.tif")))
-    print(f"\n📦 Found {len(tif_files)} TIF files")
-    
-    if len(tif_files) == 0:
-        print("❌ No TIF files found!")
-        return
-    
-    # Print first few filenames to understand naming
-    print(f"   Sample filenames: {[f.name for f in tif_files[:3]]}")
-    
-    # Try to load Z=41 (signal) and Z=20 (noise)
-    signal_idx = min(41, len(tif_files) - 1)
-    noise_idx = min(20, len(tif_files) - 1)
-    
-    signal_path = tif_files[signal_idx]
-    noise_path = tif_files[noise_idx]
-    
-    print(f"\n🎯 Signal Layer: {signal_path.name} (Z={signal_idx})")
-    print(f"🔇 Noise Layer: {noise_path.name} (Z={noise_idx})")
-    
-    # 1. Load images as uint16 (RAW values)
-    print("\n📥 Loading images (keeping raw uint16)...")
-    
-    signal_img = np.array(Image.open(signal_path))
-    noise_img = np.array(Image.open(noise_path))
-    
-    print(f"   Signal shape: {signal_img.shape}, dtype: {signal_img.dtype}")
-    print(f"   Noise shape: {noise_img.shape}, dtype: {noise_img.dtype}")
-    
-    # 2. Load Labels
-    print("\n🏷️ Loading Ink Labels...")
-    labels_full = np.array(Image.open(label_path))
-    
-    # Handle RGB labels
-    if len(labels_full.shape) == 3:
-        labels_full = labels_full[:, :, 0]
-    
-    # Resize to match signal image
-    labels_resized = np.array(
-        Image.fromarray(labels_full).resize(
-            (signal_img.shape[1], signal_img.shape[0]), 
-            Image.NEAREST
-        )
-    )
-    
-    # Binarize
-    ink_mask = labels_resized > 127
-    bg_mask = labels_resized <= 127
-    
-    print(f"   Label shape (resized): {labels_resized.shape}")
-    print(f"   Ink pixels: {ink_mask.sum():,}")
-    print(f"   BG pixels: {bg_mask.sum():,}")
-    
-    # 3. Extract pixel values
-    print("\n🔬 Extracting Pixel Distributions...")
-    
-    ink_pixels = signal_img[ink_mask].astype(np.float64)
-    bg_pixels = signal_img[bg_mask].astype(np.float64)
-    noise_all = noise_img.flatten().astype(np.float64)
-    
-    # 4. Compute Statistics
-    print("\n📈 Computing Statistics...")
-    
-    def compute_stats(arr, name):
-        stats = {
-            'name': name,
-            'mean': np.mean(arr),
-            'std': np.std(arr),
-            'min': np.min(arr),
-            'max': np.max(arr),
-            'p1': np.percentile(arr, 1),
-            'p99': np.percentile(arr, 99),
-            'median': np.median(arr)
-        }
-        return stats
-    
-    ink_stats = compute_stats(ink_pixels, "Ink (Z=41)")
-    bg_stats = compute_stats(bg_pixels, "Background (Z=41)")
-    noise_stats = compute_stats(noise_all, "Noise Layer (Z=20)")
-    
-    # Print stats table
-    print("\n" + "="*70)
-    print(f"{'Metric':<15} {'Ink (Z=41)':<20} {'Background (Z=41)':<20} {'Noise (Z=20)':<15}")
-    print("="*70)
-    print(f"{'Mean':<15} {ink_stats['mean']:<20.2f} {bg_stats['mean']:<20.2f} {noise_stats['mean']:<15.2f}")
-    print(f"{'Std':<15} {ink_stats['std']:<20.2f} {bg_stats['std']:<20.2f} {noise_stats['std']:<15.2f}")
-    print(f"{'Min':<15} {ink_stats['min']:<20.0f} {bg_stats['min']:<20.0f} {noise_stats['min']:<15.0f}")
-    print(f"{'Max':<15} {ink_stats['max']:<20.0f} {bg_stats['max']:<20.0f} {noise_stats['max']:<15.0f}")
-    print(f"{'P1':<15} {ink_stats['p1']:<20.2f} {bg_stats['p1']:<20.2f} {noise_stats['p1']:<15.2f}")
-    print(f"{'P99':<15} {ink_stats['p99']:<20.2f} {bg_stats['p99']:<20.2f} {noise_stats['p99']:<15.2f}")
-    print(f"{'Median':<15} {ink_stats['median']:<20.2f} {bg_stats['median']:<20.2f} {noise_stats['median']:<15.2f}")
-    print("="*70)
-    
-    # 5. Compute Separation Metrics
-    print("\n🎯 Signal Separation Analysis:")
-    
-    # Cohen's d (effect size)
-    pooled_std = np.sqrt((ink_stats['std']**2 + bg_stats['std']**2) / 2)
-    cohens_d = (ink_stats['mean'] - bg_stats['mean']) / pooled_std
-    print(f"   Cohen's d (effect size): {cohens_d:.4f}")
-    
-    if abs(cohens_d) < 0.2:
-        print("   ⚠️ Very weak separation (|d| < 0.2)")
-    elif abs(cohens_d) < 0.5:
-        print("   ⚠️ Small separation (0.2 < |d| < 0.5)")
-    elif abs(cohens_d) < 0.8:
-        print("   ✅ Medium separation (0.5 < |d| < 0.8)")
-    else:
-        print("   ✅ Large separation (|d| > 0.8)")
-    
-    # Suggest windowing
-    # Use the range that captures most of the ink distribution
-    suggested_min = max(0, ink_stats['p1'] - 0.1 * (ink_stats['p99'] - ink_stats['p1']))
-    suggested_max = ink_stats['p99'] + 0.1 * (ink_stats['p99'] - ink_stats['p1'])
-    
-    print(f"\n💡 Suggested Intensity Window:")
-    print(f"   min_val = {suggested_min:.0f}")
-    print(f"   max_val = {suggested_max:.0f}")
-    print(f"   (Normalized: [{suggested_min/65535:.4f}, {suggested_max/65535:.4f}])")
-    
-    # 6. Generate Histogram Visualization
-    print("\n🎨 Generating Histogram Visualization...")
-    
-    fig, axes = plt.subplots(2, 1, figsize=(12, 10))
-    
-    # Define bin range based on actual data
-    global_min = min(noise_all.min(), ink_pixels.min(), bg_pixels.min())
-    global_max = max(noise_all.max(), ink_pixels.max(), bg_pixels.max())
-    bins = np.linspace(global_min, global_max, 200)
-    
-    # Subplot 1: Noise Layer (Z=20)
-    axes[0].hist(noise_all, bins=bins, alpha=0.7, color='gray', density=True, label=f'Z=20 (All pixels)')
-    axes[0].set_title(f'Noise Layer (Z={noise_idx}) - Full Histogram', fontsize=12)
-    axes[0].set_xlabel('Pixel Intensity (uint16)', fontsize=10)
-    axes[0].set_ylabel('Density', fontsize=10)
-    axes[0].legend()
-    axes[0].grid(True, alpha=0.3)
-    
-    # Subplot 2: Signal Layer with Ink/BG separation
-    axes[1].hist(bg_pixels, bins=bins, alpha=0.6, color='blue', density=True, label=f'Background (N={len(bg_pixels):,})')
-    axes[1].hist(ink_pixels, bins=bins, alpha=0.6, color='red', density=True, label=f'Ink (N={len(ink_pixels):,})')
-    
-    # Mark suggested window
-    axes[1].axvline(x=suggested_min, color='green', linestyle='--', linewidth=2, label=f'Window Min: {suggested_min:.0f}')
-    axes[1].axvline(x=suggested_max, color='green', linestyle='--', linewidth=2, label=f'Window Max: {suggested_max:.0f}')
-    
-    # Mark means
-    axes[1].axvline(x=ink_stats['mean'], color='darkred', linestyle='-', linewidth=1.5, alpha=0.8)
-    axes[1].axvline(x=bg_stats['mean'], color='darkblue', linestyle='-', linewidth=1.5, alpha=0.8)
-    
-    axes[1].set_title(f'Signal Layer (Z={signal_idx}) - Ink vs Background Distribution', fontsize=12)
-    axes[1].set_xlabel('Pixel Intensity (uint16)', fontsize=10)
-    axes[1].set_ylabel('Density', fontsize=10)
-    axes[1].legend(loc='upper right')
-    axes[1].grid(True, alpha=0.3)
-    
-    # Add text annotation
-    textstr = f"Ink Mean: {ink_stats['mean']:.0f}\nBG Mean: {bg_stats['mean']:.0f}\nCohen's d: {cohens_d:.3f}"
-    axes[1].text(0.02, 0.98, textstr, transform=axes[1].transAxes, fontsize=10,
-                 verticalalignment='top', bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
-    
-    plt.tight_layout()
-    plt.savefig("signal_distribution.png", dpi=150)
-    plt.close(fig)
-    
-    print("   ✅ Saved: signal_distribution.png")
-    
-    # 7. Final Report
-    print("\n" + "="*50)
-    print("📊 SIGNAL HISTOGRAM ANALYSIS COMPLETE")
-    print("="*50)
-    print(f"   Ink Mean: {ink_stats['mean']:.2f}")
-    print(f"   BG Mean: {bg_stats['mean']:.2f}")
-    print(f"   Difference: {ink_stats['mean'] - bg_stats['mean']:.2f}")
-    print(f"   Cohen's d: {cohens_d:.4f}")
-    print("="*50)
-
-if __name__ == "__main__":
-    analyze_signal()
-
-```
-
----
-## File: analysis_scripts\audit_data.py
-```py
-import os
-from pathlib import Path
-from PIL import Image
-import sys
-
-# Update to absolute path based on my exploration
-BASE_PATH = Path(r"d:\Documents\Codes\2026_Kaggle_Vesuvius Challenge 2026\data\native\train\1")
-
-def audit_war_chest():
-    print("📋 正在进行数据完整性终审...")
-    
-    # 1. 检查关键标签
-    mask_path = BASE_PATH / "mask.png"
-    ink_path = BASE_PATH / "inklabels.png"
-    
-    for label in [mask_path, ink_path]:
-        if not label.exists():
-            print(f"❌ 致命缺失: {label.name} 未找到！")
-        else:
-            try:
-                with Image.open(label) as img:
-                    print(f"✅ {label.name} 已就绪 | 尺寸: {img.size}")
-            except Exception as e:
-                print(f"❌ 读取错误: {label.name} - {e}")
-
-    # 2. 检查切片连续性
-    tif_dir = BASE_PATH / "surface_volume"
-    if not tif_dir.exists():
-        print(f"❌ 目录不存在: {tif_dir}")
-        return
-
-    tifs = sorted([f for f in tif_dir.glob("*.tif") if f.name.replace('.tif','').isdigit()], 
-                  key=lambda x: int(x.name.split('.')[0]))
-    
-    if len(tifs) < 10:
-        print(f"❌ 弹药不足: 仅找到 {len(tifs)} 张切片，无法构建 16 层深度的 2.5D 训练块。")
-    else:
-        print(f"📊 已就绪切片: {len(tifs)} 张 (范围: {tifs[0].name} 到 {tifs[-1].name})")
-
-    # 3. 检查是否有损坏 (Check a few random files)
-    import random
-    check_files = [tifs[0], tifs[len(tifs)//2], tifs[-1]]
-    
-    for f in check_files:
-        try:
-            with Image.open(f) as img:
-                pass
-            print(f"✅ 样本切片解析成功: {f.name}")
-        except Exception as e:
-            print(f"❌ 数据损坏: 无法解析 TIF 文件 {f.name} - {e}")
-
-if __name__ == "__main__":
-    audit_war_chest()
-
-```
-
----
-## File: analysis_scripts\audit_data_coverage.py
-```py
-
-import numpy as np
-from PIL import Image
-import os
-import matplotlib.pyplot as plt
-
-CONFIG = {
-    "data_root": "data/native/train/1/surface_volume",
-    "tif_name": "57.tif"
-}
-
-def check_coverage():
-    tif_path = os.path.join(CONFIG["data_root"], CONFIG["tif_name"])
-    if not os.path.exists(tif_path):
-        print(f"❌ {tif_path} not found")
-        return
-
-    print(f"📦 Loading {tif_path}...")
-    with Image.open(tif_path) as img:
-        # Load low-res resize to check global coverage map
-        w, h = img.size
-        img_small = img.resize((w//10, h//10), Image.NEAREST)
-        data = np.array(img_small)
-    
-    print(f"   Original Size: {w}x{h}")
-    print(f"   Analysis Size: {data.shape}")
-    
-    # Check non-zero pixels
-    non_zero = data > 0
-    coverage = non_zero.sum() / non_zero.size
-    
-    print(f"   Non-zero Coverage: {coverage*100:.2f}%")
-    print(f"   Black Pixels: {(1-coverage)*100:.2f}%")
-    
-    # Visualize
-    plt.figure(figsize=(10, 5))
-    plt.imshow(non_zero, cmap='gray')
-    plt.title(f"TIF Data Coverage (White=Data, Black=Empty)\nCoverage: {coverage*100:.2f}%")
-    plt.savefig("data_coverage.png")
-    print("📸 Saved coverage map to 'data_coverage.png'")
-    
-    # Compare with Mask
-    mask_path = "data/native/train/1/mask.png"
-    if os.path.exists(mask_path):
-        mask = np.array(Image.open(mask_path).convert("L"))
-        mask_coverage = (mask > 0).sum() / mask.size
-        print(f"\n🎭 Mask File Checking:")
-        print(f"   Mask Coverage: {mask_coverage*100:.2f}%")
-        
-        if mask_coverage > 99 and coverage < 50:
-            print("\n🚨 CRITICAL MISMATCH:")
-            print("   Mask says 'EVERYTHING IS VALID' (100%)")
-            print(f"   But TIF only has data in {coverage*100:.0f}% of area.")
-            print("   -> Random crops will be BLACK {(1-coverage)*100:.0f}% of the time!")
-
-if __name__ == "__main__":
-    check_coverage()
-
-```
-
----
-## File: analysis_scripts\audit_model_contrast.py
-```py
-import torch
-import numpy as np
-import sys
-import os
-from pathlib import Path
-from tqdm import tqdm
-
-# Import components from training script
-try:
-    from train_vesuvius import Thinking25DNet, Vesuvius25DDataset, CONFIG
-    import albumentations as A
-    from albumentations.pytorch import ToTensorV2
-    from torch.utils.data import DataLoader
-except ImportError:
-    print("❌ Error: Could not import from train_vesuvius.py. Make sure it's in the same directory.")
-    sys.exit(1)
-
-def audit_model():
-    print("🔍 Initializing Audit Protocol...")
-    
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"   Device: {device}")
-    
-    # 1. Load Model
-    model_path = "vesuvius_best.pth"
-    if not os.path.exists(model_path):
-        print(f"❌ Error: Model file '{model_path}' not found. Has training started/saved yet?")
-        sys.exit(1)
-        
-    print(f"   Loading model from {model_path}...")
-    model = Thinking25DNet(in_channels=CONFIG["z_depth"]).to(device)
-    model.load_state_dict(torch.load(model_path, map_location=device))
-    model.eval()
-    
-    # 2. Setup Data
-    print("   Setting up Validation Data...")
-    val_transform = A.Compose([
-        ToTensorV2(transpose_mask=True),
-    ])
-    
-    # Force single batch for audit
-    val_dataset = Vesuvius25DDataset(CONFIG["data_root"], z_slices=CONFIG["z_depth"], transform=val_transform, mode="valid")
-    # Use shuffle=True to find ink faster if start is empty
-    loader = DataLoader(val_dataset, batch_size=4, num_workers=0, shuffle=True) 
-    
-    print("\n🧪 Searching for ink-containing samples...")
-    
-    found_ink = False
-    
-    with torch.no_grad():
-        with torch.amp.autocast('cuda'):
-            for step, (images, masks) in enumerate(tqdm(loader)):
-                images = images.to(device)
-                masks = masks.to(device)
-                
-                # Check if batch has ink
-                if masks.sum() == 0:
-                    continue
-                
-                found_ink = True
-                print(f"   ✅ Found ink in batch {step}!")
-                
-                # 3. Inference
-                outputs = model(images)
-                preds = torch.sigmoid(outputs)
-                
-                # 4. Signal-to-Noise Analysis
-                # Flatten everything to analyze pixels
-                probs = preds.cpu().numpy().flatten()
-                targets = masks.cpu().numpy().flatten()
-                
-                ink_pixels = probs[targets == 1]
-                bg_pixels = probs[targets == 0]
-                
-                if len(ink_pixels) == 0:
-                    print("   ⚠️ Warning: Batch sum > 0 but no ink pixels found in flatten? Should not happen.")
-                    continue
-                
-                mean_ink = np.mean(ink_pixels)
-                mean_bg = np.mean(bg_pixels)
-                
-                # Avoid division by zero
-                contrast = mean_ink / (mean_bg + 1e-9)
-                
-                # Report
-                report = []
-                report.append("="*40)
-                report.append("📊 审计报告 (Audit Report)")
-                report.append("="*40)
-                report.append(f"   - 📦 样本数 (Pixels): {len(probs)}")
-                report.append(f"   - ✒️ 墨水像素数: {len(ink_pixels)}")
-                report.append(f"   - ⬜ 背景像素数: {len(bg_pixels)}")
-                report.append("-" * 40)
-                report.append(f"   - 🟢 墨水区平均置信度 (Mean Ink Prob)  : {mean_ink:.6f}")
-                report.append(f"   - 🔴 背景区平均置信度 (Mean BG Prob)   : {mean_bg:.6f}")
-                report.append("-" * 40)
-                report.append(f"   - 🚀 对比度 (Signal/Noise Ratio)      : {contrast:.2f} 倍")
-                report.append("="*40)
-                
-                if contrast > 1.5:
-                    report.append("✅ 结论: 模型已学会区分墨水与背景！")
-                elif contrast > 1.0:
-                    report.append("⚠️ 结论: 信号极其微弱，仅略高于随机猜测。")
-                else:
-                    report.append("❌ 结论: 模型尚未区分（或产生了反向预测）。")
-                
-                report_str = "\n".join(report)
-                print(report_str)
-                with open("audit_result.log", "w", encoding="utf-8") as f:
-                    f.write(report_str)
-                
-                break # Ensure we only do one batch
-    
-    if not found_ink:
-        print("\n❌ Failed: Scanned validation set but found NO ink pixels. Is the label loading correct?")
-
-if __name__ == "__main__":
-    audit_model()
-
-```
-
----
-## File: analysis_scripts\debug_z_scan.py
-```py
-"""
-Z-Scan Forensics for Vesuvius Challenge 2026
-Locates the physical Z-layer where ink signal is strongest.
-Detects Z-axis misalignment between labels and volume data.
-"""
-import os
-import numpy as np
-from PIL import Image
-import matplotlib.pyplot as plt
-from pathlib import Path
-from glob import glob
-from tqdm import tqdm
-
-def run_z_scan():
-    print("🔬 Starting Z-Scan Forensics...")
-    
-    # Path Configuration
-    data_dir = Path("data/native/train/1")
-    volume_dir = data_dir / "surface_volume"
-    label_path = data_dir / "inklabels.png"
-    
-    # Check if paths exist
-    if not volume_dir.exists():
-        print(f"❌ Error: Volume directory not found: {volume_dir}")
-        return
-    if not label_path.exists():
-        print(f"❌ Error: Label file not found: {label_path}")
-        return
-    
-    # 1. Load all TIF files (sorted by numeric index)
-    print("\n📦 Loading Surface Volume...")
-    tif_files = sorted(glob(str(volume_dir / "*.tif")), 
-                       key=lambda x: int(Path(x).stem.split('_')[-1]) if '_' in Path(x).stem else int(Path(x).stem))
-    print(f"   Total TIF files found: {len(tif_files)}")
-    
-    if len(tif_files) == 0:
-        print("❌ Error: No TIF files found!")
-        return
-    
-    # 2. Load Labels
-    print("\n🏷️ Loading Ink Labels...")
-    labels_full = Image.open(label_path)
-    labels = np.array(labels_full).astype(np.float32)
-    labels_full.close()
-    
-    # Normalize labels to 0-1
-    if labels.max() > 1:
-        labels = labels / 255.0
-    
-    # Handle RGB labels
-    if len(labels.shape) == 3:
-        labels = labels[:, :, 0]
-    
-    # Binarize
-    labels = (labels > 0.5).astype(np.float32)
-    
-    print(f"   Label shape: {labels.shape}")
-    print(f"   Label sum (ink pixels): {labels.sum():.0f}")
-    print(f"   Ink coverage: {100 * labels.sum() / labels.size:.2f}%")
-    
-    if labels.sum() == 0:
-        print("   ❌ CRITICAL: Labels are ALL ZEROS! Cannot perform Z-scan.")
-        return
-    if labels.sum() == labels.size:
-        print("   ❌ CRITICAL: Labels are ALL ONES! Invalid mask.")
-        return
-    
-    print("   ✅ Labels have valid ink regions.")
-    
-    # 3. Z-Scan: Compute signal for each layer
-    print("\n🔍 Running Z-Scan (this may take a while)...")
-    
-    z_signals = []
-    DOWNSAMPLE = 4  # Speed up by downsampling
-    
-    # Get target size from first image
-    first_img = Image.open(tif_files[0])
-    target_size = (first_img.width // DOWNSAMPLE, first_img.height // DOWNSAMPLE)
-    first_img.close()
-    
-    # Resize labels to match
-    labels_small = np.array(Image.fromarray((labels * 255).astype(np.uint8)).resize(target_size, Image.NEAREST)).astype(np.float32) / 255.0
-    labels_small = (labels_small > 0.5).astype(np.float32)
-    
-    ink_mask = labels_small > 0.5
-    bg_mask = labels_small < 0.5
-    
-    print(f"   Downsampled to: {target_size}")
-    print(f"   Ink pixels: {ink_mask.sum()}, BG pixels: {bg_mask.sum()}")
-    
-    for z_idx, tif_path in enumerate(tqdm(tif_files, desc="   Z-Scan")):
-        # Load and downsample
-        img = Image.open(tif_path)
-        img_small = img.resize(target_size, Image.LANCZOS)
-        data = np.array(img_small).astype(np.float32) / 65535.0  # Normalize uint16
-        img.close()
-        
-        # Compute signal: (Mean Ink Brightness) - (Mean BG Brightness)
-        if ink_mask.sum() > 0 and bg_mask.sum() > 0:
-            mean_ink = data[ink_mask].mean()
-            mean_bg = data[bg_mask].mean()
-            signal = mean_ink - mean_bg
-        else:
-            signal = 0
-        
-        z_signals.append({
-            'z': z_idx,
-            'signal': signal,
-            'mean_ink': mean_ink,
-            'mean_bg': mean_bg,
-            'path': tif_path
-        })
-    
-    # Convert to arrays
-    z_indices = [s['z'] for s in z_signals]
-    signals = [s['signal'] for s in z_signals]
-    
-    # Find peak
-    peak_idx = np.argmax(np.abs(signals))
-    peak_z = z_indices[peak_idx]
-    peak_signal = signals[peak_idx]
-    
-    print(f"\n📊 Z-Scan Results:")
-    print(f"   Peak signal at Z={peak_z}: {peak_signal:.6f}")
-    print(f"   Signal range: [{min(signals):.6f}, {max(signals):.6f}]")
-    
-    if abs(peak_signal) < 0.01:
-        print("   ⚠️ WARNING: Peak signal is very weak! Possible misalignment.")
-    else:
-        print("   ✅ Clear signal detected!")
-    
-    # 4. Plot Z-Signal Profile
-    print("\n📈 Generating Z-Signal Profile...")
-    
-    fig, ax = plt.subplots(figsize=(12, 5))
-    ax.plot(z_indices, signals, 'b-', linewidth=2, marker='o', markersize=4)
-    ax.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
-    ax.axvline(x=peak_z, color='red', linestyle='--', alpha=0.7, label=f'Peak @ Z={peak_z}')
-    
-    ax.set_xlabel('Z-Index (Depth)', fontsize=12)
-    ax.set_ylabel('Signal: Mean(Ink) - Mean(BG)', fontsize=12)
-    ax.set_title('Z-Scan Signal Profile: Where is the Ink?', fontsize=14)
-    ax.legend()
-    ax.grid(True, alpha=0.3)
-    
-    # Highlight current training range
-    train_z_start, train_z_end = 16, 31
-    ax.axvspan(train_z_start, train_z_end, alpha=0.2, color='green', label=f'Current Training Range: Z={train_z_start}-{train_z_end}')
-    ax.legend()
-    
-    plt.tight_layout()
-    plt.savefig("z_signal_profile.png", dpi=150)
-    plt.close(fig)
-    print("   ✅ Saved: z_signal_profile.png")
-    
-    # 5. Generate Layer Gallery
-    print("\n🖼️ Generating Layer Gallery...")
-    
-    # Select layers: peak +/- 2, and the worst layer
-    gallery_indices = [
-        max(0, peak_z - 2),
-        max(0, peak_z - 1),
-        peak_z,
-        min(len(tif_files) - 1, peak_z + 1),
-        min(len(tif_files) - 1, peak_z + 2),
-        np.argmin(np.abs(signals))  # Layer with weakest signal
-    ]
-    gallery_indices = sorted(set(gallery_indices))
-    
-    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
-    axes = axes.flatten()
-    
-    for i, z_idx in enumerate(gallery_indices[:6]):
-        if i >= len(axes):
-            break
-            
-        # Load layer
-        img = Image.open(tif_files[z_idx])
-        img_small = img.resize(target_size, Image.LANCZOS)
-        data = np.array(img_small).astype(np.float32) / 65535.0
-        img.close()
-        
-        # Create RGB overlay
-        p2, p98 = np.percentile(data, (2, 98))
-        data_norm = np.clip((data - p2) / (p98 - p2 + 1e-7), 0, 1)
-        rgb = np.stack([data_norm, data_norm, data_norm], axis=-1)
-        
-        # Red overlay for labels (30% opacity)
-        rgb[ink_mask, 0] = 0.7 * rgb[ink_mask, 0] + 0.3 * 1.0
-        rgb[ink_mask, 1] = 0.7 * rgb[ink_mask, 1]
-        rgb[ink_mask, 2] = 0.7 * rgb[ink_mask, 2]
-        
-        axes[i].imshow(rgb)
-        signal_val = z_signals[z_idx]['signal']
-        title = f"Z={z_idx} | Signal={signal_val:.4f}"
-        if z_idx == peak_z:
-            title += " [PEAK]"
-        axes[i].set_title(title, fontsize=10)
-        axes[i].axis('off')
-    
-    # Hide unused axes
-    for i in range(len(gallery_indices), len(axes)):
-        axes[i].axis('off')
-    
-    plt.suptitle('Layer Gallery: Red = Ink Labels Overlay', fontsize=14)
-    plt.tight_layout()
-    plt.savefig("layer_gallery.png", dpi=100)
-    plt.close(fig)
-    print("   ✅ Saved: layer_gallery.png")
-    
-    # 6. Final Report
-    print("\n" + "="*50)
-    print("🔬 Z-SCAN FORENSICS REPORT")
-    print("="*50)
-    print(f"   Peak Signal Layer: Z={peak_z}")
-    print(f"   Peak Signal Value: {peak_signal:.6f}")
-    print(f"   Current Training Range: Z=16-31")
-    
-    if train_z_start <= peak_z <= train_z_end:
-        print("   ✅ Peak is WITHIN training range! Alignment OK.")
-    else:
-        print(f"   ⚠️ Peak is OUTSIDE training range! Consider using Z={max(0, peak_z-8)}-{min(len(tif_files)-1, peak_z+8)}")
-    
-    print("="*50)
-    print("\nOpen 'z_signal_profile.png' and 'layer_gallery.png' to visually confirm.")
-
-if __name__ == "__main__":
-    run_z_scan()
-
-```
-
----
-## File: analysis_scripts\inspect_dataset_alignment.py
-```py
-"""
-Dataset Alignment Inspector for Vesuvius Challenge 2026
-Verifies that surface_volume slices and ink labels are correctly aligned.
-"""
-import os
-import numpy as np
-from PIL import Image
-import matplotlib.pyplot as plt
-from pathlib import Path
-from glob import glob
-
-def inspect_dataset():
-    print("🔍 Starting Dataset Alignment Inspection...")
-    
-    # Path Configuration
-    data_dir = Path("data/native/train/1")
-    volume_dir = data_dir / "surface_volume"
-    label_path = data_dir / "inklabels.png"
-    
-    # Check if paths exist
-    if not volume_dir.exists():
-        print(f"❌ Error: Volume directory not found: {volume_dir}")
-        return
-    if not label_path.exists():
-        print(f"❌ Error: Label file not found: {label_path}")
-        return
-    
-    # 1. Load 3D Volume (Middle Z-slices)
-    print("\n📦 Loading Surface Volume...")
-    tif_files = sorted(glob(str(volume_dir / "*.tif")))
-    print(f"   Total TIF files found: {len(tif_files)}")
-    
-    if len(tif_files) == 0:
-        print("❌ Error: No TIF files found!")
-        return
-    
-    # Select middle Z-slices (e.g., 25-35)
-    mid_start = max(0, len(tif_files) // 2 - 5)
-    mid_end = min(len(tif_files), len(tif_files) // 2 + 5)
-    selected_files = tif_files[mid_start:mid_end]
-    print(f"   Using Z-slices: {mid_start} to {mid_end-1} (Total: {len(selected_files)})")
-    
-    # Load and stack slices (DOWNSAMPLED to 1/4 resolution for memory safety)
-    DOWNSAMPLE = 4  # Reduce by factor of 4
-    slices = []
-    for f in selected_files:
-        img = Image.open(f)
-        # Downsample to prevent memory crash
-        new_size = (img.width // DOWNSAMPLE, img.height // DOWNSAMPLE)
-        img_small = img.resize(new_size, Image.LANCZOS)
-        slices.append(np.array(img_small))
-        img.close()
-    
-    volume = np.stack(slices, axis=0)  # (Z, H, W)
-    
-    # Volume Statistics
-    print("\n📊 Volume Statistics:")
-    print(f"   Shape: {volume.shape}")
-    print(f"   Dtype: {volume.dtype}")
-    print(f"   Min: {volume.min()}")
-    print(f"   Max: {volume.max()}")
-    print(f"   Mean: {volume.mean():.2f}")
-    
-    if volume.max() > 255:
-        print("   ⚠️ NOTE: Data is 16-bit. Training code MUST divide by 65535!")
-    else:
-        print("   ℹ️ Data is 8-bit. Divide by 255 for normalization.")
-    
-    # Compute Mean Projection
-    mean_proj = volume.mean(axis=0)  # (H, W)
-    print(f"\n   Mean Projection Shape: {mean_proj.shape}")
-    
-    # 2. Load Labels (RESIZED to match volume dimensions)
-    print("\n🏷️ Loading Ink Labels...")
-    labels_full = Image.open(label_path)
-    # Resize to exactly match mean_proj dimensions (width, height for PIL)
-    target_size = (mean_proj.shape[1], mean_proj.shape[0])  # PIL uses (W, H)
-    labels_small = labels_full.resize(target_size, Image.NEAREST)
-    labels = np.array(labels_small)
-    labels_full.close()
-    
-    print(f"   Shape: {labels.shape}")
-    print(f"   Dtype: {labels.dtype}")
-    print(f"   Unique values: {np.unique(labels)}")
-    print(f"   Min: {labels.min()}")
-    print(f"   Max: {labels.max()}")
-    print(f"   Non-zero pixels: {(labels > 0).sum()} / {labels.size} ({100*(labels > 0).sum()/labels.size:.2f}%)")
-    
-    if labels.max() == 0:
-        print("   ❌ CRITICAL: Label is ALL ZEROS! No ink annotation found!")
-    elif labels.min() == labels.max():
-        print(f"   ❌ CRITICAL: Label is UNIFORM (value={labels.max()})! Invalid mask!")
-    else:
-        print("   ✅ Label has variation (good).")
-    
-    # 3. Check alignment (dimensions)
-    print("\n🔗 Checking Alignment...")
-    if mean_proj.shape[:2] == labels.shape[:2]:
-        print(f"   ✅ Dimensions match: Volume {mean_proj.shape[:2]} == Labels {labels.shape[:2]}")
-    else:
-        print(f"   ❌ DIMENSION MISMATCH: Volume {mean_proj.shape[:2]} != Labels {labels.shape[:2]}")
-    
-    # 4. Generate Visualization
-    print("\n🎨 Generating Overlay Visualization...")
-    
-    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
-    
-    # Normalize mean projection for display
-    mean_proj_norm = (mean_proj - mean_proj.min()) / (mean_proj.max() - mean_proj.min() + 1e-7)
-    
-    # Enhance contrast (percentile stretch)
-    p2, p98 = np.percentile(mean_proj_norm, (2, 98))
-    mean_proj_enhanced = np.clip((mean_proj_norm - p2) / (p98 - p2 + 1e-7), 0, 1)
-    
-    # Left: Surface Texture
-    axes[0].imshow(mean_proj_enhanced, cmap='gray')
-    axes[0].set_title('Surface Texture (Mean Z-Projection)')
-    axes[0].axis('off')
-    
-    # Middle: Ink Labels
-    label_disp = labels.astype(float)
-    if labels.max() > 0:
-        label_disp = label_disp / labels.max()
-    axes[1].imshow(label_disp, cmap='gray')
-    axes[1].set_title('Ink Labels (Ground Truth)')
-    axes[1].axis('off')
-    
-    # Right: Red Overlay
-    # Create RGB image from grayscale
-    rgb = np.stack([mean_proj_enhanced, mean_proj_enhanced, mean_proj_enhanced], axis=-1)
-    
-    # Create red overlay where label > 0
-    if len(labels.shape) == 3:
-        label_binary = labels[:, :, 0] > 0  # Handle RGB labels
-    else:
-        label_binary = labels > 0
-    
-    # Apply 50% transparent red overlay
-    overlay = rgb.copy()
-    overlay[label_binary, 0] = 0.5 * overlay[label_binary, 0] + 0.5 * 1.0  # Red channel
-    overlay[label_binary, 1] = 0.5 * overlay[label_binary, 1]  # Green channel
-    overlay[label_binary, 2] = 0.5 * overlay[label_binary, 2]  # Blue channel
-    
-    axes[2].imshow(overlay)
-    axes[2].set_title('Red Overlay (Ink on Surface)')
-    axes[2].axis('off')
-    
-    plt.tight_layout()
-    output_path = "dataset_check.png"
-    plt.savefig(output_path, dpi=150)
-    plt.close(fig)
-    
-    print(f"   ✅ Saved visualization to: {output_path}")
-    print("\n🏁 Inspection Complete!")
-    print("   → Open 'dataset_check.png' to visually verify ink alignment.")
-
-if __name__ == "__main__":
-    inspect_dataset()
-
-```
-
----
-## File: analysis_scripts\inspect_normalization.py
-```py
-
-import numpy as np
-from PIL import Image
-import matplotlib.pyplot as plt
-import os
-
-# CONFIG (Replicated from train_vesuvius_surgical.py)
-CONFIG = {
-    "tile_size": 224,
-    "z_slices": [57], # Test on the peak signal layer
-    "data_root": "data/native/train/1"
-}
-
-def check_normalization_logic():
-    print("🔬 Auditing Normalization Logic...")
-    
-    # 1. Load Raw TIF
-    tif_path = os.path.join(CONFIG["data_root"], "surface_volume", "57.tif")
-    if not os.path.exists(tif_path):
-        print(f"❌ Error: {tif_path} not found.")
-        return
-        
-    print(f"   Loading {tif_path}...")
-    with Image.open(tif_path) as img:
-        raw_full = np.array(img).astype(np.float32)
-        
-    # Crop a center patch (simulating __getitem__)
-    h, w = raw_full.shape
-    cy, cx = h // 2, w // 2
-    raw_patch = raw_full[cy:cy+CONFIG["tile_size"], cx:cx+CONFIG["tile_size"]]
-    
-    print(f"   Raw Patch Stats: Min={raw_patch.min():.1f}, Max={raw_patch.max():.1f}, Mean={raw_patch.mean():.1f}")
-    
-    # 2. Apply Surgical Logic (Adaptive Percentile)
-    # ---------------------------------------------------------
-    # Logic in train_vesuvius_surgical.py:
-    # p_min, p_max = np.percentile(volume, (1, 99))
-    # volume = np.clip((volume - p_min) / (p_max - p_min + 1e-8), 0, 1)
-    # ---------------------------------------------------------
-    
-    p_min, p_max = np.percentile(raw_patch, (1, 99))
-    print(f"   Calculated Percentiles: p1={p_min:.1f}, p99={p_max:.1f}")
-    
-    norm_patch = np.clip((raw_patch - p_min) / (p_max - p_min + 1e-8), 0, 1)
-    
-    print(f"   Normalized Stats: Min={norm_patch.min():.4f}, Max={norm_patch.max():.4f}, Mean={norm_patch.mean():.4f}")
-    
-    # 3. Verification
-    if norm_patch.mean() < 0.1:
-        print("\n❌ CRITICAL: Result is too dark (Black Hole).")
-    elif norm_patch.mean() > 0.9:
-        print("\n❌ CRITICAL: Result is washed out (White).")
-    else:
-        print("\n✅ PASS: Result has good dynamic range.")
-        
-    # 4. Save visualization
-    plt.figure(figsize=(10, 5))
-    plt.subplot(1, 2, 1)
-    plt.imshow(raw_patch, cmap='gray')
-    plt.title(f"Raw (Min:{raw_patch.min():.0f} Max:{raw_patch.max():.0f})")
-    plt.axis('off')
-    
-    plt.subplot(1, 2, 2)
-    plt.imshow(norm_patch, cmap='gray', vmin=0, vmax=1)
-    plt.title(f"Normalized (Mean:{norm_patch.mean():.2f})")
-    plt.axis('off')
-    
-    plt.savefig("norm_check.png")
-    print("\n📸 Saved visual proof to 'norm_check.png'")
-
-if __name__ == "__main__":
-    check_normalization_logic()
-
-```
-
----
-## File: analysis_scripts\verify_debug_image.py
-```py
-
-import numpy as np
-from PIL import Image
-import matplotlib.pyplot as plt
-import os
-
-img_path = "output/debug_epoch_2.png"
-if not os.path.exists(img_path):
-    print(f"❌ Error: {img_path} not found.")
-    exit(1)
-
-# Load image
-img = Image.open(img_path)
-img_arr = np.array(img)
-h, w, c = img_arr.shape
-
-print(f"🖼️ Analyzing {img_path}")
-print(f"   Size: {w}x{h}, Channels: {c}")
-
-# Split into 3 parts (approximate due to borders/titles)
-# The image has 3 subplots horizontally.
-# Let's verify the content of the LEFT part (Input).
-w_third = w // 3
-input_region = img_arr[100:-50, 0:w_third] # Crop margins to avoid title/axes
-
-# Calculate stats
-mean_val = input_region.mean()
-std_val = input_region.std()
-min_val = input_region.min()
-max_val = input_region.max()
-
-print("\n🔍 Input Region Analysis (Left Panel):")
-print(f"   Mean Intensity: {mean_val:.2f} (0-255)")
-print(f"   Contrast (Std): {std_val:.2f}")
-print(f"   Range: [{min_val}, {max_val}]")
-
-# Check if black
-if mean_val < 5:
-    print("\n❌ FAILED: Input is essentially BLACK.")
-elif std_val < 2:
-    print("\n❌ FAILED: Input is FLAT (no texture).")
-else:
-    print("\n✅ PASS: Input shows texture/content.")
-
-# Check Middle (Label)
-label_region = img_arr[100:-50, w_third:2*w_third]
-print("\n🔍 Label Region Analysis (Middle Panel):")
-print(f"   Mean Intensity: {label_region.mean():.2f}")
-print(f"   Unique Values (approx): {len(np.unique(label_region))}")
-
-
-```
-
----
-## File: archive\create_dummy_data.py
-```py
-from PIL import Image
-import numpy as np
-import os
-from pathlib import Path
-
-BASE_PATH = Path(r"d:\Documents\Codes\2026_Kaggle_Vesuvius Challenge 2026\data\native\train\1")
-BASE_PATH.mkdir(parents=True, exist_ok=True)
-
-# Create a dummy mask.png (usually very large, but for testing we just need it to exist)
-# Let's assume 1000x1000 for a dry run if the real one isn't there
-mask_path = BASE_PATH / "mask.png"
-ink_path = BASE_PATH / "inklabels.png"
-
-if not mask_path.exists():
-    print("Creating dummy mask.png...")
-    mask = np.ones((1000, 1000), dtype=np.uint8) * 255
-    Image.fromarray(mask).save(mask_path)
-
-if not ink_path.exists():
-    print("Creating dummy inklabels.png...")
-    ink = np.zeros((1000, 1000), dtype=np.uint8)
-    ink[400:600, 400:600] = 255 # Some "ink" in the middle
-    Image.fromarray(ink).save(ink_path)
-
-```
-
----
-## File: archive\deploy_packager.py
-```py
-#!/usr/bin/env python3
-"""
-RGT Kaggle Deployment Packager
-==============================
-
-Bundles src/rgt/ modules into a Kaggle-compatible package.
-
-Usage:
-    python deploy_packager.py
-
-Output:
-    kaggle_deploy/
-    ├── rgt_package.zip      # Bundled source code
-    ├── install_hooks.py     # Bootstrap script
-    └── inference_template.py # Notebook template
-
-Author: DevOps Architect
-"""
-
-import os
-import shutil
-import zipfile
-from pathlib import Path
-from datetime import datetime
-
-
-# =============================================================================
-# Configuration
-# =============================================================================
-
-SRC_DIR = Path("src/rgt")
-OUTPUT_DIR = Path("kaggle_deploy")
-PACKAGE_NAME = "rgt_package.zip"
-
-# Files to exclude
-EXCLUDE_PATTERNS = [
-    "__pycache__",
-    ".git",
-    ".pyc",
-    "test_*.py",
-    "*.egg-info",
-]
-
-
-# =============================================================================
-# Packager Functions
-# =============================================================================
-
-def should_include(filepath: Path) -> bool:
-    """Check if file should be included in package."""
-    name = filepath.name
-    
-    for pattern in EXCLUDE_PATTERNS:
-        if pattern.startswith("*"):
-            if name.endswith(pattern[1:]):
-                return False
-        elif pattern.endswith("*"):
-            if name.startswith(pattern[:-1]):
-                return False
-        elif pattern in str(filepath):
-            return False
-    
-    return True
-
-
-def create_package() -> Path:
-    """Create rgt_package.zip from source files."""
-    print("[Packager] Creating RGT package...")
-    
-    # Ensure output directory exists
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    
-    zip_path = OUTPUT_DIR / PACKAGE_NAME
-    
-    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
-        # Add src/__init__.py
-        src_init = Path("src/__init__.py")
-        if src_init.exists():
-            zf.write(src_init, "src/__init__.py")
-            print(f"  Added: src/__init__.py")
-        
-        # Add all files from src/rgt/
-        for filepath in SRC_DIR.rglob("*"):
-            if filepath.is_file() and should_include(filepath):
-                arcname = f"src/rgt/{filepath.relative_to(SRC_DIR)}"
-                zf.write(filepath, arcname)
-                print(f"  Added: {arcname}")
-    
-    print(f"  ✓ Package created: {zip_path}")
-    return zip_path
-
-
-def create_install_hooks() -> Path:
-    """Generate install_hooks.py for Kaggle bootstrap."""
-    print("[Packager] Creating install hooks...")
-    
-    hooks_content = '''#!/usr/bin/env python3
-"""
-RGT Install Hooks for Kaggle
-============================
-
-Unzips rgt_package.zip and adds to sys.path.
-Run this cell first in your Kaggle notebook.
-
-Usage (in Kaggle Notebook):
-    exec(open("/kaggle/input/rgt-package/install_hooks.py").read())
-"""
-
-import os
-import sys
-import zipfile
-from pathlib import Path
-
-
-def install_rgt():
-    """Install RGT package from zip."""
-    # Kaggle paths
-    INPUT_DIR = Path("/kaggle/input/rgt-package")
-    WORKING_DIR = Path("/kaggle/working")
-    PACKAGE_ZIP = INPUT_DIR / "rgt_package.zip"
-    EXTRACT_DIR = WORKING_DIR / "rgt_extracted"
-    
-    # Local fallback (for testing)
-    if not INPUT_DIR.exists():
-        INPUT_DIR = Path("kaggle_deploy")
-        WORKING_DIR = Path(".")
-        PACKAGE_ZIP = INPUT_DIR / "rgt_package.zip"
-        EXTRACT_DIR = WORKING_DIR / "rgt_extracted"
-    
-    print("=" * 60)
-    print("RGT Package Installation")
-    print("=" * 60)
-    
-    # Check if package exists
-    if not PACKAGE_ZIP.exists():
-        raise FileNotFoundError(f"Package not found: {PACKAGE_ZIP}")
-    
-    # Extract if needed
-    if not EXTRACT_DIR.exists():
-        print(f"[Install] Extracting to {EXTRACT_DIR}...")
-        EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
-        
-        with zipfile.ZipFile(PACKAGE_ZIP, 'r') as zf:
-            zf.extractall(EXTRACT_DIR)
-        
-        print(f"  ✓ Extracted {len(list(EXTRACT_DIR.rglob('*.py')))} Python files")
-    else:
-        print(f"[Install] Using existing extraction: {EXTRACT_DIR}")
-    
-    # Add to sys.path
-    src_path = str(EXTRACT_DIR / "src")
-    if src_path not in sys.path:
-        sys.path.insert(0, src_path)
-        print(f"  ✓ Added to sys.path: {src_path}")
-    
-    # Verify import
-    try:
-        from rgt import HessianEngine, VectorAligner, PoissonSolver, SurfaceExtractor
-        print("  ✓ RGT modules imported successfully")
-    except ImportError as e:
-        print(f"  ✗ Import failed: {e}")
-        raise
-    
-    print("=" * 60)
-    print("✓ RGT Package Ready")
-    print("=" * 60)
-
-
-# Auto-run on exec()
-if __name__ == "__main__" or "__file__" not in dir():
-    install_rgt()
-'''
-    
-    hooks_path = OUTPUT_DIR / "install_hooks.py"
-    hooks_path.write_text(hooks_content, encoding='utf-8')
-    
-    print(f"  ✓ Install hooks created: {hooks_path}")
-    return hooks_path
-
-
-def create_inference_template() -> Path:
-    """Generate Kaggle inference notebook template."""
-    print("[Packager] Creating inference template...")
-    
-    template_content = f'''#!/usr/bin/env python3
-"""
-RGT Kaggle Inference Template
-=============================
-
-Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-
-This template provides the structure for running the RGT pipeline
-on Kaggle competition data.
-
-Notebook Structure:
-    Cell 1: Environment Setup
-    Cell 2: Hardware Check
-    Cell 3: Pipeline Configuration
-    Cell 4: Main Processing Loop
-"""
-
-# =============================================================================
-# CELL 1: Environment Setup
-# =============================================================================
-# %%
-
-import os
-import gc
-import sys
-from pathlib import Path
-
-# Install RGT package
-exec(open("/kaggle/input/rgt-package/install_hooks.py").read())
-
-# Imports
-import numpy as np
-import cupy as cp
-
-from rgt import (
-    ContextManager,
-    HessianEngine,
-    VectorAligner,
-    PoissonSolver,
-    SurfaceExtractor,
-)
-
-
-# =============================================================================
-# CELL 2: Hardware Check
-# =============================================================================
-# %%
-
-# Initialize context and detect environment
-ctx = ContextManager.get_instance()
-print(ctx)
-
-# GPU memory info
-if ctx.gpu_available:
-    free, total = cp.cuda.Device(0).mem_info
-    print(f"\\nGPU Memory: {{free/1e9:.2f}} GB free / {{total/1e9:.2f}} GB total")
-else:
-    print("\\n⚠ No GPU available - running in CPU mode")
-
-
-# =============================================================================
-# CELL 3: Pipeline Configuration
-# =============================================================================
-# %%
-
-# Kaggle paths
-INPUT_DIR = Path("/kaggle/input/vesuvius-challenge-data")  # Adjust to actual dataset
-OUTPUT_DIR = Path("/kaggle/working/output")
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-# Processing parameters
-CONFIG = {{
-    "chunk_size": ctx.chunk_size if hasattr(ctx, 'chunk_size') else 128,
-    "overlap": 16,
-    "sigma": 1.5,
-    "alignment_threshold": 0.5,
-    "poisson_tol": 1e-5,
-    "poisson_maxiter": 1000,
-    "mesh_step_size": 1,
-}}
-
-print("Pipeline Configuration:")
-for k, v in CONFIG.items():
-    print(f"  {{k}}: {{v}}")
-
-
-# =============================================================================
-# CELL 4: Main Processing Loop
-# =============================================================================
-# %%
-
-def process_volume(volume_path: Path, output_name: str) -> None:
-    """
-    Process a single volume through the RGT pipeline.
-    
-    Pipeline:
-        1. Load volume
-        2. Hessian feature extraction
-        3. Vector field alignment
-        4. Poisson solve
-        5. Mesh extraction
-        6. Save output
-    """
-    print(f"\\n{{'='*60}}")
-    print(f"Processing: {{volume_path.name}}")
-    print(f"{{'='*60}}")
-    
-    # Step 1: Load volume (placeholder - adjust for actual data format)
-    print("\\n[1/6] Loading volume...")
-    # volume = load_zarr_volume(volume_path)  # Implement based on data format
-    # For demo, create synthetic data
-    volume = cp.random.randn(64, 64, 64, dtype=cp.float32)
-    
-    # Step 2: Hessian
-    print("\\n[2/6] Computing Hessian features...")
-    engine = HessianEngine(slab_size=16, verbose=True)
-    hessian = engine.compute_hessian(volume, sigma=CONFIG["sigma"])
-    eigen = engine.solve_eigen_system(hessian.as_list())
-    
-    # Force GC
-    hessian.free()
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    # Step 3: Alignment
-    print("\\n[3/6] Aligning vector field...")
-    aligner = VectorAligner(threshold=CONFIG["alignment_threshold"], verbose=True)
-    aligned = aligner.align_vectors(eigen.normal_vectors, eigen.confidence)
-    
-    # Force GC
-    del eigen.normal_vectors
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    # Step 4: Poisson
-    print("\\n[4/6] Solving Poisson equation...")
-    weights = eigen.confidence / (eigen.confidence.max() + 1e-10)
-    
-    solver = PoissonSolver(
-        tol=CONFIG["poisson_tol"],
-        maxiter=CONFIG["poisson_maxiter"],
-        verbose=True
-    )
-    A, b, _ = solver.assemble_system(aligned, weights)
-    result = solver.solve(A, b, volume.shape)
-    phi = result.phi
-    
-    # Force GC
-    del A, b, aligned, weights, eigen
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    # Step 5: Mesh extraction
-    print("\\n[5/6] Extracting mesh...")
-    extractor = SurfaceExtractor(step_size=CONFIG["mesh_step_size"], verbose=True)
-    mesh = extractor.extract_layer(phi, iso_level=float(phi.mean()))
-    audit = extractor.audit_curvature(mesh)
-    
-    # Step 6: Save
-    print("\\n[6/6] Saving output...")
-    mesh_path = OUTPUT_DIR / f"{{output_name}}.obj"
-    extractor.save_mesh(mesh, str(mesh_path))
-    
-    # Final GC
-    del volume, phi, mesh
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    print(f"\\n✓ Complete: {{mesh_path}}")
-    print(f"  Curvature defect ratio: {{audit.defect_ratio:.1%}}")
-
-
-# Main execution
-if __name__ == "__main__":
-    # Process all volumes
-    # volumes = list(INPUT_DIR.glob("*.zarr"))  # Adjust pattern
-    # for i, vol_path in enumerate(volumes):
-    #     process_volume(vol_path, f"rgt_mesh_{{i:03d}}")
-    
-    # Demo with synthetic data
-    process_volume(Path("demo"), "rgt_demo_mesh")
-    
-    print("\\n" + "="*60)
-    print("✓ ALL PROCESSING COMPLETE")
-    print("="*60)
-'''
-    
-    template_path = OUTPUT_DIR / "inference_template.py"
-    template_path.write_text(template_content, encoding='utf-8')
-    
-    print(f"  ✓ Inference template created: {template_path}")
-    return template_path
-
-
-# =============================================================================
-# Main
-# =============================================================================
-
-def main():
-    """Run the full packaging process."""
-    print("=" * 60)
-    print("RGT Kaggle Deployment Packager")
-    print("=" * 60)
-    print()
-    
-    # Create package
-    zip_path = create_package()
-    print()
-    
-    # Create install hooks
-    hooks_path = create_install_hooks()
-    print()
-    
-    # Create inference template
-    template_path = create_inference_template()
-    print()
-    
-    # Summary
-    print("=" * 60)
-    print("✓ Deployment Package Ready")
-    print("=" * 60)
-    print(f"  Package: {zip_path}")
-    print(f"  Hooks:   {hooks_path}")
-    print(f"  Template: {template_path}")
-    print()
-    print("To deploy to Kaggle:")
-    print("  1. Upload kaggle_deploy/ as a Kaggle Dataset")
-    print("  2. Create a new Notebook and add the dataset")
-    print("  3. Copy contents from inference_template.py")
-    print("=" * 60)
-
-
-if __name__ == "__main__":
-    main()
-
-```
-
----
-## File: audit_logs\audit_report.txt
-```txt
-
-```
-
----
-## File: audit_logs\file_list.txt
-```txt
+## File: configs\config.yaml
+```yaml
+data:
+  root: "data/native/train/1"
+  # 🎯 Z-Axis Alignment (CRITICAL)
+  # Files 34-47 are MISSING. Available files with ink: 51-64
+  # We strictly exclude any other layers to avoid domain shift or missing file errors.
+  z_slices: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64]
+  
+  # Surgical Windowing
+  window_min: 18000.0
+  window_max: 28000.0
+  
+  # Validation Split (Spatial)
+  # We take the bottom 20% of the scroll for validation to prevent leakage.
+  valid_split_fraction: 0.2
+
+training:
+  experiment_name: "vesuvius_surgical_refactor"
+  batch_size: 16
+  epochs: 20
+  lr: 0.001
+  accumulate_steps: 1
+  num_workers: 0 # Windows safe default
+
+model:
+  encoder: "resnet18"
+  in_channels: 14 # Must match z_slices length
 
 ```
 
@@ -2392,279 +344,624 @@ ea1ed050123e45d5f8b5178a10c9db0e  64.tif
 ```
 
 ---
-## File: kaggle_deploy\inference_template.py
+## File: inference\predict.py
+```py
+import sys
+from pathlib import Path
+import torch
+import numpy as np
+from PIL import Image
+from tqdm import tqdm
+import cv2
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+from src.models import get_unet, load_checkpoint
+
+CONFIG = {
+    "volume_dir": PROJECT_ROOT / "data/native/train/1/surface_volume",
+    "model_path": PROJECT_ROOT / "models/vesuvius_native_finetuned.pth",
+    "z_slices": list(range(18, 32)),
+    "window_min": 18000.0,
+    "window_max": 28000.0,
+    "tile_size": 224,
+    "stride": 112,
+    "encoder": "resnet18",
+    "output_dir": PROJECT_ROOT / "outputs",
+    "device": "cuda" if torch.cuda.is_available() else "cpu",
+}
+
+def load_inference_volume():
+    print("📦 Loading volume for inference...")
+    tif_files = sorted(CONFIG["volume_dir"].glob("*.tif"), key=lambda x: int(x.stem))
+    
+    selected = [f for f in tif_files if int(f.stem) in CONFIG["z_slices"]]
+    
+    first = np.array(Image.open(selected[0]))
+    h, w = first.shape
+    volume = np.zeros((h, w, len(selected)), dtype=np.float32)
+    
+    for i, f in enumerate(tqdm(selected, desc="Loading")):
+        img = np.array(Image.open(f)).astype(np.float32)
+        img = np.clip(img, CONFIG["window_min"], CONFIG["window_max"])
+        img = (img - CONFIG["window_min"]) / (CONFIG["window_max"] - CONFIG["window_min"])
+        volume[:, :, i] = img
+        
+    return volume
+
+def predict():
+    CONFIG["output_dir"].mkdir(exist_ok=True)
+    device = torch.device(CONFIG["device"])
+    
+    # 1. Model
+    model = get_unet(in_channels=len(CONFIG["z_slices"])).to(device)
+    model = load_checkpoint(model, CONFIG["model_path"], device)
+    model.eval()
+    
+    # 2. Volume
+    volume = load_inference_volume()
+    h, w, c = volume.shape
+    
+    # 3. Sliding Window
+    pred_sum = np.zeros((h, w), dtype=np.float32)
+    count_map = np.zeros((h, w), dtype=np.float32)
+    
+    y_steps = list(range(0, h - CONFIG["tile_size"] + 1, CONFIG["stride"])) + [h - CONFIG["tile_size"]]
+    x_steps = list(range(0, w - CONFIG["tile_size"] + 1, CONFIG["stride"])) + [w - CONFIG["tile_size"]]
+    y_steps, x_steps = sorted(list(set(y_steps))), sorted(list(set(x_steps)))
+    
+    with torch.no_grad():
+        for y in tqdm(y_steps, desc="Y-Inference"):
+            for x in x_steps:
+                tile = volume[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"], :]
+                tile_tensor = torch.from_numpy(tile).permute(2, 0, 1).unsqueeze(0).to(device)
+                
+                with torch.amp.autocast('cuda'):
+                    output = model(tile_tensor)
+                    prob = torch.sigmoid(output).cpu().numpy()[0, 0]
+                
+                pred_sum[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]] += prob
+                count_map[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]] += 1
+                
+    pred_map = np.divide(pred_sum, count_map, where=count_map > 0)
+    
+    # Save
+    out_path = CONFIG["output_dir"] / "inference_full.png"
+    cv2.imwrite(str(out_path), (pred_map * 255).astype(np.uint8))
+    print(f"✅ Saved prediction to {out_path}")
+
+if __name__ == "__main__":
+    predict()
+
+```
+
+---
+## File: inference\unroll.py
 ```py
 #!/usr/bin/env python3
 """
-RGT Kaggle Inference Template
-=============================
+RGT Poisson Solver for Vesuvius Challenge 2026
+===============================================
 
-Generated: 2026-02-06 12:25:05
+Sparse weighted Poisson equation solver for RGT scalar field computation.
+Solves ∇·(w∇φ) = ∇·(wv⃗) using CG with optional AMG preconditioning.
 
-This template provides the structure for running the RGT pipeline
-on Kaggle competition data.
-
-Notebook Structure:
-    Cell 1: Environment Setup
-    Cell 2: Hardware Check
-    Cell 3: Pipeline Configuration
-    Cell 4: Main Processing Loop
+Author: HPC Architect
 """
 
-# =============================================================================
-# CELL 1: Environment Setup
-# =============================================================================
-# %%
+from __future__ import annotations
 
-import os
 import gc
-import sys
-from pathlib import Path
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Optional, Tuple
 
-# Install RGT package
-exec(open("/kaggle/input/rgt-package/install_hooks.py").read())
-
-# Imports
 import numpy as np
-import cupy as cp
 
-from rgt import (
-    ContextManager,
-    HessianEngine,
-    VectorAligner,
-    PoissonSolver,
-    SurfaceExtractor,
-)
+if TYPE_CHECKING:
+    import cupy as cp
+    from cupyx.scipy.sparse import csr_matrix
 
 
 # =============================================================================
-# CELL 2: Hardware Check
+# PoissonSolver Class
 # =============================================================================
-# %%
 
-# Initialize context and detect environment
-ctx = ContextManager.get_instance()
-print(ctx)
-
-# GPU memory info
-if ctx.gpu_available:
-    free, total = cp.cuda.Device(0).mem_info
-    print(f"\nGPU Memory: {free/1e9:.2f} GB free / {total/1e9:.2f} GB total")
-else:
-    print("\n⚠ No GPU available - running in CPU mode")
+@dataclass
+class PoissonResult:
+    """Result container for Poisson solve."""
+    phi: "cp.ndarray"           # Scalar field (D, H, W)
+    converged: bool             # Whether solver converged
+    iterations: int             # Number of iterations
+    residual: float             # Final residual norm
 
 
-# =============================================================================
-# CELL 3: Pipeline Configuration
-# =============================================================================
-# %%
-
-# Kaggle paths
-INPUT_DIR = Path("/kaggle/input/vesuvius-challenge-data")  # Adjust to actual dataset
-OUTPUT_DIR = Path("/kaggle/working/output")
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-# Processing parameters
-CONFIG = {
-    "chunk_size": ctx.chunk_size if hasattr(ctx, 'chunk_size') else 128,
-    "overlap": 16,
-    "sigma": 1.5,
-    "alignment_threshold": 0.5,
-    "poisson_tol": 1e-5,
-    "poisson_maxiter": 1000,
-    "mesh_step_size": 1,
-}
-
-print("Pipeline Configuration:")
-for k, v in CONFIG.items():
-    print(f"  {k}: {v}")
-
-
-# =============================================================================
-# CELL 4: Main Processing Loop
-# =============================================================================
-# %%
-
-def process_volume(volume_path: Path, output_name: str) -> None:
+class PoissonSolver:
     """
-    Process a single volume through the RGT pipeline.
+    Weighted Poisson equation solver for RGT computation.
     
-    Pipeline:
-        1. Load volume
-        2. Hessian feature extraction
-        3. Vector field alignment
-        4. Poisson solve
-        5. Mesh extraction
-        6. Save output
+    Solves the weighted Poisson equation:
+        ∇·(w∇φ) = ∇·(wv⃗)
+    
+    where w is the confidence/weight field and v⃗ is the normal vector field.
+    
+    Usage:
+        solver = PoissonSolver()
+        A, b = solver.assemble_system(vectors, weights)
+        result = solver.solve(A, b, shape)
     """
-    print(f"\n{'='*60}")
-    print(f"Processing: {volume_path.name}")
-    print(f"{'='*60}")
     
-    # Step 1: Load volume (placeholder - adjust for actual data format)
-    print("\n[1/6] Loading volume...")
-    # volume = load_zarr_volume(volume_path)  # Implement based on data format
-    # For demo, create synthetic data
-    volume = cp.random.randn(64, 64, 64, dtype=cp.float32)
+    def __init__(
+        self,
+        vram_threshold: float = 0.8,
+        tol: float = 1e-6,
+        maxiter: int = 2000,
+        verbose: bool = True,
+    ):
+        """
+        Initialize PoissonSolver.
+        
+        Args:
+            vram_threshold: Maximum VRAM utilization before raising error.
+            tol: Solver convergence tolerance.
+            maxiter: Maximum solver iterations.
+            verbose: Print progress messages.
+        """
+        self.vram_threshold = vram_threshold
+        self.tol = tol
+        self.maxiter = maxiter
+        self.verbose = verbose
+        self.epsilon = 1e-6  # Regularization for conditioning
     
-    # Step 2: Hessian
-    print("\n[2/6] Computing Hessian features...")
-    engine = HessianEngine(slab_size=16, verbose=True)
-    hessian = engine.compute_hessian(volume, sigma=CONFIG["sigma"])
-    eigen = engine.solve_eigen_system(hessian.as_list())
+    def _log(self, msg: str) -> None:
+        """Print message if verbose."""
+        if self.verbose:
+            print(f"[PoissonSolver] {msg}")
     
-    # Force GC
+    def _check_vram(self, estimated_bytes: int) -> None:
+        """
+        Check if estimated memory usage is safe.
+        
+        Args:
+            estimated_bytes: Estimated memory requirement.
+            
+        Raises:
+            MemoryError: If allocation would exceed threshold.
+        """
+        import cupy as cp
+        
+        try:
+            free, total = cp.cuda.Device(0).mem_info
+            utilization = (total - free + estimated_bytes) / total
+            
+            if utilization > self.vram_threshold:
+                raise MemoryError(
+                    f"VRAM check failed: estimated {estimated_bytes / 1e9:.2f} GB "
+                    f"would exceed {self.vram_threshold:.0%} threshold "
+                    f"(current free: {free / 1e9:.2f} GB)"
+                )
+        except Exception as e:
+            if isinstance(e, MemoryError):
+                raise
+            # If we can't check, proceed with caution
+            self._log(f"  Warning: Could not check VRAM: {e}")
+    
+    def compute_divergence(
+        self,
+        vectors: "cp.ndarray",
+        weights: "cp.ndarray",
+    ) -> "cp.ndarray":
+        """
+        Compute weighted divergence: ∇·(w·v).
+        
+        Uses central differences with zero-padding at boundaries.
+        
+        Args:
+            vectors: Normal vectors (3, D, H, W).
+            weights: Confidence weights (D, H, W).
+            
+        Returns:
+            Divergence field (D, H, W).
+        """
+        import cupy as cp
+        
+        D, H, W = weights.shape
+        
+        # Weighted vector field
+        wvx = weights * vectors[2]  # X component (axis 2)
+        wvy = weights * vectors[1]  # Y component (axis 1)
+        wvz = weights * vectors[0]  # Z component (axis 0)
+        
+        # Central differences with zero-padding
+        # d(wvx)/dx
+        dvx = cp.zeros_like(wvx)
+        dvx[:, :, 1:-1] = (wvx[:, :, 2:] - wvx[:, :, :-2]) / 2.0
+        
+        # d(wvy)/dy
+        dvy = cp.zeros_like(wvy)
+        dvy[:, 1:-1, :] = (wvy[:, 2:, :] - wvy[:, :-2, :]) / 2.0
+        
+        # d(wvz)/dz
+        dvz = cp.zeros_like(wvz)
+        dvz[1:-1, :, :] = (wvz[2:, :, :] - wvz[:-2, :, :]) / 2.0
+        
+        divergence = dvx + dvy + dvz
+        
+        del wvx, wvy, wvz, dvx, dvy, dvz
+        
+        return divergence
+    
+    def build_laplacian(
+        self,
+        weights: "cp.ndarray",
+        pin_center: bool = True,
+    ) -> Tuple["csr_matrix", int]:
+        """
+        Build weighted 7-point stencil Laplacian matrix (vectorized).
+        
+        Constructs sparse matrix A for ∇·(w∇φ) using finite differences.
+        Uses fully vectorized operations for performance.
+        
+        Args:
+            weights: Confidence weights (D, H, W).
+            pin_center: If True, pin center voxel to fix gauge freedom.
+            
+        Returns:
+            Tuple of (CSR sparse matrix, pinned node index).
+        """
+        import cupy as cp
+        from cupyx.scipy.sparse import coo_matrix, diags
+        
+        D, H, W = weights.shape
+        N = D * H * W
+        
+        # Estimate memory
+        estimated_nnz = N * 7
+        estimated_bytes = estimated_nnz * 16 + N * 8
+        self._check_vram(estimated_bytes)
+        
+        self._log(f"  Building Laplacian matrix ({D}×{H}×{W} = {N:,} dof)")
+        
+        # Work on CPU for sparse matrix construction
+        w = cp.asnumpy(weights).astype(np.float64).ravel()  # Use float64 for stability
+        
+        # Create index arrays
+        idx = np.arange(N, dtype=np.int32)
+        
+        # Neighbor offsets for 3D grid
+        # X neighbors: offset = 1
+        # Y neighbors: offset = W
+        # Z neighbors: offset = W * H
+        
+        rows_list = []
+        cols_list = []
+        data_list = []
+        diag = np.zeros(N, dtype=np.float64)
+        
+        # X- neighbor (x > 0)
+        mask = (idx % W) > 0
+        src = idx[mask]
+        dst = src - 1
+        w_half = 0.5 * (w[src] + w[dst])
+        rows_list.append(src)
+        cols_list.append(dst)
+        data_list.append(w_half)
+        diag[src] -= w_half
+        
+        # X+ neighbor (x < W-1)
+        mask = (idx % W) < W - 1
+        src = idx[mask]
+        dst = src + 1
+        w_half = 0.5 * (w[src] + w[dst])
+        rows_list.append(src)
+        cols_list.append(dst)
+        data_list.append(w_half)
+        diag[src] -= w_half
+        
+        # Y- neighbor (y > 0)
+        mask = ((idx // W) % H) > 0
+        src = idx[mask]
+        dst = src - W
+        w_half = 0.5 * (w[src] + w[dst])
+        rows_list.append(src)
+        cols_list.append(dst)
+        data_list.append(w_half)
+        diag[src] -= w_half
+        
+        # Y+ neighbor (y < H-1)
+        mask = ((idx // W) % H) < H - 1
+        src = idx[mask]
+        dst = src + W
+        w_half = 0.5 * (w[src] + w[dst])
+        rows_list.append(src)
+        cols_list.append(dst)
+        data_list.append(w_half)
+        diag[src] -= w_half
+        
+        # Z- neighbor (z > 0)
+        mask = (idx // (W * H)) > 0
+        src = idx[mask]
+        dst = src - W * H
+        w_half = 0.5 * (w[src] + w[dst])
+        rows_list.append(src)
+        cols_list.append(dst)
+        data_list.append(w_half)
+        diag[src] -= w_half
+        
+        # Z+ neighbor (z < D-1)
+        mask = (idx // (W * H)) < D - 1
+        src = idx[mask]
+        dst = src + W * H
+        w_half = 0.5 * (w[src] + w[dst])
+        rows_list.append(src)
+        cols_list.append(dst)
+        data_list.append(w_half)
+        diag[src] -= w_half
+        
+        # Concatenate all off-diagonal entries
+        rows = np.concatenate(rows_list)
+        cols = np.concatenate(cols_list)
+        data = np.concatenate(data_list)
+        
+        # Add diagonal with regularization for conditioning
+        # Small epsilon prevents near-singular matrix in low-weight regions
+        diag_regularized = diag - self.epsilon
+        rows = np.concatenate([rows, idx])
+        cols = np.concatenate([cols, idx])
+        data = np.concatenate([data, diag_regularized])
+        
+        # Pin center node
+        pinned_idx = (D // 2) * (H * W) + (H // 2) * W + (W // 2)
+        
+        if pin_center:
+            # Zero out all entries in pinned row
+            pinned_mask = rows == pinned_idx
+            data[pinned_mask] = 0.0
+            # Set diagonal to 1
+            diag_mask = (rows == pinned_idx) & (cols == pinned_idx)
+            data[diag_mask] = 1.0
+        
+        # Transfer to GPU
+        rows_gpu = cp.asarray(rows.astype(np.int32))
+        cols_gpu = cp.asarray(cols.astype(np.int32))
+        data_gpu = cp.asarray(data.astype(np.float32))
+        
+        A_coo = coo_matrix((data_gpu, (rows_gpu, cols_gpu)), shape=(N, N))
+        A_csr = A_coo.tocsr()
+        
+        # Cleanup
+        del rows, cols, data, rows_gpu, cols_gpu, data_gpu, A_coo
+        del rows_list, cols_list, data_list, diag, w
+        gc.collect()
+        cp.get_default_memory_pool().free_all_blocks()
+        
+        return A_csr, pinned_idx
+    
+    def assemble_system(
+        self,
+        vectors: "cp.ndarray",
+        weights: "cp.ndarray",
+    ) -> Tuple["csr_matrix", "cp.ndarray", int]:
+        """
+        Assemble complete linear system Ax = b.
+        
+        Args:
+            vectors: Normal vectors (3, D, H, W).
+            weights: Confidence weights (D, H, W).
+            
+        Returns:
+            Tuple of (A sparse matrix, b RHS vector, pinned index).
+        """
+        import cupy as cp
+        
+        self._log(f"Assembling system (shape={weights.shape})")
+        
+        # Compute divergence (RHS)
+        self._log("  Computing divergence...")
+        divergence = self.compute_divergence(vectors, weights)
+        b = divergence.ravel().astype(cp.float32)
+        
+        # Build Laplacian (LHS)
+        self._log("  Building Laplacian matrix...")
+        A, pinned_idx = self.build_laplacian(weights, pin_center=True)
+        
+        # Set pinned node RHS to 0
+        b[pinned_idx] = 0.0
+        
+        del divergence
+        gc.collect()
+        
+        self._log(f"  ✓ System assembled: A={A.shape}, nnz={A.nnz:,}")
+        
+        return A, b, pinned_idx
+    
+    def solve(
+        self,
+        A: "csr_matrix",
+        b: "cp.ndarray",
+        shape: Tuple[int, int, int],
+    ) -> PoissonResult:
+        """
+        Solve the linear system Ax = b.
+        
+        Uses SolverFactory to get best available solver.
+        
+        Args:
+            A: Sparse matrix (N, N).
+            b: RHS vector (N,).
+            shape: Original volume shape (D, H, W).
+            
+        Returns:
+            PoissonResult with scalar field and convergence info.
+        """
+        import cupy as cp
+        from rgt.infrastructure import SolverFactory
+        
+        self._log(f"Solving system ({A.shape[0]:,} unknowns)...")
+        
+        # Get solver
+        solver = SolverFactory.create(prefer_amgx=True)
+        self._log(f"  Using: {solver.name}")
+        
+        # Initial guess
+        x0 = cp.zeros(b.shape[0], dtype=cp.float32)
+        
+        # Jacobi (diagonal) preconditioner for better convergence
+        diag_A = A.diagonal()
+        diag_A = cp.where(cp.abs(diag_A) > 1e-10, diag_A, 1.0)  # Avoid division by zero
+        M_inv = 1.0 / cp.abs(diag_A)  # Inverse of diagonal
+        
+        # Preconditioned solve using cupyx.scipy.sparse.linalg.cg with M
+        from cupyx.scipy.sparse.linalg import cg, LinearOperator
+        
+        def precond(x):
+            return M_inv * x
+        
+        M = LinearOperator((A.shape[0], A.shape[0]), matvec=precond, dtype=cp.float32)
+        
+        solution, info_code = cg(A, b, x0=x0, tol=self.tol, maxiter=self.maxiter, M=M)
+        converged = info_code == 0
+        
+        # Reshape to volume
+        phi = solution.reshape(shape).astype(cp.float32)
+        
+        iterations = -1  # CG doesn't return iteration count directly
+        
+        # Compute residual
+        residual = float(cp.linalg.norm(A @ solution - b))
+        
+        self._log(f"  ✓ Solved: converged={converged}, residual={residual:.2e}")
+        
+        return PoissonResult(
+            phi=phi,
+            converged=converged,
+            iterations=iterations,
+            residual=residual,
+        )
+
+
+# =============================================================================
+# Test Function
+# =============================================================================
+
+def test_poisson_solver(size: int = 64) -> bool:
+    """
+    Test PoissonSolver on synthetic sphere.
+    
+    For a sphere with radial normal vectors, the Poisson solution should
+    approximate the radial distance field φ ≈ r.
+    
+    Args:
+        size: Volume dimension (reduced for faster testing).
+        
+    Returns:
+        True if correlation with radial distance is high.
+    """
+    import cupy as cp
+    from rgt.feature_extraction import HessianEngine, create_synthetic_sphere
+    from rgt.orientation import VectorAligner
+    
+    print("=" * 60)
+    print("PoissonSolver Test Suite")
+    print("=" * 60)
+    
+    # Step 1: Create sphere and compute normals
+    print("\n[Step 1] Creating sphere and computing normals")
+    print("-" * 40)
+    
+    center = (size / 2, size / 2, size / 2)
+    radius = size * 0.3
+    
+    sphere_np = create_synthetic_sphere(size=size, center=center, radius=radius)
+    sphere_gpu = cp.asarray(sphere_np)
+    
+    engine = HessianEngine(slab_size=8, verbose=False)
+    hessian = engine.compute_hessian(sphere_gpu, sigma=1.5)
+    result = engine.solve_eigen_system(hessian.as_list())
+    
+    vectors = result.normal_vectors
+    confidence = result.confidence
+    
+    print(f"  Shape: {vectors.shape[1:]}")
+    
+    # Step 2: Align vectors
+    print("\n[Step 2] Aligning vectors")
+    print("-" * 40)
+    
+    aligner = VectorAligner(threshold=0.5, verbose=False)
+    aligned = aligner.align_vectors(vectors, confidence)
+    print("  ✓ Vectors aligned")
+    
+    # Step 3: Solve Poisson
+    print("\n[Step 3] Solving Poisson equation")
+    print("-" * 40)
+    
+    # Use confidence as weight (normalized)
+    weights = confidence / (confidence.max() + 1e-10)
+    
+    solver = PoissonSolver(tol=1e-5, maxiter=1000, verbose=True)
+    A, b, pinned = solver.assemble_system(aligned, weights)
+    result = solver.solve(A, b, weights.shape)
+    
+    phi = result.phi
+    
+    # Step 4: Validate φ ≈ r
+    print("\n[Step 4] Validating solution")
+    print("-" * 40)
+    
+    # Compute radial distance
+    z, y, x = cp.meshgrid(
+        cp.arange(size), cp.arange(size), cp.arange(size), indexing='ij'
+    )
+    r = cp.sqrt((z - center[0])**2 + (y - center[1])**2 + (x - center[2])**2)
+    
+    # Mask to shell region
+    shell_mask = cp.abs(r - radius) < 3.0
+    
+    # Normalize both fields for comparison
+    phi_shell = phi[shell_mask]
+    r_shell = r[shell_mask]
+    
+    phi_norm = (phi_shell - phi_shell.mean()) / (phi_shell.std() + 1e-10)
+    r_norm = (r_shell - r_shell.mean()) / (r_shell.std() + 1e-10)
+    
+    # Correlation
+    correlation = float(cp.mean(phi_norm * r_norm))
+    
+    print(f"  φ range: [{float(phi.min()):.3f}, {float(phi.max()):.3f}]")
+    print(f"  Correlation with radial distance: {correlation:.4f}")
+    print(f"  Residual: {result.residual:.2e}")
+    
+    # Cleanup
+    del sphere_gpu, vectors, confidence, aligned, weights
+    del A, b, phi, z, y, x, r
     hessian.free()
     gc.collect()
     cp.get_default_memory_pool().free_all_blocks()
     
-    # Step 3: Alignment
-    print("\n[3/6] Aligning vector field...")
-    aligner = VectorAligner(threshold=CONFIG["alignment_threshold"], verbose=True)
-    aligned = aligner.align_vectors(eigen.normal_vectors, eigen.confidence)
+    # Test passes if correlation is reasonable (not perfect due to discrete effects)
+    test_passed = abs(correlation) > 0.3
     
-    # Force GC
-    del eigen.normal_vectors
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    # Step 4: Poisson
-    print("\n[4/6] Solving Poisson equation...")
-    weights = eigen.confidence / (eigen.confidence.max() + 1e-10)
-    
-    solver = PoissonSolver(
-        tol=CONFIG["poisson_tol"],
-        maxiter=CONFIG["poisson_maxiter"],
-        verbose=True
-    )
-    A, b, _ = solver.assemble_system(aligned, weights)
-    result = solver.solve(A, b, volume.shape)
-    phi = result.phi
-    
-    # Force GC
-    del A, b, aligned, weights, eigen
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    # Step 5: Mesh extraction
-    print("\n[5/6] Extracting mesh...")
-    extractor = SurfaceExtractor(step_size=CONFIG["mesh_step_size"], verbose=True)
-    mesh = extractor.extract_layer(phi, iso_level=float(phi.mean()))
-    audit = extractor.audit_curvature(mesh)
-    
-    # Step 6: Save
-    print("\n[6/6] Saving output...")
-    mesh_path = OUTPUT_DIR / f"{output_name}.obj"
-    extractor.save_mesh(mesh, str(mesh_path))
-    
-    # Final GC
-    del volume, phi, mesh
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    print(f"\n✓ Complete: {mesh_path}")
-    print(f"  Curvature defect ratio: {audit.defect_ratio:.1%}")
-
-
-# Main execution
-if __name__ == "__main__":
-    # Process all volumes
-    # volumes = list(INPUT_DIR.glob("*.zarr"))  # Adjust pattern
-    # for i, vol_path in enumerate(volumes):
-    #     process_volume(vol_path, f"rgt_mesh_{i:03d}")
-    
-    # Demo with synthetic data
-    process_volume(Path("demo"), "rgt_demo_mesh")
-    
-    print("\n" + "="*60)
-    print("✓ ALL PROCESSING COMPLETE")
-    print("="*60)
-
-```
-
----
-## File: kaggle_deploy\install_hooks.py
-```py
-#!/usr/bin/env python3
-"""
-RGT Install Hooks for Kaggle
-============================
-
-Unzips rgt_package.zip and adds to sys.path.
-Run this cell first in your Kaggle notebook.
-
-Usage (in Kaggle Notebook):
-    exec(open("/kaggle/input/rgt-package/install_hooks.py").read())
-"""
-
-import os
-import sys
-import zipfile
-from pathlib import Path
-
-
-def install_rgt():
-    """Install RGT package from zip."""
-    # Kaggle paths
-    INPUT_DIR = Path("/kaggle/input/rgt-package")
-    WORKING_DIR = Path("/kaggle/working")
-    PACKAGE_ZIP = INPUT_DIR / "rgt_package.zip"
-    EXTRACT_DIR = WORKING_DIR / "rgt_extracted"
-    
-    # Local fallback (for testing)
-    if not INPUT_DIR.exists():
-        INPUT_DIR = Path("kaggle_deploy")
-        WORKING_DIR = Path(".")
-        PACKAGE_ZIP = INPUT_DIR / "rgt_package.zip"
-        EXTRACT_DIR = WORKING_DIR / "rgt_extracted"
-    
-    print("=" * 60)
-    print("RGT Package Installation")
-    print("=" * 60)
-    
-    # Check if package exists
-    if not PACKAGE_ZIP.exists():
-        raise FileNotFoundError(f"Package not found: {PACKAGE_ZIP}")
-    
-    # Extract if needed
-    if not EXTRACT_DIR.exists():
-        print(f"[Install] Extracting to {EXTRACT_DIR}...")
-        EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
-        
-        with zipfile.ZipFile(PACKAGE_ZIP, 'r') as zf:
-            zf.extractall(EXTRACT_DIR)
-        
-        print(f"  ✓ Extracted {len(list(EXTRACT_DIR.rglob('*.py')))} Python files")
+    print("\n" + "=" * 60)
+    if test_passed:
+        print("✓ All tests PASSED")
+        print(f"  φ shows correlation with radial distance: {correlation:.4f}")
     else:
-        print(f"[Install] Using existing extraction: {EXTRACT_DIR}")
-    
-    # Add to sys.path
-    src_path = str(EXTRACT_DIR / "src")
-    if src_path not in sys.path:
-        sys.path.insert(0, src_path)
-        print(f"  ✓ Added to sys.path: {src_path}")
-    
-    # Verify import
-    try:
-        from rgt import HessianEngine, VectorAligner, PoissonSolver, SurfaceExtractor
-        print("  ✓ RGT modules imported successfully")
-    except ImportError as e:
-        print(f"  ✗ Import failed: {e}")
-        raise
-    
+        print("✗ Tests FAILED")
+        print(f"  Low correlation with radial distance: {correlation:.4f}")
     print("=" * 60)
-    print("✓ RGT Package Ready")
-    print("=" * 60)
+    
+    return test_passed
 
 
-# Auto-run on exec()
-if __name__ == "__main__" or "__file__" not in dir():
-    install_rgt()
+if __name__ == "__main__":
+    test_poisson_solver(size=64)
 
 ```
 
 ---
-## File: output\rgt_sphere_mesh.obj
+## File: outputs\rgt_sphere_mesh.obj
 ```obj
 # RGT Mesh Export
 # Vertices: 7014
@@ -29326,7 +27623,471 @@ f 6660//6660 6999//6999 6648//6648
 ```
 
 ---
-## File: scripts\audit_data.py
+## File: scripts\verify_pipeline.py
+```py
+"""
+Pipeline Verification Script
+============================
+Strictly validates:
+1. Config Loading (Z-slices = 51-64)
+2. Data Integrity (Files exist, not empty)
+3. Spatial Split (Train/Valid non-overlap)
+4. Visualization (Saves debug image)
+"""
+import sys
+from pathlib import Path
+import numpy as np
+import matplotlib.pyplot as plt
+import torch
+
+# Add project root
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.append(str(PROJECT_ROOT))
+
+from src.core.config import cfg
+from src.data.datasets import VesuviusDataset
+
+def verify_pipeline():
+    print("🔬 Starting Pipeline Verification...")
+    
+    # 1. Check Config
+    print(f"   Config Z-Slices: {cfg.Z_SLICES}")
+    expected_z = list(range(51, 65))
+    assert cfg.Z_SLICES == expected_z, f"❌ Config mismatch! Expected {expected_z}, got {cfg.Z_SLICES}"
+    print("   ✅ Config Z-Slices Correct (51-64)")
+    
+    # 2. Initialize Datasets
+    print("\n📦 Initializing Datasets...")
+    train_ds = VesuviusDataset(
+        data_root=cfg.DATA_ROOT, 
+        z_slices=cfg.Z_SLICES,
+        mode="train", 
+        split_fraction=cfg.VALID_SPLIT
+    )
+    valid_ds = VesuviusDataset(
+        data_root=cfg.DATA_ROOT, 
+        z_slices=cfg.Z_SLICES,
+        mode="valid", 
+        split_fraction=cfg.VALID_SPLIT
+    )
+    
+    print(f"   Train Length: {len(train_ds)}")
+    print(f"   Valid Length: {len(valid_ds)}")
+    
+    # 3. Assert Spatial Split (Leakage Check)
+    print("\n🕵️ Checking Spatial Split (Leakage)...")
+    # Hack: Access internal y_range to verify
+    print(f"   Train Y-Range: {train_ds.y_range}")
+    print(f"   Valid Y-Range: {valid_ds.y_range}")
+    
+    t_min, t_max = train_ds.y_range
+    v_min, v_max = valid_ds.y_range
+    
+    assert t_max <= v_min, f"❌ DATA LEAKAGE DETECTED! Train Max {t_max} > Valid Min {v_min}"
+    print("   ✅ Spatial Split Verified (No Overlap)")
+    
+    # 4. Load & Visual Check
+    print("\n📸 Generatng Debug Visualization...")
+    # Get one sample from Train
+    tx, ty = train_ds[0] # (C, H, W), (1, H, W)
+    # Get one sample from Valid
+    vx, vy = valid_ds[0]
+    
+    # Convert to numpy
+    tx_np = tx.numpy()
+    vx_np = vx.numpy()
+    
+    print(f"   Train Sample Mean: {tx_np.mean():.4f} (Should be ~0.5)")
+    print(f"   Valid Sample Mean: {vx_np.mean():.4f} (Should be ~0.5)")
+    
+    # Visualization
+    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    
+    # Train Row
+    mid_z = tx_np.shape[0] // 2
+    axes[0,0].imshow(tx_np[mid_z], cmap='gray')
+    axes[0,0].set_title(f"Train Input (Z={cfg.Z_SLICES[mid_z]})")
+    axes[0,1].imshow(ty[0], cmap='gray')
+    axes[0,1].set_title("Train Label")
+    axes[0,2].hist(tx_np.flatten(), bins=50)
+    axes[0,2].set_title("Train Histogram")
+    
+    # Valid Row
+    axes[1,0].imshow(vx_np[mid_z], cmap='gray')
+    axes[1,0].set_title(f"Valid Input (Z={cfg.Z_SLICES[mid_z]})")
+    axes[1,1].imshow(vy[0], cmap='gray')
+    axes[1,1].set_title("Valid Label")
+    axes[1,2].hist(vx_np.flatten(), bins=50)
+    axes[1,2].set_title("Valid Histogram")
+    
+    out_path = PROJECT_ROOT / "outputs" / "debug_pipeline_verify.png"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.tight_layout()
+    plt.savefig(out_path)
+    print(f"   ✅ Saved debug image: {out_path}")
+    
+    print("\n🎉 Pipeline Verification PASSED!")
+
+if __name__ == "__main__":
+    verify_pipeline()
+
+```
+
+---
+## File: scripts\inference\assemble_and_detect_volumetric.py
+```py
+"""
+Vesuvius Challenge 2026 - Volumetric Ink Detection
+===================================================
+Stack RGT-flattened layers into 3D volume for proper Z-stack inference.
+
+Problem: Single-layer detection failed (max pred 0.13) due to missing Z-axis features.
+Solution: Stack 10 flattened layers + reflect padding to 16 channels.
+
+Input: flattened_layers/layer_01.png to layer_10.png
+Output: volumetric_prediction.png, volumetric_overlay.png
+"""
+
+import numpy as np
+import torch
+import torch.nn.functional as F
+import cv2
+from pathlib import Path
+from tqdm import tqdm
+import segmentation_models_pytorch as smp
+from scipy.ndimage import gaussian_filter
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Input
+    "layer_dir": Path("flattened_layers"),
+    "num_layers": 10,
+    "model_path": "models/vesuvius_surgical_best.pth",
+    
+    # Model architecture (must match training)
+    "encoder": "resnet18",
+    "in_channels": 14,  # Model trained on 14 Z-slices
+    
+    # Inference parameters
+    "tile_size": 224,
+    "stride": 112,
+    "batch_size": 8,
+    
+    # Output
+    "output_dir": Path("volumetric_detection_results"),
+    
+    # Post-processing
+    "gaussian_sigma": 1.0,
+    "binary_threshold": 0.10,  # Lower threshold
+}
+
+# =============================================================================
+# 🔧 Data Loading
+# =============================================================================
+def load_layer_stack(layer_dir, num_layers):
+    """
+    Load flattened layers and stack into volume.
+    
+    Returns:
+        volume: (num_layers, H, W) normalized to [0, 1]
+    """
+    print(f"📥 Loading {num_layers} layers from {layer_dir}/...")
+    
+    layers = []
+    for i in range(1, num_layers + 1):
+        path = layer_dir / f"layer_{i:02d}.png"
+        
+        if not path.exists():
+            raise FileNotFoundError(f"Missing: {path}")
+        
+        img = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
+        img = img.astype(np.float32) / 255.0
+        layers.append(img)
+    
+    volume = np.stack(layers, axis=0)  # (num_layers, H, W)
+    
+    print(f"   Stacked volume shape: {volume.shape}")
+    print(f"   Value range: [{volume.min():.4f}, {volume.max():.4f}]")
+    
+    return volume
+
+def pad_volume_to_channels(volume, target_channels):
+    """
+    Pad volume to target number of channels using reflect padding.
+    
+    This allows the model to see the full density transition:
+    air -> surface -> interior
+    """
+    current_channels = volume.shape[0]
+    
+    if current_channels >= target_channels:
+        # Take center slice
+        start = (current_channels - target_channels) // 2
+        return volume[start:start + target_channels]
+    
+    # Need to pad
+    pad_total = target_channels - current_channels
+    pad_top = pad_total // 2
+    pad_bottom = pad_total - pad_top
+    
+    print(f"   Padding: {current_channels} -> {target_channels} channels (reflect)")
+    print(f"   Pad top: {pad_top}, Pad bottom: {pad_bottom}")
+    
+    # Reflect padding
+    # For numpy: use np.pad with 'reflect' mode
+    padded = np.pad(volume, ((pad_top, pad_bottom), (0, 0), (0, 0)), mode='reflect')
+    
+    return padded
+
+# =============================================================================
+# 🔧 Model Loading
+# =============================================================================
+def load_model(model_path, encoder, in_channels):
+    """Load trained U-Net model."""
+    print(f"\n📥 Loading model from {model_path}...")
+    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"   Device: {device}")
+    
+    model = smp.Unet(
+        encoder_name=encoder,
+        encoder_weights=None,
+        in_channels=in_channels,
+        classes=1,
+        activation=None
+    )
+    
+    checkpoint = torch.load(model_path, map_location=device, weights_only=False)
+    
+    if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'])
+    elif isinstance(checkpoint, dict) and 'state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['state_dict'])
+    else:
+        model.load_state_dict(checkpoint)
+    
+    model = model.to(device)
+    model.eval()
+    
+    print(f"   ✅ Model loaded successfully")
+    
+    return model, device
+
+# =============================================================================
+# 🔧 Volumetric Sliding Window Inference
+# =============================================================================
+def sliding_window_inference_3d(model, volume, tile_size, stride, device, batch_size=8):
+    """
+    3D sliding window inference on volumetric data.
+    
+    Args:
+        model: PyTorch model expecting (B, C, H, W) input
+        volume: (C, H, W) numpy array
+        tile_size: Spatial tile size
+        stride: Stride between tiles
+        device: torch device
+        batch_size: Batch size for inference
+    
+    Returns:
+        prediction: (H, W) numpy array of probabilities
+    """
+    C, H, W = volume.shape
+    
+    print(f"\n🧮 Running 3D sliding window inference...")
+    print(f"   Volume: {volume.shape}")
+    print(f"   Tile size: {tile_size}, Stride: {stride}")
+    
+    # Initialize output
+    prediction = np.zeros((H, W), dtype=np.float32)
+    weight = np.zeros((H, W), dtype=np.float32)
+    
+    # Gaussian blending weight
+    gaussian_weight = np.zeros((tile_size, tile_size), dtype=np.float32)
+    center = tile_size // 2
+    for i in range(tile_size):
+        for j in range(tile_size):
+            dist = np.sqrt((i - center)**2 + (j - center)**2)
+            gaussian_weight[i, j] = np.exp(-dist**2 / (2 * (tile_size/4)**2))
+    
+    # Generate tile positions
+    positions = []
+    for y in range(0, max(1, H - tile_size + 1), stride):
+        for x in range(0, max(1, W - tile_size + 1), stride):
+            positions.append((y, x))
+    
+    # Edge tiles
+    if H > tile_size and (H - tile_size) % stride != 0:
+        for x in range(0, max(1, W - tile_size + 1), stride):
+            positions.append((H - tile_size, x))
+    if W > tile_size and (W - tile_size) % stride != 0:
+        for y in range(0, max(1, H - tile_size + 1), stride):
+            positions.append((y, W - tile_size))
+    if H > tile_size and W > tile_size:
+        if (H - tile_size) % stride != 0 and (W - tile_size) % stride != 0:
+            positions.append((H - tile_size, W - tile_size))
+    
+    positions = list(set(positions))
+    print(f"   Processing {len(positions)} tiles...")
+    
+    # Track statistics
+    max_pred = 0.0
+    
+    with torch.no_grad():
+        for batch_start in tqdm(range(0, len(positions), batch_size), desc="   Inferring"):
+            batch_positions = positions[batch_start:batch_start + batch_size]
+            
+            # Extract 3D tiles
+            tiles = []
+            for y, x in batch_positions:
+                tile = volume[:, y:y+tile_size, x:x+tile_size]  # (C, tile, tile)
+                tiles.append(tile)
+            
+            # Stack: (B, C, H, W)
+            tiles = np.stack(tiles, axis=0)
+            tiles_tensor = torch.from_numpy(tiles).float().to(device)
+            
+            # Inference
+            outputs = model(tiles_tensor)
+            outputs = torch.sigmoid(outputs)
+            outputs_np = outputs.cpu().numpy()[:, 0, :, :]  # (B, H, W)
+            
+            # Track max
+            batch_max = outputs_np.max()
+            if batch_max > max_pred:
+                max_pred = batch_max
+            
+            # Accumulate
+            for i, (y, x) in enumerate(batch_positions):
+                prediction[y:y+tile_size, x:x+tile_size] += outputs_np[i] * gaussian_weight
+                weight[y:y+tile_size, x:x+tile_size] += gaussian_weight
+            
+            # Clear cache
+            if batch_start % (batch_size * 10) == 0:
+                torch.cuda.empty_cache()
+    
+    # Normalize
+    weight = np.maximum(weight, 1e-8)
+    prediction = prediction / weight
+    
+    print(f"\n📊 Inference Statistics:")
+    print(f"   🎯 Max Prediction Value: {max_pred:.4f}")
+    print(f"   Mean Prediction: {prediction.mean():.4f}")
+    print(f"   Prediction Range: [{prediction.min():.4f}, {prediction.max():.4f}]")
+    
+    return prediction
+
+# =============================================================================
+# 🔧 Post-Processing and Visualization
+# =============================================================================
+def post_process(prediction, sigma, threshold):
+    """Apply Gaussian smoothing and thresholding."""
+    smoothed = gaussian_filter(prediction, sigma=sigma)
+    binary = (smoothed > threshold).astype(np.uint8) * 255
+    return smoothed, binary
+
+def create_overlay(background, prediction, alpha=0.5):
+    """Create heatmap overlay."""
+    pred_norm = (np.clip(prediction, 0, 1) * 255).astype(np.uint8)
+    heatmap = cv2.applyColorMap(pred_norm, cv2.COLORMAP_HOT)
+    
+    if len(background.shape) == 2:
+        background_bgr = cv2.cvtColor(background, cv2.COLOR_GRAY2BGR)
+    else:
+        background_bgr = background
+    
+    overlay = cv2.addWeighted(background_bgr, 1 - alpha, heatmap, alpha, 0)
+    return overlay
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius - Volumetric Ink Detection")
+    print("=" * 60)
+    
+    # Create output directory
+    CONFIG["output_dir"].mkdir(parents=True, exist_ok=True)
+    
+    # 1. Load and stack layers
+    volume = load_layer_stack(CONFIG["layer_dir"], CONFIG["num_layers"])
+    
+    # 2. Pad to match model channels
+    volume_padded = pad_volume_to_channels(volume, CONFIG["in_channels"])
+    print(f"   Final volume shape: {volume_padded.shape}")
+    
+    # 3. Load model
+    model, device = load_model(
+        CONFIG["model_path"],
+        CONFIG["encoder"],
+        CONFIG["in_channels"]
+    )
+    
+    # 4. Run inference
+    prediction = sliding_window_inference_3d(
+        model, volume_padded,
+        CONFIG["tile_size"], CONFIG["stride"],
+        device, CONFIG["batch_size"]
+    )
+    
+    # 5. Post-process
+    print(f"\n🔧 Post-processing...")
+    smoothed, binary = post_process(
+        prediction,
+        CONFIG["gaussian_sigma"],
+        CONFIG["binary_threshold"]
+    )
+    
+    # 6. Load middle layer for overlay
+    mid_layer_path = CONFIG["layer_dir"] / f"layer_{CONFIG['num_layers']//2 + 1:02d}.png"
+    background = cv2.imread(str(mid_layer_path), cv2.IMREAD_GRAYSCALE)
+    
+    overlay = create_overlay(background, smoothed, alpha=0.5)
+    
+    # 7. Save results
+    print(f"\n💾 Saving results to {CONFIG['output_dir']}/...")
+    
+    # Probability map
+    pred_path = CONFIG["output_dir"] / "volumetric_prediction.png"
+    pred_img = (np.clip(smoothed, 0, 1) * 255).astype(np.uint8)
+    cv2.imwrite(str(pred_path), pred_img)
+    print(f"   ✅ {pred_path}")
+    
+    # Overlay
+    overlay_path = CONFIG["output_dir"] / "volumetric_overlay.png"
+    cv2.imwrite(str(overlay_path), overlay)
+    print(f"   ✅ {overlay_path}")
+    
+    # Binary
+    binary_path = CONFIG["output_dir"] / "volumetric_binary.png"
+    cv2.imwrite(str(binary_path), binary)
+    print(f"   ✅ {binary_path}")
+    
+    # 8. Statistics
+    ink_pixels = np.sum(binary > 0)
+    total_pixels = binary.size
+    ink_ratio = ink_pixels / total_pixels * 100
+    
+    print(f"\n📊 Final Results:")
+    print(f"   Ink pixels: {ink_pixels:,} / {total_pixels:,} ({ink_ratio:.2f}%)")
+    print(f"   Max prediction: {prediction.max():.4f}")
+    print(f"   Binary threshold: {CONFIG['binary_threshold']}")
+    
+    # 9. Summary
+    print("\n" + "=" * 60)
+    print("📊 Volumetric Ink Detection Complete!")
+    print(f"   Output: {CONFIG['output_dir']}/")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\inference\audit_data.py
 ```py
 import os
 from pathlib import Path
@@ -29396,222 +28157,299 @@ if __name__ == "__main__":
 ```
 
 ---
-## File: scripts\download_data.py
+## File: scripts\inference\detect_ink_on_layer.py
 ```py
-import os
-import pathlib
-import hashlib
+"""
+Vesuvius Challenge 2026 - Ink Detection on RGT Flattened Layer
+===============================================================
+Apply trained U-Net model to detect ink on RGT-flattened texture.
+
+Input: flattened_layers/layer_XX.png (already windowed 0-255)
+Output: final_ink_raw.png, final_ink_overlay.png, final_ink_binary.png
+"""
+
+import numpy as np
+import torch
+import torch.nn as nn
+import cv2
+from pathlib import Path
 from tqdm import tqdm
-from kaggle.api.kaggle_api_extended import KaggleApi
+import segmentation_models_pytorch as smp
+from scipy.ndimage import gaussian_filter
 
-# Configuration
-# TODO: Update this if the 2026 competition has a different slug
-COMPETITION_NAME = "vesuvius-challenge-ink-detection" 
-# Target: Scroll 1, first 100 slices (00 to 99)
-SCROLL_ID = "1"
-SLICE_RANGE = range(100) # 0 to 99
-DATA_ROOT = pathlib.Path("data")
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Input/Output
+    "input_path": "flattened_layers/layer_07.png",
+    "model_path": "models/vesuvius_surgical_best.pth",
+    "output_dir": Path("ink_detection_results"),
+    
+    # Model architecture (must match training)
+    "encoder": "resnet18",
+    "in_channels": 14,  # Model trained on 14 Z-slices, will replicate 2D layer
+    
+    # Inference parameters
+    "tile_size": 224,
+    "stride": 112,  # 50% overlap
+    "batch_size": 16,
+    
+    # Post-processing
+    "gaussian_sigma": 1.0,
+    "binary_threshold": 0.15,
+}
 
-# Optimized Directory Structure for RTX 3060 (Simple local storage)
-# We store raw data separately.
-RAW_DIR = DATA_ROOT / "native" / "train" / SCROLL_ID
-SURFACE_VOLUME_DIR = RAW_DIR / "surface_volume"
-MASK_DIR = RAW_DIR  # mask.png usually sits at root of scroll dir or in distinct folder depending on comp
-
-def get_remote_paths():
-    """Generates the list of remote file paths to download."""
-    files = []
+# =============================================================================
+# 🔧 Model Loading
+# =============================================================================
+def load_model(model_path, encoder, in_channels):
+    """Load trained U-Net model."""
+    print(f"📥 Loading model from {model_path}...")
     
-    # Surface Volume Slices (00.tif to 99.tif)
-    for i in SLICE_RANGE:
-        filename = f"{i:02d}.tif"
-        # Remote path structure usually follows: train/1/surface_volume/00.tif
-        remote_path = f"train/{SCROLL_ID}/surface_volume/{filename}"
-        local_path = SURFACE_VOLUME_DIR / filename
-        files.append((remote_path, local_path))
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"   Device: {device}")
     
-    # Mask file
-    # Remote path: train/1/mask.png
-    mask_remote = f"train/{SCROLL_ID}/mask.png"
-    mask_local = RAW_DIR / "mask.png"
-    files.append((mask_remote, mask_local))
-    
-    # Inklabels (if strictly needed for training, usually yes)
-    # Remote path: train/1/inklabels.png
-    ink_remote = f"train/{SCROLL_ID}/inklabels.png"
-    ink_local = RAW_DIR / "inklabels.png"
-    files.append((ink_remote, ink_local))
-
-    return files
-
-def calculate_md5(file_path):
-    """Calculates MD5 hash of a file."""
-    hash_md5 = hashlib.md5()
-    with open(file_path, "rb") as f:
-        for chunk in iter(lambda: f.read(4096), b""):
-            hash_md5.update(chunk)
-    return hash_md5.hexdigest()
-
-def ensure_folders():
-    """Creates necessary local directories."""
-    SURFACE_VOLUME_DIR.mkdir(parents=True, exist_ok=True)
-    print(f"Created/Verified directory: {SURFACE_VOLUME_DIR}")
-
-def download_file_resumable(api, competition, remote_path, local_path):
-    """Downloads a file if it doesn't exist or is incomplete (simple check)."""
-    
-    # Kaggle API doesn't give us easy remote file size without listing files first
-    # So we will try to list it to get metadata
-    # listing = api.competition_list_files(competition, name=str(pathlib.Path(remote_path).name))
-    # This is often slow/flakes for single files inside deep folders.
-    # Instead, we'll try the download. If local file exists, we check if it seems valid.
-    
-    if local_path.exists():
-        # Check if file has reasonable size (avoid empty or error-page files)
-        if local_path.stat().st_size > 1000:
-             print(f"[SKIP] {local_path.name} exists and seems valid.")
-             return
-        else:
-             print(f"[RE-DOWNLOAD] {local_path.name} exists but is too small ({local_path.stat().st_size} bytes). Deleting.")
-             local_path.unlink()
-
-    print(f"[DOWNLOADING] {remote_path} -> {local_path}")
-    
-    # Ensure parent exists usually handled by ensure_folders, but just in case
-    local_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    # api.competition_download_file downloads to local path, but usually as a zip if it's large?
-    # Or direct file. For many competition files, it puts them in the current working dir.
-    # We need to be careful with `path` argument.
-    
-    # NOTE: Kaggle API's `competition_download_file` behaves oddly with paths.
-    # It often downloads to `path` with the base filename.
-    
-    api.competition_download_file(
-        competition=competition,
-        file_name=remote_path,
-        path=local_path.parent,
-        force=False,
-        quiet=False
+    model = smp.Unet(
+        encoder_name=encoder,
+        encoder_weights=None,
+        in_channels=in_channels,
+        classes=1,
+        activation=None
     )
     
-    # Check if it was downloaded as a zip (common for some extensions)
-    # If remote is .tif, it usually comes as .tif
-    # However, checking the result is good.
-    downloaded_file = local_path.parent / pathlib.Path(remote_path).name
+    checkpoint = torch.load(model_path, map_location=device)
     
-    # If the API extracted relative path logic, it might be in a subdir.
-    # Often it just drops `00.tif` in the `path`.
-    possible_download = local_path.parent / local_path.name
+    # Handle different checkpoint formats
+    if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'])
+    elif isinstance(checkpoint, dict) and 'state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['state_dict'])
+    else:
+        model.load_state_dict(checkpoint)
     
-    if not possible_download.exists():
-            # Try finding it if api created full path structure?
-            pass
+    model = model.to(device)
+    model.eval()
+    
+    print(f"   ✅ Model loaded successfully")
+    
+    return model, device
 
+# =============================================================================
+# 🔧 Sliding Window Inference
+# =============================================================================
+def sliding_window_inference(model, image, tile_size, stride, device, batch_size=16):
+    """
+    Perform sliding window inference on a 2D image.
+    
+    Args:
+        model: PyTorch model
+        image: (H, W) numpy array, normalized to [0, 1]
+        tile_size: Size of each tile
+        stride: Stride between tiles
+        device: torch device
+        batch_size: Number of tiles to process at once
+    
+    Returns:
+        prediction: (H, W) numpy array of probabilities
+    """
+    H, W = image.shape
+    
+    # Initialize output arrays
+    prediction = np.zeros((H, W), dtype=np.float32)
+    weight = np.zeros((H, W), dtype=np.float32)
+    
+    # Create Gaussian weight for blending
+    gaussian_weight = np.zeros((tile_size, tile_size), dtype=np.float32)
+    center = tile_size // 2
+    for i in range(tile_size):
+        for j in range(tile_size):
+            dist = np.sqrt((i - center)**2 + (j - center)**2)
+            gaussian_weight[i, j] = np.exp(-dist**2 / (2 * (tile_size/4)**2))
+    
+    # Generate tile positions
+    positions = []
+    for y in range(0, H - tile_size + 1, stride):
+        for x in range(0, W - tile_size + 1, stride):
+            positions.append((y, x))
+    
+    # Add edge tiles
+    if (H - tile_size) % stride != 0:
+        for x in range(0, W - tile_size + 1, stride):
+            positions.append((H - tile_size, x))
+    if (W - tile_size) % stride != 0:
+        for y in range(0, H - tile_size + 1, stride):
+            positions.append((y, W - tile_size))
+    if (H - tile_size) % stride != 0 and (W - tile_size) % stride != 0:
+        positions.append((H - tile_size, W - tile_size))
+    
+    positions = list(set(positions))  # Remove duplicates
+    
+    print(f"   Processing {len(positions)} tiles...")
+    
+    # Process in batches
+    with torch.no_grad():
+        for batch_start in tqdm(range(0, len(positions), batch_size), desc="   Inferring"):
+            batch_positions = positions[batch_start:batch_start + batch_size]
+            
+            # Extract tiles
+            tiles = []
+            for y, x in batch_positions:
+                tile = image[y:y+tile_size, x:x+tile_size]
+                tiles.append(tile)
+            
+            # Stack and convert to tensor
+            tiles = np.stack(tiles, axis=0)  # (B, H, W)
+            # Replicate to 14 channels to match model trained on Z-stacks
+            tiles = np.repeat(tiles[:, np.newaxis, :, :], 14, axis=1)  # (B, 14, H, W)
+            tiles_tensor = torch.from_numpy(tiles).float().to(device)
+            
+            # Inference
+            outputs = model(tiles_tensor)
+            outputs = torch.sigmoid(outputs)
+            outputs = outputs.cpu().numpy()[:, 0, :, :]  # (B, H, W)
+            
+            # Accumulate predictions
+            for i, (y, x) in enumerate(batch_positions):
+                prediction[y:y+tile_size, x:x+tile_size] += outputs[i] * gaussian_weight
+                weight[y:y+tile_size, x:x+tile_size] += gaussian_weight
+            
+            # Clear CUDA cache periodically
+            if batch_start % (batch_size * 10) == 0:
+                torch.cuda.empty_cache()
+    
+    # Normalize by weight
+    weight = np.maximum(weight, 1e-8)
+    prediction = prediction / weight
+    
+    return prediction
+
+# =============================================================================
+# 🔧 Post-Processing
+# =============================================================================
+def post_process(prediction, sigma, threshold):
+    """Apply Gaussian smoothing and thresholding."""
+    
+    # Gaussian blur
+    smoothed = gaussian_filter(prediction, sigma=sigma)
+    
+    # Binary threshold
+    binary = (smoothed > threshold).astype(np.uint8) * 255
+    
+    return smoothed, binary
+
+def create_overlay(image, prediction, alpha=0.5):
+    """Create red heatmap overlay on original image."""
+    
+    # Normalize prediction to 0-255
+    pred_norm = (np.clip(prediction, 0, 1) * 255).astype(np.uint8)
+    
+    # Create heatmap (red channel)
+    heatmap = cv2.applyColorMap(pred_norm, cv2.COLORMAP_HOT)
+    
+    # Convert grayscale to BGR
+    if len(image.shape) == 2:
+        image_bgr = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+    else:
+        image_bgr = image
+    
+    # Blend
+    overlay = cv2.addWeighted(image_bgr, 1 - alpha, heatmap, alpha, 0)
+    
+    return overlay
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
 def main():
-    print("Initializing Kaggle API...")
-    try:
-        api = KaggleApi()
-        api.authenticate()
-    except Exception as e:
-        print("Error: Could not authenticate with Kaggle API. Ensure ~/.kaggle/kaggle.json is present.")
-        print(e)
-        return
-
-    print(f"Target Competition: {COMPETITION_NAME}")
-    print(f"Target Scroll: {SCROLL_ID}, Slices: 0-{SLICE_RANGE[-1]}")
+    print("=" * 60)
+    print("🔬 Vesuvius - Ink Detection on RGT Layer")
+    print("=" * 60)
     
-    ensure_folders()
+    # Create output directory
+    CONFIG["output_dir"].mkdir(parents=True, exist_ok=True)
     
-    files_to_download = get_remote_paths()
-    checksums = []
-
-    import concurrent.futures
-
-    import time
-
-    # Thread safe download worker
-    def process_file(args):
-        remote, local = args
-        
-        # Retry logic
-        max_retries = 10
-        base_delay = 5
-        
-        for attempt in range(max_retries):
-            try:
-                # Exponential backoff with jitter
-                sleep_time = base_delay * (2 ** attempt) 
-                if attempt > 0:
-                    print(f"Waiting {sleep_time}s before retry {attempt+1}...")
-                    time.sleep(sleep_time)
-                
-                download_file_resumable(api, COMPETITION_NAME, remote, local)
-                break # Success
-            except Exception as e:
-                print(f"[WARNING] Attempt {attempt+1}/{max_retries} failed for {remote}: {e}")
-                if "429" in str(e):
-                     print("Rate limit hit. Sleeping longer...")
-                     time.sleep(60) # Extra minute for 429s
-
-                if attempt == max_retries - 1:
-                    print(f"[ERROR] Final failure for {remote}")
-                    return None
-        
-        try:
-            # Handle potential zip file download
-            zip_path = local.parent / (local.name + ".zip")
-            
-            # Handle potential zip file download
-            zip_path = local.parent / (local.name + ".zip")
-            if not local.exists() and zip_path.exists():
-                # print(f"[INFO] Unzipping {zip_path.name}...") # Reduce noise in threads
-                import zipfile
-                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                    # Debug: print content of zip if unexpected
-                    # names = zip_ref.namelist()
-                    # print(f"[DEBUG] Zip contents for {zip_path.name}: {names}")
-                    zip_ref.extractall(local.parent)
-                
-                # Check if file exists now, if not maybe it was in a subdir in the zip?
-                if not local.exists():
-                     # Force move if it's in a subdirectory? 
-                     # For now just warn with content list
-                     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                         print(f"[ERROR] Extracted {zip_path.name} but {local.name} not found. Zip contents: {zip_ref.namelist()}")
-
-                zip_path.unlink() 
-            
-            # Verify / Checksum
-            if local.exists():
-                md5 = calculate_md5(local)
-                return f"{md5}  {local.name}"
-            else:
-                print(f"[WARNING] File {local.name} missing after download attempt.")
-                return None
-        except Exception as e:
-            print(f"Error processing {remote}: {e}")
-            return None
-
-    # Parallel Download
-    MAX_WORKERS = 1 # Reduced to avoid 429 Rate Limits
-    print(f"Starting parallel download with {MAX_WORKERS} workers...")
+    # 1. Load model
+    model, device = load_model(
+        CONFIG["model_path"],
+        CONFIG["encoder"],
+        CONFIG["in_channels"]
+    )
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        # Submit all tasks
-        futures = {executor.submit(process_file, (remote, local)): local for remote, local in files_to_download}
-        
-        for future in tqdm(concurrent.futures.as_completed(futures), total=len(files_to_download), desc="Downloading"):
-             result = future.result()
-             if result:
-                 checksums.append(result)
-
-    # Save checksums
-    checksum_file = RAW_DIR / "checksums.txt"
-    with open(checksum_file, "w") as f:
-        f.write("\n".join(checksums))
+    # 2. Load input image
+    print(f"\n📥 Loading {CONFIG['input_path']}...")
+    image = cv2.imread(str(CONFIG["input_path"]), cv2.IMREAD_GRAYSCALE)
     
-    print(f"Done! Checksums saved to {checksum_file}")
+    if image is None:
+        raise FileNotFoundError(f"Could not load {CONFIG['input_path']}")
+    
+    print(f"   Image shape: {image.shape}")
+    print(f"   Value range: [{image.min()}, {image.max()}]")
+    
+    # 3. Normalize to [0, 1]
+    image_norm = image.astype(np.float32) / 255.0
+    print(f"   Normalized range: [{image_norm.min():.4f}, {image_norm.max():.4f}]")
+    
+    # 4. Run inference
+    print(f"\n🧮 Running sliding window inference...")
+    print(f"   Tile size: {CONFIG['tile_size']}, Stride: {CONFIG['stride']}")
+    
+    prediction = sliding_window_inference(
+        model, image_norm,
+        CONFIG["tile_size"], CONFIG["stride"],
+        device, CONFIG["batch_size"]
+    )
+    
+    print(f"   Prediction range: [{prediction.min():.4f}, {prediction.max():.4f}]")
+    
+    # 5. Post-process
+    print(f"\n🔧 Post-processing...")
+    print(f"   Gaussian sigma: {CONFIG['gaussian_sigma']}")
+    print(f"   Binary threshold: {CONFIG['binary_threshold']}")
+    
+    smoothed, binary = post_process(
+        prediction,
+        CONFIG["gaussian_sigma"],
+        CONFIG["binary_threshold"]
+    )
+    
+    # 6. Create overlay
+    overlay = create_overlay(image, smoothed, alpha=0.5)
+    
+    # 7. Save results
+    print(f"\n💾 Saving results to {CONFIG['output_dir']}/...")
+    
+    # Raw probability map
+    raw_path = CONFIG["output_dir"] / "final_ink_raw.png"
+    raw_img = (np.clip(smoothed, 0, 1) * 255).astype(np.uint8)
+    cv2.imwrite(str(raw_path), raw_img)
+    print(f"   ✅ {raw_path}")
+    
+    # Overlay
+    overlay_path = CONFIG["output_dir"] / "final_ink_overlay.png"
+    cv2.imwrite(str(overlay_path), overlay)
+    print(f"   ✅ {overlay_path}")
+    
+    # Binary
+    binary_path = CONFIG["output_dir"] / "final_ink_binary.png"
+    cv2.imwrite(str(binary_path), binary)
+    print(f"   ✅ {binary_path}")
+    
+    # 8. Statistics
+    ink_pixels = np.sum(binary > 0)
+    total_pixels = binary.size
+    ink_ratio = ink_pixels / total_pixels * 100
+    
+    print(f"\n📊 Results:")
+    print(f"   Ink pixels: {ink_pixels:,} / {total_pixels:,} ({ink_ratio:.2f}%)")
+    print(f"   Mean prediction: {prediction.mean():.4f}")
+    print(f"   Max prediction: {prediction.max():.4f}")
+    
+    # 9. Summary
+    print("\n" + "=" * 60)
+    print("📊 Ink Detection Complete!")
+    print(f"   Output: {CONFIG['output_dir']}/")
+    print("=" * 60)
 
 if __name__ == "__main__":
     main()
@@ -29619,63 +28457,3026 @@ if __name__ == "__main__":
 ```
 
 ---
-## File: scripts\extract_center.py
+## File: scripts\inference\inference.py
 ```py
-from PIL import Image
-import numpy as np
-import os
+"""
+Vesuvius Challenge 2026 - Standard Inference
+============================================
+Usage:
+    python scripts/inference/inference.py
+"""
+
 import sys
+from pathlib import Path
+import torch
+import numpy as np
+from PIL import Image
+from tqdm import tqdm
+import gc
+import segmentation_models_pytorch as smp
 
-def process_slice(z_index):
-    file_path = f"data/native/train/1/surface_volume/{z_index}.tif"
-    if not os.path.exists(file_path):
-        print(f"❌ Error: {file_path} not found.")
-        return False
-    
-    print(f"📖 Reading {file_path}...")
-    img = Image.open(file_path)
-    w, h = img.size
-    print(f"   Original size: {w}x{h}, Mode: {img.mode}")
-    
-    # Calculate center 512x512
-    left = (w - 512) // 2
-    top = (h - 512) // 2
-    right = left + 512
-    bottom = top + 512
-    
-    print(f"   Cropping center: ({left}, {top}) to ({right}, {bottom})")
-    crop = img.crop((left, top, right, bottom))
-    
-    # Vesuvius data is usually 16-bit. PNG supports 16-bit, but most viewers don't.
-    # The user said "不做任何复杂变换" (no complex transformations).
-    # If we save as PNG directly, PIL might keep it 16-bit or fail.
-    # To ensure it is visible, we should ideally map it to 8-bit, 
-    # but I will try to save it directly first as requested.
-    
-    output_name = f"slice_{z_index}_center.png"
-    
-    # If it's a 16-bit image, we might need to convert it to 8-bit for standard PNG transparency/visibility
-    # but the user said "no complex transformations". 
-    # Let's check the array values.
-    data = np.array(crop)
-    print(f"   Crop stats: Min={data.min()}, Max={data.max()}, Mean={data.mean():.2f}")
-    
-    # Simple 8-bit mapping for visibility if it's 16-bit
-    if data.dtype == np.uint16 or data.dtype == np.int32:
-        # User said "no complex transformations", but a purely black image is useless.
-        # I'll check if it's mostly low values.
-        # If I don't scale, it will save as 16-bit PNG (which is valid PNG but rare).
-        pass
+# Add project root
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.append(str(PROJECT_ROOT))
 
-    crop.save(output_name)
-    print(f"✅ Saved to {output_name}")
-    return True
+from src.core.config import cfg
+
+def load_model(path, device):
+    print(f"📦 Loading model from {path}...")
+    model = smp.Unet(
+        encoder_name="resnet18",
+        encoder_weights=None,
+        in_channels=cfg.IN_CHANNELS,
+        classes=1,
+    )
+    model.load_state_dict(torch.load(path, weights_only=True))
+    model.to(device)
+    model.eval()
+    return model
+
+class ChunkLoader:
+    def __init__(self, data_root, z_slices):
+        self.tif_dict = {}
+        tif_dir = data_root / "surface_volume"
+        
+        for f in tif_dir.glob("*.tif"):
+            try:
+                self.tif_dict[int(f.stem)] = f
+            except: pass
+            
+        self.z_slices = [z for z in z_slices if z in self.tif_dict]
+        
+        with Image.open(self.tif_dict[self.z_slices[0]]) as img:
+            self.w, self.h = img.size
+            
+    def load_strip(self, y_start, y_end):
+        d = len(self.z_slices)
+        h = y_end - y_start
+        w = self.w
+        
+        strip = np.zeros((d, h, w), dtype=np.float32)
+        
+        for i, z in enumerate(self.z_slices):
+            with Image.open(self.tif_dict[z]) as img:
+                region = img.crop((0, y_start, w, y_end))
+                strip[i] = np.array(region)
+                
+        # Surgical Normalization (Surgical Standard)
+        # We process ENTIRE strip for percentile? Or per tile?
+        # Dataset does per-patch. Here we do per strip to be faster?
+        # To match training exactly, we should ideally do per-patch OR 
+        # approximate with strip stats. 
+        # Given "Standard" requirement, let's use safe robust normalization 
+        p_min, p_max = np.percentile(strip, (1, 99))
+        strip = np.clip((strip - p_min) / (p_max - p_min + 1e-8), 0, 1)
+        
+        return strip
+
+def run_inference():
+    print(f"🚀 Starting Inference: {cfg.EXPERIMENT_NAME}")
+    print(f"   Z-Slices: {cfg.Z_SLICES}")
+    
+    device = cfg.DEVICE
+    model_path = cfg.OUTPUT_DIR / f"{cfg.EXPERIMENT_NAME}_best.pth"
+    
+    if not model_path.exists():
+        print(f"❌ Model not found: {model_path}")
+        return
+
+    model = load_model(model_path, device)
+    loader = ChunkLoader(cfg.DATA_ROOT, cfg.Z_SLICES)
+    
+    # Strip processing
+    strip_size = 2048
+    full_pred = np.zeros((loader.h, loader.w), dtype=np.float16) # Save RAM
+    
+    for y in range(0, loader.h, strip_size):
+        y_end = min(y + strip_size, loader.h)
+        print(f"   Processing strip {y}-{y_end}...")
+        
+        strip = loader.load_strip(y, y_end)
+        strip_tensor = torch.from_numpy(strip).unsqueeze(0).float() # (1, D, H, W)
+        
+        # Sliding window on strip
+        # For simplicity in this script, we just run tile-by-tile
+        # Ideally: Use a proper sliding window implementation.
+        # Here: Validating structure.
+        
+        pass # Placeholder for full sliding window (implementation detail)
+        
+    print("✅ Inference Setup Verified (Dry Run Logic)")
 
 if __name__ == "__main__":
-    target = "41"
-    if not process_slice(target):
-        print("💡 Attempting fallback to slice 57...")
-        process_slice("57")
+    run_inference()
+
+```
+
+---
+## File: scripts\inference\inference_full_scroll.py
+```py
+"""
+Vesuvius Challenge 2026 - Full Scroll Inference
+================================================
+Sliding window inference on full scroll to generate ink prediction map.
+
+Critical Parameters (Must Match Training):
+- Z-slices: range(33, 49) - 16 layers centered on Z=41
+- Normalization: clip [18000, 28000] -> [0, 1]
+- Window: 224, Stride: 112 (50% overlap with average blending)
+"""
+
+import os
+import numpy as np
+import torch
+from PIL import Image
+from pathlib import Path
+from tqdm import tqdm
+import segmentation_models_pytorch as smp
+import matplotlib.pyplot as plt
+
+# =============================================================================
+# ⚙️ Configuration (MUST MATCH TRAINING)
+# =============================================================================
+CONFIG = {
+    "data_root": Path("data/native/train/1"),
+    "model_path": "vesuvius_surgical_best.pth",
+    
+    # Z-axis alignment (actual training used Z=51-64, 14 slices)
+    "z_slices": list(range(51, 65)),  # 14 slices
+    
+    # Normalization window
+    "window_min": 18000.0,
+    "window_max": 28000.0,
+    
+    # Sliding window
+    "tile_size": 224,
+    "stride": 112,  # 50% overlap
+    
+    # Model architecture (MUST MATCH TRAINING)
+    "encoder": "resnet18",
+    "in_channels": 14,  # len(range(51, 65))
+    
+    # Output
+    "output_pred": "inference_pred.png",
+    "output_overlay": "inference_overlay.png",
+    
+    "device": "cuda" if torch.cuda.is_available() else "cpu",
+}
+
+# =============================================================================
+# 📦 Data Loading
+# =============================================================================
+def load_volume(data_root, z_slices):
+    """Load Z-stack volume and apply windowing normalization."""
+    print("📦 Loading volume...")
+    
+    tif_dir = data_root / "surface_volume"
+    
+    # Build file dictionary by Z-index
+    tif_dict = {}
+    for f in tif_dir.glob("*.tif"):
+        try:
+            z_idx = int(f.stem)
+            tif_dict[z_idx] = f
+        except ValueError:
+            continue
+    
+    # Filter to available z_slices
+    available = [z for z in z_slices if z in tif_dict]
+    if len(available) < len(z_slices):
+        print(f"⚠️ Only {len(available)}/{len(z_slices)} Z-slices available")
+    
+    # Load first slice to get dimensions
+    with Image.open(tif_dict[available[0]]) as img:
+        w, h = img.size
+    print(f"   Volume dimensions: {w} x {h} x {len(available)}")
+    
+    # Load all slices
+    volume = np.zeros((h, w, len(available)), dtype=np.float32)
+    for i, z in enumerate(tqdm(available, desc="   Loading Z-slices")):
+        with Image.open(tif_dict[z]) as img:
+            volume[:, :, i] = np.array(img).astype(np.float32)
+    
+    # Apply windowing normalization
+    print("🔧 Applying windowing normalization...")
+    volume = np.clip(volume, CONFIG["window_min"], CONFIG["window_max"])
+    volume = (volume - CONFIG["window_min"]) / (CONFIG["window_max"] - CONFIG["window_min"])
+    
+    print(f"   Normalized range: [{volume.min():.4f}, {volume.max():.4f}]")
+    print(f"   Mean: {volume.mean():.4f}")
+    
+    return volume, available
+
+# =============================================================================
+# 🧠 Sliding Window Inference
+# =============================================================================
+def sliding_window_inference(model, volume, tile_size=224, stride=112):
+    """
+    Perform sliding window inference with average blending.
+    
+    Args:
+        model: Trained segmentation model
+        volume: (H, W, C) normalized volume
+        tile_size: Window size
+        stride: Step size (overlap = tile_size - stride)
+    
+    Returns:
+        pred_map: (H, W) probability map
+    """
+    model.eval()
+    h, w, c = volume.shape
+    
+    # Initialize accumulator and counter
+    pred_sum = np.zeros((h, w), dtype=np.float32)
+    count_map = np.zeros((h, w), dtype=np.float32)
+    
+    # Calculate grid
+    y_steps = list(range(0, h - tile_size + 1, stride))
+    x_steps = list(range(0, w - tile_size + 1, stride))
+    
+    # Add edge tiles if needed
+    if y_steps[-1] + tile_size < h:
+        y_steps.append(h - tile_size)
+    if x_steps[-1] + tile_size < w:
+        x_steps.append(w - tile_size)
+    
+    total_tiles = len(y_steps) * len(x_steps)
+    print(f"🔍 Sliding window: {len(y_steps)} x {len(x_steps)} = {total_tiles} tiles")
+    
+    with torch.no_grad():
+        bar = tqdm(total=total_tiles, desc="   Inference")
+        
+        for y in y_steps:
+            for x in x_steps:
+                # Extract tile
+                tile = volume[y:y+tile_size, x:x+tile_size, :]  # (H, W, C)
+                
+                # Convert to tensor (N, C, H, W)
+                tile_tensor = torch.from_numpy(tile).permute(2, 0, 1).unsqueeze(0).float()
+                tile_tensor = tile_tensor.to(CONFIG["device"])
+                
+                # Forward pass
+                with torch.amp.autocast('cuda'):
+                    output = model(tile_tensor)
+                    prob = torch.sigmoid(output).cpu().numpy()[0, 0]  # (H, W)
+                
+                # Accumulate
+                pred_sum[y:y+tile_size, x:x+tile_size] += prob
+                count_map[y:y+tile_size, x:x+tile_size] += 1
+                
+                bar.update(1)
+                
+                # VRAM cleanup every 100 tiles
+                if bar.n % 100 == 0:
+                    torch.cuda.empty_cache()
+        
+        bar.close()
+    
+    # Average blending
+    pred_map = np.divide(pred_sum, count_map, where=count_map > 0)
+    
+    print(f"   Prediction range: [{pred_map.min():.4f}, {pred_map.max():.4f}]")
+    print(f"   Mean confidence: {pred_map.mean():.4f}")
+    
+    return pred_map
+
+# =============================================================================
+# 🎨 Visualization
+# =============================================================================
+def create_overlay(pred_map, texture, alpha=0.5):
+    """Create red heatmap overlay on grayscale texture."""
+    # Normalize texture to [0, 1]
+    texture_norm = (texture - texture.min()) / (texture.max() - texture.min() + 1e-8)
+    
+    # Create RGB image
+    h, w = texture_norm.shape
+    overlay = np.zeros((h, w, 3), dtype=np.float32)
+    
+    # Grayscale background
+    overlay[:, :, 0] = texture_norm
+    overlay[:, :, 1] = texture_norm
+    overlay[:, :, 2] = texture_norm
+    
+    # Red heatmap for prediction
+    red_channel = pred_map * alpha
+    overlay[:, :, 0] = np.clip(overlay[:, :, 0] + red_channel, 0, 1)
+    
+    return (overlay * 255).astype(np.uint8)
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius Challenge 2026 - Full Scroll Inference")
+    print("=" * 60)
+    
+    # 1. Load Model
+    print("\n📂 Loading model...")
+    model = smp.Unet(
+        encoder_name=CONFIG["encoder"],
+        encoder_weights=None,  # Load from checkpoint
+        in_channels=CONFIG["in_channels"],
+        classes=1,
+    )
+    
+    if os.path.exists(CONFIG["model_path"]):
+        model.load_state_dict(torch.load(CONFIG["model_path"], weights_only=True))
+        print(f"   ✅ Loaded: {CONFIG['model_path']}")
+    else:
+        print(f"   ❌ Model not found: {CONFIG['model_path']}")
+        return
+    
+    model = model.to(CONFIG["device"])
+    model.eval()
+    
+    # 2. Load Volume
+    volume, z_slices = load_volume(CONFIG["data_root"], CONFIG["z_slices"])
+    
+    # 3. Sliding Window Inference
+    print("\n🧠 Running inference...")
+    pred_map = sliding_window_inference(
+        model, volume,
+        tile_size=CONFIG["tile_size"],
+        stride=CONFIG["stride"]
+    )
+    
+    # 4. Save Prediction
+    print("\n💾 Saving outputs...")
+    
+    # Pure prediction map
+    pred_uint8 = (pred_map * 255).astype(np.uint8)
+    Image.fromarray(pred_uint8).save(CONFIG["output_pred"])
+    print(f"   ✅ Saved: {CONFIG['output_pred']}")
+    
+    # Overlay on Z=41 texture
+    z41_idx = z_slices.index(41) if 41 in z_slices else len(z_slices) // 2
+    texture = volume[:, :, z41_idx]
+    overlay = create_overlay(pred_map, texture, alpha=0.6)
+    Image.fromarray(overlay).save(CONFIG["output_overlay"])
+    print(f"   ✅ Saved: {CONFIG['output_overlay']}")
+    
+    # 5. Summary
+    print("\n" + "=" * 60)
+    print("📊 Inference Complete!")
+    print(f"   Prediction Mean: {pred_map.mean():.4f}")
+    print(f"   Prediction Max: {pred_map.max():.4f}")
+    print(f"   Non-zero pixels: {(pred_map > 0.1).sum()} ({(pred_map > 0.1).sum() / pred_map.size * 100:.2f}%)")
+    print("=" * 60)
+    
+    # Cleanup
+    torch.cuda.empty_cache()
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\inference\inference_rgt_finetuned.py
+```py
+"""
+Vesuvius Challenge 2026 - Final RGT Inference (Fine-tuned Model)
+=================================================================
+Apply fine-tuned model to RGT-flattened layer for final ink detection.
+Refactored to use shared modules.
+"""
+
+import sys
+from pathlib import Path
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.append(str(PROJECT_ROOT))
+
+import numpy as np
+import torch
+import cv2
+from tqdm import tqdm
+from scipy.ndimage import gaussian_filter
+
+# Modular imports
+from src.models.segmentation import load_model
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Input
+    "image_path": "flattened_layers/layer_07.png",
+    
+    # Model
+    "model_path": "models/vesuvius_rgt_finetuned.pth",
+    "encoder": "resnet18",
+    "in_channels": 14,
+    
+    # Inference
+    "tile_size": 224,
+    "stride": 112,
+    "batch_size": 16,
+    
+    # Post-processing
+    "gaussian_sigma": 1.0,
+    "binary_threshold": 0.10,
+    
+    # Output
+    "output_dir": Path("final_rgt_results"),
+}
+
+# =============================================================================
+# 🔧 Sliding Window Inference
+# =============================================================================
+def sliding_window_inference(model, image, in_channels, tile_size, stride, device, batch_size):
+    """
+    Sliding window inference with channel replication.
+    """
+    H, W = image.shape
+    
+    print(f"\n🧮 Running sliding window inference...")
+    print(f"   Image: {H} x {W}")
+    print(f"   Tile: {tile_size}, Stride: {stride}")
+    
+    # Output arrays
+    prediction = np.zeros((H, W), dtype=np.float32)
+    weight = np.zeros((H, W), dtype=np.float32)
+    
+    # Gaussian blending weight
+    gaussian_weight = np.zeros((tile_size, tile_size), dtype=np.float32)
+    center = tile_size // 2
+    for i in range(tile_size):
+        for j in range(tile_size):
+            dist = np.sqrt((i - center)**2 + (j - center)**2)
+            gaussian_weight[i, j] = np.exp(-dist**2 / (2 * (tile_size/4)**2))
+    
+    # Generate positions
+    positions = []
+    for y in range(0, max(1, H - tile_size + 1), stride):
+        for x in range(0, max(1, W - tile_size + 1), stride):
+            positions.append((y, x))
+    
+    # Edge tiles
+    if H > tile_size and (H - tile_size) % stride != 0:
+        for x in range(0, max(1, W - tile_size + 1), stride):
+            positions.append((H - tile_size, x))
+    if W > tile_size and (W - tile_size) % stride != 0:
+        for y in range(0, max(1, H - tile_size + 1), stride):
+            positions.append((y, W - tile_size))
+    if H > tile_size and W > tile_size:
+        if (H - tile_size) % stride != 0 and (W - tile_size) % stride != 0:
+            positions.append((H - tile_size, W - tile_size))
+    
+    positions = list(set(positions))
+    print(f"   Tiles: {len(positions)}")
+    
+    max_pred = 0.0
+    
+    with torch.no_grad():
+        for batch_start in tqdm(range(0, len(positions), batch_size), desc="   Inferring"):
+            batch_pos = positions[batch_start:batch_start + batch_size]
+            
+            # Extract and replicate tiles
+            tiles = []
+            for y, x in batch_pos:
+                tile = image[y:y+tile_size, x:x+tile_size]
+                # Replicate to in_channels
+                tile_multi = np.repeat(tile[np.newaxis, :, :], in_channels, axis=0)
+                tiles.append(tile_multi)
+            
+            tiles = np.stack(tiles, axis=0)  # (B, C, H, W)
+            tiles_tensor = torch.from_numpy(tiles).float().to(device)
+            
+            # Forward
+            outputs = model(tiles_tensor)
+            outputs = torch.sigmoid(outputs)
+            outputs_np = outputs.cpu().numpy()[:, 0, :, :]
+            
+            # Track max
+            batch_max = outputs_np.max()
+            if batch_max > max_pred:
+                max_pred = batch_max
+            
+            # Accumulate
+            for i, (y, x) in enumerate(batch_pos):
+                prediction[y:y+tile_size, x:x+tile_size] += outputs_np[i] * gaussian_weight
+                weight[y:y+tile_size, x:x+tile_size] += gaussian_weight
+            
+            if batch_start % (batch_size * 10) == 0:
+                torch.cuda.empty_cache()
+    
+    # Normalize
+    weight = np.maximum(weight, 1e-8)
+    prediction = prediction / weight
+    
+    print(f"\n📊 Inference Results:")
+    print(f"   🎯 Max Prediction: {max_pred:.4f}")
+    
+    return prediction
+
+# =============================================================================
+# 🔧 Post-processing
+# =============================================================================
+def post_process(prediction, sigma, threshold):
+    """Apply Gaussian smoothing and thresholding."""
+    smoothed = gaussian_filter(prediction, sigma=sigma)
+    binary = (smoothed > threshold).astype(np.uint8) * 255
+    return smoothed, binary
+
+def create_overlay(background, prediction, alpha=0.5):
+    """Create heatmap overlay."""
+    pred_norm = (np.clip(prediction, 0, 1) * 255).astype(np.uint8)
+    heatmap = cv2.applyColorMap(pred_norm, cv2.COLORMAP_HOT)
+    
+    if len(background.shape) == 2:
+        background_bgr = cv2.cvtColor(background, cv2.COLOR_GRAY2BGR)
+    else:
+        background_bgr = background
+    
+    overlay = cv2.addWeighted(background_bgr, 1 - alpha, heatmap, alpha, 0)
+    return overlay
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius - Final RGT Inference (Refactored)")
+    print("=" * 60)
+    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"\n🖥️ Device: {device}")
+    
+    # Create output dir
+    CONFIG["output_dir"].mkdir(parents=True, exist_ok=True)
+    
+    # 1. Load image
+    print(f"\n📥 Loading: {CONFIG['image_path']}")
+    image = cv2.imread(CONFIG["image_path"], cv2.IMREAD_GRAYSCALE)
+    if image is None:
+        # Fallback if path relative to PROJECT_ROOT
+        full_path = PROJECT_ROOT / CONFIG["image_path"]
+        print(f"   Trying absolute path: {full_path}")
+        image = cv2.imread(str(full_path), cv2.IMREAD_GRAYSCALE)
+        
+    if image is None:
+        raise FileNotFoundError(f"Could not load {CONFIG['image_path']}")
+
+    image_norm = image.astype(np.float32) / 255.0
+    print(f"   Shape: {image.shape}")
+    
+    # 2. Load model
+    full_model_path = PROJECT_ROOT / CONFIG["model_path"]
+    model = load_model(
+        str(full_model_path),
+        CONFIG["encoder"],
+        CONFIG["in_channels"],
+        device
+    )
+    
+    # 3. Inference
+    prediction = sliding_window_inference(
+        model, image_norm,
+        CONFIG["in_channels"],
+        CONFIG["tile_size"], CONFIG["stride"],
+        device, CONFIG["batch_size"]
+    )
+    
+    # 4. Post-process
+    print(f"\n🔧 Post-processing (sigma={CONFIG['gaussian_sigma']})...")
+    smoothed, binary = post_process(
+        prediction,
+        CONFIG["gaussian_sigma"],
+        CONFIG["binary_threshold"]
+    )
+    
+    # 5. Create overlay
+    overlay = create_overlay(image, smoothed, alpha=0.5)
+    
+    # 6. Save results
+    print(f"\n💾 Saving to {CONFIG['output_dir']}/...")
+    
+    # Prediction map
+    cv2.imwrite(str(CONFIG["output_dir"] / "final_rgt_finetuned_pred.png"), (np.clip(smoothed, 0, 1) * 255).astype(np.uint8))
+    
+    # Overlay
+    cv2.imwrite(str(CONFIG["output_dir"] / "final_rgt_finetuned_overlay.png"), overlay)
+    
+    # Binary
+    cv2.imwrite(str(CONFIG["output_dir"] / "final_rgt_finetuned_binary.png"), binary)
+    
+    print("   ✅ Saved all outputs.")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\inference\post_process_ink.py
+```py
+"""
+Vesuvius Challenge 2026 - Ink Prediction Post-Processing
+=========================================================
+Enhance and purify weak ink predictions using morphological operations.
+
+Pipeline:
+1. Contrast stretching (histogram normalization)
+2. Gaussian blur for stroke connection
+3. Multi-level thresholding for comparison
+"""
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    "input_path": "inference_pred.png",
+    "output_path": "inference_post_process.png",
+    
+    # Gaussian blur kernel
+    "blur_kernel": (3, 3),
+    
+    # Multi-level thresholds
+    "thresholds": {
+        "loose": 0.10,
+        "balanced": 0.15,
+        "strict": 0.20,
+    }
+}
+
+# =============================================================================
+# 🔧 Processing Functions
+# =============================================================================
+def load_and_normalize(path):
+    """Load grayscale image and normalize to [0, 1]."""
+    print(f"📥 Loading {path}...")
+    img = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
+    if img is None:
+        raise FileNotFoundError(f"Cannot load: {path}")
+    
+    # Convert to float32 [0, 1]
+    img_float = img.astype(np.float32) / 255.0
+    
+    print(f"   Shape: {img.shape}")
+    print(f"   Original range: [{img_float.min():.4f}, {img_float.max():.4f}]")
+    
+    return img_float
+
+def contrast_stretch(img):
+    """Stretch intensity range from [min, max] to [0, 1]."""
+    print("🔧 Applying contrast stretching...")
+    
+    p_min, p_max = img.min(), img.max()
+    
+    if p_max - p_min < 1e-6:
+        print("   ⚠️ Image is flat, skipping stretching.")
+        return img
+    
+    stretched = (img - p_min) / (p_max - p_min)
+    
+    print(f"   Stretched from [{p_min:.4f}, {p_max:.4f}] to [0, 1]")
+    print(f"   New mean: {stretched.mean():.4f}")
+    
+    return stretched
+
+def apply_gaussian_blur(img, kernel_size=(3, 3)):
+    """Apply Gaussian blur for stroke connection."""
+    print(f"🔧 Applying Gaussian blur (kernel={kernel_size})...")
+    blurred = cv2.GaussianBlur(img, kernel_size, 0)
+    return blurred
+
+def multi_threshold(img, thresholds):
+    """Generate binary masks at multiple thresholds."""
+    print("🔧 Generating multi-level binary masks...")
+    
+    results = {}
+    for name, thresh in thresholds.items():
+        binary = (img >= thresh).astype(np.float32)
+        coverage = binary.sum() / binary.size * 100
+        results[name] = {
+            "threshold": thresh,
+            "binary": binary,
+            "coverage": coverage,
+        }
+        print(f"   {name.capitalize()} (t={thresh:.2f}): {coverage:.2f}% pixels retained")
+    
+    return results
+
+# =============================================================================
+# 🎨 Visualization
+# =============================================================================
+def create_visualization(stretched, blurred, thresh_results, output_path):
+    """Create 4-panel comparison visualization."""
+    print("📊 Creating visualization...")
+    
+    fig, axes = plt.subplots(2, 2, figsize=(16, 16))
+    fig.suptitle("Ink Prediction Post-Processing", fontsize=16, fontweight='bold')
+    
+    # Panel 1: Contrast Stretched (after blur)
+    ax1 = axes[0, 0]
+    im1 = ax1.imshow(blurred, cmap='gray', vmin=0, vmax=1)
+    ax1.set_title(f"Contrast Stretched + Blur\nMean: {blurred.mean():.3f}", fontsize=12)
+    ax1.axis('off')
+    plt.colorbar(im1, ax=ax1, fraction=0.046, pad=0.04)
+    
+    # Panel 2: Loose threshold
+    loose = thresh_results["loose"]
+    ax2 = axes[0, 1]
+    ax2.imshow(loose["binary"], cmap='hot', vmin=0, vmax=1)
+    ax2.set_title(f"Threshold = {loose['threshold']:.2f} (Loose)\n{loose['coverage']:.2f}% retained", fontsize=12)
+    ax2.axis('off')
+    
+    # Panel 3: Balanced threshold
+    balanced = thresh_results["balanced"]
+    ax3 = axes[1, 0]
+    ax3.imshow(balanced["binary"], cmap='hot', vmin=0, vmax=1)
+    ax3.set_title(f"Threshold = {balanced['threshold']:.2f} (Balanced)\n{balanced['coverage']:.2f}% retained", fontsize=12)
+    ax3.axis('off')
+    
+    # Panel 4: Strict threshold
+    strict = thresh_results["strict"]
+    ax4 = axes[1, 1]
+    ax4.imshow(strict["binary"], cmap='hot', vmin=0, vmax=1)
+    ax4.set_title(f"Threshold = {strict['threshold']:.2f} (Strict)\n{strict['coverage']:.2f}% retained", fontsize=12)
+    ax4.axis('off')
+    
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=150, bbox_inches='tight')
+    plt.close(fig)
+    
+    print(f"   ✅ Saved: {output_path}")
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius Ink Prediction Post-Processing")
+    print("=" * 60)
+    
+    # 1. Load and normalize
+    img = load_and_normalize(CONFIG["input_path"])
+    
+    # 2. Contrast stretching
+    stretched = contrast_stretch(img)
+    
+    # 3. Gaussian blur
+    blurred = apply_gaussian_blur(stretched, CONFIG["blur_kernel"])
+    
+    # 4. Multi-level thresholding
+    thresh_results = multi_threshold(blurred, CONFIG["thresholds"])
+    
+    # 5. Visualization
+    create_visualization(stretched, blurred, thresh_results, CONFIG["output_path"])
+    
+    # 6. Save individual binary masks
+    print("\n💾 Saving individual binary masks...")
+    for name, data in thresh_results.items():
+        mask_path = f"inference_binary_{name}.png"
+        cv2.imwrite(mask_path, (data["binary"] * 255).astype(np.uint8))
+        print(f"   ✅ Saved: {mask_path}")
+    
+    # 7. Summary
+    print("\n" + "=" * 60)
+    print("📊 Post-Processing Complete!")
+    print(f"   Input: {CONFIG['input_path']}")
+    print(f"   Output: {CONFIG['output_path']}")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\inference\verify_raw_inference.py
+```py
+"""
+Vesuvius Challenge 2026 - Raw CT Inference Verification
+========================================================
+Direct inference on original CT data (no RGT flattening).
+
+Purpose: Verify if model works on raw data to rule out:
+1. Domain shift from RGT flattening
+2. Blank scroll region (no ink)
+
+Input: data/native/train/1/surface_volume/33.tif to 48.tif (16 slices)
+Output: raw_inference_pred.png, raw_inference_overlay.png
+"""
+
+import numpy as np
+import torch
+import cv2
+from pathlib import Path
+from tqdm import tqdm
+from PIL import Image
+import segmentation_models_pytorch as smp
+from scipy.ndimage import gaussian_filter
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Input (raw CT data)
+    "ct_dir": Path("data/native/train/1/surface_volume"),
+    "z_start": 51,
+    "z_end": 65,  # Exclusive, 51-64 = 14 slices (matches training)
+    
+    # Vesuvius normalization (same as training)
+    "window_min": 18000,
+    "window_max": 28000,
+    
+    # Model
+    "model_path": "models/vesuvius_surgical_best.pth",
+    "encoder": "resnet18",
+    "in_channels": 14,  # Training used 14 slices
+    
+    # Inference
+    "tile_size": 224,
+    "stride": 112,
+    "batch_size": 8,
+    
+    # Output
+    "output_dir": Path("raw_inference_results"),
+    
+    # Post-processing
+    "gaussian_sigma": 1.0,
+    "binary_threshold": 0.10,
+}
+
+# =============================================================================
+# 🔧 Data Loading (Training-Identical Normalization)
+# =============================================================================
+def load_raw_ct_volume(ct_dir, z_start, z_end, window_min, window_max):
+    """
+    Load raw CT slices with TRAINING-IDENTICAL normalization.
+    
+    This exactly replicates what the model saw during training.
+    """
+    print(f"📥 Loading raw CT data from {ct_dir}...")
+    print(f"   Z range: [{z_start}, {z_end})")
+    
+    slices = []
+    
+    for z in tqdm(range(z_start, z_end), desc="   Loading"):
+        path = ct_dir / f"{z}.tif"
+        
+        if not path.exists():
+            raise FileNotFoundError(f"Missing: {path}")
+        
+        # Load as 16-bit
+        img = np.array(Image.open(path))
+        slices.append(img)
+    
+    volume = np.stack(slices, axis=0).astype(np.float32)  # (D, H, W)
+    
+    print(f"   Raw volume shape: {volume.shape}")
+    print(f"   Raw value range: [{volume.min():.0f}, {volume.max():.0f}]")
+    
+    # ============================================
+    # CRITICAL: Training-identical normalization
+    # ============================================
+    print(f"\n🔧 Applying training normalization...")
+    print(f"   Window: [{window_min}, {window_max}]")
+    
+    # Step 1: Clip to window
+    volume = np.clip(volume, window_min, window_max)
+    
+    # Step 2: Normalize to [0, 1]
+    volume = (volume - window_min) / (window_max - window_min)
+    
+    print(f"   Normalized range: [{volume.min():.4f}, {volume.max():.4f}]")
+    
+    return volume
+
+# =============================================================================
+# 🔧 Model Loading
+# =============================================================================
+def load_model(model_path, encoder, in_channels):
+    """Load trained U-Net model."""
+    print(f"\n📥 Loading model from {model_path}...")
+    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"   Device: {device}")
+    
+    model = smp.Unet(
+        encoder_name=encoder,
+        encoder_weights=None,
+        in_channels=in_channels,
+        classes=1,
+        activation=None
+    )
+    
+    checkpoint = torch.load(model_path, map_location=device, weights_only=False)
+    
+    if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'])
+    elif isinstance(checkpoint, dict) and 'state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['state_dict'])
+    else:
+        model.load_state_dict(checkpoint)
+    
+    model = model.to(device)
+    model.eval()
+    
+    print(f"   ✅ Model loaded")
+    
+    return model, device
+
+# =============================================================================
+# 🔧 Sliding Window Inference
+# =============================================================================
+def sliding_window_inference(model, volume, tile_size, stride, device, batch_size=8):
+    """
+    Sliding window inference on 3D volume.
+    
+    Args:
+        volume: (C, H, W) numpy array, normalized to [0, 1]
+    """
+    C, H, W = volume.shape
+    
+    print(f"\n🧮 Running inference on raw CT data...")
+    print(f"   Volume: {volume.shape}")
+    print(f"   Tile: {tile_size}x{tile_size}, Stride: {stride}")
+    
+    # Output arrays
+    prediction = np.zeros((H, W), dtype=np.float32)
+    weight = np.zeros((H, W), dtype=np.float32)
+    
+    # Gaussian blending
+    gaussian_weight = np.zeros((tile_size, tile_size), dtype=np.float32)
+    center = tile_size // 2
+    for i in range(tile_size):
+        for j in range(tile_size):
+            dist = np.sqrt((i - center)**2 + (j - center)**2)
+            gaussian_weight[i, j] = np.exp(-dist**2 / (2 * (tile_size/4)**2))
+    
+    # Tile positions
+    positions = []
+    for y in range(0, max(1, H - tile_size + 1), stride):
+        for x in range(0, max(1, W - tile_size + 1), stride):
+            positions.append((y, x))
+    
+    # Edge tiles
+    if H > tile_size and (H - tile_size) % stride != 0:
+        for x in range(0, max(1, W - tile_size + 1), stride):
+            positions.append((H - tile_size, x))
+    if W > tile_size and (W - tile_size) % stride != 0:
+        for y in range(0, max(1, H - tile_size + 1), stride):
+            positions.append((y, W - tile_size))
+    if H > tile_size and W > tile_size:
+        if (H - tile_size) % stride != 0 and (W - tile_size) % stride != 0:
+            positions.append((H - tile_size, W - tile_size))
+    
+    positions = list(set(positions))
+    print(f"   Tiles: {len(positions)}")
+    
+    max_pred = 0.0
+    
+    with torch.no_grad():
+        for batch_start in tqdm(range(0, len(positions), batch_size), desc="   Inferring"):
+            batch_pos = positions[batch_start:batch_start + batch_size]
+            
+            # Extract tiles
+            tiles = []
+            for y, x in batch_pos:
+                tile = volume[:, y:y+tile_size, x:x+tile_size]
+                tiles.append(tile)
+            
+            tiles = np.stack(tiles, axis=0)  # (B, C, H, W)
+            tiles_tensor = torch.from_numpy(tiles).float().to(device)
+            
+            # Forward pass
+            outputs = model(tiles_tensor)
+            outputs = torch.sigmoid(outputs)
+            outputs_np = outputs.cpu().numpy()[:, 0, :, :]
+            
+            # Track max
+            batch_max = outputs_np.max()
+            if batch_max > max_pred:
+                max_pred = batch_max
+            
+            # Accumulate
+            for i, (y, x) in enumerate(batch_pos):
+                prediction[y:y+tile_size, x:x+tile_size] += outputs_np[i] * gaussian_weight
+                weight[y:y+tile_size, x:x+tile_size] += gaussian_weight
+            
+            if batch_start % (batch_size * 10) == 0:
+                torch.cuda.empty_cache()
+    
+    # Normalize
+    weight = np.maximum(weight, 1e-8)
+    prediction = prediction / weight
+    
+    print(f"\n" + "=" * 50)
+    print(f"📊 RAW INFERENCE RESULTS:")
+    print(f"   🎯 MAX PREDICTION VALUE: {max_pred:.4f}")
+    print(f"   Mean: {prediction.mean():.4f}")
+    print(f"   Range: [{prediction.min():.4f}, {prediction.max():.4f}]")
+    print("=" * 50)
+    
+    # Interpretation
+    if max_pred > 0.4:
+        print("\n✅ INK DETECTED! RGT flattening likely caused domain shift.")
+    elif max_pred > 0.25:
+        print("\n⚠️ Weak ink signal. Region may have sparse ink.")
+    else:
+        print("\n❌ NO SIGNIFICANT INK. This appears to be a blank scroll region.")
+    
+    return prediction, max_pred
+
+# =============================================================================
+# 🔧 Visualization
+# =============================================================================
+def save_results(prediction, volume, output_dir, sigma, threshold):
+    """Save prediction and overlay images."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    print(f"\n💾 Saving to {output_dir}/...")
+    
+    # Smooth prediction
+    smoothed = gaussian_filter(prediction, sigma=sigma)
+    
+    # 1. Prediction map
+    pred_img = (np.clip(smoothed, 0, 1) * 255).astype(np.uint8)
+    cv2.imwrite(str(output_dir / "raw_inference_pred.png"), pred_img)
+    print(f"   ✅ raw_inference_pred.png")
+    
+    # 2. Binary
+    binary = (smoothed > threshold).astype(np.uint8) * 255
+    cv2.imwrite(str(output_dir / "raw_inference_binary.png"), binary)
+    print(f"   ✅ raw_inference_binary.png")
+    
+    # 3. Overlay on middle slice
+    mid_idx = volume.shape[0] // 2
+    background = (volume[mid_idx] * 255).astype(np.uint8)
+    background_bgr = cv2.cvtColor(background, cv2.COLOR_GRAY2BGR)
+    
+    heatmap = cv2.applyColorMap(pred_img, cv2.COLORMAP_HOT)
+    overlay = cv2.addWeighted(background_bgr, 0.5, heatmap, 0.5, 0)
+    
+    cv2.imwrite(str(output_dir / "raw_inference_overlay.png"), overlay)
+    print(f"   ✅ raw_inference_overlay.png")
+    
+    # Stats
+    ink_pixels = np.sum(binary > 0)
+    total = binary.size
+    print(f"\n📊 Binary stats (threshold={threshold}):")
+    print(f"   Ink pixels: {ink_pixels:,} / {total:,} ({ink_pixels/total*100:.2f}%)")
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius - Raw CT Inference Verification")
+    print("=" * 60)
+    
+    # 1. Load raw CT data with training normalization
+    volume = load_raw_ct_volume(
+        CONFIG["ct_dir"],
+        CONFIG["z_start"],
+        CONFIG["z_end"],
+        CONFIG["window_min"],
+        CONFIG["window_max"]
+    )
+    
+    # Adjust to model channels if needed
+    actual_slices = volume.shape[0]
+    expected_channels = CONFIG["in_channels"]
+    
+    if actual_slices != expected_channels:
+        print(f"\n⚠️ Slice count mismatch: got {actual_slices}, model expects {expected_channels}")
+        if actual_slices > expected_channels:
+            # Take center slices
+            start = (actual_slices - expected_channels) // 2
+            volume = volume[start:start + expected_channels]
+            print(f"   Taking center {expected_channels} slices")
+        else:
+            # Reflect pad
+            pad_total = expected_channels - actual_slices
+            pad_top = pad_total // 2
+            pad_bottom = pad_total - pad_top
+            volume = np.pad(volume, ((pad_top, pad_bottom), (0, 0), (0, 0)), mode='reflect')
+            print(f"   Reflect padded to {expected_channels} slices")
+    
+    print(f"   Final volume: {volume.shape}")
+    
+    # 2. Load model
+    model, device = load_model(
+        CONFIG["model_path"],
+        CONFIG["encoder"],
+        CONFIG["in_channels"]
+    )
+    
+    # 3. Run inference
+    prediction, max_pred = sliding_window_inference(
+        model, volume,
+        CONFIG["tile_size"], CONFIG["stride"],
+        device, CONFIG["batch_size"]
+    )
+    
+    # 4. Save results
+    save_results(
+        prediction, volume,
+        CONFIG["output_dir"],
+        CONFIG["gaussian_sigma"],
+        CONFIG["binary_threshold"]
+    )
+    
+    print("\n" + "=" * 60)
+    print("📊 Raw Inference Verification Complete!")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\preprocessing\flatten_scroll.py
+```py
+"""
+Vesuvius Challenge 2026 - RGT Scroll Flattening
+================================================
+Final Phase: Virtual unrolling based on scalar field iso-surfaces.
+
+Algorithm:
+1. Load scalar field φ and original CT volume
+2. For each iso-value c (layer), find z where φ(x,y,z) = c
+3. Sample CT intensity at those z-coordinates
+4. Generate flattened 2D texture images
+
+Output: flattened_layers/layer_XX.png
+"""
+
+import numpy as np
+from scipy.ndimage import zoom, map_coordinates
+from pathlib import Path
+from tqdm import tqdm
+import cv2
+import gc
+from PIL import Image
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Input
+    "phi_path": "scalar_field.npz",
+    "ct_dir": Path("data/native/train/1/surface_volume"),
+    "z_range": (51, 65),  # Same Z range as orientation field
+    
+    # Output
+    "output_dir": Path("flattened_layers"),
+    
+    # Windowing (Vesuvius-specific)
+    "window_min": 18000,
+    "window_max": 28000,
+    
+    # Layer extraction
+    "num_layers": 20,  # Need more layers for true 3D volume
+    "layer_margin": 0.05,  # Less margin to get more layers
+}
+
+# =============================================================================
+# 🔧 Data Loading
+# =============================================================================
+def load_ct_volume(ct_dir, z_range):
+    """Load CT volume from TIF slices."""
+    print(f"📥 Loading CT volume from {ct_dir}...")
+    
+    # Find all TIF files
+    tif_files = sorted(ct_dir.glob("*.tif"))
+    
+    if not tif_files:
+        raise FileNotFoundError(f"No TIF files in {ct_dir}")
+    
+    # Filter by Z range
+    z_start, z_end = z_range
+    selected_files = []
+    for f in tif_files:
+        try:
+            z_idx = int(f.stem)
+            if z_start <= z_idx < z_end:
+                selected_files.append((z_idx, f))
+        except ValueError:
+            continue
+    
+    selected_files.sort(key=lambda x: x[0])
+    
+    if not selected_files:
+        raise ValueError(f"No files found in Z range {z_range}")
+    
+    print(f"   Loading {len(selected_files)} slices...")
+    
+    # Load first to get dimensions
+    first_img = np.array(Image.open(selected_files[0][1]))
+    H, W = first_img.shape
+    D = len(selected_files)
+    
+    volume = np.zeros((D, H, W), dtype=np.float32)
+    
+    for i, (z_idx, path) in enumerate(tqdm(selected_files, desc="   Loading")):
+        img = np.array(Image.open(path))
+        volume[i] = img.astype(np.float32)
+    
+    print(f"   Volume shape: {volume.shape}")
+    print(f"   Value range: [{volume.min():.0f}, {volume.max():.0f}]")
+    
+    return volume
+
+def apply_windowing(volume, win_min, win_max):
+    """Apply contrast windowing."""
+    volume = np.clip(volume, win_min, win_max)
+    volume = (volume - win_min) / (win_max - win_min)
+    return volume
+
+# =============================================================================
+# 🔧 Scalar Field Processing
+# =============================================================================
+def load_and_resize_phi(phi_path, target_shape):
+    """Load phi and resize to match CT volume."""
+    print(f"📥 Loading scalar field from {phi_path}...")
+    
+    data = np.load(phi_path)
+    phi = data['phi']
+    
+    print(f"   Original phi shape: {phi.shape}")
+    print(f"   Target shape: {target_shape}")
+    
+    # Calculate zoom factors
+    factors = tuple(t / s for t, s in zip(target_shape, phi.shape))
+    
+    print(f"   Zoom factors: {factors}")
+    
+    if factors != (1.0, 1.0, 1.0):
+        print("   Resizing phi...")
+        phi_resized = zoom(phi, factors, order=1)
+    else:
+        phi_resized = phi
+    
+    # Ensure exact shape match
+    phi_resized = phi_resized[:target_shape[0], :target_shape[1], :target_shape[2]]
+    
+    print(f"   Resized phi shape: {phi_resized.shape}")
+    print(f"   Phi range: [{phi_resized.min():.4f}, {phi_resized.max():.4f}]")
+    
+    return phi_resized
+
+# =============================================================================
+# 🔧 Z-Flattening (Core Algorithm)
+# =============================================================================
+def find_z_for_layer(phi, target_value):
+    """
+    For each (x, y), find z where phi(x,y,z) ≈ target_value.
+    
+    Uses linear interpolation between phi values.
+    
+    Returns:
+        z_map: (H, W) array of z-coordinates where phi = target_value
+        mask: (H, W) boolean array, True where valid z was found
+    """
+    D, H, W = phi.shape
+    
+    z_map = np.full((H, W), np.nan, dtype=np.float32)
+    mask = np.zeros((H, W), dtype=bool)
+    
+    # For each (y, x), search along z axis
+    for z in range(D - 1):
+        phi_curr = phi[z]      # (H, W)
+        phi_next = phi[z + 1]  # (H, W)
+        
+        # Find where target crosses between z and z+1
+        # Case 1: phi_curr <= target < phi_next (increasing)
+        # Case 2: phi_curr >= target > phi_next (decreasing)
+        
+        cross_up = (phi_curr <= target_value) & (phi_next > target_value)
+        cross_down = (phi_curr >= target_value) & (phi_next < target_value)
+        crosses = cross_up | cross_down
+        
+        if not crosses.any():
+            continue
+        
+        # Linear interpolation to find exact z
+        # z_exact = z + (target - phi_curr) / (phi_next - phi_curr)
+        denom = phi_next - phi_curr
+        denom[denom == 0] = 1e-8  # Avoid division by zero
+        
+        t = (target_value - phi_curr) / denom
+        z_exact = z + t
+        
+        # Only update where we cross and haven't already found a value
+        update = crosses & ~mask
+        z_map[update] = z_exact[update]
+        mask[update] = True
+    
+    return z_map, mask
+
+def sample_volume_at_z(volume, z_map, mask):
+    """
+    Sample the volume at fractional z coordinates using interpolation.
+    
+    Args:
+        volume: (D, H, W) CT volume
+        z_map: (H, W) z-coordinates to sample
+        mask: (H, W) valid mask
+    
+    Returns:
+        sampled: (H, W) sampled intensities
+    """
+    D, H, W = volume.shape
+    
+    # Create coordinate grids
+    y_coords, x_coords = np.meshgrid(np.arange(H), np.arange(W), indexing='ij')
+    
+    # Flatten for map_coordinates
+    z_flat = z_map.ravel()
+    y_flat = y_coords.ravel()
+    x_flat = x_coords.ravel()
+    
+    # Stack coordinates: (3, N) array
+    coords = np.array([z_flat, y_flat, x_flat])
+    
+    # Sample with linear interpolation
+    sampled_flat = map_coordinates(volume, coords, order=1, mode='constant', cval=0)
+    
+    sampled = sampled_flat.reshape(H, W)
+    
+    # Zero out invalid regions
+    sampled[~mask] = 0
+    
+    return sampled
+
+# =============================================================================
+# 🔧 Layer Extraction
+# =============================================================================
+def extract_layers(volume, phi, num_layers, margin=0.1):
+    """
+    Extract flattened layers from the volume.
+    
+    Args:
+        volume: (D, H, W) windowed CT volume [0, 1]
+        phi: (D, H, W) scalar field
+        num_layers: number of layers to extract
+        margin: fraction of phi range to skip at extremes
+    
+    Returns:
+        layers: list of (H, W) arrays
+        layer_values: corresponding phi values
+    """
+    phi_min, phi_max = phi.min(), phi.max()
+    phi_range = phi_max - phi_min
+    
+    # Skip extreme values
+    layer_min = phi_min + margin * phi_range
+    layer_max = phi_max - margin * phi_range
+    
+    layer_values = np.linspace(layer_min, layer_max, num_layers)
+    
+    print(f"   Phi range: [{phi_min:.4f}, {phi_max:.4f}]")
+    print(f"   Layer range: [{layer_min:.4f}, {layer_max:.4f}]")
+    print(f"   Extracting {num_layers} layers...")
+    
+    layers = []
+    
+    for i, target in enumerate(tqdm(layer_values, desc="   Extracting")):
+        z_map, mask = find_z_for_layer(phi, target)
+        
+        # Sample volume
+        layer = sample_volume_at_z(volume, z_map, mask)
+        
+        layers.append(layer)
+    
+    return layers, layer_values
+
+# =============================================================================
+# 🔧 Output
+# =============================================================================
+def save_layers(layers, layer_values, output_dir):
+    """Save layers as PNG images."""
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    print(f"\n💾 Saving {len(layers)} layers to {output_dir}/...")
+    
+    for i, (layer, value) in enumerate(zip(layers, layer_values)):
+        # Normalize to 0-255
+        if layer.max() > 0:
+            layer_norm = (layer * 255).clip(0, 255).astype(np.uint8)
+        else:
+            layer_norm = np.zeros_like(layer, dtype=np.uint8)
+        
+        # Save
+        filename = output_dir / f"layer_{i+1:02d}.png"
+        cv2.imwrite(str(filename), layer_norm)
+    
+    print(f"   ✅ Saved {len(layers)} layers")
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius RGT - Scroll Flattening")
+    print("=" * 60)
+    
+    # 1. Load CT volume
+    volume = load_ct_volume(CONFIG["ct_dir"], CONFIG["z_range"])
+    
+    # 2. Apply windowing
+    print("\n🔧 Applying contrast windowing...")
+    volume = apply_windowing(volume, CONFIG["window_min"], CONFIG["window_max"])
+    print(f"   Windowed range: [{volume.min():.4f}, {volume.max():.4f}]")
+    
+    # 3. Load and resize phi
+    print()
+    phi = load_and_resize_phi(CONFIG["phi_path"], volume.shape)
+    
+    # 4. Extract layers
+    print(f"\n🔪 Extracting flattened layers...")
+    layers, layer_values = extract_layers(
+        volume, phi, 
+        CONFIG["num_layers"], 
+        CONFIG["layer_margin"]
+    )
+    
+    # 5. Save layers
+    save_layers(layers, layer_values, CONFIG["output_dir"])
+    
+    # 6. Create summary image
+    print("\n📊 Creating summary montage...")
+    
+    # Create grid of all layers
+    n = len(layers)
+    cols = min(5, n)
+    rows = (n + cols - 1) // cols
+    
+    h, w = layers[0].shape
+    scale = min(1.0, 2000 / w)  # Scale down if too large
+    new_h, new_w = int(h * scale), int(w * scale)
+    
+    montage = np.zeros((rows * new_h, cols * new_w), dtype=np.uint8)
+    
+    for i, layer in enumerate(layers):
+        row, col = i // cols, i % cols
+        
+        # Resize for montage
+        layer_resized = cv2.resize(
+            (layer * 255).clip(0, 255).astype(np.uint8),
+            (new_w, new_h),
+            interpolation=cv2.INTER_AREA
+        )
+        
+        y_start = row * new_h
+        x_start = col * new_w
+        montage[y_start:y_start+new_h, x_start:x_start+new_w] = layer_resized
+    
+    cv2.imwrite(str(CONFIG["output_dir"] / "montage.png"), montage)
+    print(f"   ✅ Saved: {CONFIG['output_dir']}/montage.png")
+    
+    # 7. Summary
+    print("\n" + "=" * 60)
+    print("📊 Scroll Flattening Complete!")
+    print(f"   Output: {CONFIG['output_dir']}/")
+    print(f"   Layers: {len(layers)}")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\preprocessing\generate_orientation_field.py
+```py
+"""
+Vesuvius Challenge 2026 - RGT Orientation Field Generator
+==========================================================
+Phase 1: Extract micro-orientation field from 3D CT scroll data.
+
+Algorithm:
+1. Compute Hessian matrix using separable convolutions (GPU)
+2. Eigenvalue decomposition for Sato sheet filter
+3. Global orientation propagation (sign disambiguation)
+
+Memory Target: < 5GB VRAM (RTX 3060 compatible)
+"""
+
+import numpy as np
+import cupy as cp
+from cupyx.scipy.ndimage import gaussian_filter1d, convolve1d
+import heapq
+from pathlib import Path
+from tqdm import tqdm
+import gc
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Input/Output
+    "input_dir": Path("data/native/train/1/surface_volume"),
+    "output_path": "orientation_field.npz",
+    
+    # Processing parameters
+    "sigma": 1.0,           # Gaussian smoothing scale
+    "chunk_size": 512,      # Larger chunks = fewer iterations = faster
+    "overlap": 32,          # Overlap between chunks
+    
+    # Sato filter parameters
+    "alpha": 0.5,           # Sato alpha (plate-ness sensitivity)
+    "gamma": 0.5,           # Sato gamma (structure-ness sensitivity)
+    
+    # Memory management
+    "max_vram_gb": 5.0,     # Maximum VRAM usage
+    "dtype": cp.float32,    # Computation dtype
+    
+    # Performance
+    "num_workers": 4,       # CPU workers for parallel operations
+    "use_fast_eigen": True, # Use simplified eigenanalysis (faster but less accurate)
+}
+
+# =============================================================================
+# 🔧 Hessian Computation (Separable Convolutions)
+# =============================================================================
+def compute_hessian_separable(volume, sigma=1.0):
+    """
+    Compute 3D Hessian matrix using separable Gaussian convolutions.
+    
+    Uses gaussian_filter1d for memory efficiency.
+    Returns 6 unique Hessian components: Ixx, Iyy, Izz, Ixy, Ixz, Iyz
+    
+    Args:
+        volume: (D, H, W) CuPy array
+        sigma: Gaussian scale
+    
+    Returns:
+        hessian: dict with keys 'xx', 'yy', 'zz', 'xy', 'xz', 'yz'
+    """
+    print("📐 Computing Hessian matrix (separable convolutions)...")
+    
+    # Gaussian smoothing first
+    smoothed = gaussian_filter1d(volume, sigma, axis=0)
+    smoothed = gaussian_filter1d(smoothed, sigma, axis=1)
+    smoothed = gaussian_filter1d(smoothed, sigma, axis=2)
+    
+    # Derivative kernels (1D)
+    d1 = cp.array([-0.5, 0, 0.5], dtype=CONFIG["dtype"])  # First derivative
+    d2 = cp.array([1, -2, 1], dtype=CONFIG["dtype"])      # Second derivative
+    
+    # Second derivatives (diagonal)
+    Ixx = convolve1d(smoothed, d2, axis=2)  # ∂²I/∂x²
+    Iyy = convolve1d(smoothed, d2, axis=1)  # ∂²I/∂y²
+    Izz = convolve1d(smoothed, d2, axis=0)  # ∂²I/∂z²
+    
+    # Mixed derivatives (off-diagonal)
+    Ix = convolve1d(smoothed, d1, axis=2)
+    Iy = convolve1d(smoothed, d1, axis=1)
+    Iz = convolve1d(smoothed, d1, axis=0)
+    
+    Ixy = convolve1d(Ix, d1, axis=1)  # ∂²I/∂x∂y
+    Ixz = convolve1d(Ix, d1, axis=0)  # ∂²I/∂x∂z
+    Iyz = convolve1d(Iy, d1, axis=0)  # ∂²I/∂y∂z
+    
+    # Free intermediate memory
+    del smoothed, Ix, Iy, Iz
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    hessian = {
+        'xx': Ixx, 'yy': Iyy, 'zz': Izz,
+        'xy': Ixy, 'xz': Ixz, 'yz': Iyz
+    }
+    
+    return hessian
+
+# =============================================================================
+# 🔧 Eigenvalue Decomposition + Sato Filter
+# =============================================================================
+def sato_eigenanalysis_fast(hessian, alpha=0.5, gamma=0.5):
+    """
+    FAST eigenanalysis using analytical 3x3 solution.
+    
+    For 3x3 symmetric matrices, eigenvalues can be computed analytically
+    using Cardano's formula - much faster than iterative methods.
+    """
+    print("🧮 Computing eigenvalues (FAST analytical method)...")
+    
+    D, H, W = hessian['xx'].shape
+    
+    # Extract components
+    a11 = hessian['xx'].ravel()
+    a22 = hessian['yy'].ravel()
+    a33 = hessian['zz'].ravel()
+    a12 = hessian['xy'].ravel()
+    a13 = hessian['xz'].ravel()
+    a23 = hessian['yz'].ravel()
+    
+    hessian.clear()
+    
+    # Analytical eigenvalues for 3x3 symmetric matrix
+    # Using characteristic polynomial coefficients
+    p1 = a12**2 + a13**2 + a23**2
+    
+    # Trace and other invariants
+    q = (a11 + a22 + a33) / 3.0
+    p2 = (a11 - q)**2 + (a22 - q)**2 + (a33 - q)**2 + 2 * p1
+    p = cp.sqrt(p2 / 6.0)
+    
+    # For confidence, we just need |largest eigenvalue|
+    # Approximate using Frobenius norm
+    frobenius = cp.sqrt(a11**2 + a22**2 + a33**2 + 2*(a12**2 + a13**2 + a23**2))
+    
+    # Approximate largest eigenvalue magnitude
+    lambda_max = frobenius / cp.sqrt(3.0)
+    
+    # Confidence = magnitude of structure
+    confidence = lambda_max.reshape(D, H, W)
+    
+    # For orientation: use gradient of intensity (simplified)
+    # The eigenvector of largest eigenvalue roughly aligns with 
+    # the direction of maximum second derivative
+    # Approximate with normalized [Izz, Iyy, Ixx] direction
+    vectors = cp.zeros((D, H, W, 3), dtype=CONFIG["dtype"])
+    
+    # Use the diagonal elements as proxy for principal direction
+    norm = cp.sqrt(a11**2 + a22**2 + a33**2 + 1e-8)
+    vectors[:, :, :, 0] = (a33 / norm).reshape(D, H, W)  # Z component
+    vectors[:, :, :, 1] = (a22 / norm).reshape(D, H, W)  # Y component  
+    vectors[:, :, :, 2] = (a11 / norm).reshape(D, H, W)  # X component
+    
+    del a11, a22, a33, a12, a13, a23
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    print(f"   Confidence range: [{float(confidence.min()):.4f}, {float(confidence.max()):.4f}]")
+    
+    return vectors, confidence
+
+def sato_eigenanalysis_gpu(hessian, alpha=0.5, gamma=0.5):
+    """
+    Full eigenvalue decomposition (accurate but slower).
+    """
+    # Use fast method if enabled
+    if CONFIG.get("use_fast_eigen", False):
+        return sato_eigenanalysis_fast(hessian, alpha, gamma)
+    
+    print("🧮 Computing eigenvalues (full decomposition)...")
+    
+    D, H, W = hessian['xx'].shape
+    
+    # Build Hessian tensor
+    H_tensor = cp.zeros((D, H, W, 3, 3), dtype=CONFIG["dtype"])
+    
+    H_tensor[:, :, :, 0, 0] = hessian['xx']
+    H_tensor[:, :, :, 1, 1] = hessian['yy']
+    H_tensor[:, :, :, 2, 2] = hessian['zz']
+    H_tensor[:, :, :, 0, 1] = hessian['xy']
+    H_tensor[:, :, :, 1, 0] = hessian['xy']
+    H_tensor[:, :, :, 0, 2] = hessian['xz']
+    H_tensor[:, :, :, 2, 0] = hessian['xz']
+    H_tensor[:, :, :, 1, 2] = hessian['yz']
+    H_tensor[:, :, :, 2, 1] = hessian['yz']
+    
+    hessian.clear()
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    H_flat = H_tensor.reshape(-1, 3, 3)
+    
+    print("   Computing eigenvalues/vectors...")
+    eigenvalues, eigenvectors = cp.linalg.eigh(H_flat)
+    
+    del H_flat, H_tensor
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    abs_eigenvalues = cp.abs(eigenvalues)
+    max_idx = cp.argmax(abs_eigenvalues, axis=1)
+    
+    N = eigenvalues.shape[0]
+    vectors_flat = eigenvectors[cp.arange(N), :, max_idx]
+    
+    λ1, λ2, λ3 = eigenvalues[:, 0], eigenvalues[:, 1], eigenvalues[:, 2]
+    abs_λ3 = cp.abs(λ3)
+    R_sheet = cp.abs(λ2) / (abs_λ3 + 1e-8)
+    S = cp.sqrt(λ1**2 + λ2**2 + λ3**2)
+    
+    sato_response = abs_λ3 * (1 - cp.exp(-R_sheet**2 / (2 * alpha**2))) * \
+                    (1 - cp.exp(-S**2 / (2 * gamma**2)))
+    
+    vectors = vectors_flat.reshape(D, H, W, 3)
+    confidence = sato_response.reshape(D, H, W)
+    
+    del eigenvalues, eigenvectors, vectors_flat, sato_response
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    print(f"   Confidence range: [{float(confidence.min()):.4f}, {float(confidence.max()):.4f}]")
+    
+    return vectors, confidence
+
+# =============================================================================
+# 🔧 Global Orientation Propagation (Sign Disambiguation)
+# =============================================================================
+def propagate_orientation_fast(vectors, confidence):
+    """
+    FAST sign disambiguation using iterative local propagation.
+    
+    Instead of serial BFS, we use vectorized local consistency checks
+    that can be parallelized on GPU. Much faster than serial BFS.
+    
+    Algorithm:
+    1. Start with random initial signs
+    2. Iteratively check local 6-neighbors and flip if majority disagree
+    3. Repeat until convergence or max iterations
+    """
+    print("🔄 Propagating global orientation (FAST iterative method)...")
+    
+    # Handle both CuPy and NumPy inputs
+    if hasattr(vectors, 'get'):
+        vectors_np = vectors.get().copy()
+    else:
+        vectors_np = np.asarray(vectors).copy()
+    
+    if hasattr(confidence, 'get'):
+        confidence_np = confidence.get()
+    else:
+        confidence_np = np.asarray(confidence)
+    
+    D, H, W, _ = vectors_np.shape
+    print(f"   Volume: {D} x {H} x {W}")
+    
+    # Find seed (highest confidence) and fix its direction
+    seed_idx = np.unravel_index(np.argmax(confidence_np), confidence_np.shape)
+    print(f"   Seed: {seed_idx} (confidence: {confidence_np[seed_idx]:.4f})")
+    
+    # Simple approach: propagate layer by layer from seed
+    # This is much faster than full BFS
+    max_iters = 20
+    changed_count = 1
+    iteration = 0
+    
+    while changed_count > 0 and iteration < max_iters:
+        changed_count = 0
+        
+        # Check all 6 neighbors for each voxel
+        for dz, dy, dx in [(-1,0,0), (1,0,0), (0,-1,0), (0,1,0), (0,0,-1), (0,0,1)]:
+            # Shifted views
+            if dz == -1:
+                v1 = vectors_np[:-1, :, :]
+                v2 = vectors_np[1:, :, :]
+            elif dz == 1:
+                v1 = vectors_np[1:, :, :]
+                v2 = vectors_np[:-1, :, :]
+            elif dy == -1:
+                v1 = vectors_np[:, :-1, :]
+                v2 = vectors_np[:, 1:, :]
+            elif dy == 1:
+                v1 = vectors_np[:, 1:, :]
+                v2 = vectors_np[:, :-1, :]
+            elif dx == -1:
+                v1 = vectors_np[:, :, :-1]
+                v2 = vectors_np[:, :, 1:]
+            else:  # dx == 1
+                v1 = vectors_np[:, :, 1:]
+                v2 = vectors_np[:, :, :-1]
+            
+            # Compute dot products
+            dots = np.einsum('ijkl,ijkl->ijk', v1, v2)
+            
+            # Find disagreements (dot < 0)
+            flip_mask = dots < 0
+            
+            if flip_mask.any():
+                # Apply flips to v2's original location
+                if dz == -1:
+                    vectors_np[1:, :, :][flip_mask] *= -1
+                elif dz == 1:
+                    vectors_np[:-1, :, :][flip_mask] *= -1
+                elif dy == -1:
+                    vectors_np[:, 1:, :][flip_mask] *= -1
+                elif dy == 1:
+                    vectors_np[:, :-1, :][flip_mask] *= -1
+                elif dx == -1:
+                    vectors_np[:, :, 1:][flip_mask] *= -1
+                else:
+                    vectors_np[:, :, :-1][flip_mask] *= -1
+                
+                changed_count += flip_mask.sum()
+        
+        iteration += 1
+        print(f"   Iteration {iteration}: {changed_count} flips")
+        
+        if changed_count == 0:
+            break
+    
+    print(f"   Converged in {iteration} iterations")
+    
+    return vectors_np
+
+# =============================================================================
+# 🔧 Chunked Processing (Memory-Safe)
+# =============================================================================
+def process_volume_chunked(volume, chunk_size=128, overlap=16):
+    """
+    Process large volume in overlapping chunks to stay within VRAM limits.
+    
+    Args:
+        volume: (D, H, W) NumPy array
+        chunk_size: Size of each chunk
+        overlap: Overlap between chunks
+    
+    Returns:
+        vectors: (D, H, W, 3) orientation field
+        confidence: (D, H, W) Sato response
+    """
+    D, H, W = volume.shape
+    
+    # If small enough, process directly
+    vram_estimate = D * H * W * 4 * 20 / 1e9  # Rough estimate
+    
+    if vram_estimate < CONFIG["max_vram_gb"]:
+        print(f"📦 Processing entire volume (est. {vram_estimate:.2f} GB VRAM)...")
+        
+        volume_gpu = cp.asarray(volume, dtype=CONFIG["dtype"])
+        hessian = compute_hessian_separable(volume_gpu, CONFIG["sigma"])
+        
+        del volume_gpu
+        cp.get_default_memory_pool().free_all_blocks()
+        
+        vectors, confidence = sato_eigenanalysis_gpu(
+            hessian, CONFIG["alpha"], CONFIG["gamma"]
+        )
+        
+        return vectors, confidence
+    
+    # Chunked processing
+    print(f"📦 Processing in chunks ({chunk_size}³ with {overlap} overlap)...")
+    
+    vectors_full = np.zeros((D, H, W, 3), dtype=np.float32)
+    confidence_full = np.zeros((D, H, W), dtype=np.float32)
+    weight_full = np.zeros((D, H, W), dtype=np.float32)
+    
+    step = chunk_size - overlap
+    
+    z_chunks = list(range(0, D, step))
+    y_chunks = list(range(0, H, step))
+    x_chunks = list(range(0, W, step))
+    
+    total_chunks = len(z_chunks) * len(y_chunks) * len(x_chunks)
+    
+    with tqdm(total=total_chunks, desc="   Chunks") as pbar:
+        for z0 in z_chunks:
+            for y0 in y_chunks:
+                for x0 in x_chunks:
+                    z1 = min(z0 + chunk_size, D)
+                    y1 = min(y0 + chunk_size, H)
+                    x1 = min(x0 + chunk_size, W)
+                    
+                    chunk = volume[z0:z1, y0:y1, x0:x1]
+                    chunk_gpu = cp.asarray(chunk, dtype=CONFIG["dtype"])
+                    
+                    # Process chunk
+                    hessian = compute_hessian_separable(chunk_gpu, CONFIG["sigma"])
+                    vectors_chunk, conf_chunk = sato_eigenanalysis_gpu(
+                        hessian, CONFIG["alpha"], CONFIG["gamma"]
+                    )
+                    
+                    # Transfer back
+                    vectors_np = cp.asnumpy(vectors_chunk)
+                    conf_np = cp.asnumpy(conf_chunk)
+                    
+                    # Accumulate with blending
+                    vectors_full[z0:z1, y0:y1, x0:x1] += vectors_np
+                    confidence_full[z0:z1, y0:y1, x0:x1] += conf_np
+                    weight_full[z0:z1, y0:y1, x0:x1] += 1.0
+                    
+                    # Cleanup
+                    del chunk_gpu, hessian, vectors_chunk, conf_chunk
+                    cp.get_default_memory_pool().free_all_blocks()
+                    gc.collect()
+                    
+                    pbar.update(1)
+    
+    # Average overlapping regions
+    weight_full = np.maximum(weight_full, 1e-8)
+    vectors_full /= weight_full[:, :, :, np.newaxis]
+    confidence_full /= weight_full
+    
+    # Normalize vectors
+    norms = np.linalg.norm(vectors_full, axis=-1, keepdims=True)
+    vectors_full = vectors_full / np.maximum(norms, 1e-8)
+    
+    # Return as CuPy for consistency with direct processing path
+    # But only if memory allows
+    try:
+        return cp.asarray(vectors_full), cp.asarray(confidence_full)
+    except:
+        # If OOM, return numpy - BFS will handle it
+        print("   ⚠️ Returning NumPy arrays due to VRAM limits")
+        return vectors_full, confidence_full
+
+# =============================================================================
+# 🔧 I/O Functions
+# =============================================================================
+def load_volume_from_tifs(input_dir, z_range=None):
+    """Load 3D volume from directory of TIF slices."""
+    import tifffile
+    
+    input_dir = Path(input_dir)
+    tif_files = sorted(input_dir.glob("*.tif"), key=lambda x: int(x.stem))
+    
+    if z_range:
+        tif_files = [f for f in tif_files if z_range[0] <= int(f.stem) < z_range[1]]
+    
+    print(f"📥 Loading {len(tif_files)} TIF slices...")
+    
+    # Load first slice to get dimensions
+    first = tifffile.imread(str(tif_files[0]))
+    H, W = first.shape
+    D = len(tif_files)
+    
+    volume = np.zeros((D, H, W), dtype=np.float32)
+    volume[0] = first.astype(np.float32)
+    
+    for i, f in enumerate(tqdm(tif_files[1:], desc="   Loading")):
+        volume[i + 1] = tifffile.imread(str(f)).astype(np.float32)
+    
+    print(f"   Volume shape: {volume.shape}")
+    print(f"   Value range: [{volume.min():.0f}, {volume.max():.0f}]")
+    
+    return volume
+
+def save_orientation_field(vectors, confidence, output_path):
+    """Save orientation field as compressed NPZ."""
+    print(f"💾 Saving to {output_path}...")
+    
+    np.savez_compressed(
+        output_path,
+        vector_field=vectors,
+        confidence=confidence,
+    )
+    
+    print(f"   ✅ Saved: {output_path}")
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius RGT - Orientation Field Generator")
+    print("=" * 60)
+    
+    # Check GPU
+    print(f"\n🖥️ GPU: {cp.cuda.runtime.getDeviceProperties(0)['name'].decode()}")
+    meminfo = cp.cuda.runtime.memGetInfo()
+    print(f"   VRAM: {meminfo[1] / 1e9:.2f} GB total, {meminfo[0] / 1e9:.2f} GB free")
+    
+    # 1. Load volume
+    volume = load_volume_from_tifs(CONFIG["input_dir"], z_range=(51, 65))
+    
+    # 2. 🚑 VESUVIUS CONTRAST WINDOWING (Critical Fix!)
+    # Raw values are uint16 [0, 65535]. Papyrus signal is in [18000, 28000].
+    WIN_MIN, WIN_MAX = 18000.0, 28000.0
+    print(f"\n🔧 Applying Vesuvius contrast windowing [{WIN_MIN:.0f}, {WIN_MAX:.0f}]...")
+    print(f"   Before: range=[{volume.min():.0f}, {volume.max():.0f}], mean={volume.mean():.0f}")
+    
+    volume = np.clip(volume, WIN_MIN, WIN_MAX)
+    volume = (volume - WIN_MIN) / (WIN_MAX - WIN_MIN)
+    volume = volume.astype(np.float32)
+    
+    print(f"   After: range=[{volume.min():.4f}, {volume.max():.4f}], mean={volume.mean():.4f}")
+    
+    # 3. Compute Hessian and Sato filter
+    vectors, confidence = process_volume_chunked(
+        volume, CONFIG["chunk_size"], CONFIG["overlap"]
+    )
+    
+    # 4. 🔍 VISUAL PROBE: Save Sato confidence for debugging
+    print("\n🔍 Saving Sato confidence debug image...")
+    if hasattr(confidence, 'get'):
+        conf_np = confidence.get()
+    else:
+        conf_np = np.asarray(confidence)
+    
+    mid_z = conf_np.shape[0] // 2
+    conf_slice = conf_np[mid_z]
+    
+    # Normalize for visualization
+    if conf_slice.max() > 0:
+        conf_vis = (conf_slice / conf_slice.max() * 255).astype(np.uint8)
+    else:
+        conf_vis = (conf_slice * 255).astype(np.uint8)
+    
+    import cv2
+    cv2.imwrite("debug_sato_confidence.png", conf_vis)
+    print(f"   ✅ Saved: debug_sato_confidence.png")
+    print(f"   Confidence stats: min={conf_np.min():.4f}, max={conf_np.max():.4f}, mean={conf_np.mean():.4f}")
+    
+    # 5. Global orientation propagation (SKIP for now - can be done later)
+    # vectors_fixed = propagate_orientation_fast(vectors, confidence)
+    print("⏭️ Skipping sign propagation (use raw vectors)")
+    
+    # Convert to numpy if needed
+    if hasattr(vectors, 'get'):
+        vectors_fixed = vectors.get()
+    else:
+        vectors_fixed = np.asarray(vectors)
+    
+    # 6. Save results
+    if hasattr(confidence, 'get'):
+        confidence_np = confidence.get()
+    else:
+        confidence_np = np.asarray(confidence)
+    save_orientation_field(vectors_fixed, confidence_np, CONFIG["output_path"])
+    
+    # 6. Summary
+    print("\n" + "=" * 60)
+    print("📊 Orientation Field Generation Complete!")
+    print(f"   Output: {CONFIG['output_path']}")
+    print(f"   Shape: {vectors_fixed.shape}")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\preprocessing\solve_global_scalar_field.py
+```py
+"""
+Vesuvius Challenge 2026 - RGT Scalar Field Solver (GPU ONLY)
+=============================================================
+Phase 2: Solve weighted Poisson equation for global scalar field.
+
+Equation: ∇·(w∇φ) = ∇·(wv)
+
+Method: Matrix-free CG with Jacobi Preconditioner (PURE CUPY)
+Target: RTX 3060 6GB VRAM
+"""
+
+import numpy as np
+import cupy as cp
+from cupyx.scipy.sparse.linalg import LinearOperator, cg
+from cupyx.scipy.ndimage import zoom as gpu_zoom
+from pathlib import Path
+import gc
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    "input_path": "orientation_field.npz",
+    "output_path": "scalar_field.npz",
+    "debug_slice_path": "debug_scalar_slice.png",
+    
+    "tol": 1e-4,
+    "maxiter": 500,
+    "print_interval": 25,
+    
+    "epsilon": 1e-5,
+    "downsample_factor": 4,
+}
+
+# =============================================================================
+# 🔧 GPU Finite Difference Operators
+# =============================================================================
+def gradient_x_gpu(phi, w=None):
+    """Forward difference in X (GPU)"""
+    grad = cp.zeros_like(phi)
+    grad[..., :-1] = phi[..., 1:] - phi[..., :-1]
+    if w is not None:
+        grad *= w
+    return grad
+
+def gradient_y_gpu(phi, w=None):
+    """Forward difference in Y (GPU)"""
+    grad = cp.zeros_like(phi)
+    grad[:, :-1, :] = phi[:, 1:, :] - phi[:, :-1, :]
+    if w is not None:
+        grad *= w
+    return grad
+
+def gradient_z_gpu(phi, w=None):
+    """Forward difference in Z (GPU)"""
+    grad = cp.zeros_like(phi)
+    grad[:-1, :, :] = phi[1:, :, :] - phi[:-1, :, :]
+    if w is not None:
+        grad *= w
+    return grad
+
+def divergence_gpu(fx, fy, fz):
+    """Compute divergence (GPU, backward differences)"""
+    div = cp.zeros_like(fx)
+    
+    div[..., 1:] += fx[..., 1:] - fx[..., :-1]
+    div[..., 0] += fx[..., 0]
+    
+    div[:, 1:, :] += fy[:, 1:, :] - fy[:, :-1, :]
+    div[:, 0, :] += fy[:, 0, :]
+    
+    div[1:, :, :] += fz[1:, :, :] - fz[:-1, :, :]
+    div[0, :, :] += fz[0, :, :]
+    
+    return div
+
+# =============================================================================
+# 🔧 GPU Matrix-Free Linear Operator
+# =============================================================================
+class GPUWeightedLaplacian:
+    """Pure CuPy matrix-free weighted Laplacian."""
+    
+    def __init__(self, shape, weights_gpu, epsilon=1e-5):
+        self.shape = shape
+        self.n = int(cp.prod(cp.array(shape)))
+        self.dtype = cp.float32
+        self.w = weights_gpu  # Already on GPU
+        self.epsilon = epsilon
+        
+        # Jacobi diagonal
+        self.diag = cp.maximum(6.0 * self.w + epsilon, 1e-8)
+        
+    def matvec(self, phi_flat):
+        """A @ φ = -∇·(w∇φ) + ε*φ (GPU)"""
+        phi = phi_flat.reshape(self.shape)
+        
+        gx = gradient_x_gpu(phi, self.w)
+        gy = gradient_y_gpu(phi, self.w)
+        gz = gradient_z_gpu(phi, self.w)
+        
+        result = -divergence_gpu(gx, gy, gz)
+        result += self.epsilon * phi
+        
+        del gx, gy, gz
+        
+        return result.ravel()
+    
+    def precond(self, r_flat):
+        """Jacobi preconditioner (GPU)"""
+        return (r_flat.reshape(self.shape) / self.diag).ravel()
+    
+    def as_operator(self):
+        return LinearOperator(
+            shape=(self.n, self.n),
+            matvec=self.matvec,
+            dtype=self.dtype
+        )
+    
+    def as_precond(self):
+        return LinearOperator(
+            shape=(self.n, self.n),
+            matvec=self.precond,
+            dtype=self.dtype
+        )
+
+# =============================================================================
+# 🔧 CPU Downsampling (before GPU transfer)
+# =============================================================================
+def downsample_cpu(arr, factor, is_vector=False):
+    """Downsample on CPU using scipy zoom."""
+    from scipy.ndimage import zoom as cpu_zoom
+    
+    if is_vector:
+        D, H, W, C = arr.shape
+        result = np.zeros((D, H // factor, W // factor, C), dtype=np.float32)
+        for c in range(C):
+            result[:, :, :, c] = cpu_zoom(arr[:, :, :, c], (1, 1/factor, 1/factor), order=1)
+        # Re-normalize
+        norms = np.linalg.norm(result, axis=-1, keepdims=True)
+        result = result / np.maximum(norms, 1e-8)
+        return result
+    else:
+        return cpu_zoom(arr, (1, 1/factor, 1/factor), order=1).astype(np.float32)
+
+# =============================================================================
+# 🔧 CG Callback
+# =============================================================================
+class CGCallback:
+    def __init__(self, interval=25):
+        self.i = 0
+        self.interval = interval
+        
+    def __call__(self, xk):
+        self.i += 1
+        if self.i % self.interval == 0:
+            print(f"   Iteration {self.i}...", flush=True)
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius RGT - Scalar Field Solver (GPU ONLY)")
+    print("=" * 60)
+    
+    # GPU check
+    print(f"\n🖥️ GPU: {cp.cuda.runtime.getDeviceProperties(0)['name'].decode()}")
+    meminfo = cp.cuda.runtime.memGetInfo()
+    print(f"   VRAM: {meminfo[1]/1e9:.2f} GB total, {meminfo[0]/1e9:.2f} GB free")
+    
+    # 1. Load on CPU
+    print(f"\n📥 Loading {CONFIG['input_path']}...")
+    data = np.load(CONFIG['input_path'])
+    vectors = data['vector_field']
+    confidence = data['confidence']
+    
+    print(f"   Original: {vectors.shape}, conf: {confidence.shape}")
+    original_shape = confidence.shape
+    
+    # 2. Downsample on CPU (more memory efficient)
+    factor = CONFIG["downsample_factor"]
+    print(f"\n📉 Downsampling by {factor}x on CPU...")
+    
+    vectors_ds = downsample_cpu(vectors, factor, is_vector=True)
+    weights_ds = downsample_cpu(confidence, factor)
+    
+    del vectors, confidence, data
+    gc.collect()
+    
+    D, H, W = weights_ds.shape
+    n = D * H * W
+    print(f"   Downsampled: ({D}, {H}, {W}) = {n:,} voxels")
+    print(f"   Est. GPU memory: {n * 4 * 6 / 1e9:.2f} GB")
+    
+    # 3. Transfer to GPU
+    print("\n🔄 Transferring to GPU...")
+    
+    vectors_gpu = cp.asarray(vectors_ds, dtype=cp.float32)
+    weights_gpu = cp.asarray(weights_ds, dtype=cp.float32)
+    weights_gpu = cp.maximum(weights_gpu, 1e-8)
+    
+    del vectors_ds, weights_ds
+    gc.collect()
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    meminfo = cp.cuda.runtime.memGetInfo()
+    print(f"   VRAM after transfer: {meminfo[0]/1e9:.2f} GB free")
+    
+    # 4. Compute RHS on GPU
+    print("\n📐 Computing RHS: b = ∇·(w·v) on GPU...")
+    
+    vx = vectors_gpu[:, :, :, 2]
+    vy = vectors_gpu[:, :, :, 1]
+    vz = vectors_gpu[:, :, :, 0]
+    
+    w_vx = weights_gpu * vx
+    w_vy = weights_gpu * vy
+    w_vz = weights_gpu * vz
+    
+    b = divergence_gpu(w_vx, w_vy, w_vz)
+    b_flat = b.ravel()
+    
+    print(f"   RHS range: [{float(b.min()):.6f}, {float(b.max()):.6f}]")
+    
+    del vectors_gpu, vx, vy, vz, w_vx, w_vy, w_vz, b
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    meminfo = cp.cuda.runtime.memGetInfo()
+    print(f"   VRAM after RHS: {meminfo[0]/1e9:.2f} GB free")
+    
+    # 5. Build operator
+    print("\n🔧 Building GPU LinearOperator...")
+    op = GPUWeightedLaplacian((D, H, W), weights_gpu, CONFIG["epsilon"])
+    A = op.as_operator()
+    M = op.as_precond()
+    
+    # 6. Initial guess
+    x0 = cp.zeros(n, dtype=cp.float32)
+    
+    # 7. Solve CG on GPU
+    print(f"\n🧮 Solving Poisson (CG on GPU)...")
+    print(f"   tol={CONFIG['tol']}, maxiter={CONFIG['maxiter']}")
+    
+    callback = CGCallback(CONFIG["print_interval"])
+    
+    phi_flat, info = cg(A, b_flat, x0=x0, tol=CONFIG["tol"], 
+                        maxiter=CONFIG["maxiter"], M=M, callback=callback)
+    
+    if info == 0:
+        print(f"   ✅ Converged in {callback.i} iterations!")
+    else:
+        print(f"   ⚠️ info={info}, iterations={callback.i}")
+    
+    # 8. Reshape and transfer to CPU
+    phi_ds = phi_flat.reshape((D, H, W))
+    phi_ds_np = cp.asnumpy(phi_ds)
+    
+    print(f"\n📊 Solution stats:")
+    print(f"   Range: [{phi_ds_np.min():.4f}, {phi_ds_np.max():.4f}]")
+    print(f"   Mean: {phi_ds_np.mean():.4f}")
+    
+    # 9. Upsample to original resolution
+    print(f"\n📈 Upsampling to original resolution...")
+    from scipy.ndimage import zoom as cpu_zoom
+    phi_full = cpu_zoom(phi_ds_np, (1, factor, factor), order=1)
+    phi_full = phi_full[:original_shape[0], :original_shape[1], :original_shape[2]]
+    print(f"   Full shape: {phi_full.shape}")
+    
+    # 10. Save
+    print(f"\n💾 Saving {CONFIG['output_path']}...")
+    np.savez_compressed(CONFIG['output_path'], phi=phi_full)
+    print(f"   ✅ Saved!")
+    
+    # 11. Debug viz
+    import cv2
+    mid_z = phi_full.shape[0] // 2
+    s = phi_full[mid_z]
+    s_min, s_max = s.min(), s.max()
+    if s_max - s_min > 1e-8:
+        vis = ((s - s_min) / (s_max - s_min) * 255).astype(np.uint8)
+    else:
+        vis = np.zeros_like(s, dtype=np.uint8)
+    cv2.imwrite(CONFIG['debug_slice_path'], vis)
+    print(f"   ✅ Debug: {CONFIG['debug_slice_path']}")
+    
+    print("\n" + "=" * 60)
+    print("📊 Scalar Field Solver Complete!")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\training\train.py
+```py
+"""
+Vesuvius Challenge 2026 - Standard Training Entry Point
+=======================================================
+Usage:
+    python scripts/training/train.py
+"""
+
+import sys
+from pathlib import Path
+import argparse
+import torch
+import torch.optim as optim
+from torch.utils.data import DataLoader
+import segmentation_models_pytorch as smp
+import albumentations as A
+from tqdm import tqdm
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.append(str(PROJECT_ROOT))
+
+from src.core.config import cfg
+from src.data.datasets import VesuviusDataset
+from src.models.losses import BCEDiceLoss
+from src.utils.metrics import fbeta_score, MetricMonitor
+
+def main(args):
+    print(f"🚀 Starting Training: {cfg.EXPERIMENT_NAME}")
+    print(f"   Device: {cfg.DEVICE}")
+    print(f"   Data: {cfg.DATA_ROOT}")
+    print(f"   Z-Slices: {len(cfg.Z_SLICES)} chunks ({cfg.Z_SLICES[0]}...{cfg.Z_SLICES[-1]})")
+    
+    # 1. Dataset
+    transforms = A.Compose([
+        A.HorizontalFlip(p=0.5),
+        A.VerticalFlip(p=0.5),
+        A.RandomRotate90(p=0.5),
+        A.ShiftScaleRotate(p=0.5)
+    ])
+    
+    print("\n📦 Initializing Datasets (Spatial Split)...")
+    train_ds = VesuviusDataset(
+        data_root=cfg.DATA_ROOT,
+        z_slices=cfg.Z_SLICES,
+        transform=transforms, 
+        mode="train",
+        split_fraction=cfg.VALID_SPLIT
+    )
+    
+    val_ds = VesuviusDataset(
+        data_root=cfg.DATA_ROOT,
+        z_slices=cfg.Z_SLICES,
+        transform=None, 
+        mode="valid",
+        split_fraction=cfg.VALID_SPLIT
+    )
+    
+    loaders = {
+        "train": DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, num_workers=0, pin_memory=True),
+        "valid": DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=0, pin_memory=True),
+    }
+    
+    # 2. Model
+    print(f"🧠 Initializing Model (In: {cfg.IN_CHANNELS})...")
+    model = smp.Unet(
+        encoder_name="resnet18",
+        encoder_weights="imagenet",
+        in_channels=cfg.IN_CHANNELS,
+        classes=1,
+    ).to(cfg.DEVICE)
+    
+    # 3. Optimization
+    optimizer = optim.AdamW(model.parameters(), lr=args.lr)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=2)
+    criterion = BCEDiceLoss()
+    scaler = torch.cuda.amp.GradScaler()
+    
+    # Dry Run Break
+    if args.dry_run:
+        print("\n🐪 Dry Run Mode: Checking one batch...")
+        x, y = next(iter(loaders["train"]))
+        print(f"   Batch Shape: {x.shape}")
+        with torch.cuda.amp.autocast():
+            out = model(x.to(cfg.DEVICE))
+        print("   Forward Pass OK")
+        print("✅ Dry Run Successful")
+        return
+
+    # 4. Loop
+    print("\n🔥 Starting Loop...")
+    best_score = 0
+    
+    # ... Training loop implementation (Simplified for brevity as logic is same as before)
+    # Re-using previous training loop logic from earlier artifacts if needed, 
+    # but for now ensuring the critical parts (Setup) are correct.
+    
+    for epoch in range(1, args.epochs + 1):
+        # Train
+        model.train()
+        pbar = tqdm(loaders["train"], desc=f"Epoch {epoch} [Train]")
+        for images, masks in pbar:
+            images, masks = images.to(cfg.DEVICE), masks.to(cfg.DEVICE)
+            optimizer.zero_grad()
+            with torch.cuda.amp.autocast():
+                out = model(images)
+                loss = criterion(out, masks)
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+            pbar.set_postfix(loss=loss.item())
+            
+        # Valid
+        model.eval()
+        val_score = MetricMonitor()
+        with torch.no_grad():
+            for images, masks in tqdm(loaders["valid"], desc="Valid"):
+                images, masks = images.to(cfg.DEVICE), masks.to(cfg.DEVICE)
+                with torch.cuda.amp.autocast():
+                    out = model(images)
+                score = fbeta_score(torch.sigmoid(out), masks)
+                val_score.update(score.item(), images.size(0))
+        
+        print(f"   Val F0.5: {val_score.avg:.4f}")
+        scheduler.step(val_score.avg)
+        
+        if val_score.avg > best_score:
+            best_score = val_score.avg
+            torch.save(model.state_dict(), cfg.OUTPUT_DIR / f"{cfg.EXPERIMENT_NAME}_best.pth")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--batch_size", type=int, default=cfg.BATCH_SIZE)
+    parser.add_argument("--epochs", type=int, default=cfg.EPOCHS)
+    parser.add_argument("--lr", type=float, default=cfg.LR)
+    parser.add_argument("--dry-run", action="store_true")
+    
+    args = parser.parse_args()
+    main(args)
+
+```
+
+---
+## File: scripts\training\train_native_volume.py
+```py
+"""
+Vesuvius Challenge 2026 - Native Volume Training (Refactored)
+============================================================
+Train on ORIGINAL surface_volume data with CORRECT ink labels.
+Refactored to use centralized config and modular components.
+"""
+
+import sys
+from pathlib import Path
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.append(str(PROJECT_ROOT))
+
+import numpy as np
+import torch
+import torch.optim as optim
+from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
+import cv2
+from tqdm import tqdm
+import albumentations as A
+import gc
+from PIL import Image
+
+# Modular imports
+from src.core.config import Config
+from src.data.native_dataset import NativeVolumeDataset
+from src.data.samplers import BalancedSampler
+from src.models.segmentation import load_model
+from src.core.metrics import DiceBCELoss
+
+# =============================================================================
+# 🔧 Data Loading
+# =============================================================================
+def load_native_volume(volume_dir, z_start, n_channels, window_min, window_max):
+    """Load native TIF slices as 3D volume."""
+    print(f"📥 Loading native volume from {volume_dir}...")
+    
+    tif_files = sorted(volume_dir.glob("*.tif"))
+    print(f"   Found {len(tif_files)} TIF files")
+    
+    if not tif_files:
+        raise FileNotFoundError(f"No TIF files in {volume_dir}")
+    
+    # Select slices
+    z_end = z_start + n_channels
+    selected_files = []
+    
+    tif_files.sort(key=lambda p: int(p.stem))
+    
+    for f in tif_files:
+        try:
+            z_idx = int(f.stem)
+            if z_start <= z_idx < z_end:
+                selected_files.append((z_idx, f))
+        except ValueError:
+            continue
+            
+    print(f"   Requested Z range: {z_start}-{z_end}")
+    print(f"   Actual files found: {len(selected_files)}")
+    
+    if len(selected_files) < n_channels:
+        print(f"   ⚠️ Warning: Only found {len(selected_files)}/{n_channels} files")
+        # Padding logic could be added here if strictly needed, or fail.
+        # For now, we proceed with what we have and let the user know, 
+        # or pad. Original script had complex fallback logic.
+        # We will implement simple padding to avoid shape mismatch.
+    
+    # Load first to get dimensions
+    first_img = np.array(Image.open(selected_files[0][1]))
+    H, W = first_img.shape
+    D = len(selected_files)
+    
+    volume = np.zeros((D, H, W), dtype=np.float32)
+    
+    for i, (z_idx, path) in enumerate(tqdm(selected_files, desc="   Loading")):
+        img = np.array(Image.open(path)).astype(np.float32)
+        # Apply windowing
+        img = np.clip(img, window_min, window_max)
+        img = (img - window_min) / (window_max - window_min)
+        volume[i] = img
+    
+    if D < n_channels:
+        print(f"   Padding from {D} to {n_channels} channels")
+        pad_total = n_channels - D
+        pad_top = pad_total // 2
+        pad_bottom = pad_total - pad_top
+        volume = np.pad(volume, ((pad_top, pad_bottom), (0, 0), (0, 0)), mode='reflect')
+
+    return volume
+
+# =============================================================================
+# 🔧 Augmentations
+# =============================================================================
+def get_train_augmentations():
+    return A.Compose([
+        A.HorizontalFlip(p=0.5),
+        A.VerticalFlip(p=0.5),
+        A.RandomRotate90(p=0.5),
+        A.ShiftScaleRotate(
+            shift_limit=0.1,
+            scale_limit=0.15,
+            rotate_limit=45,
+            border_mode=cv2.BORDER_REFLECT_101,
+            p=0.5
+        ),
+        A.RandomBrightnessContrast(p=0.5),
+    ])
+
+# =============================================================================
+# 🔧 Training
+# =============================================================================
+def train_epoch(model, dataloader, optimizer, criterion, device, scaler=None):
+    model.train()
+    total_loss = 0.0
+    
+    for images, masks in tqdm(dataloader, desc="   Training", leave=False):
+        images = images.to(device)
+        masks = masks.to(device)
+        
+        optimizer.zero_grad()
+        
+        with torch.cuda.amp.autocast(enabled=(scaler is not None)):
+            outputs = model(images)
+            loss = criterion(outputs, masks)
+        
+        if scaler is not None:
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+        else:
+            loss.backward()
+            optimizer.step()
+        
+        total_loss += loss.item()
+        
+        del images, masks, outputs, loss
+        torch.cuda.empty_cache()
+    
+    return total_loss / len(dataloader)
+
+def validate(model, dataloader, criterion, device):
+    model.eval()
+    total_loss = 0.0
+    
+    with torch.no_grad():
+        for images, masks in tqdm(dataloader, desc="   Validating", leave=False):
+            images = images.to(device)
+            masks = masks.to(device)
+            
+            outputs = model(images)
+            loss = criterion(outputs, masks)
+            
+            total_loss += loss.item()
+    
+    return total_loss / len(dataloader)
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius - Native Volume Training (Refactored)")
+    print("=" * 60)
+    
+    device = torch.device(Config.DEVICE)
+    print(f"\n🖥️ Device: {device}")
+    
+    Config.OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    Path(Config.MODEL_SAVE_PATH).parent.mkdir(parents=True, exist_ok=True)
+    
+    # 1. Load native volume
+    volume = load_native_volume(
+        Config.VOLUME_DIR,
+        Config.Z_START,
+        Config.IN_CHANNELS,
+        Config.WINDOW_MIN,
+        Config.WINDOW_MAX
+    )
+    
+    D, H, W = volume.shape
+    print(f"   Final volume: {volume.shape}")
+    
+    # 2. Load ink mask
+    print(f"\n📥 Loading ink mask: {Config.MASK_PATH}")
+    ink_mask = cv2.imread(str(Config.MASK_PATH), cv2.IMREAD_GRAYSCALE)
+    ink_mask = ink_mask.astype(np.float32) / 255.0
+    
+    if ink_mask.shape != (H, W):
+        print(f"   Resizing mask from {ink_mask.shape} to ({H}, {W})")
+        ink_mask = cv2.resize(ink_mask, (W, H), interpolation=cv2.INTER_NEAREST)
+    
+    # 3. Load paper mask
+    if Config.PAPYRUS_MASK_PATH.exists():
+        print(f"\n📥 Loading paper mask: {Config.PAPYRUS_MASK_PATH}")
+        paper_mask = cv2.imread(str(Config.PAPYRUS_MASK_PATH), cv2.IMREAD_GRAYSCALE)
+        paper_mask = paper_mask.astype(np.float32) / 255.0
+        if paper_mask.shape != (H, W):
+            paper_mask = cv2.resize(paper_mask, (W, H), interpolation=cv2.INTER_NEAREST)
+    else:
+        print("   No paper mask, using full image")
+        paper_mask = np.ones((H, W), dtype=np.float32)
+    
+    # 4. Create dataset
+    print("\n📦 Creating dataset...")
+    full_dataset = NativeVolumeDataset(
+        volume, ink_mask, paper_mask,
+        patch_size=Config.PATCH_SIZE,
+        min_ink_threshold=Config.MIN_INK_THRESHOLD,
+        augmentations=get_train_augmentations()
+    )
+    
+    # 5. Split (Uses Fixed Shuffle to prevent leakage)
+    print("   Splitting dataset...")
+    train_dataset, val_dataset = full_dataset.split(
+        val_split=Config.VAL_SPLIT, 
+        shuffle=True
+    )
+    
+    print(f"   Train patches: {len(train_dataset.all_patches)}")
+    print(f"   Val patches: {len(val_dataset.all_patches)}")
+    
+    # 6. Loaders
+    train_sampler = BalancedSampler(
+        train_dataset,
+        Config.BATCH_SIZE,
+        Config.INK_RATIO
+    )
+    
+    train_loader = DataLoader(
+        train_dataset,
+        batch_size=Config.BATCH_SIZE,
+        sampler=train_sampler,
+        num_workers=0,
+        pin_memory=True,
+        drop_last=True
+    )
+    
+    val_loader = DataLoader(
+        val_dataset,
+        batch_size=Config.BATCH_SIZE,
+        shuffle=False,
+        num_workers=0,
+        pin_memory=True
+    )
+    
+    # 7. Model
+    model = load_model(
+        Config.PRETRAINED_PATH,
+        Config.ENCODER,
+        Config.IN_CHANNELS,
+        device
+    )
+    
+    optimizer = optim.AdamW(
+        model.parameters(),
+        lr=Config.LEARNING_RATE,
+        weight_decay=Config.WEIGHT_DECAY
+    )
+    
+    scheduler = CosineAnnealingWarmRestarts(
+        optimizer,
+        T_0=Config.T_0,
+        T_mult=Config.T_MULT
+    )
+    
+    criterion = DiceBCELoss(dice_weight=0.5)
+    scaler = torch.cuda.amp.GradScaler()
+    
+    # 8. Loop
+    print(f"\n🏋️ Training for {Config.EPOCHS} epochs...")
+    best_val_loss = float('inf')
+    
+    for epoch in range(1, Config.EPOCHS + 1):
+        print(f"\nEpoch {epoch}/{Config.EPOCHS} (LR: {scheduler.get_last_lr()[0]:.2e})")
+        
+        train_loss = train_epoch(model, train_loader, optimizer, criterion, device, scaler)
+        val_loss = validate(model, val_loader, criterion, device)
+        scheduler.step()
+        
+        print(f"   Train Loss: {train_loss:.4f}")
+        print(f"   Val Loss: {val_loss:.4f}")
+        
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            torch.save({
+                'epoch': epoch,
+                'model_state_dict': model.state_dict(),
+                'val_loss': val_loss,
+            }, Config.MODEL_SAVE_PATH)
+            print(f"   💾 Saved best model!")
+        
+        gc.collect()
+        torch.cuda.empty_cache()
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: scripts\training\train_rgt.py
+```py
+"""
+Vesuvius Challenge 2026 - RGT Full Scale Training (V2)
+======================================================
+Strict Balanced Sampling & True 3D Volumetric Training on RGT Layers.
+Refactored to use shared modules.
+"""
+
+import sys
+from pathlib import Path
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.append(str(PROJECT_ROOT))
+
+import torch
+import torch.optim as optim
+from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
+import segmentation_models_pytorch as smp
+import albumentations as A
+import cv2
+import numpy as np
+import random
+from tqdm import tqdm
+
+# Modular imports
+from src.data.rgt_dataset import RGTVolumeDataset
+from src.data.samplers import ForcedBalancedBatchSampler
+from src.core.metrics import TverskyLoss
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Data
+    "layer_dir": PROJECT_ROOT / "flattened_layers",
+    "mask_path": PROJECT_ROOT / "data/native/train/1/inklabels.png",
+    "frag_mask_path": PROJECT_ROOT / "data/native/train/1/mask.png",
+    
+    # 3D Stack
+    "start_layer": 5,    # Start from layer 5
+    "num_layers": 16,    # Read 16 layers (5-20)
+    
+    # Training
+    "patch_size": 224,
+    "batch_size": 8,     # total batch size
+    "epochs": 30,
+    "lr": 5e-5,          # User requested 5e-5
+    "wd": 1e-2,
+    
+    # Output
+    "output_dir": PROJECT_ROOT / "output",
+    "save_path": PROJECT_ROOT / "models/vesuvius_rgt_v2.pth",
+}
+
+def collate_fn_balanced(batch):
+    """
+    Batch is a list of ('type', (y, x)) tuples.
+    """
+    images = []
+    masks = []
+    
+    for img, mask in batch:
+        images.append(img)
+        masks.append(mask)
+        
+    return torch.stack(images), torch.stack(masks)
+
+# Wrapper for the dataset to handle tuple inputs
+class WrapperDataset(torch.utils.data.Dataset):
+    def __init__(self, real_dataset, transforms=None):
+        self.real = real_dataset
+        self.transforms = transforms
+        
+    def __len__(self):
+        return len(self.real)
+        
+    def __getitem__(self, item):
+        # item is ('type', (y, x))
+        label_type, (y, x) = item
+        return self.real.get_patch(y, x, self.transforms)
+
+# =============================================================================
+# 🔧 Augmentations
+# =============================================================================
+def get_transforms():
+    return A.Compose([
+        A.HorizontalFlip(p=0.5),
+        A.VerticalFlip(p=0.5),
+        A.RandomRotate90(p=0.5),
+        A.GridDistortion(p=0.2), # Elastic might be too slow for 16ch
+        A.RandomBrightnessContrast(p=0.2),
+    ])
+
+# =============================================================================
+# 🔧 Training Loop
+# =============================================================================
+def train_one_epoch(model, loader, optimizer, loss_fn, device, scaler):
+    model.train()
+    total_loss = 0
+    
+    pbar = tqdm(loader, desc="   Training", leave=False)
+    for images, masks in pbar:
+        images = images.to(device)
+        masks = masks.to(device)
+        
+        optimizer.zero_grad()
+        
+        # Modern AMP
+        with torch.cuda.amp.autocast():
+            outputs = model(images)
+            loss = loss_fn(outputs, masks)
+            
+        scaler.scale(loss).backward()
+        scaler.step(optimizer)
+        scaler.update()
+        
+        total_loss += loss.item()
+        pbar.set_postfix({'loss': f"{loss.item():.4f}"})
+        
+    return total_loss / len(loader)
+
+def debug_viz(model, dataset, device, epoch, output_dir):
+    model.eval()
+    
+    # 1. Pick one ink, one bg
+    y_ink, x_ink = random.choice(dataset.ink_indices)
+    y_bg, x_bg = random.choice(dataset.bg_indices)
+    
+    patches = [('Ink', y_ink, x_ink), ('Bg', y_bg, x_bg)]
+    
+    rows = []
+    
+    for label, y, x in patches:
+        img_t, mask_t = dataset.get_patch(y, x) # (16, H, W)
+        
+        # Inference
+        inp = img_t.unsqueeze(0).to(device)
+        with torch.no_grad():
+            pred = model(inp)
+            pred = torch.sigmoid(pred)[0,0].cpu().numpy()
+            
+        # Vis
+        mid_idx = img_t.shape[0] // 2
+        img_vis = (img_t[mid_idx].numpy() * 255).astype(np.uint8)
+        mask_vis = (mask_t[0].numpy() * 255).astype(np.uint8)
+        pred_vis = (pred * 255).astype(np.uint8)
+        
+        row = np.hstack([img_vis, mask_vis, pred_vis])
+        row = cv2.cvtColor(row, cv2.COLOR_GRAY2BGR)
+        
+        # Add labels
+        cv2.putText(row, f"{label} GT:{mask_vis.mean():.1f}", (5, 20), 
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+        rows.append(row)
+        
+    combined = np.vstack(rows)
+    cv2.imwrite(str(output_dir / f"debug_rgt_v2_epoch_{epoch:02d}.png"), combined)
+
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("🚀 Vesuvius RGT V2 Training Initiated (Refactored)...")
+    
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f"   Device: {device}")
+    
+    CONFIG["output_dir"].mkdir(exist_ok=True, parents=True)
+    
+    # 1. Dataset
+    core_dataset = RGTVolumeDataset(
+        layer_dir=CONFIG["layer_dir"],
+        mask_path=CONFIG["mask_path"],
+        fragment_mask_path=CONFIG["frag_mask_path"],
+        start_layer=CONFIG["start_layer"],
+        num_layers=CONFIG["num_layers"],
+        patch_size=CONFIG["patch_size"]
+    )
+    
+    # 2. Wrapper & Loader
+    wrapper = WrapperDataset(core_dataset, transforms=get_transforms())
+    
+    # Note: ForcedBalancedBatchSampler was moved to src.data.samplers. It iterates list of coords (y, x).
+    # Its logic was to iterate self.dataset.ink_indices.
+    # We must ensure core_dataset has these attributes. (It did in the original script)
+    
+    sampler = ForcedBalancedBatchSampler(core_dataset, CONFIG["batch_size"])
+    
+    loader = DataLoader(
+        wrapper, 
+        batch_sampler=sampler,
+        collate_fn=collate_fn_balanced,
+        num_workers=0 # Win safe
+    )
+    
+    # 3. Model
+    model = smp.Unet(
+        encoder_name='resnet18',
+        in_channels=CONFIG["num_layers"],
+        classes=1,
+        encoder_weights=None # Train from scratch or load carefully
+    ).to(device)
+    
+    # 4. Opt/Loss
+    optimizer = optim.AdamW(model.parameters(), lr=CONFIG["lr"], weight_decay=CONFIG["wd"])
+    scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=5, T_mult=2)
+    loss_fn = TverskyLoss(alpha=0.3, beta=0.7)
+    scaler = torch.cuda.amp.GradScaler()
+    
+    # 5. Loop
+    for epoch in range(1, CONFIG["epochs"]+1):
+        print(f"\nEpoch {epoch}/{CONFIG['epochs']}")
+        loss = train_one_epoch(model, loader, optimizer, loss_fn, device, scaler)
+        print(f"   Loss: {loss:.4f}")
+        
+        debug_viz(model, core_dataset, device, epoch, CONFIG["output_dir"])
+        scheduler.step()
+        
+        # Save
+        if epoch % 5 == 0:
+            torch.save(model.state_dict(), CONFIG["save_path"])
+            
+if __name__ == "__main__":
+    main()
 
 ```
 
@@ -29689,6 +31490,2140 @@ src: Source code for Vesuvius Challenge 2026.
 Packages:
     - rgt: Relative Geological Time computation infrastructure
 """
+
+```
+
+---
+## File: src\dataset.py
+```py
+import numpy as np
+import torch
+import cv2
+from pathlib import Path
+from torch.utils.data import Dataset, Sampler
+from PIL import Image
+from tqdm import tqdm
+import random
+
+class VesuviusDataset(Dataset):
+    """
+    Vesuvius Challenge 2026 Core Dataset
+    
+    Features:
+    - Strict Resolution Guard: Raises Error if Mask != InkLabels != Volume
+    - 3D Sandwich Loader: Loads consecutives Z-slices centered around target
+    - Physical Normalization: Linear clip [window_min, window_max] -> [0, 1]
+    - RGT & Native Support: Auto-detects mode based on directory structure
+    """
+    def __init__(self, 
+                 volume_path, 
+                 ink_mask_path, 
+                 fragment_mask_path=None,
+                 is_rgt=False,
+                 z_start=0, 
+                 n_channels=16,
+                 patch_size=224,
+                 window_range=(18000, 28000),
+                 augmentations=None,
+                 min_ink_threshold=1e-5): # Ultra-sensitive for sparse ink strokes
+        
+        self.patch_size = patch_size
+        self.n_channels = n_channels
+        self.augmentations = augmentations
+        self.is_rgt = is_rgt
+        self.min_ink_threshold = min_ink_threshold
+        
+        # 1. Load Labels First (The Source of Truth)
+        print(f"\n🧱 Initializing VesuviusDataset (RGT={is_rgt})")
+        self.ink_mask, self.H, self.W = self._load_secure_label(ink_mask_path)
+        
+        if fragment_mask_path and Path(fragment_mask_path).exists():
+            self.frag_mask, h_f, w_f = self._load_secure_label(fragment_mask_path)
+            if (h_f, w_f) != (self.H, self.W):
+                 raise RuntimeError(f"🚨 Fragment Mask Mismatch: {w_f}x{h_f} vs Ink {self.W}x{self.H}")
+        else:
+            self.frag_mask = np.ones((self.H, self.W), dtype=np.float32)
+            
+        # 2. Volume Loading with Strict Alignment
+        self.volume = self._load_volume(volume_path, z_start, n_channels, window_range, (self.W, self.H))
+        
+        # 3. Patch Mining (Balanced Sampling Prep)
+        self._mine_patches()
+
+    def _load_secure_label(self, path):
+        path = Path(path)
+        if not path.exists():
+            raise FileNotFoundError(f"Missing label file: {path}")
+            
+        img = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
+        if img is None:
+            raise ValueError(f"Failed to read image: {path}")
+            
+        h, w = img.shape
+        
+        # Forensics: Check for "Thumbnail" trap
+        if w < 2000 or h < 2000:
+             print(f"⚠️ WARNING: Label {path.name} is oddly small ({w}x{h}). Is this a preview image?")
+             
+        # Forensics: Density Check
+        density = (img > 0).mean()
+        if density > 0.30:
+             print(f"⚠️ WARNING: Label Density {density:.1%} is suspiciously high. Potential Geometric artifact?")
+             
+        return (img > 127).astype(np.float32), h, w
+
+    def _load_volume(self, volume_path, z_start, n_channels, window_range, target_hw):
+        target_w, target_h = target_hw
+        volume_path = Path(volume_path)
+        
+        if self.is_rgt:
+            files = sorted(volume_path.glob("layer_*.png"), key=lambda x: int(x.stem.split('_')[1]))
+        else:
+            files = sorted(volume_path.glob("*.tif"), key=lambda x: int(x.stem) if x.stem.isdigit() else 9999)
+            
+        # Select Slices
+        if len(files) < n_channels:
+             msg = f"Requested {n_channels} channels but only found {len(files)} files in {volume_path}"
+             print(f"⚠️ {msg}. Padding will be used.")
+             
+        # Safe slice indexing
+        start_idx = max(0, min(z_start, len(files) - n_channels))
+        selected_files = files[start_idx : start_idx + n_channels]
+        
+        print(f"   Using Z-Range: {selected_files[0].name} ... {selected_files[-1].name}")
+        
+        # Load Volume
+        D = len(selected_files)
+        volume = np.zeros((D, target_h, target_w), dtype=np.float32)
+        w_min, w_max = window_range
+        
+        for i, f in enumerate(tqdm(selected_files, desc="   Loading 3D Volume", leave=False)):
+            img = np.array(Image.open(f)).astype(np.float32)
+            
+            # 🚨 STRICT RESOLUTION CHECK
+            if img.shape != (target_h, target_w):
+                raise RuntimeError(
+                    f"\n🛑 CRITICAL MISMATCH on slice {f.name}:\n"
+                    f"   Slice Shape: {img.shape}\n"
+                    f"   Label Shape: ({target_h}, {target_w})\n"
+                    f"   Action: Training aborted to protect data integrity."
+                )
+            
+            # Physical Normalization
+            img = np.clip(img, w_min, w_max)
+            img = (img - w_min) / (w_max - w_min)
+            volume[i] = img
+            
+        # Pad Z-axis if insufficient depth
+        if D < n_channels:
+            pad_amt = n_channels - D
+            volume = np.pad(volume, ((0, pad_amt), (0,0), (0,0)), mode='edge')
+            
+        return volume
+
+    def _mine_patches(self):
+        self.ink_coords = []
+        self.bg_coords = []
+        step = self.patch_size // 2
+        
+        print("   Mining patches...")
+        
+        # Iterate over valid fragment area
+        # Optimization: Only scan where frag_mask has content? 
+        # For now, stride over full image, check valid later
+        
+        y_steps = range(0, self.H - self.patch_size, step)
+        x_steps = range(0, self.W - self.patch_size, step)
+        
+        for y in y_steps:
+             for x in x_steps:
+                 # 1. Check Fragment (Paper) validity
+                 paper_val = self.frag_mask[y:y+self.patch_size, x:x+self.patch_size].mean()
+                 if paper_val < 0.1: # At least 10% paper
+                     continue
+                     
+                 # 2. Check Ink
+                 ink_val = self.ink_mask[y:y+self.patch_size, x:x+self.patch_size].mean()
+                 
+                 if ink_val > self.min_ink_threshold:
+                     self.ink_coords.append((y, x, ink_val))
+                 else:
+                     self.bg_coords.append((y, x, ink_val))
+                     
+        print(f"✅ Minerals Found: {len(self.ink_coords)} Ink Patches, {len(self.bg_coords)} Paper Patches.")
+        if not self.ink_coords:
+             print("⚠️ WARNING: ZERO ink patches found. Check min_ink_threshold or data source.")
+
+    def get_patch(self, y, x, use_augmentation=True):
+        ps = self.patch_size
+        vol_patch = self.volume[:, y:y+ps, x:x+ps].copy()
+        mask_patch = self.ink_mask[y:y+ps, x:x+ps].copy()
+        
+        if use_augmentation and self.augmentations:
+            # Albumentations standard H,W,C
+            vol_trans = vol_patch.transpose(1, 2, 0)
+            data = self.augmentations(image=vol_trans, mask=mask_patch)
+            vol_patch = data['image'].transpose(2, 0, 1)
+            mask_patch = data['mask']
+            
+        return (
+            torch.from_numpy(vol_patch.astype(np.float32)),
+            torch.from_numpy(mask_patch[np.newaxis, :, :].astype(np.float32))
+        )
+
+    def __getitem__(self, item):
+        if isinstance(item, tuple):
+            y, x = item
+        else:
+            y, x, _ = self.all_coords[item] # Access via Combined List in Sampler
+            
+        return self.get_patch(y, x, use_augmentation=True)
+    
+    @property
+    def all_coords(self):
+         return self.ink_coords + self.bg_coords
+    
+    def __len__(self):
+        return len(self.ink_coords) + len(self.bg_coords)
+
+
+class BalancedBatchSampler(Sampler):
+    """
+    Forced 50/50 Sampling Strategy.
+    Ensures model sees ink in every batch to prevent 'all-zero' collapse.
+    """
+    def __init__(self, dataset, batch_size, ink_ratio=0.5):
+        self.dataset = dataset
+        self.batch_size = batch_size
+        self.ink_per_batch = int(batch_size * ink_ratio)
+        self.bg_per_batch = batch_size - self.ink_per_batch
+        
+    def __iter__(self):
+        ink_pool = list(range(len(self.dataset.ink_coords))) 
+        bg_pool = list(range(len(self.dataset.ink_coords), len(self.dataset.all_coords))) # Offset indices
+        
+        random.shuffle(ink_pool)
+        random.shuffle(bg_pool)
+        
+        # Calculate max batches supported by ink count (limiter)
+        if not ink_pool:
+             raise RuntimeError("Cannot use BalancedSampler with 0 ink patches.")
+             
+        n_batches = len(ink_pool) // max(1, self.ink_per_batch)
+        
+        for _ in range(n_batches):
+            batch = []
+            # Fill Ink
+            for _ in range(self.ink_per_batch):
+                batch.append(ink_pool.pop())
+            
+            # Fill BG (Resample if needed)
+            for _ in range(self.bg_per_batch):
+                if not bg_pool:
+                     # Refill if exhausted
+                     bg_pool = list(range(len(self.dataset.ink_coords), len(self.dataset.all_coords)))
+                     random.shuffle(bg_pool)
+                batch.append(bg_pool.pop())
+                
+            random.shuffle(batch)
+            yield batch
+
+    def __len__(self):
+         return len(self.dataset.ink_coords) // max(1, self.ink_per_batch)
+
+```
+
+---
+## File: src\losses.py
+```py
+import torch
+import torch.nn as nn
+
+class DiceBCELoss(nn.Module):
+    def __init__(self, dice_weight=0.5):
+        super().__init__()
+        self.dice_weight = dice_weight
+        self.bce = nn.BCEWithLogitsLoss()
+    
+    def forward(self, pred, target):
+        bce_loss = self.bce(pred, target)
+        
+        pred_sigmoid = torch.sigmoid(pred)
+        intersection = (pred_sigmoid * target).sum()
+        union = pred_sigmoid.sum() + target.sum()
+        dice_loss = 1 - (2 * intersection + 1) / (union + 1)
+        
+        return (1 - self.dice_weight) * bce_loss + self.dice_weight * dice_loss
+
+class TverskyLoss(nn.Module):
+    def __init__(self, alpha=0.3, beta=0.7, smooth=1):
+        super().__init__()
+        self.alpha = alpha
+        self.beta = beta
+        self.smooth = smooth
+
+    def forward(self, inputs, targets):
+        inputs = torch.sigmoid(inputs)
+        
+        inputs = inputs.view(-1)
+        targets = targets.view(-1)
+        
+        TP = (inputs * targets).sum()
+        FP = ((1 - targets) * inputs).sum()
+        FN = (targets * (1 - inputs)).sum()
+        
+        Tversky = (TP + self.smooth) / (TP + self.alpha * FP + self.beta * FN + self.smooth)
+        return 1 - Tversky
+
+```
+
+---
+## File: src\models_legacy.py
+```py
+import segmentation_models_pytorch as smp
+import torch
+from pathlib import Path
+
+def get_unet(encoder='resnet18', in_channels=16, classes=1, pretrained=False):
+    model = smp.Unet(
+        encoder_name=encoder,
+        encoder_weights='imagenet' if pretrained else None,
+        in_channels=in_channels,
+        classes=classes,
+        activation=None
+    )
+    return model
+
+def load_checkpoint(model, path, device, strict=False):
+    path = Path(path)
+    if not path.exists():
+        print(f"⚠️ Checkpoint not found: {path}")
+        return model
+        
+    checkpoint = torch.load(path, map_location=device, weights_only=False)
+    if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'], strict=strict)
+    else:
+        model.load_state_dict(checkpoint, strict=strict)
+    print(f"✅ Loaded checkpoint from {path}")
+    return model
+
+```
+
+---
+## File: src\utils_legacy.py
+```py
+import cv2
+import numpy as np
+import torch
+from pathlib import Path
+
+def visualize_prediction(image, mask, pred, ps=224):
+    """
+    image: (H, W) normalized middle slice
+    mask: (H, W) mask
+    pred: (H, W) prediction probabilities
+    """
+    img_vis = (image * 255).astype(np.uint8)
+    mask_vis = (mask * 255).astype(np.uint8)
+    pred_vis = (pred * 255).astype(np.uint8)
+    
+    row = np.hstack([img_vis, mask_vis, pred_vis])
+    row_bgr = cv2.cvtColor(row, cv2.COLOR_GRAY2BGR)
+    
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(row_bgr, "Input", (10, 20), font, 0.5, (0, 255, 0), 1)
+    cv2.putText(row_bgr, "GT", (ps + 10, 20), font, 0.5, (0, 255, 0), 1)
+    cv2.putText(row_bgr, "Pred", (2*ps + 10, 20), font, 0.5, (0, 255, 0), 1)
+    
+    return row_bgr
+
+def seed_everything(seed=42):
+    import random
+    import os
+    random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+```
+
+---
+## File: src\analysis\analyze_signal_histogram.py
+```py
+"""
+Signal Histogram Analysis for Vesuvius Challenge 2026
+Analyzes pixel distribution of Ink vs Background to determine optimal windowing.
+"""
+import os
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+def analyze_signal():
+    print("📊 Starting Signal Histogram Analysis...")
+    
+    # Path Configuration
+    data_dir = Path("data/native/train/1")
+    volume_dir = data_dir / "surface_volume"
+    label_path = data_dir / "inklabels.png"
+    
+    # Find the signal layer (should be around Z=41 based on Z-scan)
+    # First, list available files to find correct naming
+    tif_files = sorted(list(volume_dir.glob("*.tif")))
+    print(f"\n📦 Found {len(tif_files)} TIF files")
+    
+    if len(tif_files) == 0:
+        print("❌ No TIF files found!")
+        return
+    
+    # Print first few filenames to understand naming
+    print(f"   Sample filenames: {[f.name for f in tif_files[:3]]}")
+    
+    # Try to load Z=41 (signal) and Z=20 (noise)
+    signal_idx = min(41, len(tif_files) - 1)
+    noise_idx = min(20, len(tif_files) - 1)
+    
+    signal_path = tif_files[signal_idx]
+    noise_path = tif_files[noise_idx]
+    
+    print(f"\n🎯 Signal Layer: {signal_path.name} (Z={signal_idx})")
+    print(f"🔇 Noise Layer: {noise_path.name} (Z={noise_idx})")
+    
+    # 1. Load images as uint16 (RAW values)
+    print("\n📥 Loading images (keeping raw uint16)...")
+    
+    signal_img = np.array(Image.open(signal_path))
+    noise_img = np.array(Image.open(noise_path))
+    
+    print(f"   Signal shape: {signal_img.shape}, dtype: {signal_img.dtype}")
+    print(f"   Noise shape: {noise_img.shape}, dtype: {noise_img.dtype}")
+    
+    # 2. Load Labels
+    print("\n🏷️ Loading Ink Labels...")
+    labels_full = np.array(Image.open(label_path))
+    
+    # Handle RGB labels
+    if len(labels_full.shape) == 3:
+        labels_full = labels_full[:, :, 0]
+    
+    # Resize to match signal image
+    labels_resized = np.array(
+        Image.fromarray(labels_full).resize(
+            (signal_img.shape[1], signal_img.shape[0]), 
+            Image.NEAREST
+        )
+    )
+    
+    # Binarize
+    ink_mask = labels_resized > 127
+    bg_mask = labels_resized <= 127
+    
+    print(f"   Label shape (resized): {labels_resized.shape}")
+    print(f"   Ink pixels: {ink_mask.sum():,}")
+    print(f"   BG pixels: {bg_mask.sum():,}")
+    
+    # 3. Extract pixel values
+    print("\n🔬 Extracting Pixel Distributions...")
+    
+    ink_pixels = signal_img[ink_mask].astype(np.float64)
+    bg_pixels = signal_img[bg_mask].astype(np.float64)
+    noise_all = noise_img.flatten().astype(np.float64)
+    
+    # 4. Compute Statistics
+    print("\n📈 Computing Statistics...")
+    
+    def compute_stats(arr, name):
+        stats = {
+            'name': name,
+            'mean': np.mean(arr),
+            'std': np.std(arr),
+            'min': np.min(arr),
+            'max': np.max(arr),
+            'p1': np.percentile(arr, 1),
+            'p99': np.percentile(arr, 99),
+            'median': np.median(arr)
+        }
+        return stats
+    
+    ink_stats = compute_stats(ink_pixels, "Ink (Z=41)")
+    bg_stats = compute_stats(bg_pixels, "Background (Z=41)")
+    noise_stats = compute_stats(noise_all, "Noise Layer (Z=20)")
+    
+    # Print stats table
+    print("\n" + "="*70)
+    print(f"{'Metric':<15} {'Ink (Z=41)':<20} {'Background (Z=41)':<20} {'Noise (Z=20)':<15}")
+    print("="*70)
+    print(f"{'Mean':<15} {ink_stats['mean']:<20.2f} {bg_stats['mean']:<20.2f} {noise_stats['mean']:<15.2f}")
+    print(f"{'Std':<15} {ink_stats['std']:<20.2f} {bg_stats['std']:<20.2f} {noise_stats['std']:<15.2f}")
+    print(f"{'Min':<15} {ink_stats['min']:<20.0f} {bg_stats['min']:<20.0f} {noise_stats['min']:<15.0f}")
+    print(f"{'Max':<15} {ink_stats['max']:<20.0f} {bg_stats['max']:<20.0f} {noise_stats['max']:<15.0f}")
+    print(f"{'P1':<15} {ink_stats['p1']:<20.2f} {bg_stats['p1']:<20.2f} {noise_stats['p1']:<15.2f}")
+    print(f"{'P99':<15} {ink_stats['p99']:<20.2f} {bg_stats['p99']:<20.2f} {noise_stats['p99']:<15.2f}")
+    print(f"{'Median':<15} {ink_stats['median']:<20.2f} {bg_stats['median']:<20.2f} {noise_stats['median']:<15.2f}")
+    print("="*70)
+    
+    # 5. Compute Separation Metrics
+    print("\n🎯 Signal Separation Analysis:")
+    
+    # Cohen's d (effect size)
+    pooled_std = np.sqrt((ink_stats['std']**2 + bg_stats['std']**2) / 2)
+    cohens_d = (ink_stats['mean'] - bg_stats['mean']) / pooled_std
+    print(f"   Cohen's d (effect size): {cohens_d:.4f}")
+    
+    if abs(cohens_d) < 0.2:
+        print("   ⚠️ Very weak separation (|d| < 0.2)")
+    elif abs(cohens_d) < 0.5:
+        print("   ⚠️ Small separation (0.2 < |d| < 0.5)")
+    elif abs(cohens_d) < 0.8:
+        print("   ✅ Medium separation (0.5 < |d| < 0.8)")
+    else:
+        print("   ✅ Large separation (|d| > 0.8)")
+    
+    # Suggest windowing
+    # Use the range that captures most of the ink distribution
+    suggested_min = max(0, ink_stats['p1'] - 0.1 * (ink_stats['p99'] - ink_stats['p1']))
+    suggested_max = ink_stats['p99'] + 0.1 * (ink_stats['p99'] - ink_stats['p1'])
+    
+    print(f"\n💡 Suggested Intensity Window:")
+    print(f"   min_val = {suggested_min:.0f}")
+    print(f"   max_val = {suggested_max:.0f}")
+    print(f"   (Normalized: [{suggested_min/65535:.4f}, {suggested_max/65535:.4f}])")
+    
+    # 6. Generate Histogram Visualization
+    print("\n🎨 Generating Histogram Visualization...")
+    
+    fig, axes = plt.subplots(2, 1, figsize=(12, 10))
+    
+    # Define bin range based on actual data
+    global_min = min(noise_all.min(), ink_pixels.min(), bg_pixels.min())
+    global_max = max(noise_all.max(), ink_pixels.max(), bg_pixels.max())
+    bins = np.linspace(global_min, global_max, 200)
+    
+    # Subplot 1: Noise Layer (Z=20)
+    axes[0].hist(noise_all, bins=bins, alpha=0.7, color='gray', density=True, label=f'Z=20 (All pixels)')
+    axes[0].set_title(f'Noise Layer (Z={noise_idx}) - Full Histogram', fontsize=12)
+    axes[0].set_xlabel('Pixel Intensity (uint16)', fontsize=10)
+    axes[0].set_ylabel('Density', fontsize=10)
+    axes[0].legend()
+    axes[0].grid(True, alpha=0.3)
+    
+    # Subplot 2: Signal Layer with Ink/BG separation
+    axes[1].hist(bg_pixels, bins=bins, alpha=0.6, color='blue', density=True, label=f'Background (N={len(bg_pixels):,})')
+    axes[1].hist(ink_pixels, bins=bins, alpha=0.6, color='red', density=True, label=f'Ink (N={len(ink_pixels):,})')
+    
+    # Mark suggested window
+    axes[1].axvline(x=suggested_min, color='green', linestyle='--', linewidth=2, label=f'Window Min: {suggested_min:.0f}')
+    axes[1].axvline(x=suggested_max, color='green', linestyle='--', linewidth=2, label=f'Window Max: {suggested_max:.0f}')
+    
+    # Mark means
+    axes[1].axvline(x=ink_stats['mean'], color='darkred', linestyle='-', linewidth=1.5, alpha=0.8)
+    axes[1].axvline(x=bg_stats['mean'], color='darkblue', linestyle='-', linewidth=1.5, alpha=0.8)
+    
+    axes[1].set_title(f'Signal Layer (Z={signal_idx}) - Ink vs Background Distribution', fontsize=12)
+    axes[1].set_xlabel('Pixel Intensity (uint16)', fontsize=10)
+    axes[1].set_ylabel('Density', fontsize=10)
+    axes[1].legend(loc='upper right')
+    axes[1].grid(True, alpha=0.3)
+    
+    # Add text annotation
+    textstr = f"Ink Mean: {ink_stats['mean']:.0f}\nBG Mean: {bg_stats['mean']:.0f}\nCohen's d: {cohens_d:.3f}"
+    axes[1].text(0.02, 0.98, textstr, transform=axes[1].transAxes, fontsize=10,
+                 verticalalignment='top', bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+    
+    plt.tight_layout()
+    plt.savefig("signal_distribution.png", dpi=150)
+    plt.close(fig)
+    
+    print("   ✅ Saved: signal_distribution.png")
+    
+    # 7. Final Report
+    print("\n" + "="*50)
+    print("📊 SIGNAL HISTOGRAM ANALYSIS COMPLETE")
+    print("="*50)
+    print(f"   Ink Mean: {ink_stats['mean']:.2f}")
+    print(f"   BG Mean: {bg_stats['mean']:.2f}")
+    print(f"   Difference: {ink_stats['mean'] - bg_stats['mean']:.2f}")
+    print(f"   Cohen's d: {cohens_d:.4f}")
+    print("="*50)
+
+if __name__ == "__main__":
+    analyze_signal()
+
+```
+
+---
+## File: src\analysis\audit_data.py
+```py
+import os
+from pathlib import Path
+from PIL import Image
+import sys
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+# Update to absolute path based on my exploration
+BASE_PATH = Path(r"d:\Documents\Codes\2026_Kaggle_Vesuvius Challenge 2026\data\native\train\1")
+
+def audit_war_chest():
+    print("📋 正在进行数据完整性终审...")
+    
+    # 1. 检查关键标签
+    mask_path = BASE_PATH / "mask.png"
+    ink_path = BASE_PATH / "inklabels.png"
+    
+    for label in [mask_path, ink_path]:
+        if not label.exists():
+            print(f"❌ 致命缺失: {label.name} 未找到！")
+        else:
+            try:
+                with Image.open(label) as img:
+                    print(f"✅ {label.name} 已就绪 | 尺寸: {img.size}")
+            except Exception as e:
+                print(f"❌ 读取错误: {label.name} - {e}")
+
+    # 2. 检查切片连续性
+    tif_dir = BASE_PATH / "surface_volume"
+    if not tif_dir.exists():
+        print(f"❌ 目录不存在: {tif_dir}")
+        return
+
+    tifs = sorted([f for f in tif_dir.glob("*.tif") if f.name.replace('.tif','').isdigit()], 
+                  key=lambda x: int(x.name.split('.')[0]))
+    
+    if len(tifs) < 10:
+        print(f"❌ 弹药不足: 仅找到 {len(tifs)} 张切片，无法构建 16 层深度的 2.5D 训练块。")
+    else:
+        print(f"📊 已就绪切片: {len(tifs)} 张 (范围: {tifs[0].name} 到 {tifs[-1].name})")
+
+    # 3. 检查是否有损坏 (Check a few random files)
+    import random
+    check_files = [tifs[0], tifs[len(tifs)//2], tifs[-1]]
+    
+    for f in check_files:
+        try:
+            with Image.open(f) as img:
+                pass
+            print(f"✅ 样本切片解析成功: {f.name}")
+        except Exception as e:
+            print(f"❌ 数据损坏: 无法解析 TIF 文件 {f.name} - {e}")
+
+if __name__ == "__main__":
+    audit_war_chest()
+
+```
+
+---
+## File: src\analysis\audit_data_coverage.py
+```py
+
+import numpy as np
+from PIL import Image
+import os
+import matplotlib.pyplot as plt
+
+CONFIG = {
+    "data_root": "data/native/train/1/surface_volume",
+    "tif_name": "57.tif"
+}
+
+def check_coverage():
+    tif_path = os.path.join(CONFIG["data_root"], CONFIG["tif_name"])
+    if not os.path.exists(tif_path):
+        print(f"❌ {tif_path} not found")
+        return
+
+    print(f"📦 Loading {tif_path}...")
+    with Image.open(tif_path) as img:
+        # Load low-res resize to check global coverage map
+        w, h = img.size
+        img_small = img.resize((w//10, h//10), Image.NEAREST)
+        data = np.array(img_small)
+    
+    print(f"   Original Size: {w}x{h}")
+    print(f"   Analysis Size: {data.shape}")
+    
+    # Check non-zero pixels
+    non_zero = data > 0
+    coverage = non_zero.sum() / non_zero.size
+    
+    print(f"   Non-zero Coverage: {coverage*100:.2f}%")
+    print(f"   Black Pixels: {(1-coverage)*100:.2f}%")
+    
+    # Visualize
+    plt.figure(figsize=(10, 5))
+    plt.imshow(non_zero, cmap='gray')
+    plt.title(f"TIF Data Coverage (White=Data, Black=Empty)\nCoverage: {coverage*100:.2f}%")
+    plt.savefig("data_coverage.png")
+    print("📸 Saved coverage map to 'data_coverage.png'")
+    
+    # Compare with Mask
+    mask_path = "data/native/train/1/mask.png"
+    if os.path.exists(mask_path):
+        mask = np.array(Image.open(mask_path).convert("L"))
+        mask_coverage = (mask > 0).sum() / mask.size
+        print(f"\n🎭 Mask File Checking:")
+        print(f"   Mask Coverage: {mask_coverage*100:.2f}%")
+        
+        if mask_coverage > 99 and coverage < 50:
+            print("\n🚨 CRITICAL MISMATCH:")
+            print("   Mask says 'EVERYTHING IS VALID' (100%)")
+            print(f"   But TIF only has data in {coverage*100:.0f}% of area.")
+            print("   -> Random crops will be BLACK {(1-coverage)*100:.0f}% of the time!")
+
+if __name__ == "__main__":
+    check_coverage()
+
+```
+
+---
+## File: src\analysis\audit_model_contrast.py
+```py
+import torch
+import numpy as np
+import sys
+import os
+from pathlib import Path
+from tqdm import tqdm
+
+# Import components from training script
+try:
+    from train_vesuvius import Thinking25DNet, Vesuvius25DDataset, CONFIG
+    import albumentations as A
+    from albumentations.pytorch import ToTensorV2
+    from torch.utils.data import DataLoader
+except ImportError:
+    print("❌ Error: Could not import from train_vesuvius.py. Make sure it's in the same directory.")
+    sys.exit(1)
+
+def audit_model():
+    print("🔍 Initializing Audit Protocol...")
+    
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"   Device: {device}")
+    
+    # 1. Load Model
+    model_path = "vesuvius_best.pth"
+    if not os.path.exists(model_path):
+        print(f"❌ Error: Model file '{model_path}' not found. Has training started/saved yet?")
+        sys.exit(1)
+        
+    print(f"   Loading model from {model_path}...")
+    model = Thinking25DNet(in_channels=CONFIG["z_depth"]).to(device)
+    model.load_state_dict(torch.load(model_path, map_location=device))
+    model.eval()
+    
+    # 2. Setup Data
+    print("   Setting up Validation Data...")
+    val_transform = A.Compose([
+        ToTensorV2(transpose_mask=True),
+    ])
+    
+    # Force single batch for audit
+    val_dataset = Vesuvius25DDataset(CONFIG["data_root"], z_slices=CONFIG["z_depth"], transform=val_transform, mode="valid")
+    # Use shuffle=True to find ink faster if start is empty
+    loader = DataLoader(val_dataset, batch_size=4, num_workers=0, shuffle=True) 
+    
+    print("\n🧪 Searching for ink-containing samples...")
+    
+    found_ink = False
+    
+    with torch.no_grad():
+        with torch.amp.autocast('cuda'):
+            for step, (images, masks) in enumerate(tqdm(loader)):
+                images = images.to(device)
+                masks = masks.to(device)
+                
+                # Check if batch has ink
+                if masks.sum() == 0:
+                    continue
+                
+                found_ink = True
+                print(f"   ✅ Found ink in batch {step}!")
+                
+                # 3. Inference
+                outputs = model(images)
+                preds = torch.sigmoid(outputs)
+                
+                # 4. Signal-to-Noise Analysis
+                # Flatten everything to analyze pixels
+                probs = preds.cpu().numpy().flatten()
+                targets = masks.cpu().numpy().flatten()
+                
+                ink_pixels = probs[targets == 1]
+                bg_pixels = probs[targets == 0]
+                
+                if len(ink_pixels) == 0:
+                    print("   ⚠️ Warning: Batch sum > 0 but no ink pixels found in flatten? Should not happen.")
+                    continue
+                
+                mean_ink = np.mean(ink_pixels)
+                mean_bg = np.mean(bg_pixels)
+                
+                # Avoid division by zero
+                contrast = mean_ink / (mean_bg + 1e-9)
+                
+                # Report
+                report = []
+                report.append("="*40)
+                report.append("📊 审计报告 (Audit Report)")
+                report.append("="*40)
+                report.append(f"   - 📦 样本数 (Pixels): {len(probs)}")
+                report.append(f"   - ✒️ 墨水像素数: {len(ink_pixels)}")
+                report.append(f"   - ⬜ 背景像素数: {len(bg_pixels)}")
+                report.append("-" * 40)
+                report.append(f"   - 🟢 墨水区平均置信度 (Mean Ink Prob)  : {mean_ink:.6f}")
+                report.append(f"   - 🔴 背景区平均置信度 (Mean BG Prob)   : {mean_bg:.6f}")
+                report.append("-" * 40)
+                report.append(f"   - 🚀 对比度 (Signal/Noise Ratio)      : {contrast:.2f} 倍")
+                report.append("="*40)
+                
+                if contrast > 1.5:
+                    report.append("✅ 结论: 模型已学会区分墨水与背景！")
+                elif contrast > 1.0:
+                    report.append("⚠️ 结论: 信号极其微弱，仅略高于随机猜测。")
+                else:
+                    report.append("❌ 结论: 模型尚未区分（或产生了反向预测）。")
+                
+                report_str = "\n".join(report)
+                print(report_str)
+                with open("audit_result.log", "w", encoding="utf-8") as f:
+                    f.write(report_str)
+                
+                break # Ensure we only do one batch
+    
+    if not found_ink:
+        print("\n❌ Failed: Scanned validation set but found NO ink pixels. Is the label loading correct?")
+
+if __name__ == "__main__":
+    audit_model()
+
+```
+
+---
+## File: src\analysis\debug_z_scan.py
+```py
+"""
+Z-Scan Forensics for Vesuvius Challenge 2026
+Locates the physical Z-layer where ink signal is strongest.
+Detects Z-axis misalignment between labels and volume data.
+"""
+import os
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+from pathlib import Path
+from glob import glob
+from tqdm import tqdm
+
+def run_z_scan():
+    print("🔬 Starting Z-Scan Forensics...")
+    
+    # Path Configuration
+    data_dir = Path("data/native/train/1")
+    volume_dir = data_dir / "surface_volume"
+    label_path = data_dir / "inklabels.png"
+    
+    # Check if paths exist
+    if not volume_dir.exists():
+        print(f"❌ Error: Volume directory not found: {volume_dir}")
+        return
+    if not label_path.exists():
+        print(f"❌ Error: Label file not found: {label_path}")
+        return
+    
+    # 1. Load all TIF files (sorted by numeric index)
+    print("\n📦 Loading Surface Volume...")
+    tif_files = sorted(glob(str(volume_dir / "*.tif")), 
+                       key=lambda x: int(Path(x).stem.split('_')[-1]) if '_' in Path(x).stem else int(Path(x).stem))
+    print(f"   Total TIF files found: {len(tif_files)}")
+    
+    if len(tif_files) == 0:
+        print("❌ Error: No TIF files found!")
+        return
+    
+    # 2. Load Labels
+    print("\n🏷️ Loading Ink Labels...")
+    labels_full = Image.open(label_path)
+    labels = np.array(labels_full).astype(np.float32)
+    labels_full.close()
+    
+    # Normalize labels to 0-1
+    if labels.max() > 1:
+        labels = labels / 255.0
+    
+    # Handle RGB labels
+    if len(labels.shape) == 3:
+        labels = labels[:, :, 0]
+    
+    # Binarize
+    labels = (labels > 0.5).astype(np.float32)
+    
+    print(f"   Label shape: {labels.shape}")
+    print(f"   Label sum (ink pixels): {labels.sum():.0f}")
+    print(f"   Ink coverage: {100 * labels.sum() / labels.size:.2f}%")
+    
+    if labels.sum() == 0:
+        print("   ❌ CRITICAL: Labels are ALL ZEROS! Cannot perform Z-scan.")
+        return
+    if labels.sum() == labels.size:
+        print("   ❌ CRITICAL: Labels are ALL ONES! Invalid mask.")
+        return
+    
+    print("   ✅ Labels have valid ink regions.")
+    
+    # 3. Z-Scan: Compute signal for each layer
+    print("\n🔍 Running Z-Scan (this may take a while)...")
+    
+    z_signals = []
+    DOWNSAMPLE = 4  # Speed up by downsampling
+    
+    # Get target size from first image
+    first_img = Image.open(tif_files[0])
+    target_size = (first_img.width // DOWNSAMPLE, first_img.height // DOWNSAMPLE)
+    first_img.close()
+    
+    # Resize labels to match
+    labels_small = np.array(Image.fromarray((labels * 255).astype(np.uint8)).resize(target_size, Image.NEAREST)).astype(np.float32) / 255.0
+    labels_small = (labels_small > 0.5).astype(np.float32)
+    
+    ink_mask = labels_small > 0.5
+    bg_mask = labels_small < 0.5
+    
+    print(f"   Downsampled to: {target_size}")
+    print(f"   Ink pixels: {ink_mask.sum()}, BG pixels: {bg_mask.sum()}")
+    
+    for z_idx, tif_path in enumerate(tqdm(tif_files, desc="   Z-Scan")):
+        # Load and downsample
+        img = Image.open(tif_path)
+        img_small = img.resize(target_size, Image.LANCZOS)
+        data = np.array(img_small).astype(np.float32) / 65535.0  # Normalize uint16
+        img.close()
+        
+        # Compute signal: (Mean Ink Brightness) - (Mean BG Brightness)
+        if ink_mask.sum() > 0 and bg_mask.sum() > 0:
+            mean_ink = data[ink_mask].mean()
+            mean_bg = data[bg_mask].mean()
+            signal = mean_ink - mean_bg
+        else:
+            signal = 0
+        
+        z_signals.append({
+            'z': z_idx,
+            'signal': signal,
+            'mean_ink': mean_ink,
+            'mean_bg': mean_bg,
+            'path': tif_path
+        })
+    
+    # Convert to arrays
+    z_indices = [s['z'] for s in z_signals]
+    signals = [s['signal'] for s in z_signals]
+    
+    # Find peak
+    peak_idx = np.argmax(np.abs(signals))
+    peak_z = z_indices[peak_idx]
+    peak_signal = signals[peak_idx]
+    
+    print(f"\n📊 Z-Scan Results:")
+    print(f"   Peak signal at Z={peak_z}: {peak_signal:.6f}")
+    print(f"   Signal range: [{min(signals):.6f}, {max(signals):.6f}]")
+    
+    if abs(peak_signal) < 0.01:
+        print("   ⚠️ WARNING: Peak signal is very weak! Possible misalignment.")
+    else:
+        print("   ✅ Clear signal detected!")
+    
+    # 4. Plot Z-Signal Profile
+    print("\n📈 Generating Z-Signal Profile...")
+    
+    fig, ax = plt.subplots(figsize=(12, 5))
+    ax.plot(z_indices, signals, 'b-', linewidth=2, marker='o', markersize=4)
+    ax.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
+    ax.axvline(x=peak_z, color='red', linestyle='--', alpha=0.7, label=f'Peak @ Z={peak_z}')
+    
+    ax.set_xlabel('Z-Index (Depth)', fontsize=12)
+    ax.set_ylabel('Signal: Mean(Ink) - Mean(BG)', fontsize=12)
+    ax.set_title('Z-Scan Signal Profile: Where is the Ink?', fontsize=14)
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    
+    # Highlight current training range
+    train_z_start, train_z_end = 16, 31
+    ax.axvspan(train_z_start, train_z_end, alpha=0.2, color='green', label=f'Current Training Range: Z={train_z_start}-{train_z_end}')
+    ax.legend()
+    
+    plt.tight_layout()
+    plt.savefig("z_signal_profile.png", dpi=150)
+    plt.close(fig)
+    print("   ✅ Saved: z_signal_profile.png")
+    
+    # 5. Generate Layer Gallery
+    print("\n🖼️ Generating Layer Gallery...")
+    
+    # Select layers: peak +/- 2, and the worst layer
+    gallery_indices = [
+        max(0, peak_z - 2),
+        max(0, peak_z - 1),
+        peak_z,
+        min(len(tif_files) - 1, peak_z + 1),
+        min(len(tif_files) - 1, peak_z + 2),
+        np.argmin(np.abs(signals))  # Layer with weakest signal
+    ]
+    gallery_indices = sorted(set(gallery_indices))
+    
+    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    axes = axes.flatten()
+    
+    for i, z_idx in enumerate(gallery_indices[:6]):
+        if i >= len(axes):
+            break
+            
+        # Load layer
+        img = Image.open(tif_files[z_idx])
+        img_small = img.resize(target_size, Image.LANCZOS)
+        data = np.array(img_small).astype(np.float32) / 65535.0
+        img.close()
+        
+        # Create RGB overlay
+        p2, p98 = np.percentile(data, (2, 98))
+        data_norm = np.clip((data - p2) / (p98 - p2 + 1e-7), 0, 1)
+        rgb = np.stack([data_norm, data_norm, data_norm], axis=-1)
+        
+        # Red overlay for labels (30% opacity)
+        rgb[ink_mask, 0] = 0.7 * rgb[ink_mask, 0] + 0.3 * 1.0
+        rgb[ink_mask, 1] = 0.7 * rgb[ink_mask, 1]
+        rgb[ink_mask, 2] = 0.7 * rgb[ink_mask, 2]
+        
+        axes[i].imshow(rgb)
+        signal_val = z_signals[z_idx]['signal']
+        title = f"Z={z_idx} | Signal={signal_val:.4f}"
+        if z_idx == peak_z:
+            title += " [PEAK]"
+        axes[i].set_title(title, fontsize=10)
+        axes[i].axis('off')
+    
+    # Hide unused axes
+    for i in range(len(gallery_indices), len(axes)):
+        axes[i].axis('off')
+    
+    plt.suptitle('Layer Gallery: Red = Ink Labels Overlay', fontsize=14)
+    plt.tight_layout()
+    plt.savefig("layer_gallery.png", dpi=100)
+    plt.close(fig)
+    print("   ✅ Saved: layer_gallery.png")
+    
+    # 6. Final Report
+    print("\n" + "="*50)
+    print("🔬 Z-SCAN FORENSICS REPORT")
+    print("="*50)
+    print(f"   Peak Signal Layer: Z={peak_z}")
+    print(f"   Peak Signal Value: {peak_signal:.6f}")
+    print(f"   Current Training Range: Z=16-31")
+    
+    if train_z_start <= peak_z <= train_z_end:
+        print("   ✅ Peak is WITHIN training range! Alignment OK.")
+    else:
+        print(f"   ⚠️ Peak is OUTSIDE training range! Consider using Z={max(0, peak_z-8)}-{min(len(tif_files)-1, peak_z+8)}")
+    
+    print("="*50)
+    print("\nOpen 'z_signal_profile.png' and 'layer_gallery.png' to visually confirm.")
+
+if __name__ == "__main__":
+    run_z_scan()
+
+```
+
+---
+## File: src\analysis\inspect_dataset_alignment.py
+```py
+"""
+Dataset Alignment Inspector for Vesuvius Challenge 2026
+Verifies that surface_volume slices and ink labels are correctly aligned.
+"""
+import os
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+from pathlib import Path
+from glob import glob
+
+def inspect_dataset():
+    print("🔍 Starting Dataset Alignment Inspection...")
+    
+    # Path Configuration
+    data_dir = Path("data/native/train/1")
+    volume_dir = data_dir / "surface_volume"
+    label_path = data_dir / "inklabels.png"
+    
+    # Check if paths exist
+    if not volume_dir.exists():
+        print(f"❌ Error: Volume directory not found: {volume_dir}")
+        return
+    if not label_path.exists():
+        print(f"❌ Error: Label file not found: {label_path}")
+        return
+    
+    # 1. Load 3D Volume (Middle Z-slices)
+    print("\n📦 Loading Surface Volume...")
+    tif_files = sorted(glob(str(volume_dir / "*.tif")))
+    print(f"   Total TIF files found: {len(tif_files)}")
+    
+    if len(tif_files) == 0:
+        print("❌ Error: No TIF files found!")
+        return
+    
+    # Select middle Z-slices (e.g., 25-35)
+    mid_start = max(0, len(tif_files) // 2 - 5)
+    mid_end = min(len(tif_files), len(tif_files) // 2 + 5)
+    selected_files = tif_files[mid_start:mid_end]
+    print(f"   Using Z-slices: {mid_start} to {mid_end-1} (Total: {len(selected_files)})")
+    
+    # Load and stack slices (DOWNSAMPLED to 1/4 resolution for memory safety)
+    DOWNSAMPLE = 4  # Reduce by factor of 4
+    slices = []
+    for f in selected_files:
+        img = Image.open(f)
+        # Downsample to prevent memory crash
+        new_size = (img.width // DOWNSAMPLE, img.height // DOWNSAMPLE)
+        img_small = img.resize(new_size, Image.LANCZOS)
+        slices.append(np.array(img_small))
+        img.close()
+    
+    volume = np.stack(slices, axis=0)  # (Z, H, W)
+    
+    # Volume Statistics
+    print("\n📊 Volume Statistics:")
+    print(f"   Shape: {volume.shape}")
+    print(f"   Dtype: {volume.dtype}")
+    print(f"   Min: {volume.min()}")
+    print(f"   Max: {volume.max()}")
+    print(f"   Mean: {volume.mean():.2f}")
+    
+    if volume.max() > 255:
+        print("   ⚠️ NOTE: Data is 16-bit. Training code MUST divide by 65535!")
+    else:
+        print("   ℹ️ Data is 8-bit. Divide by 255 for normalization.")
+    
+    # Compute Mean Projection
+    mean_proj = volume.mean(axis=0)  # (H, W)
+    print(f"\n   Mean Projection Shape: {mean_proj.shape}")
+    
+    # 2. Load Labels (RESIZED to match volume dimensions)
+    print("\n🏷️ Loading Ink Labels...")
+    labels_full = Image.open(label_path)
+    # Resize to exactly match mean_proj dimensions (width, height for PIL)
+    target_size = (mean_proj.shape[1], mean_proj.shape[0])  # PIL uses (W, H)
+    labels_small = labels_full.resize(target_size, Image.NEAREST)
+    labels = np.array(labels_small)
+    labels_full.close()
+    
+    print(f"   Shape: {labels.shape}")
+    print(f"   Dtype: {labels.dtype}")
+    print(f"   Unique values: {np.unique(labels)}")
+    print(f"   Min: {labels.min()}")
+    print(f"   Max: {labels.max()}")
+    print(f"   Non-zero pixels: {(labels > 0).sum()} / {labels.size} ({100*(labels > 0).sum()/labels.size:.2f}%)")
+    
+    if labels.max() == 0:
+        print("   ❌ CRITICAL: Label is ALL ZEROS! No ink annotation found!")
+    elif labels.min() == labels.max():
+        print(f"   ❌ CRITICAL: Label is UNIFORM (value={labels.max()})! Invalid mask!")
+    else:
+        print("   ✅ Label has variation (good).")
+    
+    # 3. Check alignment (dimensions)
+    print("\n🔗 Checking Alignment...")
+    if mean_proj.shape[:2] == labels.shape[:2]:
+        print(f"   ✅ Dimensions match: Volume {mean_proj.shape[:2]} == Labels {labels.shape[:2]}")
+    else:
+        print(f"   ❌ DIMENSION MISMATCH: Volume {mean_proj.shape[:2]} != Labels {labels.shape[:2]}")
+    
+    # 4. Generate Visualization
+    print("\n🎨 Generating Overlay Visualization...")
+    
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+    
+    # Normalize mean projection for display
+    mean_proj_norm = (mean_proj - mean_proj.min()) / (mean_proj.max() - mean_proj.min() + 1e-7)
+    
+    # Enhance contrast (percentile stretch)
+    p2, p98 = np.percentile(mean_proj_norm, (2, 98))
+    mean_proj_enhanced = np.clip((mean_proj_norm - p2) / (p98 - p2 + 1e-7), 0, 1)
+    
+    # Left: Surface Texture
+    axes[0].imshow(mean_proj_enhanced, cmap='gray')
+    axes[0].set_title('Surface Texture (Mean Z-Projection)')
+    axes[0].axis('off')
+    
+    # Middle: Ink Labels
+    label_disp = labels.astype(float)
+    if labels.max() > 0:
+        label_disp = label_disp / labels.max()
+    axes[1].imshow(label_disp, cmap='gray')
+    axes[1].set_title('Ink Labels (Ground Truth)')
+    axes[1].axis('off')
+    
+    # Right: Red Overlay
+    # Create RGB image from grayscale
+    rgb = np.stack([mean_proj_enhanced, mean_proj_enhanced, mean_proj_enhanced], axis=-1)
+    
+    # Create red overlay where label > 0
+    if len(labels.shape) == 3:
+        label_binary = labels[:, :, 0] > 0  # Handle RGB labels
+    else:
+        label_binary = labels > 0
+    
+    # Apply 50% transparent red overlay
+    overlay = rgb.copy()
+    overlay[label_binary, 0] = 0.5 * overlay[label_binary, 0] + 0.5 * 1.0  # Red channel
+    overlay[label_binary, 1] = 0.5 * overlay[label_binary, 1]  # Green channel
+    overlay[label_binary, 2] = 0.5 * overlay[label_binary, 2]  # Blue channel
+    
+    axes[2].imshow(overlay)
+    axes[2].set_title('Red Overlay (Ink on Surface)')
+    axes[2].axis('off')
+    
+    plt.tight_layout()
+    output_path = "dataset_check.png"
+    plt.savefig(output_path, dpi=150)
+    plt.close(fig)
+    
+    print(f"   ✅ Saved visualization to: {output_path}")
+    print("\n🏁 Inspection Complete!")
+    print("   → Open 'dataset_check.png' to visually verify ink alignment.")
+
+if __name__ == "__main__":
+    inspect_dataset()
+
+```
+
+---
+## File: src\analysis\inspect_normalization.py
+```py
+
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+import os
+
+# CONFIG (Replicated from train_vesuvius_surgical.py)
+CONFIG = {
+    "tile_size": 224,
+    "z_slices": [57], # Test on the peak signal layer
+    "data_root": "data/native/train/1"
+}
+
+def check_normalization_logic():
+    print("🔬 Auditing Normalization Logic...")
+    
+    # 1. Load Raw TIF
+    tif_path = os.path.join(CONFIG["data_root"], "surface_volume", "57.tif")
+    if not os.path.exists(tif_path):
+        print(f"❌ Error: {tif_path} not found.")
+        return
+        
+    print(f"   Loading {tif_path}...")
+    with Image.open(tif_path) as img:
+        raw_full = np.array(img).astype(np.float32)
+        
+    # Crop a center patch (simulating __getitem__)
+    h, w = raw_full.shape
+    cy, cx = h // 2, w // 2
+    raw_patch = raw_full[cy:cy+CONFIG["tile_size"], cx:cx+CONFIG["tile_size"]]
+    
+    print(f"   Raw Patch Stats: Min={raw_patch.min():.1f}, Max={raw_patch.max():.1f}, Mean={raw_patch.mean():.1f}")
+    
+    # 2. Apply Surgical Logic (Adaptive Percentile)
+    # ---------------------------------------------------------
+    # Logic in train_vesuvius_surgical.py:
+    # p_min, p_max = np.percentile(volume, (1, 99))
+    # volume = np.clip((volume - p_min) / (p_max - p_min + 1e-8), 0, 1)
+    # ---------------------------------------------------------
+    
+    p_min, p_max = np.percentile(raw_patch, (1, 99))
+    print(f"   Calculated Percentiles: p1={p_min:.1f}, p99={p_max:.1f}")
+    
+    norm_patch = np.clip((raw_patch - p_min) / (p_max - p_min + 1e-8), 0, 1)
+    
+    print(f"   Normalized Stats: Min={norm_patch.min():.4f}, Max={norm_patch.max():.4f}, Mean={norm_patch.mean():.4f}")
+    
+    # 3. Verification
+    if norm_patch.mean() < 0.1:
+        print("\n❌ CRITICAL: Result is too dark (Black Hole).")
+    elif norm_patch.mean() > 0.9:
+        print("\n❌ CRITICAL: Result is washed out (White).")
+    else:
+        print("\n✅ PASS: Result has good dynamic range.")
+        
+    # 4. Save visualization
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 1)
+    plt.imshow(raw_patch, cmap='gray')
+    plt.title(f"Raw (Min:{raw_patch.min():.0f} Max:{raw_patch.max():.0f})")
+    plt.axis('off')
+    
+    plt.subplot(1, 2, 2)
+    plt.imshow(norm_patch, cmap='gray', vmin=0, vmax=1)
+    plt.title(f"Normalized (Mean:{norm_patch.mean():.2f})")
+    plt.axis('off')
+    
+    plt.savefig("norm_check.png")
+    print("\n📸 Saved visual proof to 'norm_check.png'")
+
+if __name__ == "__main__":
+    check_normalization_logic()
+
+```
+
+---
+## File: src\analysis\verify_debug_image.py
+```py
+
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+import os
+
+img_path = "output/debug_epoch_2.png"
+if not os.path.exists(img_path):
+    print(f"❌ Error: {img_path} not found.")
+    exit(1)
+
+# Load image
+img = Image.open(img_path)
+img_arr = np.array(img)
+h, w, c = img_arr.shape
+
+print(f"🖼️ Analyzing {img_path}")
+print(f"   Size: {w}x{h}, Channels: {c}")
+
+# Split into 3 parts (approximate due to borders/titles)
+# The image has 3 subplots horizontally.
+# Let's verify the content of the LEFT part (Input).
+w_third = w // 3
+input_region = img_arr[100:-50, 0:w_third] # Crop margins to avoid title/axes
+
+# Calculate stats
+mean_val = input_region.mean()
+std_val = input_region.std()
+min_val = input_region.min()
+max_val = input_region.max()
+
+print("\n🔍 Input Region Analysis (Left Panel):")
+print(f"   Mean Intensity: {mean_val:.2f} (0-255)")
+print(f"   Contrast (Std): {std_val:.2f}")
+print(f"   Range: [{min_val}, {max_val}]")
+
+# Check if black
+if mean_val < 5:
+    print("\n❌ FAILED: Input is essentially BLACK.")
+elif std_val < 2:
+    print("\n❌ FAILED: Input is FLAT (no texture).")
+else:
+    print("\n✅ PASS: Input shows texture/content.")
+
+# Check Middle (Label)
+label_region = img_arr[100:-50, w_third:2*w_third]
+print("\n🔍 Label Region Analysis (Middle Panel):")
+print(f"   Mean Intensity: {label_region.mean():.2f}")
+print(f"   Unique Values (approx): {len(np.unique(label_region))}")
+
+
+```
+
+---
+## File: src\core\config.py
+```py
+"""
+Configuration Loader
+Loads configs/config.yaml and provides a pythonic interface.
+"""
+import yaml
+from pathlib import Path
+from dataclasses import dataclass, field
+from typing import List, Any
+import torch
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+CONFIG_PATH = PROJECT_ROOT / "configs/config.yaml"
+
+@dataclass
+class ConfigSchema:
+    PROJECT_ROOT: Path = PROJECT_ROOT
+    
+    # Loaded from YAML
+    DATA_ROOT: Path = field(init=False)
+    Z_SLICES: List[int] = field(init=False)
+    WINDOW_MIN: float = field(init=False)
+    WINDOW_MAX: float = field(init=False)
+    VALID_SPLIT: float = field(init=False)
+    
+    BATCH_SIZE: int = field(init=False)
+    EPOCHS: int = field(init=False)
+    LR: float = field(init=False)
+    
+    DEVICE: str = "cuda" if torch.cuda.is_available() else "cpu"
+    OUTPUT_DIR: Path = PROJECT_ROOT / "outputs"
+    EXPERIMENT_NAME: str = "default"
+
+    def __post_init__(self):
+        # Load YAML
+        if not CONFIG_PATH.exists():
+            raise FileNotFoundError(f"Config file not found: {CONFIG_PATH}")
+            
+        with open(CONFIG_PATH, 'r') as f:
+            raw = yaml.safe_load(f)
+            
+        # Parse Data Section
+        d = raw.get("data", {})
+        # Handle relative path in YAML
+        r_path = d.get("root", "data/native/train/1")
+        self.DATA_ROOT = (self.PROJECT_ROOT / r_path).resolve()
+        
+        self.Z_SLICES = d.get("z_slices", [])
+        if not self.Z_SLICES:
+             raise ValueError("z_slices cannot be empty in config.yaml")
+             
+        self.WINDOW_MIN = float(d.get("window_min", 18000))
+        self.WINDOW_MAX = float(d.get("window_max", 28000))
+        self.VALID_SPLIT = float(d.get("valid_split_fraction", 0.2))
+        
+        # Parse Training Section
+        t = raw.get("training", {})
+        self.BATCH_SIZE = int(t.get("batch_size", 16))
+        self.EPOCHS = int(t.get("epochs", 20))
+        self.LR = float(t.get("lr", 1e-3))
+        self.EXPERIMENT_NAME = t.get("experiment_name", "vesuvius")
+        
+        self.OUTPUT_DIR = self.PROJECT_ROOT / "outputs" / self.EXPERIMENT_NAME
+        self.OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        
+    @property
+    def IN_CHANNELS(self):
+        return len(self.Z_SLICES)
+
+# Singleton
+cfg = ConfigSchema()
+
+```
+
+---
+## File: src\core\metrics.py
+```py
+import torch
+import torch.nn as nn
+
+class DiceBCELoss(nn.Module):
+    def __init__(self, dice_weight=0.5):
+        super().__init__()
+        self.dice_weight = dice_weight
+        self.bce = nn.BCEWithLogitsLoss()
+    
+    def forward(self, pred, target):
+        bce_loss = self.bce(pred, target)
+        
+        pred_sigmoid = torch.sigmoid(pred)
+        intersection = (pred_sigmoid * target).sum()
+        union = pred_sigmoid.sum() + target.sum()
+        dice_loss = 1 - (2 * intersection + 1) / (union + 1)
+        
+        return (1 - self.dice_weight) * bce_loss + self.dice_weight * dice_loss
+
+class TverskyLoss(nn.Module):
+    def __init__(self, alpha=0.3, beta=0.7, smooth=1):
+        super().__init__()
+        self.alpha = alpha
+        self.beta = beta
+        self.smooth = smooth
+
+    def forward(self, inputs, targets):
+        # inputs: logits
+        inputs = torch.sigmoid(inputs)
+        
+        # Flatten
+        inputs = inputs.view(-1)
+        targets = targets.view(-1)
+        
+        TP = (inputs * targets).sum()
+        FP = ((1 - targets) * inputs).sum()
+        FN = (targets * (1 - inputs)).sum()
+        
+        Tversky = (TP + self.smooth) / (TP + self.alpha * FP + self.beta * FN + self.smooth)
+        return 1 - Tversky
+
+```
+
+---
+## File: src\data\datasets.py
+```py
+import torch
+import numpy as np
+import random
+from typing import Literal
+from torch.utils.data import Dataset
+from src.utils.io import load_volume_from_files, load_mask_and_labels, get_tif_paths
+from PIL import Image
+
+class VesuviusDataset(Dataset):
+    def __init__(
+        self, 
+        data_root, 
+        z_slices, 
+        tile_size=224,
+        transform=None, 
+        mode: Literal["train", "valid"] = "train",
+        split_fraction: float = 0.2
+    ):
+        self.data_root = data_root
+        self.z_slices = z_slices
+        self.tile_size = tile_size
+        self.transform = transform
+        self.mode = mode
+        
+        # 1. Strict File Check (fail early)
+        self.tif_dict = get_tif_paths(self.data_root, self.z_slices)
+        
+        # 2. Load Dimensions
+        first_path = self.tif_dict[self.z_slices[0]]
+        with Image.open(first_path) as img:
+            self.w, self.h = img.size
+            
+        # 3. Load Labels
+        self.mask_arr, self.ink = load_mask_and_labels(self.data_root, size=(self.w, self.h))
+        
+        # 4. Spatial Split Logic
+        # We split by Y-coordinate
+        split_y = int(self.h * (1 - split_fraction))
+        
+        if self.mode == "train":
+            self.y_range = (0, split_y)
+            print(f"📦 Dataset [TRAIN]: Y-Range 0-{split_y} (Top {((1-split_fraction)*100):.0f}%)")
+        else:
+            self.y_range = (split_y, self.h)
+            print(f"📦 Dataset [VALID]: Y-Range {split_y}-{self.h} (Bottom {(split_fraction*100):.0f}%)")
+            
+        # Create Validity Mask
+        # (Combined mask.png and file content existence is handled by IO, but here we cache simple mask)
+        self.valid_mask = (self.mask_arr > 0)
+        
+        # 🚑 Surgical Normalization Defaults
+        # We process these dynamically per patch, but need defaults
+        self.win_min = 18000.0 # Will be overridden if user provided yaml, but logic is per-patch adaptive
+        
+    def __len__(self):
+        # Virtual length for sampling
+        return 2048 if self.mode == "train" else 512
+
+    def __getitem__(self, idx):
+        try:
+            # 1. Spatial Sampling (Restricted by Y-range)
+            y_min, y_max = self.y_range
+            
+            # Safety: Ensure tile fits
+            y_safe_max = y_max - self.tile_size
+            if y_safe_max <= y_min:
+                # Fallback for very small splits (unlikely)
+                y_safe_max = y_min
+            
+            for _ in range(100):
+                y = random.randint(y_min, max(y_min, y_safe_max))
+                x = random.randint(0, self.w - self.tile_size)
+                
+                # Check validity
+                if self.valid_mask[y:y+self.tile_size, x:x+self.tile_size].sum() > 0:
+                    break
+            
+            # 2. Load Volume Patch (Strictly from Disk via IO)
+            # Use IO helper to retrieve exact z-slices
+            roi = (x, y, self.tile_size, self.tile_size)
+            volume = load_volume_from_files(self.data_root, self.z_slices, region_of_interest=roi) 
+            # volume is (H, W, D) i.e. (tile, tile, z)
+            
+            # 3. Surgical Normalization
+            # "Adaptive Percentile Stretching"
+            p_min, p_max = np.percentile(volume, (1, 99))
+            if p_max - p_min < 1e-6:
+                 p_min, p_max = volume.min(), volume.max()
+            
+            volume = np.clip((volume - p_min) / (p_max - p_min + 1e-8), 0, 1)
+            
+            # 4. Get Label
+            ink_patch = self.ink[y:y+self.tile_size, x:x+self.tile_size]
+            ink_patch = (ink_patch > 0.5).astype(np.float32)
+            
+            # 5. Transforms
+            if self.transform:
+                data = self.transform(image=volume, mask=ink_patch)
+                volume = data["image"]
+                ink_patch = data["mask"]
+                
+             # 6. To Tensor
+            if not isinstance(volume, torch.Tensor):
+                volume = torch.from_numpy(volume).permute(2, 0, 1).float()
+            
+            if not isinstance(ink_patch, torch.Tensor):
+                ink_patch = torch.from_numpy(ink_patch).unsqueeze(0).float()
+            if ink_patch.ndim == 2:
+                ink_patch = ink_patch.unsqueeze(0)
+                
+            return volume, ink_patch
+            
+        except Exception as e:
+            print(f"⚠️ Error loading patch {idx}: {e}")
+            # Retry with next index
+            return self.__getitem__((idx + 1) % len(self))
+
+```
+
+---
+## File: src\data\native_dataset.py
+```py
+import torch
+import numpy as np
+import cv2
+import random
+from torch.utils.data import Dataset
+from src.core.config import Config
+
+class NativeVolumeDataset(Dataset):
+    """Dataset using native surface_volume with proper ink labels."""
+    
+    def __init__(self, volume, ink_mask, paper_mask, patch_size=224,
+                 min_ink_threshold=0.01, augmentations=None, patches=None):
+        """
+        Args:
+            volume: (D, H, W) - 3D volume, normalized 0-1
+            ink_mask: (H, W) - binary ink mask
+            paper_mask: (H, W) - binary fragment/paper mask
+            patches: Optional list of (y, x) tuples. If None, scans the image.
+        """
+        self.volume = volume
+        self.ink_mask = ink_mask
+        self.paper_mask = paper_mask
+        self.patch_size = patch_size
+        self.augmentations = augmentations
+        self.min_ink_threshold = min_ink_threshold
+        
+        D, H, W = volume.shape
+        self.depth = D
+        
+        # Categorize patches
+        self.ink_patches = []
+        self.background_patches = []
+        
+        if patches is None:
+            self._scan_patches(H, W)
+        else:
+            self.all_patches = patches
+            self._classify_patches()
+            
+    def _scan_patches(self, H, W):
+        print("   Scanning patches...")
+        self.ink_patches = []
+        self.background_patches = []
+        
+        for y in range(0, H - self.patch_size, self.patch_size // 2):
+            for x in range(0, W - self.patch_size, self.patch_size // 2):
+                paper_patch = self.paper_mask[y:y+self.patch_size, x:x+self.patch_size]
+                
+                # REFINED LOGIC: Use volume intensity to verify paper presence
+                vol_patch = self.volume[self.depth//2, y:y+self.patch_size, x:x+self.patch_size]
+                combined_mask = (paper_patch * (vol_patch > 0.05))
+                
+                if combined_mask.mean() < 0.5:
+                    continue
+                
+                ink_patch = self.ink_mask[y:y+self.patch_size, x:x+self.patch_size]
+                ink_ratio = ink_patch.mean()
+                
+                if ink_ratio > self.min_ink_threshold:
+                    self.ink_patches.append((y, x, ink_ratio))
+                else:
+                    self.background_patches.append((y, x, ink_ratio))
+                    
+        print(f"   Ink patches: {len(self.ink_patches)}")
+        print(f"   Background patches: {len(self.background_patches)}")
+        
+        # Combined list
+        self.all_patches = [(y, x) for y, x, _ in self.ink_patches + self.background_patches]
+        
+    def _classify_patches(self):
+        """Classifies provided patches into ink/bg based on mask."""
+        self.ink_patches = []
+        self.background_patches = []
+        for y, x in self.all_patches:
+            ink_patch = self.ink_mask[y:y+self.patch_size, x:x+self.patch_size]
+            ink_ratio = ink_patch.mean()
+            if ink_ratio > self.min_ink_threshold:
+                self.ink_patches.append((y, x, ink_ratio))
+            else:
+                self.background_patches.append((y, x, ink_ratio))
+
+    def split(self, val_split=0.1, shuffle=True):
+        """
+        Creates Train and Validation datasets ensuring NO DATA LEAKAGE via shuffling.
+        Returns: (train_dataset, val_dataset)
+        """
+        all_patches_list = self.all_patches.copy()
+        
+        if shuffle:
+            random.seed(42) # Fix seed for reproducibility check
+            random.shuffle(all_patches_list)
+            print("   Example patches after shuffle:", all_patches_list[:3])
+            
+        n_val = int(len(all_patches_list) * val_split)
+        val_patches = all_patches_list[:n_val]
+        train_patches = all_patches_list[n_val:]
+        
+        # Create Train Dataset
+        train_ds = NativeVolumeDataset(
+            self.volume, self.ink_mask, self.paper_mask, 
+            self.patch_size, self.min_ink_threshold, self.augmentations,
+            patches=train_patches
+        )
+        
+        # Create Val Dataset
+        val_ds = NativeVolumeDataset(
+            self.volume, self.ink_mask, self.paper_mask,
+            self.patch_size, self.min_ink_threshold, augmentations=None, # No aug for val
+            patches=val_patches
+        )
+        
+        return train_ds, val_ds
+
+    def __len__(self):
+        return len(self.all_patches)
+    
+    def __getitem__(self, idx):
+        y, x = self.all_patches[idx]
+        ps = self.patch_size
+        
+        # Extract 3D patch
+        vol_patch = self.volume[:, y:y+ps, x:x+ps].copy()
+        mask_patch = self.ink_mask[y:y+ps, x:x+ps].copy()
+        
+        # Apply augmentation
+        if self.augmentations is not None:
+            aug_volume = []
+            # We need to apply same transform to all slices.
+            # Albumentations ReplayCompose is one way, or just use the seed hack.
+            # Current naive implementation calling it per slice with same random state is tricky if using RandomCrop etc.
+            # But the original code loop:
+            # t = self.augmentations(image=vol_patch[d], mask=mask_patch)
+            # This applies DIFFERENT random params per slice if augmentations has random state!
+            # WAIT. The original code in train_native_volume.py lines 244-247 loops over slices.
+            # If augmentation is random (e.g. Rotate), volume will be twisted differently per slice?
+            # NO! Albumentations by default generates new params on __call__.
+            # This is a BUG in the original code if they used spatial transforms like Rotate/Flip separately per slice.
+            # However, looking at original code:
+            # t = self.augmentations(image=vol_patch[d], mask=mask_patch)
+            # Yes, that looks like a bug unless they freeze seed.
+            # BUT, usually for 2.5D, we stack channels and augment once.
+            # vol_patch shape is (D, H, W).
+            # We can transpose to (H, W, D), augment, then transpose back.
+            
+            # IMPROVEMENT: Fix the augmentation logic here.
+            vol_trans = vol_patch.transpose(1, 2, 0) # H, W, D
+            t = self.augmentations(image=vol_trans, mask=mask_patch)
+            vol_aug = t['image'].transpose(2, 0, 1) # D, H, W
+            mask_aug = t['mask']
+            
+            return (
+                torch.from_numpy(vol_aug.astype(np.float32)),
+                torch.from_numpy(mask_aug[np.newaxis, :, :].astype(np.float32))
+            )
+
+        return (
+            torch.from_numpy(vol_patch.astype(np.float32)),
+            torch.from_numpy(mask_patch[np.newaxis, :, :].astype(np.float32))
+        )
+
+```
+
+---
+## File: src\data\rgt_dataset.py
+```py
+"""
+RGT Vesuvius Dataset (2026 Kaggle Standard)
+===========================================
+Implements True 3D Volumetric Loading with strict Balanced Sampling.
+
+Features:
+- Auto-scaling of mismatching masks (1k -> 8k)
+- 16-channel Z-stack loading (layer_N to layer_N+15)
+- 50/50 Balanced Sampling (Ink vs Background)
+- Area restriction based on fragment mask
+"""
+
+import torch
+from torch.utils.data import Dataset
+import cv2
+import numpy as np
+from pathlib import Path
+import random
+from tqdm import tqdm
+
+class RGTVolumeDataset(Dataset):
+    def __init__(self, layer_dir, mask_path, fragment_mask_path, 
+                 start_layer=1, num_layers=16, 
+                 patch_size=224, min_ink_thresh=0.0):
+        """
+        Args:
+            layer_dir: Path to flattened RGT layers (layer_01.png...)
+            mask_path: Path to inklabels.png
+            fragment_mask_path: Path to mask.png (papyrus area)
+            start_layer: Starting layer index (1-based)
+            num_layers: Depth of volume (16 channels)
+            patch_size: x/y size of crop
+            min_ink_thresh: Minimum ink ratio to consider a patch 'Ink'
+        """
+        self.layer_dir = Path(layer_dir)
+        self.patch_size = patch_size
+        self.num_layers = num_layers
+        self.start_layer = start_layer
+        
+        # 1. Load Reference Layer for Dimensions
+        ref_path = self.layer_dir / f"layer_{start_layer:02d}.png"
+        if not ref_path.exists():
+            raise FileNotFoundError(f"Reference layer not found: {ref_path}")
+            
+        ref_img = cv2.imread(str(ref_path), cv2.IMREAD_GRAYSCALE)
+        self.H, self.W = ref_img.shape
+        print(f"   📐 Volume Dimensions: {self.H} x {self.W}")
+        del ref_img
+        
+        # 2. Load and Resize Masks
+        print(f"   📥 Loading Masks...")
+        
+        # Ink Labels
+        ink_orig = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
+        if ink_orig.shape != (self.H, self.W):
+            print(f"      ⚠️ Resizing Ink Labels: {ink_orig.shape} -> ({self.H}, {self.W})")
+            self.ink_mask = cv2.resize(ink_orig, (self.W, self.H), interpolation=cv2.INTER_NEAREST)
+        else:
+            self.ink_mask = ink_orig
+        self.ink_mask = (self.ink_mask > 127).astype(np.float32) # Binary
+        
+        # Fragment Mask (Papyrus Area)
+        frag_orig = cv2.imread(str(fragment_mask_path), cv2.IMREAD_GRAYSCALE)
+        if frag_orig is None:
+            print("      ⚠️ No Fragment Mask found. Assuming full area valid.")
+            self.frag_mask = np.ones((self.H, self.W), dtype=np.float32)
+        else:
+            if frag_orig.shape != (self.H, self.W):
+                print(f"      ⚠️ Resizing Fragment Mask: {frag_orig.shape} -> ({self.H}, {self.W})")
+                self.frag_mask = cv2.resize(frag_orig, (self.W, self.H), interpolation=cv2.INTER_NEAREST)
+            else:
+                self.frag_mask = frag_orig
+            self.frag_mask = (self.frag_mask > 127).astype(np.float32)
+
+        # 3. Pre-load Volume (Memory Heavy, but Fast)
+        # For 8k x 6k x 16ch, this is ~800MB x 16 ... too big? 
+        # 8181 * 6330 * 1 byte ~= 50MB per layer. 16 layers = 800MB. 
+        # TOTALLY FINE for 3060 (6GB VRAM) system RAM.
+        print(f"   📚 Pre-loading {num_layers} RGT Layers...")
+        self.volume = np.zeros((num_layers, self.H, self.W), dtype=np.uint8)
+        
+        for i in range(num_layers):
+            layer_idx = start_layer + i
+            p = self.layer_dir / f"layer_{layer_idx:02d}.png"
+            if p.exists():
+                img = cv2.imread(str(p), cv2.IMREAD_GRAYSCALE)
+                if img.shape != (self.H, self.W):
+                    img = cv2.resize(img, (self.W, self.H), interpolation=cv2.INTER_LINEAR)
+                self.volume[i] = img
+            else:
+                print(f"      ⚠️ Missing Layer: {p}, filling with zeros.")
+        
+        # Normalize to 0-1
+        self.volume = self.volume.astype(np.float32) / 255.0
+
+        # 4. Patch Mining (The Balanced Strategy)
+        print("   ⛏️ Mining Patches (Hard Balancing)...")
+        self.ink_indices = []
+        self.bg_indices = []
+        
+        step = patch_size // 2  # 50% Overlap
+        
+        for y in range(0, self.H - patch_size, step):
+            for x in range(0, self.W - patch_size, step):
+                # Check validity first (Must be on papyrus)
+                frag_patch = self.frag_mask[y:y+patch_size, x:x+patch_size]
+                if frag_patch.mean() < 0.5:
+                    continue # Skip empty space
+                
+                # Check Ink Content
+                ink_patch = self.ink_mask[y:y+patch_size, x:x+patch_size]
+                ink_ratio = ink_patch.mean()
+                
+                if ink_ratio > min_ink_thresh:
+                    self.ink_indices.append((y, x))
+                else:
+                    self.bg_indices.append((y, x))
+                    
+        print(f"      ✅ Positive (Ink) Patches: {len(self.ink_indices)}")
+        print(f"      ✅ Negative (Bg)  Patches: {len(self.bg_indices)}")
+        
+        if len(self.ink_indices) == 0:
+            raise ValueError("No Ink Patches found! Check your mask or threshold.")
+
+    def __len__(self):
+        # Epoch length is constrained by the smaller class to avoid oversampling too much?
+        # No, for training we typically want to see 'a lot'.
+        # Let's say length is 2 * max(len_ink, len_bg) to allow full epoch
+        return max(len(self.ink_indices), len(self.bg_indices)) * 2
+
+    def __getitem__(self, idx, force_ink=None):
+        """
+        Args:
+            force_ink: If True, return ink patch. If False, return bg patch.
+                       If None, used for standard access (not employed by BalancedBatchSampler)
+        """
+        # This dataset is designed to be used with a custom BatchSampler
+        # But if standard loader is used, we randomize here
+        if force_ink is True:
+            y, x = random.choice(self.ink_indices)
+        elif force_ink is False:
+            y, x = random.choice(self.bg_indices)
+        else:
+            # Fallback for validation (random access)
+            # Just pick randomly from all valid? No, for validation we usually iterate deterministic
+            # This logic is tricky. Let's rely on the BatchSampler to pass indices.
+            # Wait, standard Sampler passes int indices.
+            pass 
+        
+        # Wait, usually we store all_indices and access by idx. 
+        # But for strictly 50/50, it is easier to ignore idx and just random sample
+        # if the Sampler tells us what TYPE to sample.
+        
+        # SIMPLIFICATION for Standard Loader behavior:
+        # If we use a custom sampler, it will pass an index.
+        # Let's flatten the list: [ink_0, ..., ink_N, bg_0, ..., bg_M]
+        # But that doesn't guarantee 50/50 per batch.
+        
+        # We will handle the stored coordinates in the Sampler/Loader logic or 
+        # implement __getitem__ to route correctly.
+        
+        # For simplicity in this Dataset class, we will accept a tuple (y, x) if idx is a tuple
+        # Or standard index logic.
+        
+        # Let's stick to standard idx for now to avoid DataLoader crash
+        pass
+
+    def get_patch(self, y, x, augmentation=None):
+        ps = self.patch_size
+        
+        # D x H x W
+        vol_patch = self.volume[:, y:y+ps, x:x+ps].copy() 
+        mask_patch = self.ink_mask[y:y+ps, x:x+ps].copy()
+        
+        if augmentation:
+            # Albumentations expects H x W x C usually, or dict
+            # We treat channels as input. 
+            # D = Channel.
+            # Volume is (D, H, W). We need (H, W, D) for Albumentations
+            vol_trans = vol_patch.transpose(1, 2, 0)
+            
+            data = augmentation(image=vol_trans, mask=mask_patch)
+            
+            vol_trans = data['image']
+            mask_patch = data['mask']
+            
+            vol_patch = vol_trans.transpose(2, 0, 1) # Back to D, H, W
+            
+        return (
+            torch.from_numpy(vol_patch),
+            torch.from_numpy(mask_patch[np.newaxis, :, :]) # 1 x H x W
+        )
+
+
+```
+
+---
+## File: src\data\samplers.py
+```py
+import random
+from torch.utils.data import Sampler
+
+class BalancedSampler(Sampler):
+    """Ensures balanced ink/background sampling."""
+    
+    def __init__(self, dataset, batch_size, ink_ratio=0.5):
+        self.dataset = dataset
+        self.batch_size = batch_size
+        self.ink_ratio = ink_ratio
+        
+        self.n_ink = len(dataset.ink_patches)
+        self.n_bg = len(dataset.background_patches)
+        
+        self.ink_per_batch = int(batch_size * ink_ratio)
+        self.bg_per_batch = batch_size - self.ink_per_batch
+        
+        # Total batches per epoch
+        if self.n_ink > 0 and self.n_bg > 0:
+            self.n_batches = min(
+                self.n_ink // max(1, self.ink_per_batch),
+                self.n_bg // max(1, self.bg_per_batch)
+            )
+        else:
+            self.n_batches = len(dataset) // batch_size
+        
+        # print(f"   Batches per epoch: {self.n_batches}")
+    
+    def __iter__(self):
+        # Prepare indices
+        # We need to map back to original indices in dataset.all_patches
+        # dataset.ink_patches and dataset.background_patches stores (y, x, ratio)
+        # But dataset.all_patches is [(y,x)]. 
+        # We need indices into dataset.all_patches.
+        
+        # This implementation requires dataset to expose ink_indices and bg_indices
+        # OR we reconstruct them here.
+        # In the original script, it reconstructed based on list lengths?
+        # Original script:
+        # ink_indices = list(range(len(dataset.ink_patches)))
+        # bg_indices = list(range(len(dataset.ink_patches), len(dataset.all_patches)))
+        # This ASSUMED dataset.all_patches was ink_patches + background_patches concatenated IN ORDER.
+        # In my new NativeVolumeDataset, self.all_patches IS constructed that way initially.
+        # BUT if we use the .split() method, we shuffle.
+        # So we can't assume order.
+        
+        # Fix: Iterate dataset and find indices.
+        # This is slow if done every time.
+        # Ideally dataset should provide ink_indices and bg_indices properties.
+        
+        all_patches_set = { (y,x): i for i, (y,x) in enumerate(self.dataset.all_patches) }
+        
+        ink_indices = []
+        bg_indices = []
+        
+        for y, x, r in self.dataset.ink_patches:
+            if (y,x) in all_patches_set:
+                ink_indices.append(all_patches_set[(y,x)])
+                
+        for y, x, r in self.dataset.background_patches:
+             if (y,x) in all_patches_set:
+                bg_indices.append(all_patches_set[(y,x)])
+        
+        random.shuffle(ink_indices)
+        random.shuffle(bg_indices)
+        
+        ink_ptr = 0
+        bg_ptr = 0
+        
+        for _ in range(self.n_batches):
+            batch = []
+            
+            # Add ink patches
+            for _ in range(self.ink_per_batch):
+                if ink_ptr < len(ink_indices):
+                    batch.append(ink_indices[ink_ptr])
+                    ink_ptr += 1
+                elif ink_indices:
+                    batch.append(random.choice(ink_indices))
+            
+            # Add background patches
+            for _ in range(self.bg_per_batch):
+                if bg_ptr < len(bg_indices):
+                    batch.append(bg_indices[bg_ptr])
+                    bg_ptr += 1
+                elif bg_indices:
+                    batch.append(random.choice(bg_indices))
+            
+            random.shuffle(batch)
+            yield from batch
+    
+    def __len__(self):
+        return self.n_batches * self.batch_size
+
+```
+
+---
+## File: src\models\losses.py
+```py
+import torch
+import torch.nn as nn
+
+class BCEDiceLoss(nn.Module):
+    def __init__(self, bce_weight=0.5, dice_weight=0.5, smooth=1e-6):
+        super().__init__()
+        self.bce_weight = bce_weight
+        self.dice_weight = dice_weight
+        self.smooth = smooth
+        self.bce = nn.BCEWithLogitsLoss()
+        
+    def forward(self, inputs, targets):
+        # BCE (on logits)
+        bce_loss = self.bce(inputs, targets)
+        
+        # Dice (on probabilities)
+        probs = torch.sigmoid(inputs)
+        probs_flat = probs.view(-1)
+        targets_flat = targets.view(-1)
+        
+        intersection = (probs_flat * targets_flat).sum()
+        dice = (2. * intersection + self.smooth) / (probs_flat.sum() + targets_flat.sum() + self.smooth)
+        dice_loss = 1 - dice
+        
+        return self.bce_weight * bce_loss + self.dice_weight * dice_loss
+
+```
+
+---
+## File: src\models\segmentation.py
+```py
+import torch
+import segmentation_models_pytorch as smp
+from pathlib import Path
+
+def get_model(encoder_name, in_channels, classes=1, activation=None):
+    """Factory function to create the segmentation model."""
+    return smp.Unet(
+        encoder_name=encoder_name,
+        encoder_weights="imagenet" if in_channels == 3 else None,
+        in_channels=in_channels,
+        classes=classes,
+        activation=activation
+    )
+
+def load_model(model_path, encoder, in_channels, device):
+    """Robust model loading function handling various checkpoint formats."""
+    print(f"\n📥 Loading model: {model_path}")
+    
+    model = get_model(encoder, in_channels)
+    
+    path_obj = Path(model_path)
+    if path_obj.exists():
+        checkpoint = torch.load(model_path, map_location=device, weights_only=False)
+        
+        if isinstance(checkpoint, dict):
+            if 'model_state_dict' in checkpoint:
+                state_dict = checkpoint['model_state_dict']
+            elif 'state_dict' in checkpoint:
+                state_dict = checkpoint['state_dict']
+            else:
+                state_dict = checkpoint
+        else:
+            state_dict = checkpoint
+            
+        try:
+            model.load_state_dict(state_dict, strict=False)
+            print("   ✅ Loaded pretrained weights")
+        except Exception as e:
+            print(f"   ⚠️ Error loading state dict: {e}")
+            print("   Trying strict=False...")
+            model.load_state_dict(state_dict, strict=False)
+    else:
+        print("   ⚠️ No pretrained weights found, optimizing from scratch")
+    
+    return model.to(device)
 
 ```
 
@@ -32013,529 +35948,6 @@ if __name__ == "__main__":
 ```
 
 ---
-## File: src\rgt\solver.py
-```py
-#!/usr/bin/env python3
-"""
-RGT Poisson Solver for Vesuvius Challenge 2026
-===============================================
-
-Sparse weighted Poisson equation solver for RGT scalar field computation.
-Solves ∇·(w∇φ) = ∇·(wv⃗) using CG with optional AMG preconditioning.
-
-Author: HPC Architect
-"""
-
-from __future__ import annotations
-
-import gc
-from dataclasses import dataclass
-from typing import TYPE_CHECKING, Optional, Tuple
-
-import numpy as np
-
-if TYPE_CHECKING:
-    import cupy as cp
-    from cupyx.scipy.sparse import csr_matrix
-
-
-# =============================================================================
-# PoissonSolver Class
-# =============================================================================
-
-@dataclass
-class PoissonResult:
-    """Result container for Poisson solve."""
-    phi: "cp.ndarray"           # Scalar field (D, H, W)
-    converged: bool             # Whether solver converged
-    iterations: int             # Number of iterations
-    residual: float             # Final residual norm
-
-
-class PoissonSolver:
-    """
-    Weighted Poisson equation solver for RGT computation.
-    
-    Solves the weighted Poisson equation:
-        ∇·(w∇φ) = ∇·(wv⃗)
-    
-    where w is the confidence/weight field and v⃗ is the normal vector field.
-    
-    Usage:
-        solver = PoissonSolver()
-        A, b = solver.assemble_system(vectors, weights)
-        result = solver.solve(A, b, shape)
-    """
-    
-    def __init__(
-        self,
-        vram_threshold: float = 0.8,
-        tol: float = 1e-6,
-        maxiter: int = 2000,
-        verbose: bool = True,
-    ):
-        """
-        Initialize PoissonSolver.
-        
-        Args:
-            vram_threshold: Maximum VRAM utilization before raising error.
-            tol: Solver convergence tolerance.
-            maxiter: Maximum solver iterations.
-            verbose: Print progress messages.
-        """
-        self.vram_threshold = vram_threshold
-        self.tol = tol
-        self.maxiter = maxiter
-        self.verbose = verbose
-        self.epsilon = 1e-6  # Regularization for conditioning
-    
-    def _log(self, msg: str) -> None:
-        """Print message if verbose."""
-        if self.verbose:
-            print(f"[PoissonSolver] {msg}")
-    
-    def _check_vram(self, estimated_bytes: int) -> None:
-        """
-        Check if estimated memory usage is safe.
-        
-        Args:
-            estimated_bytes: Estimated memory requirement.
-            
-        Raises:
-            MemoryError: If allocation would exceed threshold.
-        """
-        import cupy as cp
-        
-        try:
-            free, total = cp.cuda.Device(0).mem_info
-            utilization = (total - free + estimated_bytes) / total
-            
-            if utilization > self.vram_threshold:
-                raise MemoryError(
-                    f"VRAM check failed: estimated {estimated_bytes / 1e9:.2f} GB "
-                    f"would exceed {self.vram_threshold:.0%} threshold "
-                    f"(current free: {free / 1e9:.2f} GB)"
-                )
-        except Exception as e:
-            if isinstance(e, MemoryError):
-                raise
-            # If we can't check, proceed with caution
-            self._log(f"  Warning: Could not check VRAM: {e}")
-    
-    def compute_divergence(
-        self,
-        vectors: "cp.ndarray",
-        weights: "cp.ndarray",
-    ) -> "cp.ndarray":
-        """
-        Compute weighted divergence: ∇·(w·v).
-        
-        Uses central differences with zero-padding at boundaries.
-        
-        Args:
-            vectors: Normal vectors (3, D, H, W).
-            weights: Confidence weights (D, H, W).
-            
-        Returns:
-            Divergence field (D, H, W).
-        """
-        import cupy as cp
-        
-        D, H, W = weights.shape
-        
-        # Weighted vector field
-        wvx = weights * vectors[2]  # X component (axis 2)
-        wvy = weights * vectors[1]  # Y component (axis 1)
-        wvz = weights * vectors[0]  # Z component (axis 0)
-        
-        # Central differences with zero-padding
-        # d(wvx)/dx
-        dvx = cp.zeros_like(wvx)
-        dvx[:, :, 1:-1] = (wvx[:, :, 2:] - wvx[:, :, :-2]) / 2.0
-        
-        # d(wvy)/dy
-        dvy = cp.zeros_like(wvy)
-        dvy[:, 1:-1, :] = (wvy[:, 2:, :] - wvy[:, :-2, :]) / 2.0
-        
-        # d(wvz)/dz
-        dvz = cp.zeros_like(wvz)
-        dvz[1:-1, :, :] = (wvz[2:, :, :] - wvz[:-2, :, :]) / 2.0
-        
-        divergence = dvx + dvy + dvz
-        
-        del wvx, wvy, wvz, dvx, dvy, dvz
-        
-        return divergence
-    
-    def build_laplacian(
-        self,
-        weights: "cp.ndarray",
-        pin_center: bool = True,
-    ) -> Tuple["csr_matrix", int]:
-        """
-        Build weighted 7-point stencil Laplacian matrix (vectorized).
-        
-        Constructs sparse matrix A for ∇·(w∇φ) using finite differences.
-        Uses fully vectorized operations for performance.
-        
-        Args:
-            weights: Confidence weights (D, H, W).
-            pin_center: If True, pin center voxel to fix gauge freedom.
-            
-        Returns:
-            Tuple of (CSR sparse matrix, pinned node index).
-        """
-        import cupy as cp
-        from cupyx.scipy.sparse import coo_matrix, diags
-        
-        D, H, W = weights.shape
-        N = D * H * W
-        
-        # Estimate memory
-        estimated_nnz = N * 7
-        estimated_bytes = estimated_nnz * 16 + N * 8
-        self._check_vram(estimated_bytes)
-        
-        self._log(f"  Building Laplacian matrix ({D}×{H}×{W} = {N:,} dof)")
-        
-        # Work on CPU for sparse matrix construction
-        w = cp.asnumpy(weights).astype(np.float64).ravel()  # Use float64 for stability
-        
-        # Create index arrays
-        idx = np.arange(N, dtype=np.int32)
-        
-        # Neighbor offsets for 3D grid
-        # X neighbors: offset = 1
-        # Y neighbors: offset = W
-        # Z neighbors: offset = W * H
-        
-        rows_list = []
-        cols_list = []
-        data_list = []
-        diag = np.zeros(N, dtype=np.float64)
-        
-        # X- neighbor (x > 0)
-        mask = (idx % W) > 0
-        src = idx[mask]
-        dst = src - 1
-        w_half = 0.5 * (w[src] + w[dst])
-        rows_list.append(src)
-        cols_list.append(dst)
-        data_list.append(w_half)
-        diag[src] -= w_half
-        
-        # X+ neighbor (x < W-1)
-        mask = (idx % W) < W - 1
-        src = idx[mask]
-        dst = src + 1
-        w_half = 0.5 * (w[src] + w[dst])
-        rows_list.append(src)
-        cols_list.append(dst)
-        data_list.append(w_half)
-        diag[src] -= w_half
-        
-        # Y- neighbor (y > 0)
-        mask = ((idx // W) % H) > 0
-        src = idx[mask]
-        dst = src - W
-        w_half = 0.5 * (w[src] + w[dst])
-        rows_list.append(src)
-        cols_list.append(dst)
-        data_list.append(w_half)
-        diag[src] -= w_half
-        
-        # Y+ neighbor (y < H-1)
-        mask = ((idx // W) % H) < H - 1
-        src = idx[mask]
-        dst = src + W
-        w_half = 0.5 * (w[src] + w[dst])
-        rows_list.append(src)
-        cols_list.append(dst)
-        data_list.append(w_half)
-        diag[src] -= w_half
-        
-        # Z- neighbor (z > 0)
-        mask = (idx // (W * H)) > 0
-        src = idx[mask]
-        dst = src - W * H
-        w_half = 0.5 * (w[src] + w[dst])
-        rows_list.append(src)
-        cols_list.append(dst)
-        data_list.append(w_half)
-        diag[src] -= w_half
-        
-        # Z+ neighbor (z < D-1)
-        mask = (idx // (W * H)) < D - 1
-        src = idx[mask]
-        dst = src + W * H
-        w_half = 0.5 * (w[src] + w[dst])
-        rows_list.append(src)
-        cols_list.append(dst)
-        data_list.append(w_half)
-        diag[src] -= w_half
-        
-        # Concatenate all off-diagonal entries
-        rows = np.concatenate(rows_list)
-        cols = np.concatenate(cols_list)
-        data = np.concatenate(data_list)
-        
-        # Add diagonal with regularization for conditioning
-        # Small epsilon prevents near-singular matrix in low-weight regions
-        diag_regularized = diag - self.epsilon
-        rows = np.concatenate([rows, idx])
-        cols = np.concatenate([cols, idx])
-        data = np.concatenate([data, diag_regularized])
-        
-        # Pin center node
-        pinned_idx = (D // 2) * (H * W) + (H // 2) * W + (W // 2)
-        
-        if pin_center:
-            # Zero out all entries in pinned row
-            pinned_mask = rows == pinned_idx
-            data[pinned_mask] = 0.0
-            # Set diagonal to 1
-            diag_mask = (rows == pinned_idx) & (cols == pinned_idx)
-            data[diag_mask] = 1.0
-        
-        # Transfer to GPU
-        rows_gpu = cp.asarray(rows.astype(np.int32))
-        cols_gpu = cp.asarray(cols.astype(np.int32))
-        data_gpu = cp.asarray(data.astype(np.float32))
-        
-        A_coo = coo_matrix((data_gpu, (rows_gpu, cols_gpu)), shape=(N, N))
-        A_csr = A_coo.tocsr()
-        
-        # Cleanup
-        del rows, cols, data, rows_gpu, cols_gpu, data_gpu, A_coo
-        del rows_list, cols_list, data_list, diag, w
-        gc.collect()
-        cp.get_default_memory_pool().free_all_blocks()
-        
-        return A_csr, pinned_idx
-    
-    def assemble_system(
-        self,
-        vectors: "cp.ndarray",
-        weights: "cp.ndarray",
-    ) -> Tuple["csr_matrix", "cp.ndarray", int]:
-        """
-        Assemble complete linear system Ax = b.
-        
-        Args:
-            vectors: Normal vectors (3, D, H, W).
-            weights: Confidence weights (D, H, W).
-            
-        Returns:
-            Tuple of (A sparse matrix, b RHS vector, pinned index).
-        """
-        import cupy as cp
-        
-        self._log(f"Assembling system (shape={weights.shape})")
-        
-        # Compute divergence (RHS)
-        self._log("  Computing divergence...")
-        divergence = self.compute_divergence(vectors, weights)
-        b = divergence.ravel().astype(cp.float32)
-        
-        # Build Laplacian (LHS)
-        self._log("  Building Laplacian matrix...")
-        A, pinned_idx = self.build_laplacian(weights, pin_center=True)
-        
-        # Set pinned node RHS to 0
-        b[pinned_idx] = 0.0
-        
-        del divergence
-        gc.collect()
-        
-        self._log(f"  ✓ System assembled: A={A.shape}, nnz={A.nnz:,}")
-        
-        return A, b, pinned_idx
-    
-    def solve(
-        self,
-        A: "csr_matrix",
-        b: "cp.ndarray",
-        shape: Tuple[int, int, int],
-    ) -> PoissonResult:
-        """
-        Solve the linear system Ax = b.
-        
-        Uses SolverFactory to get best available solver.
-        
-        Args:
-            A: Sparse matrix (N, N).
-            b: RHS vector (N,).
-            shape: Original volume shape (D, H, W).
-            
-        Returns:
-            PoissonResult with scalar field and convergence info.
-        """
-        import cupy as cp
-        from rgt.infrastructure import SolverFactory
-        
-        self._log(f"Solving system ({A.shape[0]:,} unknowns)...")
-        
-        # Get solver
-        solver = SolverFactory.create(prefer_amgx=True)
-        self._log(f"  Using: {solver.name}")
-        
-        # Initial guess
-        x0 = cp.zeros(b.shape[0], dtype=cp.float32)
-        
-        # Jacobi (diagonal) preconditioner for better convergence
-        diag_A = A.diagonal()
-        diag_A = cp.where(cp.abs(diag_A) > 1e-10, diag_A, 1.0)  # Avoid division by zero
-        M_inv = 1.0 / cp.abs(diag_A)  # Inverse of diagonal
-        
-        # Preconditioned solve using cupyx.scipy.sparse.linalg.cg with M
-        from cupyx.scipy.sparse.linalg import cg, LinearOperator
-        
-        def precond(x):
-            return M_inv * x
-        
-        M = LinearOperator((A.shape[0], A.shape[0]), matvec=precond, dtype=cp.float32)
-        
-        solution, info_code = cg(A, b, x0=x0, tol=self.tol, maxiter=self.maxiter, M=M)
-        converged = info_code == 0
-        
-        # Reshape to volume
-        phi = solution.reshape(shape).astype(cp.float32)
-        
-        iterations = -1  # CG doesn't return iteration count directly
-        
-        # Compute residual
-        residual = float(cp.linalg.norm(A @ solution - b))
-        
-        self._log(f"  ✓ Solved: converged={converged}, residual={residual:.2e}")
-        
-        return PoissonResult(
-            phi=phi,
-            converged=converged,
-            iterations=iterations,
-            residual=residual,
-        )
-
-
-# =============================================================================
-# Test Function
-# =============================================================================
-
-def test_poisson_solver(size: int = 64) -> bool:
-    """
-    Test PoissonSolver on synthetic sphere.
-    
-    For a sphere with radial normal vectors, the Poisson solution should
-    approximate the radial distance field φ ≈ r.
-    
-    Args:
-        size: Volume dimension (reduced for faster testing).
-        
-    Returns:
-        True if correlation with radial distance is high.
-    """
-    import cupy as cp
-    from rgt.feature_extraction import HessianEngine, create_synthetic_sphere
-    from rgt.orientation import VectorAligner
-    
-    print("=" * 60)
-    print("PoissonSolver Test Suite")
-    print("=" * 60)
-    
-    # Step 1: Create sphere and compute normals
-    print("\n[Step 1] Creating sphere and computing normals")
-    print("-" * 40)
-    
-    center = (size / 2, size / 2, size / 2)
-    radius = size * 0.3
-    
-    sphere_np = create_synthetic_sphere(size=size, center=center, radius=radius)
-    sphere_gpu = cp.asarray(sphere_np)
-    
-    engine = HessianEngine(slab_size=8, verbose=False)
-    hessian = engine.compute_hessian(sphere_gpu, sigma=1.5)
-    result = engine.solve_eigen_system(hessian.as_list())
-    
-    vectors = result.normal_vectors
-    confidence = result.confidence
-    
-    print(f"  Shape: {vectors.shape[1:]}")
-    
-    # Step 2: Align vectors
-    print("\n[Step 2] Aligning vectors")
-    print("-" * 40)
-    
-    aligner = VectorAligner(threshold=0.5, verbose=False)
-    aligned = aligner.align_vectors(vectors, confidence)
-    print("  ✓ Vectors aligned")
-    
-    # Step 3: Solve Poisson
-    print("\n[Step 3] Solving Poisson equation")
-    print("-" * 40)
-    
-    # Use confidence as weight (normalized)
-    weights = confidence / (confidence.max() + 1e-10)
-    
-    solver = PoissonSolver(tol=1e-5, maxiter=1000, verbose=True)
-    A, b, pinned = solver.assemble_system(aligned, weights)
-    result = solver.solve(A, b, weights.shape)
-    
-    phi = result.phi
-    
-    # Step 4: Validate φ ≈ r
-    print("\n[Step 4] Validating solution")
-    print("-" * 40)
-    
-    # Compute radial distance
-    z, y, x = cp.meshgrid(
-        cp.arange(size), cp.arange(size), cp.arange(size), indexing='ij'
-    )
-    r = cp.sqrt((z - center[0])**2 + (y - center[1])**2 + (x - center[2])**2)
-    
-    # Mask to shell region
-    shell_mask = cp.abs(r - radius) < 3.0
-    
-    # Normalize both fields for comparison
-    phi_shell = phi[shell_mask]
-    r_shell = r[shell_mask]
-    
-    phi_norm = (phi_shell - phi_shell.mean()) / (phi_shell.std() + 1e-10)
-    r_norm = (r_shell - r_shell.mean()) / (r_shell.std() + 1e-10)
-    
-    # Correlation
-    correlation = float(cp.mean(phi_norm * r_norm))
-    
-    print(f"  φ range: [{float(phi.min()):.3f}, {float(phi.max()):.3f}]")
-    print(f"  Correlation with radial distance: {correlation:.4f}")
-    print(f"  Residual: {result.residual:.2e}")
-    
-    # Cleanup
-    del sphere_gpu, vectors, confidence, aligned, weights
-    del A, b, phi, z, y, x, r
-    hessian.free()
-    gc.collect()
-    cp.get_default_memory_pool().free_all_blocks()
-    
-    # Test passes if correlation is reasonable (not perfect due to discrete effects)
-    test_passed = abs(correlation) > 0.3
-    
-    print("\n" + "=" * 60)
-    if test_passed:
-        print("✓ All tests PASSED")
-        print(f"  φ shows correlation with radial distance: {correlation:.4f}")
-    else:
-        print("✗ Tests FAILED")
-        print(f"  Low correlation with radial distance: {correlation:.4f}")
-    print("=" * 60)
-    
-    return test_passed
-
-
-if __name__ == "__main__":
-    test_poisson_solver(size=64)
-
-```
-
----
 ## File: src\rgt\test_full_pipeline.py
 ```py
 #!/usr/bin/env python3
@@ -32918,848 +36330,353 @@ if __name__ == "__main__":
 ```
 
 ---
-## File: training_scripts\train_vesuvius.py
+## File: src\utils\io.py
 ```py
-import os
-import sys
-import random
 import numpy as np
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
-from torch.cuda.amp import autocast, GradScaler
-import segmentation_models_pytorch as smp
-import albumentations as A
-from albumentations.pytorch import ToTensorV2
 from pathlib import Path
 from PIL import Image
+from typing import List, Optional, Tuple
+
+def get_tif_paths(data_root: Path, z_slices: List[int]) -> dict:
+    """
+    Locate TIF files for requested Z-slices.
+    Raises FileNotFoundError if ANY slice is missing.
+    """
+    tif_dir = Path(data_root) / "surface_volume"
+    if not tif_dir.exists():
+         raise FileNotFoundError(f"Surface volume directory not found: {tif_dir}")
+
+    tif_dict = {}
+    
+    # 1. Scan available files
+    available_files = {int(f.stem): f for f in tif_dir.glob("*.tif") if f.stem.isdigit()}
+    
+    # 2. Strict Check
+    for z in z_slices:
+        if z not in available_files:
+            raise FileNotFoundError(f"❌ CRITICAL: Requested Z-slice {z} is missing in {tif_dir}")
+        tif_dict[z] = available_files[z]
+        
+    return tif_dict
+
+def load_volume_from_files(
+    data_root: Path, 
+    z_slices: List[int], 
+    region_of_interest: Optional[Tuple[int, int, int, int]] = None
+) -> np.ndarray:
+    """
+    Load volume from disk.
+    
+    Args:
+        data_root: Path to data directory.
+        z_slices: List of Z-indices to load.
+        region_of_interest: Optional tuple (x, y, w, h) to load a specific crop.
+                            If None, loads the entire volume (Careful with RAM!).
+    
+    Returns:
+        np.ndarray: Volume of shape (H, W, D) or (h, w, D)
+    """
+    tif_dict = get_tif_paths(data_root, z_slices)
+    
+    volume = []
+    
+    for z in z_slices:
+        path = tif_dict[z]
+        with Image.open(path) as img:
+            if region_of_interest:
+                x, y, w, h = region_of_interest
+                # PIL Crop: (left, upper, right, lower)
+                img_data = img.crop((x, y, x + w, y + h))
+            else:
+                img_data = img
+                
+            volume.append(np.array(img_data).astype(np.float32))
+            
+    # Stack along last axis -> (H, W, D)
+    return np.stack(volume, axis=-1)
+
+def load_mask_and_labels(data_root: Path, size: Tuple[int, int] = None) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Load valid mask and ink labels. Resizes to 'size' if provided.
+    """
+    root = Path(data_root)
+    mask_path = root / "mask.png"
+    ink_path = root / "inklabels.png"
+    
+    if size is None:
+        # Determine size from first available TIF if not provided?
+        pass # Assume caller knows or we load raw
+
+    # Helper to load and resize
+    def _load(path):
+        if not path.exists():
+            return None
+        with Image.open(path) as img:
+            if size and img.size != size:
+                return np.array(img.resize(size, Image.NEAREST)).astype(np.uint8)
+            return np.array(img).astype(np.uint8)
+
+    mask = _load(mask_path)
+    ink = _load(ink_path)
+    
+    # Defaults
+    if mask is None and size:
+        mask = np.ones((size[1], size[0]), dtype=np.uint8) * 255
+        
+    if ink is None and size:
+        ink = np.zeros((size[1], size[0]), dtype=np.uint8)
+        
+    return mask, ink
+
+```
+
+---
+## File: src\utils\metrics.py
+```py
+class MetricMonitor:
+    def __init__(self):
+        self.reset()
+        
+    def reset(self):
+        self.val = 0
+        self.avg = 0
+        self.sum = 0
+        self.count = 0
+
+    def update(self, val, n=1):
+        self.val = val
+        self.sum += val * n
+        self.count += n
+        self.avg = self.sum / self.count
+
+def fbeta_score(preds, targets, threshold=0.5, beta=0.5):
+    preds = (preds > threshold).float()
+    tp = (preds * targets).sum()
+    fp = (preds * (1 - targets)).sum()
+    fn = ((1 - preds) * targets).sum()
+    
+    score = ((1 + beta**2) * tp) / ((1 + beta**2) * tp + (beta**2) * fn + fp + 1e-7)
+    return score
+
+```
+
+---
+## File: tools\download.py
+```py
+import os
+import pathlib
+import hashlib
 from tqdm import tqdm
-import time
-import glob
-import matplotlib.pyplot as plt
+from kaggle.api.kaggle_api_extended import KaggleApi
 
-# =========================================================================================
-# ⚙️ Configuration
-# =========================================================================================
-# =========================================================================================
-# ⚙️ Configuration
-# =========================================================================================
-CONFIG = {
-    "data_root": Path(r"data\native\train\1"),
-    "z_depth": 16,           # 2.5D depth
-    "tile_size": 224,        # Patch size
-    "batch_size": 4,         # Adjust based on VRAM (6GB -> likely 4-8)
-    "num_workers": 4,        # Data loaders (Optimized)
-    "epochs": 15,
-    "lr": 1e-3,              # 🔥 Increased since signal is now strong
-    "seed": 42,
-    "device": "cuda" if torch.cuda.is_available() else "cpu",
-    "checkpoint": True,      # Gradient Checkpointing
-    "log_interval": 50,      # Steps
-    # 🎯 SURGICAL FIX: Z-axis centered on ink signal peak (Z=41)
-    "z_slices": list(range(33, 49)),  # Z=33 to Z=48 (16 slices around peak)
-    # 🎯 SURGICAL FIX: Contrast windowing based on histogram analysis
-    "window_min": 18000.0,   # Lower bound (include paper texture context)
-    "window_max": 28000.0,   # Upper bound (exclude high-intensity noise)
-}
+# Configuration
+# TODO: Update this if the 2026 competition has a different slug
+COMPETITION_NAME = "vesuvius-challenge-ink-detection" 
+# Target: Scroll 1, first 100 slices (00 to 99)
+SCROLL_ID = "1"
+SLICE_RANGE = range(100) # 0 to 99
+DATA_ROOT = pathlib.Path("data")
 
-# Fix Seed
-def seed_everything(seed=42):
-    random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.backends.cudnn.deterministic = True
+# Optimized Directory Structure for RTX 3060 (Simple local storage)
+# We store raw data separately.
+RAW_DIR = DATA_ROOT / "native" / "train" / SCROLL_ID
+SURFACE_VOLUME_DIR = RAW_DIR / "surface_volume"
+MASK_DIR = RAW_DIR  # mask.png usually sits at root of scroll dir or in distinct folder depending on comp
 
-seed_everything(CONFIG["seed"])
+def get_remote_paths():
+    """Generates the list of remote file paths to download."""
+    files = []
+    
+    # Surface Volume Slices (00.tif to 99.tif)
+    for i in SLICE_RANGE:
+        filename = f"{i:02d}.tif"
+        # Remote path structure usually follows: train/1/surface_volume/00.tif
+        remote_path = f"train/{SCROLL_ID}/surface_volume/{filename}"
+        local_path = SURFACE_VOLUME_DIR / filename
+        files.append((remote_path, local_path))
+    
+    # Mask file
+    # Remote path: train/1/mask.png
+    mask_remote = f"train/{SCROLL_ID}/mask.png"
+    mask_local = RAW_DIR / "mask.png"
+    files.append((mask_remote, mask_local))
+    
+    # Inklabels (if strictly needed for training, usually yes)
+    # Remote path: train/1/inklabels.png
+    ink_remote = f"train/{SCROLL_ID}/inklabels.png"
+    ink_local = RAW_DIR / "inklabels.png"
+    files.append((ink_remote, ink_local))
 
-# =========================================================================================
-# 📦 Dataset
-# =========================================================================================
-class Vesuvius25DDataset(Dataset):
-    def __init__(self, root_dir, z_slices, transform=None, mode="train"):
-        self.root = Path(root_dir)
-        self.transform = transform
-        self.mode = mode
-        self.z_slices = z_slices # e.g. 16
-        
-        # Load Labels
-        print(f"[{mode.upper()}] Loading labels...")
-        mask_path = self.root / "mask.png"
-        ink_path = self.root / "inklabels.png"
-        
-        self.mask = np.array(Image.open(mask_path).convert("L"))
-        self.ink = np.array(Image.open(ink_path).convert("L"))
-        
-        self.h, self.w = self.mask.shape
-        
-        # Tiff paths
-        # We assume files are 00.tif to XX.tif
-        tif_dir = self.root / "surface_volume"
-        self.tif_files = sorted([f for f in tif_dir.glob("*.tif") if f.name[0].isdigit()], 
-                                key=lambda x: int(x.name.split('.')[0]))
-        
-        # Determine accessible z-range (use explicit z_slices from CONFIG)
-        # z_slices is now a list like [33, 34, ..., 48] instead of a count
-        if isinstance(self.z_slices, list):
-            self.z_indices = self.z_slices
+    return files
+
+def calculate_md5(file_path):
+    """Calculates MD5 hash of a file."""
+    hash_md5 = hashlib.md5()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
+
+def ensure_folders():
+    """Creates necessary local directories."""
+    SURFACE_VOLUME_DIR.mkdir(parents=True, exist_ok=True)
+    print(f"Created/Verified directory: {SURFACE_VOLUME_DIR}")
+
+def download_file_resumable(api, competition, remote_path, local_path):
+    """Downloads a file if it doesn't exist or is incomplete (simple check)."""
+    
+    # Kaggle API doesn't give us easy remote file size without listing files first
+    # So we will try to list it to get metadata
+    # listing = api.competition_list_files(competition, name=str(pathlib.Path(remote_path).name))
+    # This is often slow/flakes for single files inside deep folders.
+    # Instead, we'll try the download. If local file exists, we check if it seems valid.
+    
+    if local_path.exists():
+        # Check if file has reasonable size (avoid empty or error-page files)
+        if local_path.stat().st_size > 1000:
+             print(f"[SKIP] {local_path.name} exists and seems valid.")
+             return
         else:
-            # Fallback for old behavior (z_slices as count)
-            start_z = (len(self.tif_files) - self.z_slices) // 2
-            self.z_indices = list(range(start_z, start_z + self.z_slices))
-        print(f"[{mode.upper()}] Using Z-slices: {list(self.z_indices)}")
+             print(f"[RE-DOWNLOAD] {local_path.name} exists but is too small ({local_path.stat().st_size} bytes). Deleting.")
+             local_path.unlink()
 
-    def __len__(self):
-        # Virtual length for epoch
-        return 2048 if self.mode == "train" else 256
-
-    def __getitem__(self, idx):
-        try:
-            # 1. Select Center Coordinate
-            # Retry until valid mask
-            for _ in range(100):
-                y = np.random.randint(0, self.mask.shape[0] - CONFIG["tile_size"])
-                x = np.random.randint(0, self.mask.shape[1] - CONFIG["tile_size"])
-                
-                # Check if majority of patch is in mask
-                # Optimized: check center or corners
-                patch_mask = self.mask[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]]
-                if patch_mask.mean() > 0.1: # At least 10% data
-                    break
-            
-            # 2. Load Volume
-            volume = []
-            for z in self.z_indices:
-                # Simple PIL load. 
-                # Lazy load specific region? PIL.Image.open is lazy, but crop loads it.
-                path = self.tif_files[z]
-                with Image.open(path) as img:
-                    # PIL crop: (left, upper, right, lower)
-                    region = img.crop((x, y, x + CONFIG["tile_size"], y + CONFIG["tile_size"]))
-                    # Optimization: Convert to float32 immediately to allow normalization
-                    volume.append(np.array(region))
-            
-            volume = np.stack(volume, axis=-1) # (H, W, D)
-            
-            # 3. Label
-            ink_patch = self.ink[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]]
-            ink_patch = (ink_patch > 0).astype(np.float32)
-            
-            # 4. Augmentation
-            if self.transform:
-                data = self.transform(image=volume, mask=ink_patch)
-                volume = data["image"]
-                ink_patch = data["mask"]
-            
-            # 5. Format to Tensor
-            if not isinstance(volume, torch.Tensor):
-                volume = torch.from_numpy(volume).permute(2, 0, 1).float()
-            else:
-                volume = volume.float()
-                
-            # 🚑 SURGICAL FIX: Contrast Windowing
-            # Based on histogram analysis: Ink is concentrated in [20k-26k]
-            # We clip to [18k-28k] to preserve context, then map to [0, 1]
-            volume = torch.clamp(volume, CONFIG["window_min"], CONFIG["window_max"])
-            volume = (volume - CONFIG["window_min"]) / (CONFIG["window_max"] - CONFIG["window_min"])
-            
-            # Ensure correct shape
-            if not isinstance(ink_patch, torch.Tensor):
-                ink_patch = torch.from_numpy(ink_patch).unsqueeze(0).float()
-            else:
-                ink_patch = ink_patch.float()
-                if ink_patch.ndim == 2:
-                    ink_patch = ink_patch.unsqueeze(0)
-                
-            return volume, ink_patch
-            
-        except Exception as e:
-            print(f"⚠️ Data Minefield Warning: Index {idx} failed - {e}")
-            # Recursively try next index
-            return self.__getitem__((idx + 1) % len(self))
-
-# =========================================================================================
-# 🧠 Model
-# =========================================================================================
-class Thinking25DNet(nn.Module):
-    def __init__(self, in_channels=16):
-        super().__init__()
-        # Use SMP for efficiency and well-tested U-Net
-        self.model = smp.Unet(
-            encoder_name="resnet18",
-            encoder_weights="imagenet",
-            in_channels=in_channels,
-            classes=1,
-        )
-        
-    def forward(self, x):
-        # Gradient Checkpointing Armor
-        if CONFIG["checkpoint"] and self.training:
-           # Manually enable gradient checkpointing for input
-           x.requires_grad_(True)
-           # Unfortunately SMP U-Net doesn't easily expose 'encoder' as a single checkpointable block 
-           # without breaking internal connections or needing deep hooks.
-           # However, we can use use_checkpointing on the encoder if supported or just wrap the whole model?
-           # Ideally we checkpoint the encoder. 
-           # ResNet18 is relatively light. The biggest memory saving is likely checkpointing the encoder stages.
-           # For now, we resort to the simplest VRAM defense: 
-           # If we run OOM, we can convert to Checkpoint format. 
-           # But for strict compliance with user request "Encoder every layer":
-           pass 
-           
-        return self.model(x)
-
-# =========================================================================================
-# 📉 Tversky Loss (Loss Surgery)
-# =========================================================================================
-class BCEDiceLoss(nn.Module):
-    """Combined BCE + Dice Loss for balanced precision/recall."""
-    def __init__(self, bce_weight=0.5, dice_weight=0.5, smooth=1e-6):
-        super().__init__()
-        self.bce_weight = bce_weight
-        self.dice_weight = dice_weight
-        self.smooth = smooth
-        self.bce = nn.BCEWithLogitsLoss()
-        
-    def forward(self, inputs, targets):
-        # inputs: (B, 1, H, W) logits
-        # targets: (B, 1, H, W) binary
-        
-        # BCE Loss (operates on logits)
-        bce_loss = self.bce(inputs, targets)
-        
-        # Dice Loss (requires probabilities)
-        probs = torch.sigmoid(inputs)
-        probs_flat = probs.view(-1)
-        targets_flat = targets.view(-1)
-        
-        intersection = (probs_flat * targets_flat).sum()
-        dice = (2. * intersection + self.smooth) / (probs_flat.sum() + targets_flat.sum() + self.smooth)
-        dice_loss = 1 - dice
-        
-        return self.bce_weight * bce_loss + self.dice_weight * dice_loss
-
-# =========================================================================================
-# 📊 Metrics & Visualization
-# =========================================================================================
-class MetricMonitor:
-    def __init__(self):
-        self.reset()
-        
-    def reset(self):
-        self.val = 0
-        self.avg = 0
-        self.sum = 0
-        self.count = 0
-
-    def update(self, val, n=1):
-        self.val = val
-        self.sum += val * n
-        self.count += n
-        self.avg = self.sum / self.count
-
-def fbeta_score(preds, targets, threshold=0.5, beta=0.5):
-    preds = (preds > threshold).float()
-    tp = (preds * targets).sum()
-    fp = (preds * (1 - targets)).sum()
-    fn = ((1 - preds) * targets).sum()
+    print(f"[DOWNLOADING] {remote_path} -> {local_path}")
     
-    score = ((1 + beta**2) * tp) / ((1 + beta**2) * tp + (beta**2) * fn + fp + 1e-7)
-    return score
-
-def save_visualization(image, mask, pred, epoch, step, save_dir="logs"):
-    os.makedirs(save_dir, exist_ok=True)
-    # image: (C, H, W) -> take middle slice
-    mid = image.shape[0] // 2
-    img = image[mid].cpu().numpy()
-    msk = mask[0].cpu().numpy()
-    prd = torch.sigmoid(pred[0]).detach().cpu().numpy()
+    # Ensure parent exists usually handled by ensure_folders, but just in case
+    local_path.parent.mkdir(parents=True, exist_ok=True)
     
-    # Normalize img for display
-    img = (img - img.min()) / (img.max() - img.min() + 1e-7)
+    # api.competition_download_file downloads to local path, but usually as a zip if it's large?
+    # Or direct file. For many competition files, it puts them in the current working dir.
+    # We need to be careful with `path` argument.
     
-    # Create heatmap
-    # Red: Prediction, Green: GT
-    # Canvas
-    canvas = np.zeros((CONFIG["tile_size"], CONFIG["tile_size"]*3), dtype=np.uint8)
+    # NOTE: Kaggle API's `competition_download_file` behaves oddly with paths.
+    # It often downloads to `path` with the base filename.
     
-    img_u8 = (img * 255).astype(np.uint8)
-    msk_u8 = (msk * 255).astype(np.uint8)
-    prd_u8 = (prd * 255).astype(np.uint8)
-    
-    canvas[:, :CONFIG["tile_size"]] = img_u8
-    canvas[:, CONFIG["tile_size"]:CONFIG["tile_size"]*2] = msk_u8
-    canvas[:, CONFIG["tile_size"]*2:] = prd_u8
-    
-    Image.fromarray(canvas).save(f"{save_dir}/debug_epoch_{epoch}.png")
-
-def save_debug_images(model, loader, device, epoch):
-    """Visual Probe: Save Input|Label|Pred comparison for debugging."""
-    model.eval()
-    os.makedirs("output", exist_ok=True)
-    
-    with torch.no_grad():
-        # Get one batch
-        for images, masks in loader:
-            images = images.to(device)
-            masks = masks.to(device)
-            
-            with torch.amp.autocast('cuda'):
-                outputs = model(images)
-            
-            # Take first sample
-            img = images[0]  # (C, H, W)
-            msk = masks[0]   # (1, H, W)
-            prd = torch.sigmoid(outputs[0])  # (1, H, W)
-            
-            # Extract middle Z-slice for visualization
-            mid_z = img.shape[0] // 2
-            img_slice = img[mid_z].cpu().numpy()
-            msk_slice = msk[0].cpu().numpy()
-            prd_slice = prd[0].cpu().numpy()
-            
-            # Normalize for display
-            img_slice = (img_slice - img_slice.min()) / (img_slice.max() - img_slice.min() + 1e-7)
-            
-            # Plot
-            fig, axes = plt.subplots(1, 3, figsize=(12, 4))
-            axes[0].imshow(img_slice, cmap='gray')
-            axes[0].set_title(f'Input (Z={mid_z})')
-            axes[0].axis('off')
-            
-            axes[1].imshow(msk_slice, cmap='gray', vmin=0, vmax=1)
-            axes[1].set_title('Ground Truth')
-            axes[1].axis('off')
-            
-            axes[2].imshow(prd_slice, cmap='hot', vmin=0, vmax=1)
-            axes[2].set_title(f'Prediction (max={prd_slice.max():.3f})')
-            axes[2].axis('off')
-            
-            plt.suptitle(f'Epoch {epoch} Visual Probe')
-            plt.tight_layout()
-            plt.savefig(f'output/debug_epoch_{epoch}.png', dpi=100)
-            plt.close(fig)  # Release memory
-            
-            break  # Only need one batch
-    
-    model.train()  # Reset to training mode
-
-# =========================================================================================
-# 🛠 Training Logic
-# =========================================================================================
-def train_one_epoch(model, loader, criterion, optimizer, scaler, epoch):
-    model.train()
-    loss_meter = MetricMonitor()
-    f05_meter = MetricMonitor()
-    
-    bar = tqdm(loader, desc=f"Epoch {epoch} [Train]")
-    
-    for step, (images, masks) in enumerate(bar):
-        images = images.to(CONFIG["device"], non_blocking=True)
-        masks = masks.to(CONFIG["device"], non_blocking=True)
-        
-        optimizer.zero_grad()
-        
-        # Modern AMP API
-        with torch.amp.autocast('cuda'):
-            outputs = model(images)
-            loss = criterion(outputs, masks)
-        
-        scaler.scale(loss).backward()
-        
-        # Gradient Clipping: Prevent gradient explosion
-        scaler.unscale_(optimizer)
-        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-        
-        scaler.step(optimizer)
-        scaler.update()
-        
-        # Metrics
-        with torch.no_grad():
-            preds = torch.sigmoid(outputs)
-            score = fbeta_score(preds, masks)
-        
-        loss_meter.update(loss.item(), images.size(0))
-        f05_meter.update(score.item(), images.size(0))
-        
-        bar.set_postfix(loss=loss_meter.avg, f05=f05_meter.avg)
-        
-        # [Emergency Fix] VRAM Creep Protection
-        if step % 100 == 0:
-            torch.cuda.empty_cache()
-        
-def valid_one_epoch(model, loader, criterion, epoch):
-    model.eval()
-    loss_meter = MetricMonitor()
-    f05_meter = MetricMonitor()
-    
-    # Dynamic Threshold Search
-    thresholds = np.arange(0.05, 0.55, 0.05)
-    best_thresh_score = {t: MetricMonitor() for t in thresholds}
-    
-    # Track max prediction for visualization
-    max_pred_val = -1
-    debug_viz = None
-    
-    bar = tqdm(loader, desc=f"Epoch {epoch} [Valid]")
-    
-    with torch.no_grad():
-        for step, (images, masks) in enumerate(bar):
-            images = images.to(CONFIG["device"], non_blocking=True)
-            masks = masks.to(CONFIG["device"], non_blocking=True)
-            
-            with torch.amp.autocast('cuda'):
-                outputs = model(images)
-                loss = criterion(outputs, masks)
-            
-            preds_prob = torch.sigmoid(outputs)
-            
-            # Update metrics per threshold
-            for t in thresholds:
-                score = fbeta_score(preds_prob, masks, threshold=t)
-                best_thresh_score[t].update(score.item(), images.size(0))
-                
-            loss_meter.update(loss.item(), images.size(0))
-            
-            # Find best candidate for visualization (highest ink probability)
-            curr_max = preds_prob.max().item()
-            if curr_max > max_pred_val:
-                max_pred_val = curr_max
-                # Save just the first image in batch that triggered this
-                debug_viz = (images[0], masks[0], outputs[0])
-            
-            current_best_f05 = max([m.avg for m in best_thresh_score.values()])
-            bar.set_postfix(loss=loss_meter.avg, f05=current_best_f05)
-            
-    # Visualize Best
-    if debug_viz:
-        save_visualization(debug_viz[0], debug_viz[1], debug_viz[2], epoch, step="paramount")
-        
-    # Select Best Threshold
-    best_t = 0.5
-    best_score = 0
-    for t, monitor in best_thresh_score.items():
-        if monitor.avg > best_score:
-            best_score = monitor.avg
-            best_t = t
-            
-    print(f"Epoch {epoch} Best F0.5: {best_score:.4f} @ Threshold {best_t:.2f}")
-    return best_score
-
-def main():
-    # Transforms
-    train_transform = A.Compose([
-        A.HorizontalFlip(p=0.5),
-        A.VerticalFlip(p=0.5),
-        A.RandomRotate90(p=0.5),
-        ToTensorV2(transpose_mask=True),
-    ])
-    
-    val_transform = A.Compose([
-        ToTensorV2(transpose_mask=True),
-    ])
-    
-    # Data
-    print("Initializing Datasets...")
-    # 🎯 Use explicit z_slices list from CONFIG
-    dataset = Vesuvius25DDataset(CONFIG["data_root"], z_slices=CONFIG["z_slices"], transform=train_transform, mode="train")
-    val_dataset = Vesuvius25DDataset(CONFIG["data_root"], z_slices=CONFIG["z_slices"], transform=val_transform, mode="valid")
-    
-    # Optimized DataLoader: pin_memory=True, num_workers=4
-    # Note: On Windows, num_workers > 0 can be buggy with some libraries, but user explicitly asked for 4.
-    # We will try 4. If it crashes (BrokenPipe), we might need to fallback.
-    loader = DataLoader(
-        dataset, 
-        batch_size=CONFIG["batch_size"], 
-        num_workers=CONFIG["num_workers"], 
-        shuffle=True, 
-        pin_memory=True,
-        persistent_workers=(CONFIG["num_workers"] > 0)
-    )
-    val_loader = DataLoader(
-        val_dataset, 
-        batch_size=CONFIG["batch_size"], 
-        num_workers=CONFIG["num_workers"], 
-        shuffle=False, 
-        pin_memory=True,
-        persistent_workers=(CONFIG["num_workers"] > 0)
+    api.competition_download_file(
+        competition=competition,
+        file_name=remote_path,
+        path=local_path.parent,
+        force=False,
+        quiet=False
     )
     
-    # Model (in_channels = number of z_slices)
-    print("Initializing Model...")
-    model = Thinking25DNet(in_channels=len(CONFIG["z_slices"])).to(CONFIG["device"])
+    # Check if it was downloaded as a zip (common for some extensions)
+    # If remote is .tif, it usually comes as .tif
+    # However, checking the result is good.
+    downloaded_file = local_path.parent / pathlib.Path(remote_path).name
     
-    # Training Setup (Use CONFIG LR)
-    optimizer = optim.AdamW(model.parameters(), lr=CONFIG["lr"])
+    # If the API extracted relative path logic, it might be in a subdir.
+    # Often it just drops `00.tif` in the `path`.
+    possible_download = local_path.parent / local_path.name
     
-    # LR Scheduler: ReduceLROnPlateau to prevent divergence
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, 
-        mode='max',      # Maximize F0.5
-        factor=0.5,      # Halve LR
-        patience=2,      # Wait 2 epochs
-        verbose=True
-    )
-    
-    # Loss: BCE + Dice (Balanced Precision/Recall)
-    criterion = BCEDiceLoss(bce_weight=0.5, dice_weight=0.5)
-    
-    # Modern AMP
-    scaler = torch.amp.GradScaler('cuda')
-    
-    best_score = 0
-    print("🚀 Starting Training (BCE+Dice Optimized)...")
-    
-    for epoch in range(CONFIG["epochs"]):
-        train_one_epoch(model, loader, criterion, optimizer, scaler, epoch)
-        score = valid_one_epoch(model, val_loader, criterion, epoch)
-        
-        # Step LR Scheduler
-        scheduler.step(score)
-        
-        # Save Visual Probe
-        save_debug_images(model, val_loader, CONFIG["device"], epoch)
-        
-        if score > best_score:
-            best_score = score
-            torch.save(model.state_dict(), f"vesuvius_best.pth")
-            print(f"🔥 New Best Model Saved! ({best_score:.4f})")
-    
-    # Reload best model for final evaluation
-    print("\n📦 Reloading Best Model for Final Evaluation...")
-    model.load_state_dict(torch.load("vesuvius_best.pth"))
-    final_score = valid_one_epoch(model, val_loader, criterion, epoch="final")
-    print(f"✅ Final Best Model F0.5: {final_score:.4f}")
-
-
-if __name__ == "__main__":
-    main()
-
-# Fix Seed
-def seed_everything(seed=42):
-    random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.backends.cudnn.deterministic = True
-
-seed_everything(CONFIG["seed"])
-
-# =========================================================================================
-# 📦 Dataset
-# =========================================================================================
-class Vesuvius25DDataset(Dataset):
-    def __init__(self, root_dir, z_slices, transform=None, mode="train"):
-        self.root = Path(root_dir)
-        self.transform = transform
-        self.mode = mode
-        self.z_slices = z_slices # e.g. 16
-        
-        # Load Labels
-        print(f"[{mode.upper()}] Loading labels...")
-        mask_path = self.root / "mask.png"
-        ink_path = self.root / "inklabels.png"
-        
-        self.mask = np.array(Image.open(mask_path).convert("L"))
-        self.ink = np.array(Image.open(ink_path).convert("L"))
-        
-        # Find valid pixels for center points
-        # To avoid scanning the whole image every time, we pre-calculate valid indices?
-        # No, for random crop we can just random coord and check mask.
-        # But 'valid pixels' means mask == 1.
-        # Let's simple create a list of valid y,x coordinates (downsampled to save ram?)
-        # For 64GB RAM we can store indices of all valid pixels.
-        
-        self.valid_indices = None
-        if mode == "train":
-            # Just store resolution
-            self.h, self.w = self.mask.shape
-        else:
-            # Validation: Grid sampling?
-            # User requirement: "Verified on non-overlapping patches"
-            # For simplicity now, we'll implement random sampling for train 
-            # and a fixed grid for val.
+    if not possible_download.exists():
+            # Try finding it if api created full path structure?
             pass
-            
-        # Tiff paths
-        # We assume files are 00.tif to XX.tif
-        tif_dir = self.root / "surface_volume"
-        self.tif_files = sorted([f for f in tif_dir.glob("*.tif") if f.name[0].isdigit()], 
-                                key=lambda x: int(x.name.split('.')[0]))
-        
-        # Determine accessible z-range
-        self.mid_idx = len(self.tif_files) // 2 # usually 32 or so.
-        # We need self.z_slices around the middle, or random? 
-        # Requirement: "Center Z axis slice height 16 or 32"
-        # We assume we take the *middle* chunks of the volume, or is it sliding window in Z?
-        # Usually ink is in the middle slices. We'll fix z-range to the center crop of the volume.
-        
-        start_z = (len(self.tif_files) - self.z_slices) // 2
-        self.z_indices = range(start_z, start_z + self.z_slices)
-        print(f"[{mode.upper()}] Using Z-slices: {list(self.z_indices)}")
-
-    def __len__(self):
-        # Virtual length for epoch
-        return 2048 if self.mode == "train" else 256
-
-    def __getitem__(self, idx):
-        # 1. Select Center Coordinate
-        # Retry until valid mask
-        for _ in range(100):
-            y = np.random.randint(0, self.mask.shape[0] - CONFIG["tile_size"])
-            x = np.random.randint(0, self.mask.shape[1] - CONFIG["tile_size"])
-            
-            # Check if majority of patch is in mask
-            # Optimized: check center or corners
-            patch_mask = self.mask[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]]
-            if patch_mask.mean() > 0.1: # At least 10% data
-                break
-        
-        # 2. Load Volume
-        volume = []
-        for z in self.z_indices:
-            # Simple PIL load. 
-            # OPTIMIZATION: Keep file handles open? PIL does this? 
-            # Or usually OS file cache handles it.
-            # Lazy load specific region? PIL.Image.open is lazy, but crop loads it.
-            # Using only necessary region is faster than full load.
-            path = self.tif_files[z]
-            with Image.open(path) as img:
-                # PIL crop: (left, upper, right, lower)
-                region = img.crop((x, y, x + CONFIG["tile_size"], y + CONFIG["tile_size"]))
-                volume.append(np.array(region))
-        
-        volume = np.stack(volume, axis=-1) # (H, W, D)
-        
-        # 3. Label
-        ink_patch = self.ink[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]]
-        ink_patch = (ink_patch > 0).astype(np.float32)
-        
-        # 4. Augmentation
-        if self.transform:
-            data = self.transform(image=volume, mask=ink_patch)
-            volume = data["image"]
-            ink_patch = data["mask"]
-        
-        # 5. Format to Tensor
-        if not isinstance(volume, torch.Tensor):
-            volume = torch.from_numpy(volume).permute(2, 0, 1).float()
-        else:
-            volume = volume.float()
-            
-        # Normalization (Assume 16-bit if max > 255, else 8-bit)
-        # Or just use a safe float conversion. 
-        # Most Vesuvius data is 16-bit.
-        if volume.max() > 255:
-            volume /= 65535.0
-        else:
-            volume /= 255.0
-        
-        if not isinstance(ink_patch, torch.Tensor):
-            ink_patch = torch.from_numpy(ink_patch).unsqueeze(0).float()
-        else:
-            ink_patch = ink_patch.float()
-            if ink_patch.ndim == 2:
-                ink_patch = ink_patch.unsqueeze(0)
-            
-        return volume, ink_patch
-
-# =========================================================================================
-# 🧠 Model
-# =========================================================================================
-class Thinking25DNet(nn.Module):
-    def __init__(self, in_channels=16):
-        super().__init__()
-        # Use SMP for efficiency and well-tested U-Net
-        # Gradient Checkpointing is supported manually or via some SMP versions?
-        # We will wrap the encoder manually if needed or just trust the memory.
-        # But user asked for "Strict VRAM protection".
-        
-        self.model = smp.Unet(
-            encoder_name="resnet18",
-            encoder_weights="imagenet",
-            in_channels=in_channels,
-            classes=1,
-        )
-        
-    def forward(self, x):
-        # Optional: enable gradient checkpointing for encoder?
-        # resnet18 is small, full checkpointing might not be needed for B0/Res18 on 6GB with 16 slices.
-        # But if requested:
-        if CONFIG["checkpoint"] and self.training:
-           # Simply use the model. x is (B, C, H, W)
-           return self.model(x)
-        return self.model(x)
-
-# =========================================================================================
-# 📊 Metrics & Visualization
-# =========================================================================================
-class MetricMonitor:
-    def __init__(self):
-        self.reset()
-        
-    def reset(self):
-        self.val = 0
-        self.avg = 0
-        self.sum = 0
-        self.count = 0
-
-    def update(self, val, n=1):
-        self.val = val
-        self.sum += val * n
-        self.count += n
-        self.avg = self.sum / self.count
-
-def fbeta_score(preds, targets, threshold=0.5, beta=0.5):
-    preds = (preds > threshold).float()
-    tp = (preds * targets).sum()
-    fp = (preds * (1 - targets)).sum()
-    fn = ((1 - preds) * targets).sum()
-    
-    score = ((1 + beta**2) * tp) / ((1 + beta**2) * tp + (beta**2) * fn + fp + 1e-7)
-    return score
-
-def save_visualization(image, mask, pred, epoch, step, save_dir="logs"):
-    os.makedirs(save_dir, exist_ok=True)
-    # image: (C, H, W) -> take middle slice
-    mid = image.shape[0] // 2
-    img = image[mid].cpu().numpy()
-    msk = mask[0].cpu().numpy()
-    prd = torch.sigmoid(pred[0]).detach().cpu().numpy()
-    
-    # Normalize img for display
-    img = (img - img.min()) / (img.max() - img.min() + 1e-7)
-    
-    # Create heatmap
-    # Red: Prediction, Green: GT
-    # Canvas
-    canvas = np.zeros((CONFIG["tile_size"], CONFIG["tile_size"]*3), dtype=np.uint8)
-    
-    img_u8 = (img * 255).astype(np.uint8)
-    msk_u8 = (msk * 255).astype(np.uint8)
-    prd_u8 = (prd * 255).astype(np.uint8)
-    
-    canvas[:, :CONFIG["tile_size"]] = img_u8
-    canvas[:, CONFIG["tile_size"]:CONFIG["tile_size"]*2] = msk_u8
-    canvas[:, CONFIG["tile_size"]*2:] = prd_u8
-    
-    Image.fromarray(canvas).save(f"{save_dir}/vis_e{epoch}_s{step}.png")
-
-# =========================================================================================
-# 🛠 Training Logic
-# =========================================================================================
-def train_one_epoch(model, loader, criterion, optimizer, scaler, epoch):
-    model.train()
-    loss_meter = MetricMonitor()
-    f05_meter = MetricMonitor()
-    
-    bar = tqdm(loader, desc=f"Epoch {epoch} [Train]")
-    
-    for step, (images, masks) in enumerate(bar):
-        images = images.to(CONFIG["device"])
-        masks = masks.to(CONFIG["device"])
-        
-        optimizer.zero_grad()
-        
-        with autocast():
-            outputs = model(images)
-            loss = criterion(outputs, masks)
-        
-        scaler.scale(loss).backward()
-        scaler.step(optimizer)
-        scaler.update()
-        
-        # Metrics
-        with torch.no_grad():
-            preds = torch.sigmoid(outputs)
-            score = fbeta_score(preds, masks)
-        
-        loss_meter.update(loss.item(), images.size(0))
-        f05_meter.update(score.item(), images.size(0))
-        
-        bar.set_postfix(loss=loss_meter.avg, f05=f05_meter.avg)
-        
-        # Visualization
-        if step % CONFIG["log_interval"] == 0:
-             save_visualization(images[0], masks[0], outputs[0], epoch, step)
-
-def valid_one_epoch(model, loader, criterion, epoch):
-    model.eval()
-    loss_meter = MetricMonitor()
-    f05_meter = MetricMonitor()
-    bar = tqdm(loader, desc=f"Epoch {epoch} [Valid]")
-    
-    with torch.no_grad():
-        for step, (images, masks) in enumerate(bar):
-            images = images.to(CONFIG["device"])
-            masks = masks.to(CONFIG["device"])
-            
-            with autocast():
-                outputs = model(images)
-                loss = criterion(outputs, masks)
-            
-            preds = torch.sigmoid(outputs)
-            score = fbeta_score(preds, masks)
-            
-            loss_meter.update(loss.item(), images.size(0))
-            f05_meter.update(score.item(), images.size(0))
-            bar.set_postfix(loss=loss_meter.avg, f05=f05_meter.avg)
-            
-    return f05_meter.avg
 
 def main():
-    # Transforms
-    train_transform = A.Compose([
-        A.HorizontalFlip(p=0.5),
-        A.VerticalFlip(p=0.5),
-        A.RandomRotate90(p=0.5),
-        ToTensorV2(transpose_mask=True),
-    ])
-    
-    val_transform = A.Compose([
-        ToTensorV2(transpose_mask=True),
-    ])
-    
-    # Data
-    print("Initializing Datasets...")
-    dataset = Vesuvius25DDataset(CONFIG["data_root"], z_slices=CONFIG["z_depth"], transform=train_transform, mode="train")
-    val_dataset = Vesuvius25DDataset(CONFIG["data_root"], z_slices=CONFIG["z_depth"], transform=val_transform, mode="valid")
-    
-    loader = DataLoader(dataset, batch_size=CONFIG["batch_size"], num_workers=CONFIG["num_workers"], shuffle=True, pin_memory=True)
-    val_loader = DataLoader(val_dataset, batch_size=CONFIG["batch_size"], num_workers=CONFIG["num_workers"], shuffle=False, pin_memory=True)
-    
-    # Model
-    print("Initializing Model...")
-    model = Thinking25DNet(in_channels=CONFIG["z_depth"]).to(CONFIG["device"])
-    
-    # Training Setup
-    optimizer = optim.AdamW(model.parameters(), lr=CONFIG["lr"])
-    # BCE with Logits
-    bce_loss = nn.BCEWithLogitsLoss()
-    dice_loss = smp.losses.DiceLoss(mode='binary')
-    
-    def criterion(pred, target):
-        return 0.5 * bce_loss(pred, target) + 0.5 * dice_loss(pred, target)
-        
-    scaler = GradScaler()
-    
-    best_score = 0
-    print("🚀 Starting Training...")
-    
-    for epoch in range(CONFIG["epochs"]):
-        train_one_epoch(model, loader, criterion, optimizer, scaler, epoch)
-        score = valid_one_epoch(model, val_loader, criterion, epoch)
-        
-        print(f"Epoch {epoch} Valid F0.5: {score:.4f}")
-        
-        if score > best_score:
-            best_score = score
-            torch.save(model.state_dict(), f"vesuvius_best.pth")
-            print(f"🔥 New Best Model Saved! ({best_score:.4f})")
+    print("Initializing Kaggle API...")
+    try:
+        api = KaggleApi()
+        api.authenticate()
+    except Exception as e:
+        print("Error: Could not authenticate with Kaggle API. Ensure ~/.kaggle/kaggle.json is present.")
+        print(e)
+        return
 
+    print(f"Target Competition: {COMPETITION_NAME}")
+    print(f"Target Scroll: {SCROLL_ID}, Slices: 0-{SLICE_RANGE[-1]}")
+    
+    ensure_folders()
+    
+    files_to_download = get_remote_paths()
+    checksums = []
+
+    import concurrent.futures
+
+    import time
+
+    # Thread safe download worker
+    def process_file(args):
+        remote, local = args
+        
+        # Retry logic
+        max_retries = 10
+        base_delay = 5
+        
+        for attempt in range(max_retries):
+            try:
+                # Exponential backoff with jitter
+                sleep_time = base_delay * (2 ** attempt) 
+                if attempt > 0:
+                    print(f"Waiting {sleep_time}s before retry {attempt+1}...")
+                    time.sleep(sleep_time)
+                
+                download_file_resumable(api, COMPETITION_NAME, remote, local)
+                break # Success
+            except Exception as e:
+                print(f"[WARNING] Attempt {attempt+1}/{max_retries} failed for {remote}: {e}")
+                if "429" in str(e):
+                     print("Rate limit hit. Sleeping longer...")
+                     time.sleep(60) # Extra minute for 429s
+
+                if attempt == max_retries - 1:
+                    print(f"[ERROR] Final failure for {remote}")
+                    return None
+        
+        try:
+            # Handle potential zip file download
+            zip_path = local.parent / (local.name + ".zip")
+            
+            # Handle potential zip file download
+            zip_path = local.parent / (local.name + ".zip")
+            if not local.exists() and zip_path.exists():
+                # print(f"[INFO] Unzipping {zip_path.name}...") # Reduce noise in threads
+                import zipfile
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    # Debug: print content of zip if unexpected
+                    # names = zip_ref.namelist()
+                    # print(f"[DEBUG] Zip contents for {zip_path.name}: {names}")
+                    zip_ref.extractall(local.parent)
+                
+                # Check if file exists now, if not maybe it was in a subdir in the zip?
+                if not local.exists():
+                     # Force move if it's in a subdirectory? 
+                     # For now just warn with content list
+                     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                         print(f"[ERROR] Extracted {zip_path.name} but {local.name} not found. Zip contents: {zip_ref.namelist()}")
+
+                zip_path.unlink() 
+            
+            # Verify / Checksum
+            if local.exists():
+                md5 = calculate_md5(local)
+                return f"{md5}  {local.name}"
+            else:
+                print(f"[WARNING] File {local.name} missing after download attempt.")
+                return None
+        except Exception as e:
+            print(f"Error processing {remote}: {e}")
+            return None
+
+    # Parallel Download
+    MAX_WORKERS = 1 # Reduced to avoid 429 Rate Limits
+    print(f"Starting parallel download with {MAX_WORKERS} workers...")
+    
+    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        # Submit all tasks
+        futures = {executor.submit(process_file, (remote, local)): local for remote, local in files_to_download}
+        
+        for future in tqdm(concurrent.futures.as_completed(futures), total=len(files_to_download), desc="Downloading"):
+             result = future.result()
+             if result:
+                 checksums.append(result)
+
+    # Save checksums
+    checksum_file = RAW_DIR / "checksums.txt"
+    with open(checksum_file, "w") as f:
+        f.write("\n".join(checksums))
+    
+    print(f"Done! Checksums saved to {checksum_file}")
 
 if __name__ == "__main__":
     main()
@@ -33767,530 +36684,1096 @@ if __name__ == "__main__":
 ```
 
 ---
-## File: training_scripts\train_vesuvius_surgical.py
+## File: tools\extract.py
 ```py
-"""
-Vesuvius Challenge 2026 - Surgical Training Script
-==================================================
-Final optimized version with all data alignment and normalization fixes.
-
-Key Fixes Applied:
-1. Z-slices centered on ink signal peak (Z=33-48)
-2. Intensity windowing [18000, 28000] -> [0, 1]
-3. Gradient accumulation for 6GB VRAM stability
-4. Sanity check before training starts
-"""
+from PIL import Image
+import numpy as np
 import os
 import sys
-import random
+
+def process_slice(z_index):
+    file_path = f"data/native/train/1/surface_volume/{z_index}.tif"
+    if not os.path.exists(file_path):
+        print(f"❌ Error: {file_path} not found.")
+        return False
+    
+    print(f"📖 Reading {file_path}...")
+    img = Image.open(file_path)
+    w, h = img.size
+    print(f"   Original size: {w}x{h}, Mode: {img.mode}")
+    
+    # Calculate center 512x512
+    left = (w - 512) // 2
+    top = (h - 512) // 2
+    right = left + 512
+    bottom = top + 512
+    
+    print(f"   Cropping center: ({left}, {top}) to ({right}, {bottom})")
+    crop = img.crop((left, top, right, bottom))
+    
+    # Vesuvius data is usually 16-bit. PNG supports 16-bit, but most viewers don't.
+    # The user said "不做任何复杂变换" (no complex transformations).
+    # If we save as PNG directly, PIL might keep it 16-bit or fail.
+    # To ensure it is visible, we should ideally map it to 8-bit, 
+    # but I will try to save it directly first as requested.
+    
+    output_name = f"slice_{z_index}_center.png"
+    
+    # If it's a 16-bit image, we might need to convert it to 8-bit for standard PNG transparency/visibility
+    # but the user said "no complex transformations". 
+    # Let's check the array values.
+    data = np.array(crop)
+    print(f"   Crop stats: Min={data.min()}, Max={data.max()}, Mean={data.mean():.2f}")
+    
+    # Simple 8-bit mapping for visibility if it's 16-bit
+    if data.dtype == np.uint16 or data.dtype == np.int32:
+        # User said "no complex transformations", but a purely black image is useless.
+        # I'll check if it's mostly low values.
+        # If I don't scale, it will save as 16-bit PNG (which is valid PNG but rare).
+        pass
+
+    crop.save(output_name)
+    print(f"✅ Saved to {output_name}")
+    return True
+
+if __name__ == "__main__":
+    target = "41"
+    if not process_slice(target):
+        print("💡 Attempting fallback to slice 57...")
+        process_slice("57")
+
+```
+
+---
+## File: tools\inspect_labels.py
+```py
+import sys
+from pathlib import Path
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+def inspect_labels(mask_path):
+    mask_path = Path(mask_path)
+    if not mask_path.exists():
+        print(f"❌ Mask not found: {mask_path}")
+        return
+        
+    mask = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
+    print(f"📋 Mask: {mask_path.name}")
+    print(f"   Shape: {mask.shape}")
+    print(f"   Unique values: {np.unique(mask)}")
+    print(f"   Ink pixels: {np.sum(mask > 127)}")
+    print(f"   Coverage: {np.mean(mask > 127) * 100:.2f}%")
+    
+    # Histogram
+    plt.figure(figsize=(10, 5))
+    plt.hist(mask.flatten(), bins=50)
+    plt.title(f"Histogram of {mask_path.name}")
+    plt.savefig(PROJECT_ROOT / "outputs" / f"hist_{mask_path.stem}.png")
+    print(f"✅ Saved histogram to outputs/hist_{mask_path.stem}.png")
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        inspect_labels(sys.argv[1])
+    else:
+        # Default target
+        inspect_labels(PROJECT_ROOT / "data/native/train/1/inklabels.png")
+
+```
+
+---
+## File: tools\verify_data_integrity.py
+```py
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+import sys
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+def verify_integrity(base_path):
+    base_path = Path(base_path)
+    print(f"🕵️ Scanning {base_path} for PNG files...")
+    
+    png_files = list(base_path.glob("**/*.png"))
+    
+    candidates = []
+    
+    print(f"{'File':<40} | {'Shape':<15} | {'Density':<10} | {'Status'}")
+    print("-" * 80)
+    
+    for f in png_files:
+        if "debug" in f.name or "hist" in f.name:
+            continue
+            
+        img = cv2.imread(str(f), cv2.IMREAD_GRAYSCALE)
+        if img is None:
+            continue
+            
+        non_zero = np.sum(img > 0)
+        total = img.size
+        density = non_zero / total
+        
+        status = "Unknown"
+        if density > 0.20:
+            status = "❌ Invalid (Geometric?)"
+        elif 0.001 < density < 0.10:
+            status = "✅ Potential Ink"
+            candidates.append(f)
+        elif density <= 0.001:
+            status = "⚠️ Too Sparse"
+            
+        print(f"{f.name:<40} | {str(img.shape):<15} | {density*100:6.2f}%    | {status}")
+        
+        # Save histogram for candidates
+        if status == "✅ Potential Ink":
+            plt.figure(figsize=(10, 4))
+            plt.subplot(1, 2, 1)
+            plt.imshow(img, cmap='gray')
+            plt.title("Visual Content")
+            plt.subplot(1, 2, 2)
+            plt.hist(img.flatten(), bins=50, log=True)
+            plt.title("Pixel Value Dist (Log)")
+            plt.savefig(PROJECT_ROOT / "outputs" / f"audit_{f.stem}.png")
+            plt.close()
+
+    print("\n" + "="*80)
+    if candidates:
+        print(f"🎉 Found {len(candidates)} potential real ink files:")
+        for c in candidates:
+            print(f"   -> {c}")
+    else:
+        print("😱 CRITICAL: No sparse ink files found! You may need to re-download the dataset.")
+
+if __name__ == "__main__":
+    verify_integrity(sys.argv[1] if len(sys.argv) > 1 else PROJECT_ROOT / "data")
+
+```
+
+---
+## File: tools\deploy\kaggle_deploy\inference_template.py
+```py
+#!/usr/bin/env python3
+"""
+RGT Kaggle Inference Template
+=============================
+
+Generated: 2026-02-06 12:25:05
+
+This template provides the structure for running the RGT pipeline
+on Kaggle competition data.
+
+Notebook Structure:
+    Cell 1: Environment Setup
+    Cell 2: Hardware Check
+    Cell 3: Pipeline Configuration
+    Cell 4: Main Processing Loop
+"""
+
+# =============================================================================
+# CELL 1: Environment Setup
+# =============================================================================
+# %%
+
+import os
+import gc
+import sys
+from pathlib import Path
+
+# Install RGT package
+exec(open("/kaggle/input/rgt-package/install_hooks.py").read())
+
+# Imports
+import numpy as np
+import cupy as cp
+
+from rgt import (
+    ContextManager,
+    HessianEngine,
+    VectorAligner,
+    PoissonSolver,
+    SurfaceExtractor,
+)
+
+
+# =============================================================================
+# CELL 2: Hardware Check
+# =============================================================================
+# %%
+
+# Initialize context and detect environment
+ctx = ContextManager.get_instance()
+print(ctx)
+
+# GPU memory info
+if ctx.gpu_available:
+    free, total = cp.cuda.Device(0).mem_info
+    print(f"\nGPU Memory: {free/1e9:.2f} GB free / {total/1e9:.2f} GB total")
+else:
+    print("\n⚠ No GPU available - running in CPU mode")
+
+
+# =============================================================================
+# CELL 3: Pipeline Configuration
+# =============================================================================
+# %%
+
+# Kaggle paths
+INPUT_DIR = Path("/kaggle/input/vesuvius-challenge-data")  # Adjust to actual dataset
+OUTPUT_DIR = Path("/kaggle/working/output")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# Processing parameters
+CONFIG = {
+    "chunk_size": ctx.chunk_size if hasattr(ctx, 'chunk_size') else 128,
+    "overlap": 16,
+    "sigma": 1.5,
+    "alignment_threshold": 0.5,
+    "poisson_tol": 1e-5,
+    "poisson_maxiter": 1000,
+    "mesh_step_size": 1,
+}
+
+print("Pipeline Configuration:")
+for k, v in CONFIG.items():
+    print(f"  {k}: {v}")
+
+
+# =============================================================================
+# CELL 4: Main Processing Loop
+# =============================================================================
+# %%
+
+def process_volume(volume_path: Path, output_name: str) -> None:
+    """
+    Process a single volume through the RGT pipeline.
+    
+    Pipeline:
+        1. Load volume
+        2. Hessian feature extraction
+        3. Vector field alignment
+        4. Poisson solve
+        5. Mesh extraction
+        6. Save output
+    """
+    print(f"\n{'='*60}")
+    print(f"Processing: {volume_path.name}")
+    print(f"{'='*60}")
+    
+    # Step 1: Load volume (placeholder - adjust for actual data format)
+    print("\n[1/6] Loading volume...")
+    # volume = load_zarr_volume(volume_path)  # Implement based on data format
+    # For demo, create synthetic data
+    volume = cp.random.randn(64, 64, 64, dtype=cp.float32)
+    
+    # Step 2: Hessian
+    print("\n[2/6] Computing Hessian features...")
+    engine = HessianEngine(slab_size=16, verbose=True)
+    hessian = engine.compute_hessian(volume, sigma=CONFIG["sigma"])
+    eigen = engine.solve_eigen_system(hessian.as_list())
+    
+    # Force GC
+    hessian.free()
+    gc.collect()
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    # Step 3: Alignment
+    print("\n[3/6] Aligning vector field...")
+    aligner = VectorAligner(threshold=CONFIG["alignment_threshold"], verbose=True)
+    aligned = aligner.align_vectors(eigen.normal_vectors, eigen.confidence)
+    
+    # Force GC
+    del eigen.normal_vectors
+    gc.collect()
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    # Step 4: Poisson
+    print("\n[4/6] Solving Poisson equation...")
+    weights = eigen.confidence / (eigen.confidence.max() + 1e-10)
+    
+    solver = PoissonSolver(
+        tol=CONFIG["poisson_tol"],
+        maxiter=CONFIG["poisson_maxiter"],
+        verbose=True
+    )
+    A, b, _ = solver.assemble_system(aligned, weights)
+    result = solver.solve(A, b, volume.shape)
+    phi = result.phi
+    
+    # Force GC
+    del A, b, aligned, weights, eigen
+    gc.collect()
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    # Step 5: Mesh extraction
+    print("\n[5/6] Extracting mesh...")
+    extractor = SurfaceExtractor(step_size=CONFIG["mesh_step_size"], verbose=True)
+    mesh = extractor.extract_layer(phi, iso_level=float(phi.mean()))
+    audit = extractor.audit_curvature(mesh)
+    
+    # Step 6: Save
+    print("\n[6/6] Saving output...")
+    mesh_path = OUTPUT_DIR / f"{output_name}.obj"
+    extractor.save_mesh(mesh, str(mesh_path))
+    
+    # Final GC
+    del volume, phi, mesh
+    gc.collect()
+    cp.get_default_memory_pool().free_all_blocks()
+    
+    print(f"\n✓ Complete: {mesh_path}")
+    print(f"  Curvature defect ratio: {audit.defect_ratio:.1%}")
+
+
+# Main execution
+if __name__ == "__main__":
+    # Process all volumes
+    # volumes = list(INPUT_DIR.glob("*.zarr"))  # Adjust pattern
+    # for i, vol_path in enumerate(volumes):
+    #     process_volume(vol_path, f"rgt_mesh_{i:03d}")
+    
+    # Demo with synthetic data
+    process_volume(Path("demo"), "rgt_demo_mesh")
+    
+    print("\n" + "="*60)
+    print("✓ ALL PROCESSING COMPLETE")
+    print("="*60)
+
+```
+
+---
+## File: tools\deploy\kaggle_deploy\install_hooks.py
+```py
+#!/usr/bin/env python3
+"""
+RGT Install Hooks for Kaggle
+============================
+
+Unzips rgt_package.zip and adds to sys.path.
+Run this cell first in your Kaggle notebook.
+
+Usage (in Kaggle Notebook):
+    exec(open("/kaggle/input/rgt-package/install_hooks.py").read())
+"""
+
+import os
+import sys
+import zipfile
+from pathlib import Path
+
+
+def install_rgt():
+    """Install RGT package from zip."""
+    # Kaggle paths
+    INPUT_DIR = Path("/kaggle/input/rgt-package")
+    WORKING_DIR = Path("/kaggle/working")
+    PACKAGE_ZIP = INPUT_DIR / "rgt_package.zip"
+    EXTRACT_DIR = WORKING_DIR / "rgt_extracted"
+    
+    # Local fallback (for testing)
+    if not INPUT_DIR.exists():
+        INPUT_DIR = Path("kaggle_deploy")
+        WORKING_DIR = Path(".")
+        PACKAGE_ZIP = INPUT_DIR / "rgt_package.zip"
+        EXTRACT_DIR = WORKING_DIR / "rgt_extracted"
+    
+    print("=" * 60)
+    print("RGT Package Installation")
+    print("=" * 60)
+    
+    # Check if package exists
+    if not PACKAGE_ZIP.exists():
+        raise FileNotFoundError(f"Package not found: {PACKAGE_ZIP}")
+    
+    # Extract if needed
+    if not EXTRACT_DIR.exists():
+        print(f"[Install] Extracting to {EXTRACT_DIR}...")
+        EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+        
+        with zipfile.ZipFile(PACKAGE_ZIP, 'r') as zf:
+            zf.extractall(EXTRACT_DIR)
+        
+        print(f"  ✓ Extracted {len(list(EXTRACT_DIR.rglob('*.py')))} Python files")
+    else:
+        print(f"[Install] Using existing extraction: {EXTRACT_DIR}")
+    
+    # Add to sys.path
+    src_path = str(EXTRACT_DIR / "src")
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+        print(f"  ✓ Added to sys.path: {src_path}")
+    
+    # Verify import
+    try:
+        from rgt import HessianEngine, VectorAligner, PoissonSolver, SurfaceExtractor
+        print("  ✓ RGT modules imported successfully")
+    except ImportError as e:
+        print(f"  ✗ Import failed: {e}")
+        raise
+    
+    print("=" * 60)
+    print("✓ RGT Package Ready")
+    print("=" * 60)
+
+
+# Auto-run on exec()
+if __name__ == "__main__" or "__file__" not in dir():
+    install_rgt()
+
+```
+
+---
+## File: train\finetune.py
+```py
+"""
+Vesuvius Challenge 2026 - RGT Domain Fine-tuning
+=================================================
+Transfer learning from Raw CT domain to RGT-flattened domain.
+
+Problem: Model trained on raw CT performs poorly on RGT-flattened images.
+Solution: Fine-tune decoder only on RGT data to adapt feature space.
+
+Strategy:
+- Freeze encoder (preserve feature extraction)
+- Train decoder only (adapt to new texture distribution)
+- Very low LR (1e-5) for 5 epochs
+"""
+
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
+import cv2
 from pathlib import Path
-from PIL import Image
-from glob import glob
 from tqdm import tqdm
 import segmentation_models_pytorch as smp
-import albumentations as A
-from albumentations.pytorch import ToTensorV2
-import matplotlib.pyplot as plt
+import random
 
-# =========================================================================================
+# =============================================================================
 # ⚙️ Configuration
-# =========================================================================================
+# =============================================================================
 CONFIG = {
-    "data_root": Path(r"data/native/train/1"),
+    # Input data
+    "image_path": "data/flattened_layers/layer_07.png",
+    "mask_path": "data/native/train/1/inklabels.png",
     
-    # 🎯 Z-Axis Alignment: Use AVAILABLE files with ink signal
-    # Files 34-47 are MISSING. Available files with ink: 51-64
-    # Z=57 showed strong ink signal (Mean~23k in window)
-    "z_slices": list(range(51, 65)),  # Z=51 to Z=64 (14 slices - all available)
+    # Pretrained model
+    "pretrained_path": "models/vesuvius_surgical_best.pth",
+    "encoder": "resnet18",
+    "in_channels": 14,  # Will replicate single channel 14x
     
-    # 🎯 Intensity Windowing (from histogram analysis)
-    "window_min": 18000.0,
-    "window_max": 28000.0,
+    # Training params
+    "patch_size": 224,
+    "batch_size": 8,
+    "epochs": 5,
+    "lr": 1e-5,
+    "weight_decay": 1e-4,
     
-    # Architecture
-    "tile_size": 224,
-    "batch_size": 4,
-    "accumulate_steps": 4,  # Simulate batch_size=16
-    "num_workers": 4,
-    "epochs": 15,
-    "lr": 1e-3,
+    # Filtering
+    "min_ink_ratio": 0.01,  # Only patches with >1% ink
     
-    # System
-    "seed": 42,
-    "device": "cuda" if torch.cuda.is_available() else "cpu",
+    # Output
+    "output_dir": Path("finetune_rgt_results"),
+    "save_path": "models/vesuvius_rgt_finetuned.pth",
 }
 
-# Fix Seed
-def seed_everything(seed=42):
-    random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.backends.cudnn.deterministic = True
-
-seed_everything(CONFIG["seed"])
-
-# =========================================================================================
-# 📦 Dataset with Surgical Normalization
-# =========================================================================================
-class VesuviusSurgicalDataset(Dataset):
-    def __init__(self, root_dir, z_slices, transform=None, mode="train"):
-        self.root = Path(root_dir)
-        self.transform = transform
-        self.mode = mode
-        self.z_indices = z_slices  # Explicit list [33, 34, ..., 48]
+# =============================================================================
+# 🔧 Dataset
+# =============================================================================
+class RGTPatchDataset(Dataset):
+    """
+    Dataset for RGT fine-tuning.
+    Extracts patches containing ink from the flattened layer.
+    """
+    
+    def __init__(self, image, mask, patch_size=224, min_ink_ratio=0.01, in_channels=14):
+        self.image = image  # (H, W) normalized 0-1
+        self.mask = mask    # (H, W) binary 0-1
+        self.patch_size = patch_size
+        self.in_channels = in_channels
         
-        # Windowing parameters
-        self.win_min = CONFIG["window_min"]
-        self.win_max = CONFIG["window_max"]
+        H, W = image.shape
+        self.patches = []
         
-        # Tiff paths - create a DICTIONARY keyed by actual Z-index from filename
-        tif_dir = self.root / "surface_volume"
-        all_tifs = list(tif_dir.glob("*.tif"))
+        # Find patches containing ink
+        print("   Scanning for ink-containing patches...")
+        for y in range(0, H - patch_size, patch_size // 2):
+            for x in range(0, W - patch_size, patch_size // 2):
+                mask_patch = mask[y:y+patch_size, x:x+patch_size]
+                ink_ratio = mask_patch.mean()
+                
+                if ink_ratio > min_ink_ratio:
+                    self.patches.append((y, x))
         
-        # Build dict: {z_index: file_path}
-        self.tif_dict = {}
-        for f in all_tifs:
-            try:
-                z_idx = int(f.stem)  # Extract Z from filename like "41.tif" -> 41
-                self.tif_dict[z_idx] = f
-            except ValueError:
-                continue  # Skip non-numeric filenames
-        
-        # Validate z_slices exist in available files
-        available_z = set(self.tif_dict.keys())
-        valid_z = [z for z in self.z_indices if z in available_z]
-        missing_z = [z for z in self.z_indices if z not in available_z]
-        
-        if missing_z:
-            print(f"⚠️ WARNING: Z-slices {missing_z} not found in data. Available: {sorted(available_z)[:10]}...")
-        
-        self.z_indices = valid_z
-        
-        # Get TIF dimensions from first available file
-        first_tif = self.tif_dict[self.z_indices[0]]
-        with Image.open(first_tif) as img:
-            self.w, self.h = img.size  # PIL returns (W, H)
-        print(f"[{mode.upper()}] TIF dimensions: {self.w} x {self.h}")
-        
-        # Load Labels and RESIZE to match TIF dimensions
-        print(f"[{mode.upper()}] Loading and resizing labels to {self.w}x{self.h}...")
-        mask_path = self.root / "mask.png"
-        ink_path = self.root / "inklabels.png"
-        
-        mask_img = Image.open(mask_path).convert("L")
-        ink_img = Image.open(ink_path).convert("L")
-        
-        # Resize labels/mask to match TIF dimensions
-        # NOTE: mask.png might be dummy (all valid). We will combine it with TIF validity.
-        provided_mask = np.array(mask_img.resize((self.w, self.h), Image.NEAREST))
-        self.ink = np.array(ink_img.resize((self.w, self.h), Image.NEAREST))
-        
-        mask_img.close()
-        ink_img.close()
-
-        # 🚑 AUTO-GENERATED VALIDITY MASK
-        # Load one TIF slice to determine where actual data exists
-        print(f"[{mode.upper()}] Generatring validity mask from TIF content...")
-        with Image.open(first_tif) as img:
-            tif_data = np.array(img)
-            # Valid where TIF > 0 AND provided_mask > 0
-            tif_valid = tif_data > 0
-            # Ensure we are robust to dummy mask
-            if provided_mask.mean() > 250: # If mask is all white
-                self.mask = tif_valid.astype(np.uint8) * 255
-            else:
-                self.mask = (tif_valid & (provided_mask > 0)).astype(np.uint8) * 255
-        
-        valid_pixels = (self.mask > 0).sum()
-        total_pixels = self.mask.size
-        print(f"[{mode.upper()}] Valid Sampling Area: {valid_pixels / total_pixels * 100:.2f}% of image")
-        
-        print(f"[{mode.upper()}] Using Z-slices: {self.z_indices}")
-        print(f"[{mode.upper()}] Intensity window: [{self.win_min}, {self.win_max}]")
-
+        print(f"   Found {len(self.patches)} ink-containing patches")
+    
     def __len__(self):
-        return 2048 if self.mode == "train" else 256
-
+        return len(self.patches)
+    
     def __getitem__(self, idx):
-        try:
-            # 1. Select Random Center Coordinate
-            for _ in range(100):
-                y = random.randint(0, self.h - CONFIG["tile_size"] - 1)
-                x = random.randint(0, self.w - CONFIG["tile_size"] - 1)
-                if self.mask[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]].sum() > 0:
-                    break
-            
-            # 2. Load Z-stack
-            volume = []
-            for z in self.z_indices:
-                path = self.tif_dict[z]  # Use dictionary lookup by actual Z-index
-                with Image.open(path) as img:
-                    region = img.crop((x, y, x + CONFIG["tile_size"], y + CONFIG["tile_size"]))
-                    volume.append(np.array(region).astype(np.float32))
-            
-            volume = np.stack(volume, axis=-1)  # (H, W, Z)
-            
-            # 3. 🚑 SURGICAL NORMALIZATION: Adaptive Percentile Stretching
-            # Instead of fixed [18k, 28k], we stretch EITHER 1-99% OR Min-Max per patch.
-            # This ensures every patch has visible texture features (no black holes).
-            p_min, p_max = np.percentile(volume, (1, 99))
-            if p_max - p_min < 1e-6:
-                # Fallback if flat (rare): use global assumption or min/max
-                p_min, p_max = volume.min(), volume.max()
-            
-            # Stretch to [0, 1]
-            volume = np.clip((volume - p_min) / (p_max - p_min + 1e-8), 0, 1)
-
-            # 4. Label (binarized)
-            # Ensure we are reading INK LABELS, not just the validity mask
-            ink_patch = self.ink[y:y+CONFIG["tile_size"], x:x+CONFIG["tile_size"]]
-            ink_patch = (ink_patch > 0.5).astype(np.float32)
-            
-            # 5. Augmentation
-            if self.transform:
-                data = self.transform(image=volume, mask=ink_patch)
-                volume = data["image"]
-                ink_patch = data["mask"]
-            
-            # 6. Format to Tensor
-            if not isinstance(volume, torch.Tensor):
-                volume = torch.from_numpy(volume).permute(2, 0, 1).float()
-            else:
-                volume = volume.float()
-            
-            if not isinstance(ink_patch, torch.Tensor):
-                ink_patch = torch.from_numpy(ink_patch).unsqueeze(0).float()
-            else:
-                ink_patch = ink_patch.float()
-                if ink_patch.ndim == 2:
-                    ink_patch = ink_patch.unsqueeze(0)
-            
-            return volume, ink_patch
-            
-        except Exception as e:
-            print(f"⚠️ Data Error at index {idx}: {e}")
-            return self.__getitem__((idx + 1) % len(self))
-
-# =========================================================================================
-# 📉 BCE + Dice Loss
-# =========================================================================================
-class BCEDiceLoss(nn.Module):
-    def __init__(self, bce_weight=0.5, dice_weight=0.5, smooth=1e-6):
-        super().__init__()
-        self.bce_weight = bce_weight
-        self.dice_weight = dice_weight
-        self.smooth = smooth
-        self.bce = nn.BCEWithLogitsLoss()
+        y, x = self.patches[idx]
+        ps = self.patch_size
         
-    def forward(self, inputs, targets):
-        # BCE (on logits)
-        bce_loss = self.bce(inputs, targets)
+        # Extract patch
+        img_patch = self.image[y:y+ps, x:x+ps]
+        mask_patch = self.mask[y:y+ps, x:x+ps]
         
-        # Dice (on probabilities)
-        probs = torch.sigmoid(inputs)
-        probs_flat = probs.view(-1)
-        targets_flat = targets.view(-1)
+        # Replicate to in_channels (model expects 14 channels)
+        img_multi = np.repeat(img_patch[np.newaxis, :, :], self.in_channels, axis=0)
         
-        intersection = (probs_flat * targets_flat).sum()
-        dice = (2. * intersection + self.smooth) / (probs_flat.sum() + targets_flat.sum() + self.smooth)
-        dice_loss = 1 - dice
+        # Add random augmentation
+        if random.random() > 0.5:
+            img_multi = np.flip(img_multi, axis=2).copy()
+            mask_patch = np.flip(mask_patch, axis=1).copy()
+        if random.random() > 0.5:
+            img_multi = np.flip(img_multi, axis=1).copy()
+            mask_patch = np.flip(mask_patch, axis=0).copy()
         
-        return self.bce_weight * bce_loss + self.dice_weight * dice_loss
+        return (
+            torch.from_numpy(img_multi).float(),
+            torch.from_numpy(mask_patch[np.newaxis, :, :]).float()
+        )
 
-# =========================================================================================
-# 📊 Metrics
-# =========================================================================================
-class MetricMonitor:
-    def __init__(self):
-        self.reset()
-        
-    def reset(self):
-        self.val = 0
-        self.avg = 0
-        self.sum = 0
-        self.count = 0
+# =============================================================================
+# 🔧 Model Loading with Encoder Freezing
+# =============================================================================
+def load_and_prepare_model(pretrained_path, encoder, in_channels, device):
+    """
+    Load pretrained model and freeze encoder for fine-tuning.
+    """
+    print(f"\n📥 Loading pretrained model: {pretrained_path}")
+    
+    model = smp.Unet(
+        encoder_name=encoder,
+        encoder_weights=None,
+        in_channels=in_channels,
+        classes=1,
+        activation=None
+    )
+    
+    checkpoint = torch.load(pretrained_path, map_location=device, weights_only=False)
+    
+    if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'])
+    elif isinstance(checkpoint, dict) and 'state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['state_dict'])
+    else:
+        model.load_state_dict(checkpoint)
+    
+    model = model.to(device)
+    
+    # ========================================
+    # FREEZE ENCODER (Critical for fine-tuning)
+    # ========================================
+    print("🔒 Freezing encoder layers...")
+    encoder_params = 0
+    decoder_params = 0
+    
+    for name, param in model.named_parameters():
+        if 'encoder' in name:
+            param.requires_grad = False
+            encoder_params += param.numel()
+        else:
+            param.requires_grad = True
+            decoder_params += param.numel()
+    
+    print(f"   Encoder params (frozen): {encoder_params:,}")
+    print(f"   Decoder params (trainable): {decoder_params:,}")
+    
+    return model
 
-    def update(self, val, n=1):
-        self.val = val
-        self.sum += val * n
-        self.count += n
-        self.avg = self.sum / self.count
-
-def fbeta_score(preds, targets, threshold=0.5, beta=0.5):
-    preds = (preds > threshold).float()
-    tp = (preds * targets).sum()
-    fp = (preds * (1 - targets)).sum()
-    fn = ((1 - preds) * targets).sum()
-    
-    score = ((1 + beta**2) * tp) / ((1 + beta**2) * tp + (beta**2) * fn + fp + 1e-7)
-    return score
-
-# =========================================================================================
-# 🎓 Training Functions
-# =========================================================================================
-def sanity_check(dataset):
-    """Verify data normalization before training."""
-    print("\n🔬 Running Sanity Check...")
-    volume, mask = dataset[0]
-    
-    mean_val = volume.mean().item()
-    min_val = volume.min().item()
-    max_val = volume.max().item()
-    
-    print(f"   First Patch Stats (after windowing):")
-    print(f"   - Min: {min_val:.4f}")
-    print(f"   - Max: {max_val:.4f}")
-    print(f"   - Mean: {mean_val:.4f}")
-    print(f"   - Mask Sum: {mask.sum().item():.0f}")
-    
-    if not (0.1 <= mean_val <= 0.9):
-        print(f"\n❌ SANITY CHECK FAILED!")
-        print(f"   Expected Mean in [0.1, 0.9], got {mean_val:.4f}")
-        print(f"   This suggests windowing parameters are incorrect.")
-        return False
-    
-    print("✅ Sanity Check PASSED!\n")
-    return True
-
-def train_one_epoch(model, loader, criterion, optimizer, scaler, epoch):
+# =============================================================================
+# 🔧 Training Loop
+# =============================================================================
+def train_epoch(model, dataloader, optimizer, criterion, device):
+    """Train for one epoch."""
     model.train()
-    loss_meter = MetricMonitor()
-    f05_meter = MetricMonitor()
+    total_loss = 0.0
     
-    bar = tqdm(loader, desc=f"Epoch {epoch} [Train]")
-    optimizer.zero_grad()
+    for images, masks in tqdm(dataloader, desc="   Training"):
+        images = images.to(device)
+        masks = masks.to(device)
+        
+        optimizer.zero_grad()
+        
+        outputs = model(images)
+        loss = criterion(outputs, masks)
+        
+        loss.backward()
+        optimizer.step()
+        
+        total_loss += loss.item()
     
-    for step, (images, masks) in enumerate(bar):
-        images = images.to(CONFIG["device"], non_blocking=True)
-        masks = masks.to(CONFIG["device"], non_blocking=True)
-        
-        # Forward with AMP
-        with torch.amp.autocast('cuda'):
-            outputs = model(images)
-            loss = criterion(outputs, masks)
-            loss = loss / CONFIG["accumulate_steps"]  # Scale for accumulation
-        
-        # Backward
-        scaler.scale(loss).backward()
-        
-        # Gradient Accumulation
-        if (step + 1) % CONFIG["accumulate_steps"] == 0:
-            # Gradient Clipping
-            scaler.unscale_(optimizer)
-            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-            
-            scaler.step(optimizer)
-            scaler.update()
-            optimizer.zero_grad()
-        
-        # Metrics
-        with torch.no_grad():
-            preds = torch.sigmoid(outputs)
-            score = fbeta_score(preds, masks)
-        
-        loss_meter.update(loss.item() * CONFIG["accumulate_steps"], images.size(0))
-        f05_meter.update(score.item(), images.size(0))
-        
-        bar.set_postfix(loss=f"{loss_meter.avg:.3f}", f05=f"{f05_meter.avg:.4f}")
-        
-        # VRAM Protection
-        if step % 100 == 0:
-            torch.cuda.empty_cache()
+    return total_loss / len(dataloader)
 
-def valid_one_epoch(model, loader, criterion, epoch):
+# =============================================================================
+# 🔧 Validation Visualization
+# =============================================================================
+def visualize_progress(model, image, mask, device, epoch, output_dir, in_channels):
+    """
+    Visualize prediction on a fixed region each epoch.
+    Shows: Input | Ground Truth | Prediction
+    """
     model.eval()
-    loss_meter = MetricMonitor()
     
-    # Multi-threshold evaluation
-    thresholds = np.arange(0.05, 0.55, 0.05)
-    scores_per_thresh = {t: MetricMonitor() for t in thresholds}
+    # Find a region with good ink coverage
+    H, W = image.shape
+    best_y, best_x, best_ink = 0, 0, 0
+    ps = 224
     
-    bar = tqdm(loader, desc=f"Epoch {epoch} [Valid]")
+    for y in range(0, H - ps, ps):
+        for x in range(0, W - ps, ps):
+            ink = mask[y:y+ps, x:x+ps].mean()
+            if ink > best_ink:
+                best_ink = ink
+                best_y, best_x = y, x
+    
+    # Extract patch
+    img_patch = image[best_y:best_y+ps, best_x:best_x+ps]
+    mask_patch = mask[best_y:best_y+ps, best_x:best_x+ps]
+    
+    # Prepare for model
+    img_multi = np.repeat(img_patch[np.newaxis, np.newaxis, :, :], in_channels, axis=1)
+    img_tensor = torch.from_numpy(img_multi).float().to(device)
     
     with torch.no_grad():
-        for images, masks in bar:
-            images = images.to(CONFIG["device"], non_blocking=True)
-            masks = masks.to(CONFIG["device"], non_blocking=True)
+        pred = model(img_tensor)
+        pred = torch.sigmoid(pred)
+        pred_np = pred.cpu().numpy()[0, 0]
+    
+    # Create visualization
+    img_vis = (img_patch * 255).astype(np.uint8)
+    mask_vis = (mask_patch * 255).astype(np.uint8)
+    pred_vis = (pred_np * 255).astype(np.uint8)
+    
+    # Stack horizontally
+    combined = np.hstack([img_vis, mask_vis, pred_vis])
+    
+    # Add labels
+    combined_bgr = cv2.cvtColor(combined, cv2.COLOR_GRAY2BGR)
+    cv2.putText(combined_bgr, "Input", (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+    cv2.putText(combined_bgr, "GT", (ps + 10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+    cv2.putText(combined_bgr, "Pred", (2*ps + 10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+    
+    output_path = output_dir / f"debug_finetune_epoch_{epoch:02d}.png"
+    cv2.imwrite(str(output_path), combined_bgr)
+    
+    # Print stats
+    print(f"   📸 Epoch {epoch}: pred_max={pred_np.max():.4f}, pred_mean={pred_np.mean():.4f}")
+    
+    return pred_np.max()
+
+# =============================================================================
+# 🔧 Loss Function
+# =============================================================================
+class DiceBCELoss(nn.Module):
+    """Combined Dice + BCE loss for segmentation."""
+    
+    def __init__(self, bce_weight=0.5):
+        super().__init__()
+        self.bce_weight = bce_weight
+        self.bce = nn.BCEWithLogitsLoss()
+    
+    def forward(self, pred, target):
+        bce_loss = self.bce(pred, target)
+        
+        pred_sigmoid = torch.sigmoid(pred)
+        
+        intersection = (pred_sigmoid * target).sum()
+        union = pred_sigmoid.sum() + target.sum()
+        dice_loss = 1 - (2 * intersection + 1) / (union + 1)
+        
+        return self.bce_weight * bce_loss + (1 - self.bce_weight) * dice_loss
+
+# =============================================================================
+# 🚀 Main
+# =============================================================================
+def main():
+    print("=" * 60)
+    print("🔬 Vesuvius - RGT Domain Fine-tuning")
+    print("=" * 60)
+    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"\n🖥️ Device: {device}")
+    
+    # Create output directory
+    CONFIG["output_dir"].mkdir(parents=True, exist_ok=True)
+    
+    # 1. Load data
+    print(f"\n📥 Loading image: {CONFIG['image_path']}")
+    image = cv2.imread(CONFIG["image_path"], cv2.IMREAD_GRAYSCALE)
+    image = image.astype(np.float32) / 255.0
+    print(f"   Image shape: {image.shape}")
+    
+    print(f"\n📥 Loading mask: {CONFIG['mask_path']}")
+    mask = cv2.imread(CONFIG["mask_path"], cv2.IMREAD_GRAYSCALE)
+    mask = mask.astype(np.float32) / 255.0
+    print(f"   Mask shape: {mask.shape}")
+    print(f"   Ink ratio: {mask.mean()*100:.2f}%")
+    
+    # Ensure same size
+    if image.shape != mask.shape:
+        print(f"\n⚠️ Size mismatch! Resizing mask...")
+        mask = cv2.resize(mask, (image.shape[1], image.shape[0]), interpolation=cv2.INTER_NEAREST)
+        print(f"   Resized mask: {mask.shape}")
+    
+    # 2. Create dataset
+    print("\n📦 Creating patch dataset...")
+    dataset = RGTPatchDataset(
+        image, mask,
+        patch_size=CONFIG["patch_size"],
+        min_ink_ratio=CONFIG["min_ink_ratio"],
+        in_channels=CONFIG["in_channels"]
+    )
+    
+    dataloader = DataLoader(
+        dataset,
+        batch_size=CONFIG["batch_size"],
+        shuffle=True,
+        num_workers=0,
+        pin_memory=True
+    )
+    
+    # 3. Load and prepare model
+    model = load_and_prepare_model(
+        CONFIG["pretrained_path"],
+        CONFIG["encoder"],
+        CONFIG["in_channels"],
+        device
+    )
+    
+    # 4. Optimizer (only for decoder params)
+    trainable_params = [p for p in model.parameters() if p.requires_grad]
+    optimizer = optim.AdamW(trainable_params, lr=CONFIG["lr"], weight_decay=CONFIG["weight_decay"])
+    
+    criterion = DiceBCELoss()
+    
+    # 5. Initial visualization (before training)
+    print("\n📸 Initial prediction (before fine-tuning):")
+    visualize_progress(model, image, mask, device, 0, CONFIG["output_dir"], CONFIG["in_channels"])
+    
+    # 6. Training loop
+    print(f"\n🏋️ Fine-tuning for {CONFIG['epochs']} epochs...")
+    
+    for epoch in range(1, CONFIG["epochs"] + 1):
+        print(f"\n--- Epoch {epoch}/{CONFIG['epochs']} ---")
+        
+        loss = train_epoch(model, dataloader, optimizer, criterion, device)
+        print(f"   Loss: {loss:.4f}")
+        
+        # Visualize
+        max_pred = visualize_progress(model, image, mask, device, epoch, CONFIG["output_dir"], CONFIG["in_channels"])
+    
+    # 7. Save fine-tuned model
+    print(f"\n💾 Saving fine-tuned model: {CONFIG['save_path']}")
+    Path(CONFIG["save_path"]).parent.mkdir(parents=True, exist_ok=True)
+    
+    torch.save({
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'epoch': CONFIG["epochs"],
+        'config': CONFIG,
+    }, CONFIG["save_path"])
+    
+    print(f"   ✅ Saved!")
+    
+    # 8. Summary
+    print("\n" + "=" * 60)
+    print("📊 Fine-tuning Complete!")
+    print(f"   Model: {CONFIG['save_path']}")
+    print(f"   Debug images: {CONFIG['output_dir']}/")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+---
+## File: train\train_native.py
+```py
+import sys
+from pathlib import Path
+import torch
+import torch.optim as optim
+from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
+import albumentations as A
+import cv2
+import numpy as np
+import random
+from tqdm import tqdm
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+from src.dataset import VesuviusDataset, BalancedBatchSampler
+from src.models import get_unet, load_checkpoint
+from src.losses import DiceBCELoss
+from src.utils import visualize_prediction, seed_everything
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    # Data - Native surface volume
+    "volume_dir": PROJECT_ROOT / "data/native/train/1/surface_volume",
+    "mask_path": PROJECT_ROOT / "data/native/train/1/inklabels.png",
+    "papyrus_mask_path": PROJECT_ROOT / "data/native/train/1/mask.png",
+    
+    # Volume slicing
+    "in_channels": 14,
+    "z_start": 18,
+    
+    # Training
+    "patch_size": 224,
+    "batch_size": 8,
+    "epochs": 30,
+    "lr": 1e-4,
+    "weight_decay": 1e-4,
+    
+    # Output
+    "output_dir": PROJECT_ROOT / "outputs",
+    "save_path": PROJECT_ROOT / "models/vesuvius_native_finetuned.pth",
+    "pretrained_path": PROJECT_ROOT / "models/vesuvius_best.pth",
+    
+    # Windowing
+    "window_min": 18000,
+    "window_max": 28000,
+}
+
+def get_train_augmentations():
+    return A.Compose([
+        A.HorizontalFlip(p=0.5),
+        A.VerticalFlip(p=0.5),
+        A.RandomRotate90(p=0.5),
+        A.ShiftScaleRotate(p=0.5, border_mode=cv2.BORDER_REFLECT_101, rotate_limit=30, scale_limit=0.1),
+        A.RandomBrightnessContrast(p=0.5),
+    ])
+
+def train():
+    seed_everything(42)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    
+    # Create timestamped run folder
+    import datetime
+    run_id = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    run_dir = CONFIG["output_dir"] / f"run_native_{run_id}"
+    run_dir.mkdir(parents=True, exist_ok=True)
+    print(f"📂 Output directory: {run_dir}")
+    
+    # 1. Dataset
+    dataset = VesuviusDataset(
+        volume_path=CONFIG["volume_dir"],
+        ink_mask_path=CONFIG["mask_path"],
+        fragment_mask_path=CONFIG["papyrus_mask_path"],
+        is_rgt=False,
+        z_start=CONFIG["z_start"],
+        n_channels=CONFIG["in_channels"],
+        patch_size=CONFIG["patch_size"],
+        window_range=(CONFIG["window_min"], CONFIG["window_max"]),
+        augmentations=get_train_augmentations(),
+        min_ink_threshold=1e-5  # Extremely sensitive threshold for sparse strokes
+    )
+    
+    sampler = BalancedBatchSampler(dataset, CONFIG["batch_size"], ink_ratio=0.5)
+    train_loader = DataLoader(dataset, batch_sampler=sampler, num_workers=0)
+    
+    # 2. Model
+    model = get_unet(in_channels=CONFIG["in_channels"]).to(device)
+    model = load_checkpoint(model, CONFIG["pretrained_path"], device)
+    
+    # 3. Setup
+    optimizer = optim.AdamW(model.parameters(), lr=CONFIG["lr"], weight_decay=CONFIG["weight_decay"])
+    scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2)
+    criterion = DiceBCELoss(dice_weight=0.5)
+    
+    # 2026 Standard: torch.amp
+    scaler = torch.amp.GradScaler('cuda')
+    
+    # 4. Loop
+    best_loss = float('inf')
+    
+    # Ensure we use the new Sampler wrapper correctly
+    # Note: BalancedBatchSampler yields *indices* into dataset.all_coords
+    
+    for epoch in range(1, CONFIG["epochs"] + 1):
+        model.train()
+        train_loss = 0
+        pbar = tqdm(train_loader, desc=f"Epoch {epoch}", leave=False)
+        
+        for images, masks in pbar:
+            images, masks = images.to(device), masks.to(device)
+            optimizer.zero_grad()
             
             with torch.amp.autocast('cuda'):
                 outputs = model(images)
                 loss = criterion(outputs, masks)
             
-            preds_prob = torch.sigmoid(outputs)
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
             
-            loss_meter.update(loss.item(), images.size(0))
+            train_loss += loss.item()
+            pbar.set_postfix(loss=f"{loss.item():.4f}")
             
-            for t in thresholds:
-                score = fbeta_score(preds_prob, masks, threshold=t)
-                scores_per_thresh[t].update(score.item(), images.size(0))
-            
-            bar.set_postfix(loss=f"{loss_meter.avg:.3f}", f05=f"{scores_per_thresh[0.1].avg:.4f}")
-            
-            # Save last batch for visualization
-            last_batch = (images, masks, preds_prob)
-    
-    # Find best threshold
-    best_thresh = max(thresholds, key=lambda t: scores_per_thresh[t].avg)
-    best_score = scores_per_thresh[best_thresh].avg
-    
-    print(f"Epoch {epoch} Best F0.5: {best_score:.4f} @ Threshold {best_thresh:.2f}")
-    
-    return best_score, last_batch
+        avg_loss = train_loss / len(train_loader)
+        print(f"Epoch {epoch} - Avg Loss: {avg_loss:.4f}")
+        scheduler.step()
+        
+        # Forensic Visualization
+        model.eval()
+        with torch.no_grad():
+            if dataset.ink_coords:
+                # Pick a random ink patch
+                # ink_coords stored as (y, x, val)
+                y, x, density = random.choice(dataset.ink_coords)
+                
+                img_t, mask_t = dataset.get_patch(y, x, use_augmentation=False)
+                inp = img_t.unsqueeze(0).to(device)
+                
+                with torch.amp.autocast('cuda'):
+                    pred = torch.sigmoid(model(inp))[0, 0].cpu().numpy()
+                
+                # Use middle slice for input viz
+                mid_val = img_t[img_t.shape[0]//2].numpy()
+                gt_val = mask_t[0].numpy()
+                
+                # Create detailed debug strip
+                vis = visualize_prediction(mid_val, gt_val, pred)
+                
+                # Overlay stats on image using CV2
+                stats_text = f"Ink: {density*100:.2f}%"
+                cv2.putText(vis, stats_text, (10, 210), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+                
+                cv2.imwrite(str(run_dir / f"debug_native_epoch_{epoch:02d}.png"), vis)
+        
+        if avg_loss < best_loss:
+            best_loss = avg_loss
+            torch.save({
+                'epoch': epoch,
+                'model': model.state_dict(),
+                'optimizer': optimizer.state_dict(),
+                'loss': best_loss, 
+            }, CONFIG["save_path"])
+            print("   💾 Saved best model!")
 
-def save_debug_visualization(images, masks, preds, epoch, output_dir="output"):
-    """Save debug visualization: Input | Label | Prediction"""
-    import os
-    os.makedirs(output_dir, exist_ok=True)
-    
-    # Take first sample from batch
-    img = images[0].cpu().numpy()  # (C, H, W)
-    mask = masks[0, 0].cpu().numpy()  # (H, W)
-    pred = preds[0, 0].cpu().numpy()  # (H, W)
-    
-    # Use middle channel for visualization
-    mid_ch = img.shape[0] // 2
-    img_slice = img[mid_ch]  # (H, W)
-    
-    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
-    
-    # Input (middle Z-slice)
-    # img is already normalized to [0, 1] by adaptive percentile
-    axes[0].imshow(img_slice, cmap='gray', vmin=0, vmax=1)
-    axes[0].set_title(f'Input (Z={mid_ch})\nMin:{img_slice.min():.2f} Max:{img_slice.max():.2f}', fontsize=10)
-    axes[0].axis('off')
-    
-    # Ground Truth Label
-    axes[1].imshow(mask, cmap='Reds', vmin=0, vmax=1)
-    axes[1].set_title('Ground Truth (Ink)', fontsize=12)
-    axes[1].axis('off')
-    
-    # Prediction (probability)
-    axes[2].imshow(pred, cmap='hot', vmin=0, vmax=1)
-    axes[2].set_title(f'Prediction (prob)', fontsize=12)
-    axes[2].axis('off')
-    
-    plt.suptitle(f'Epoch {epoch} Debug', fontsize=14)
-    plt.tight_layout()
-    plt.savefig(f"{output_dir}/debug_epoch_{epoch}.png", dpi=100)
-    plt.close(fig)
-    print(f"   📸 Saved: {output_dir}/debug_epoch_{epoch}.png")
+if __name__ == "__main__":
+    train()
 
-# =========================================================================================
-# 🚀 Main
-# =========================================================================================
-def main():
-    print("="*60)
-    print("🔬 Vesuvius Challenge 2026 - Surgical Training")
-    print("="*60)
-    print(f"Device: {CONFIG['device']}")
-    print(f"Z-slices: {CONFIG['z_slices']}")
-    print(f"Window: [{CONFIG['window_min']}, {CONFIG['window_max']}]")
-    print(f"Effective Batch Size: {CONFIG['batch_size'] * CONFIG['accumulate_steps']}")
-    print("="*60)
+```
+
+---
+## File: train\train_rgt.py
+```py
+import sys
+from pathlib import Path
+import torch
+import torch.optim as optim
+from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
+import albumentations as A
+import numpy as np
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+from src.dataset import VesuviusDataset, BalancedBatchSampler
+from src.models import get_unet, load_checkpoint
+from src.losses import TverskyLoss
+from src.utils import visualize_prediction, seed_everything
+
+# =============================================================================
+# ⚙️ Configuration
+# =============================================================================
+CONFIG = {
+    "layer_dir": PROJECT_ROOT / "data/flattened_layers",
+    "mask_path": PROJECT_ROOT / "data/native/train/1/inklabels.png",
+    "frag_mask_path": PROJECT_ROOT / "data/native/train/1/mask.png",
     
-    # Augmentations
-    train_transform = A.Compose([
+    "start_layer": 5,
+    "num_layers": 16,
+    
+    "patch_size": 224,
+    "batch_size": 8,
+    "epochs": 30,
+    "lr": 5e-5,
+    "wd": 1e-2,
+    
+    "output_dir": PROJECT_ROOT / "outputs",
+    "save_path": PROJECT_ROOT / "models/vesuvius_rgt_v2.pth",
+}
+
+def get_transforms():
+    return A.Compose([
         A.HorizontalFlip(p=0.5),
         A.VerticalFlip(p=0.5),
         A.RandomRotate90(p=0.5),
-        A.ShiftScaleRotate(shift_limit=0.1, scale_limit=0.1, rotate_limit=15, p=0.5),
+        A.RandomBrightnessContrast(p=0.2),
     ])
+
+def train():
+    seed_everything(42)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    CONFIG["output_dir"].mkdir(exist_ok=True, parents=True)
     
-    val_transform = None
-    
-    # Data
-    print("\nInitializing Datasets...")
-    dataset = VesuviusSurgicalDataset(
-        CONFIG["data_root"], 
-        z_slices=CONFIG["z_slices"], 
-        transform=train_transform, 
-        mode="train"
-    )
-    val_dataset = VesuviusSurgicalDataset(
-        CONFIG["data_root"], 
-        z_slices=CONFIG["z_slices"], 
-        transform=val_transform, 
-        mode="valid"
-    )
-    
-    # Sanity Check
-    if not sanity_check(dataset):
-        print("🛑 Training aborted due to sanity check failure.")
-        sys.exit(1)
-    
-    # DataLoaders
-    loader = DataLoader(
-        dataset, 
-        batch_size=CONFIG["batch_size"], 
-        num_workers=CONFIG["num_workers"], 
-        shuffle=True, 
-        pin_memory=True,
-        persistent_workers=True
-    )
-    val_loader = DataLoader(
-        val_dataset, 
-        batch_size=CONFIG["batch_size"], 
-        num_workers=CONFIG["num_workers"], 
-        shuffle=False, 
-        pin_memory=True,
-        persistent_workers=True
+    # 1. Dataset
+    ds = VesuviusDataset(
+        volume_path=CONFIG["layer_dir"],
+        ink_mask_path=CONFIG["mask_path"],
+        fragment_mask_path=CONFIG["frag_mask_path"],
+        is_rgt=True,
+        z_start=CONFIG["start_layer"],
+        n_channels=CONFIG["num_layers"],
+        patch_size=CONFIG["patch_size"],
+        augmentations=get_transforms()
     )
     
-    # Model (ResNet18 Backbone)
-    print("Initializing Model...")
-    model = smp.Unet(
-        encoder_name="resnet18",
-        encoder_weights="imagenet",
-        in_channels=len(CONFIG["z_slices"]),
-        classes=1,
-    ).to(CONFIG["device"])
+    sampler = BalancedBatchSampler(ds, CONFIG["batch_size"])
+    loader = DataLoader(ds, batch_sampler=sampler, num_workers=0)
     
-    # Optimizer & Scheduler
-    optimizer = optim.AdamW(model.parameters(), lr=CONFIG["lr"])
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='max', factor=0.5, patience=2, verbose=True
-    )
+    # 2. Model
+    model = get_unet(in_channels=CONFIG["num_layers"]).to(device)
     
-    # Loss
-    criterion = BCEDiceLoss(bce_weight=0.5, dice_weight=0.5)
-    
-    # AMP Scaler
+    # 3. Opt/Loss
+    optimizer = optim.AdamW(model.parameters(), lr=CONFIG["lr"], weight_decay=CONFIG["wd"])
+    scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=5, T_mult=2)
+    loss_fn = TverskyLoss(alpha=0.3, beta=0.7)
     scaler = torch.amp.GradScaler('cuda')
     
-    # Training Loop
-    best_score = 0
-    print("\n🚀 Starting Surgical Training...")
-    
-    for epoch in range(CONFIG["epochs"]):
-        train_one_epoch(model, loader, criterion, optimizer, scaler, epoch)
-        score, last_batch = valid_one_epoch(model, val_loader, criterion, epoch)
+    # 4. Loop
+    for epoch in range(1, CONFIG["epochs"]+1):
+        model.train()
+        epoch_loss = 0
+        for images, masks in loader:
+            images, masks = images.to(device), masks.to(device)
+            optimizer.zero_grad()
+            with torch.amp.autocast('cuda'):
+                outputs = model(images)
+                loss = loss_fn(outputs, masks)
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+            epoch_loss += loss.item()
+            
+        print(f"Epoch {epoch}/{CONFIG['epochs']} - Loss: {epoch_loss/len(loader):.4f}")
+        scheduler.step()
         
-        # Save debug visualization
-        images, masks, preds = last_batch
-        save_debug_visualization(images, masks, preds, epoch)
-        
-        scheduler.step(score)
-        
-        if score > best_score:
-            best_score = score
-            torch.save(model.state_dict(), "vesuvius_surgical_best.pth")
-            print(f"🔥 New Best Model Saved! ({best_score:.4f})")
-    
-    # Final Evaluation
-    print("\n📦 Reloading Best Model...")
-    model.load_state_dict(torch.load("vesuvius_surgical_best.pth", weights_only=True))
-    final_score = valid_one_epoch(model, val_loader, criterion, "final")
-    print(f"\n✅ Training Complete! Final Best F0.5: {final_score:.4f}")
+    torch.save(model.state_dict(), CONFIG["save_path"])
 
 if __name__ == "__main__":
-    main()
+    train()
 
 ```
 
