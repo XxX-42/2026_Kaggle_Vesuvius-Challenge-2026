@@ -1,0 +1,33 @@
+# 忽略大数据集
+data/
+data/vesuvius-challenge-surface-detection/
+*.tif
+*.npy
+
+# 忽略输出文件
+outputs/
+20_src/output/
+10_src/outputs/
+10_src/10_outputs/
+
+# [NEW] 忽略模型权重文件
+*.pth
+*.pt
+*.ckpt
+*.model
+checkpoints/
+weight/
+weights/
+
+# 忽略虚拟环境和系统文件
+.venv/
+__pycache__/
+*.pyc
+.vs/
+.idea/
+.vscode/
+
+# 忽略临时文件
+vis_history.json
+*.tmp
+*.log
